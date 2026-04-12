@@ -1,0 +1,9 @@
+:root {
+    --header-top-bg: #E5E5E5;
+    --main-blue: #007CC0;
+    --main-red: #D31118;
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+    --gray-text: #666666;
+    --container-width: 1200px; /* Стандарт для таких макетов */
+}
