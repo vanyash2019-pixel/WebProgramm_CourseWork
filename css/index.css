@@ -28,8 +28,9 @@ body {
 /* 3. HEADER TOP (Данные из твоих замеров Computed) */
 .header-top {
     background-color: rgb(240, 240, 240); /* Тот самый rgb(240, 240, 240) */
-    line-height: 40px; /* Твои 40px из line-height */
+     padding: 7px 0;
     border-bottom: 1px solid #e0e0e0;
+
 }
 
 .header-top__wrapper {
@@ -42,15 +43,18 @@ body {
 .header-top__nav ul {
     display: flex;
     list-style: none;
-    gap: 20px; /* Расстояние между ссылками */
+    margin-left: 28px;
+    gap: 15px; /* Расстояние между ссылками */
 }
 
 .header-top__nav a {
     text-decoration: none;
+    letter-spacing: -0.02em;
     color: rgb(51, 51, 51); /* Твой цвет текста */
     font-size: 15px; /* Округлили твои 14.93px */
     font-weight: 300; /* Твой font-weight 300 */
     transition: color 0.2s ease;
+
 }
 
 .header-top__nav a:hover {
@@ -81,4 +85,116 @@ body {
     height: 6px;
     background-color: #D31118;
     border-radius: 50%;
+}
+/* --- HEADER CENTER (На основе твоих замеров) --- */
+.header-center {
+    background-color: #ffffff;
+    padding: 30px 0; /* Создаем высоту блока за счет внутренних отступов */
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.header-center__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Блок логотипа */
+.header-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+}
+
+.header-logo img {
+    width: 60px; /* Подбери на глаз или замерь в Computed у <img> */
+    height: auto;
+}
+
+.logo-name {
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    color: #333;
+    line-height: 1;
+}
+
+.logo-desc {
+    display: block;
+    font-size: 11px;
+    color: #888;
+    max-width: 160px;
+    margin-top: 5px;
+    line-height: 1.2;
+}
+
+/* Контакты */
+.header-contact {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.contact-link {
+    display: block;
+    text-decoration: none;
+    color: rgb(51, 51, 51); /* Твой замер */
+    font-size: 16px; 
+    font-weight: 700; /* Телефоны обычно жирнее */
+    margin-bottom: 4px;
+}
+
+.contact-btn {
+    display: inline-block;
+    color: #008BDA; /* Синий из оригинала */
+    font-size: 13px;
+    text-decoration: none;
+    border-bottom: 1px dashed #008BDA; /* Пунктирное подчеркивание */
+    transition: 0.2s;
+}
+
+.contact-btn:hover {
+    border-bottom-style: solid;
+}
+
+/* Скрываем второй телефон на средних экранах, если нужно */
+.only-phone .contact-link {
+    font-weight: 400;
+}
+.header-logo {
+    display: flex;
+    align-items: center; /* Выравнивает картинку, буквы и текст по одной горизонтальной линии */
+    text-decoration: none;
+    gap: 12px; /* Расстояние между картинкой и текстом */
+}
+
+.logo-img {
+    height: 50px; /* Отрегулируй по высоте букв */
+    width: auto;
+}
+
+.logo-text-group {
+    display: flex;
+    align-items: center; /* Вот это поставит описание СПРАВА от ЕГДС */
+    gap: 15px; /* Расстояние между ЕГДС и длинным описанием */
+}
+
+.logo-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px; /* Делаем буквы ЕГДС действительно большими */
+    font-weight: 800; /* Максимальная жирность */
+    color: #333;
+    line-height: 1; /* Убираем лишние отступы сверху/снизу букв */
+    letter-spacing: -1px; /* Чуть плотнее, как в логотипах */
+}
+
+.logo-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px; /* Маленький аккуратный шрифт */
+    font-weight: 400;
+    color: #666;
+    line-height: 1.2;
+    max-width: 180px; /* Ограничиваем ширину, чтобы текст красиво переносился */
+    text-transform: uppercase; /* Если на сайте текст капсом */
 }
