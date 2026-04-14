@@ -1,4 +1,4 @@
-/* --- Базовые сбросы --- */
+/* 1. СБРОС СТИЛЕЙ */
 * {
     margin: 0;
     padding: 0;
@@ -7,361 +7,78 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #fff;
-    color: #333;
+    -webkit-font-smoothing: antialiased;
 }
 
+/* 2. СЕТКА (Те самые контейнеры из кода сайта) */
 .container {
-    max-width: 1300px; /* Ширина контента */
-    margin: 0 auto;
-    padding: 0 15px;
-    display: flex;
-    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
     width: 100%;
 }
 
-/* --- ЯРУС 1: Top Bar --- */
+@media (min-width: 576px)  { .container { max-width: 540px; } }
+@media (min-width: 768px)  { .container { max-width: 720px; } }
+@media (min-width: 992px)  { .container { max-width: 960px; } }
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
+
+/* 3. HEADER TOP (Данные из твоих замеров Computed) */
 .header-top {
-    width: 100%;
-    background-color: #E5E5E5;
-    border-bottom: 1px solid #dcdcdc;
-    padding: 10px 0;
+    background-color: rgb(240, 240, 240); /* Тот самый rgb(240, 240, 240) */
+    line-height: 40px; /* Твои 40px из line-height */
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.header-top .container {
-    justify-content: flex-start; /* Начинаем слева */
-}
-
-.top-nav a {
-    text-decoration: none;
-    color: #444;
-    font-size: 13px;
-    margin-right: 25px;
-    transition: color 0.2s;
-}
-
-.top-nav a:hover {
-    color: #D31118;
-}
-
-.header-location {
-    margin-left: auto; /* Огромный отступ от новостей, прижимает адрес вправо */
-    font-size: 13px;
-    color: #666;
-}
-
-/* --- ЯРУС 2: Middle Bar --- */
-.header-middle {
-    padding: 25px 0;
-    background: #fff;
-}
-
-.header-middle .container {
-    justify-content: space-between; /* Лого слева, контакты справа */
-}
-
-.logo-area {
-    display: flex;
-    align-items: center;
-}
-
-.logo-main {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-main img {
-    height: 55px; /* Высота логотипа */
-    width: auto;
-}
-
-.logo-title {
-    font-size: 50px; /* Размер как у логотипа */
-    font-weight: 800;
-    color: #333;
-    line-height: 1;
-    letter-spacing: -1px;
-}
-
-.logo-text-block {
-    margin-left: 25px;
-    padding-left: 25px;
-    border-left: 1px solid #ddd; /* Вертикальный разделитель */
-}
-
-.logo-subtitle {
-    font-size: 14px;
-    line-height: 1.3;
-    color: #777;
-    font-weight: 500;
-}
-
-/* Контакты */
-.header-contacts {
-    display: flex;
-    gap: 50px; /* Большое расстояние между почтой и телефоном */
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.icon-circle {
-    width: 40px;
-    height: 40px;
-    background: #f0f4f8;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #007CC0;
-    font-size: 18px;
-}
-
-.contact-text a {
-    display: block;
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.sub-link {
-    font-size: 11px !important;
-    color: #007CC0 !important;
-    text-decoration: underline !important;
-    font-weight: 400 !important;
-    margin-top: 2px;
-}
-
-/* --- ЯРУС 3: Навигация с Градиентом --- */
-/* --- ЯРУС 3: Навигация с вертикальным градиентом --- */
-.header-nav {
-    width: 100%;
-    /* 0deg — это снизу вверх. 
-       Сначала идет красный (внизу), потом синий (вверху) */
-    background: linear-gradient(0deg, #D31118 0%, #005a8d 90%, #007CC0 100%);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-}
-
-.nav-list li a {
-    text-decoration: none;
-    color: #fff;
-    padding: 18px 25px;
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: background 0.3s;
-}
-
-.nav-list li.active a, .nav-list li a:hover {
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.nav-right {
-    margin-left: auto; /* Прижимает поиск и кабинет вправо */
-    display: flex;
-    align-items: center;
-    gap: 40px; /* Расстояние между поиском и кабинетом */
-}
-
-/* Поиск */
-.search-wrap {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    padding: 5px 15px;
-    border: 1px solid rgba(255,255,255,0.3);
-}
-
-.search-wrap input {
-    background: transparent;
-    border: none;
-    color: #fff;
-    outline: none;
-    width: 180px;
-}
-
-.search-wrap input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.search-btn {
-    background: transparent;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-}
-
-/* Личный кабинет */
-.user-cabinet {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.user-icon {
-    font-size: 24px;
-    color: #fff;
-}
-
-.user-text a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 13px;
-    display: block;
-}
-
-.user-text span {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 10px;
-}
-/* --- Секция Баннера --- */
-.promo-banner {
-    padding: 40px 0;
-}
-
-.banner-container {
-    background-color: #F2F2F2; /* Светло-серый фон как на фото */
-    border-radius: 10px;
-    padding: 50px;
+.header-top__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
 }
 
-.banner-content {
-    flex: 0 0 55%;
-}
-
-.banner-title {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    color: #000;
-}
-
-.banner-list {
+/* Навигация */
+.header-top__nav ul {
+    display: flex;
     list-style: none;
-    margin-bottom: 30px;
+    gap: 20px; /* Расстояние между ссылками */
 }
 
-.banner-list li {
+.header-top__nav a {
+    text-decoration: none;
+    color: rgb(51, 51, 51); /* Твой цвет текста */
+    font-size: 15px; /* Округлили твои 14.93px */
+    font-weight: 300; /* Твой font-weight 300 */
+    transition: color 0.2s ease;
+}
+
+.header-top__nav a:hover {
+    color: #008BDA;
+}
+
+/* Адрес */
+.header-location {
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+    font-size: 15px;
+    font-weight: 300;
+}
+
+/* Маленькая красная точка перед адресом для красоты */
+.header-location span {
     position: relative;
-    padding-left: 20px;
-    margin-bottom: 12px;
-    font-size: 14px;
-    line-height: 1.4;
+    padding-left: 15px;
 }
 
-/* Красные точки в списке */
-.banner-list li::before {
+.header-location span::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 6px;
-    width: 8px;
-    height: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
     background-color: #D31118;
     border-radius: 50%;
-}
-
-.btn-red {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #D31118;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    margin-bottom: 30px;
-}
-
-/* Точки слайдера */
-.slider-dots {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border: 1px solid #D31118;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.dot.active {
-    background-color: #D31118;
-}
-
-.banner-image img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Специальный контейнер для текста, чтобы он шел сверху вниз */
-.description-container {
-    display: flex;
-    flex-direction: column; /* ЭТО ГЛАВНОЕ: выстраиваем элементы вертикально */
-    align-items: flex-start; /* Прижимаем всё к левому краю */
-    max-width: 1200px; 
-    padding: 60px 15px;
-}
-
-.section-title {
-    color: #D31118;
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    text-align: left;
-}
-
-.section-intro, .section-subtitle, .section-outro {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.text-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.list-item {
-    display: flex;
-    align-items: flex-start; /* Точка сверху, если текст длинный */
-    gap: 15px;
-}
-
-.red-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #D31118;
-    border-radius: 50%;
-    flex-shrink: 0; /* Чтобы точка не сплющивалась */
-    margin-top: 8px; /* Выравниваем точку по первой строке текста */
-}
-
-.list-item p {
-    margin: 0;
-    font-size: 15px;
-    color: #333;
 }
