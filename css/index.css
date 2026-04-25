@@ -11,32 +11,34 @@ body {
 }
 
 /* 2. СЕТКА (Те самые контейнеры из кода сайта) */
+/* Применяем это к контейнеру внутри каждого хедера и секции */
 .container {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 15px;
-    padding-left: 15px;
-    width: 100%;
+    width: 1200px; /* Фиксированная ширина, чтобы ничего не съезжало */
+    margin: 0 auto; /* Магия центровки: одинаковые отступы слева и справа автоматически */
+    padding: 0 15px;
+    /* Убедись, что этого достаточно для твоей новой широкой коробки слайдера */
 }
 
-@media (min-width: 576px)  { .container { max-width: 540px; } }
-@media (min-width: 768px)  { .container { max-width: 720px; } }
-@media (min-width: 992px)  { .container { max-width: 960px; } }
-@media (min-width: 1200px) { .container { max-width: 1140px; } }
 
 /* 3. HEADER TOP (Данные из твоих замеров Computed) */
 .header-top {
     background-color: rgb(240, 240, 240); /* Тот самый rgb(240, 240, 240) */
-     padding: 7px 0;
+     padding: 10px 0;
     border-bottom: 1px solid #e0e0e0;
-
+ width: 100%;
+ padding-left: 60px;
 }
 
 .header-top__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+}
+.header-top a, 
+.header-bottom a {
+    text-decoration: none; /* Убирает подчеркивание */
+    color: inherit;        /* Чтобы цвет текста не становился синим, а был как у родителя */
 }
 
 /* Навигация */
@@ -48,13 +50,14 @@ body {
 }
 
 .header-top__nav a {
-    text-decoration: none;
-    letter-spacing: -0.02em;
-    color: rgb(51, 51, 51); /* Твой цвет текста */
-    font-size: 15px; /* Округлили твои 14.93px */
-    font-weight: 300; /* Твой font-weight 300 */
-    transition: color 0.2s ease;
+color: var(---, #000);
+text-align: center;
 
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 19.2px */
 }
 
 .header-top__nav a:hover {
@@ -89,14 +92,24 @@ body {
 /* --- HEADER CENTER (На основе твоих замеров) --- */
 .header-center {
     background-color: #ffffff;
-    padding: 30px 0; /* Создаем высоту блока за счет внутренних отступов */
+    padding: 9px 0; /* Создаем высоту блока за счет внутренних отступов */
     border-bottom: 1px solid #f0f0f0;
+    padding-left: 120px;
 }
 
 .header-center__wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Центрируем логотип и контакты по одной линии */
+}
+.header-contacts-group {
+    display: flex;
+    gap: 40px; /* Расстояние между почтой и телефонами */
+    align-items: flex-start;
+
+  margin-right: 7px;
+
+    margin-top: 7px; 
 }
 
 /* Блок логотипа */
@@ -108,26 +121,31 @@ body {
 }
 
 .header-logo img {
-    width: 60px; /* Подбери на глаз или замерь в Computed у <img> */
+    width: 57px; /* Подбери на глаз или замерь в Computed у <img> */
     height: auto;
 }
 
 .logo-name {
-    display: block;
-    font-size: 28px;
-    font-weight: 800;
-    color: #333;
-    line-height: 1;
+color: var(---, #464646);
+text-align: center;
+font-family: Roboto;
+font-size: 40px;
+font-style: normal;
+font-weight: 500;
+line-height: 120%; /* 48px */
 }
 
 .logo-desc {
-    display: block;
-    font-size: 11px;
-    color: #888;
-    max-width: 160px;
-    margin-top: 5px;
-    line-height: 1.2;
+color: var(---, #464646);
+/* Текст 17 */
+font-family: Roboto;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 20.4px */
+width: 300px;
 }
+
 
 /* Контакты */
 .header-contact {
@@ -177,24 +195,263 @@ body {
 .logo-text-group {
     display: flex;
     align-items: center; /* Вот это поставит описание СПРАВА от ЕГДС */
-    gap: 15px; /* Расстояние между ЕГДС и длинным описанием */
+    gap: 30px; /* Расстояние между ЕГДС и длинным описанием */
 }
 
-.logo-name {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 48px; /* Делаем буквы ЕГДС действительно большими */
-    font-weight: 800; /* Максимальная жирность */
-    color: #333;
-    line-height: 1; /* Убираем лишние отступы сверху/снизу букв */
-    letter-spacing: -1px; /* Чуть плотнее, как в логотипах */
+
+.header-contacts-group .header-contact:nth-child(3) {
+    transform: translateX(-50px); /* Число подбери сам, пока он не встанет под первый номер */
 }
 
-.logo-desc {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px; /* Маленький аккуратный шрифт */
+
+.header-bottom {
+    /* Точный градиент: сверху синий, снизу красный */
+    background: linear-gradient(180deg, #0092e4 0%, #dc061f 100%);
+    height: 63px;
+    display: flex;
+    align-items: center;
+}
+
+.header-bottom__wrapper {
+    display: flex;
+    justify-content: space-between;/* Меню слева/в центре, поиск справа */
+    align-items: center;
+    width: 100%;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    /* Сдвигаем меню чуть правее от начала, как на скрине */
+    margin-left: 40px; 
+
+}
+
+.main-nav li {
+    margin-right: 40px;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
     font-weight: 400;
-    color: #666;
+    letter-spacing: 0.5px;
+}
+
+/* Стили поиска */
+.header-search {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон как на фото */
+    padding: 5px 15px;
+    border-radius: 6px;
+    width: 220px;
+    height: 40px;
+}
+
+.search-input {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    outline: none;
+}
+
+.search-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.header-right-group {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Расстояние между поиском и кабинетом */
+    margin-left: auto;
+}
+
+/* Стили блока Кабинета */
+.header-cabinet {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Расстояние между иконкой и текстом */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    transition: opacity 0.3s ease;
+}
+
+.header-cabinet:hover {
+    opacity: 0.8; /* Эффект при наведении */
+}
+
+.cabinet-text {
+    display: flex;
+    flex-direction: column;
+    /* Убираем лишние отступы, чтобы строки стояли плотнее */
+    margin: 0;
     line-height: 1.2;
-    max-width: 180px; /* Ограничиваем ширину, чтобы текст красиво переносился */
-    text-transform: uppercase; /* Если на сайте текст капсом */
+}
+
+.cabinet-title {
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase; /* Крупно и капсом */
+    margin-bottom: 2px;
+}
+
+.cabinet-desc {
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 300; /* Тонкий шрифт */
+    opacity: 0.9; /* Чуть приглушенный белый */
+}
+/* Основная секция */
+.hero-slider {
+    margin-top: 40px;
+    background-color: #ffffff; /* Теперь тут белый */
+    padding: 40px 0;
+    width: 100%;
+}
+
+.slider-wrapper {
+    position: relative;
+    /* Размеры строго по твоему скриншоту */
+    max-width: 1400px; 
+    height: 501px;
+ 
+    margin: -40px 0 0 30px;
+    background: #F0F0F0; /* Твой цвет из Style */
+    border-radius: 5px; /* Твой радиус из Style */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.slider-line {
+    display: flex;
+    height: 100%; /* Занимает всю высоту родителя */
+    width: 100%;
+    transition: transform 0.4s ease-out;
+}
+
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end; /* justify-content: flex-end из твоего Layout */
+    align-items: center;      /* align-items: center из твоего Layout */
+    
+    /* Твой паддинг: сверху/снизу 43px, справа 0, слева 570px */
+    /* Это дает много места слева под текст и прижимает контент вправо */
+    padding: 43px 0 43px 570px; 
+    box-sizing: border-box;
+    position: relative;
+}
+
+.slide img {
+    pointer-events: none; /* Чтобы мышь не хватала саму картинку */
+}
+
+.slider-wrapper:active {
+    cursor: grabbing;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-content {
+    position: absolute;
+    left: 60px; /* Отступ текста от левого края коробки */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 480px; /* Ограничиваем ширину текста, чтобы не налезал на картинку */
+    z-index: 2;
+}
+
+.slide-picture {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-picture img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+.slide-title {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.slide-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.slide-item {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-weight: 300; /* Твой font-weight */
+    font-size: 16px;
+}
+
+.slide-item::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 8px;
+    width: 8px; height: 8px;
+    background-color: #dc061f;
+    border-radius: 50%;
+}
+
+.slide-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #dc061f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+
+/* Точки */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #dc061f;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #dc061f;
 }
