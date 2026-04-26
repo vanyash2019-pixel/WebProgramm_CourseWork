@@ -457,9 +457,9 @@ margin-bottom: 30px;
 /* Точки */
 .slider-dots {
     position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 14px;
+    left: 53%;
+    transform: translateX(-52%);
     display: flex;
     gap: 10px;
 }
@@ -479,8 +479,8 @@ margin-bottom: 30px;
     margin-top: -40px; 
 }
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     border: 2px solid #dc061f;
     border-radius: 50%;
     cursor: pointer;
@@ -488,4 +488,81 @@ margin-bottom: 30px;
 
 .dot.active {
     background: #dc061f;
+}
+/* Основная секция */
+/* --- СЕКЦИЯ О КОМПАНИИ --- */
+.about {
+    padding: 20px 0 20px 0; /* Отступы сверху и снизу всей секции */
+    background-color: #ffffff;
+    margin-left: 115px;
+   
+}
+
+/* Красный заголовок */
+.about .title-main {
+   color: var(---, #BF0016);
+
+/* Заголовок 1 */
+font-family: Roboto;
+font-size: 34px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 40.8px */
+margin-bottom: 19px;
+}
+
+/* Обычный текст */
+.about__text {
+color: var(---2, #333);
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 19.2px */
+width: 1140px;
+margin-bottom: 10px;
+}
+
+/* Список */
+.about__list {
+    list-style: none; /* Убираем стандартные черные точки браузера */
+    padding: 0;
+  
+   
+    
+}
+
+.about__list li {
+    position: relative;
+    padding-left: 25px; /* Освобождаем место слева под нашу красную точку */
+    margin-bottom: 9px;
+    color: var(---2, #333);
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 19.2px */
+ width: 1140px;
+ 
+}
+
+/* Кастомная красная точка для списка */
+.about__list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px; /* Опускаем точку так, чтобы она была ровно по центру первой строки */
+    width: 10px;
+    height: 10px;
+    background-color: #dc061f; /* Фирменный красный */
+    border-radius: 50%; /* Делает квадрат круглым */
+}
+
+/* Та самая серая полоска внизу */
+.about__divider {
+    border: none; /* Убираем стандартную 3D-рамку тега hr */
+    border-bottom: 4px solid #f0f0f0; /* Рисуем аккуратную светло-серую линию */
+    margin-top: 45px; /* Отталкиваем линию вниз от текста */
+    margin-bottom: 0;
+ 
 }
