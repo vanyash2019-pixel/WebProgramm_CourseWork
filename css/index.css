@@ -18,7 +18,12 @@ body {
     padding: 0 15px;
     /* Убедись, что этого достаточно для твоей новой широкой коробки слайдера */
 }
-
+.container-2 {
+    width: 1260px; /* Фиксированная ширина, чтобы ничего не съезжало */
+    margin: 0 auto; /* Магия центровки: одинаковые отступы слева и справа автоматически */
+    padding: 0 15px;
+    /* Убедись, что этого достаточно для твоей новой широкой коробки слайдера */
+}
 
 /* 3. HEADER TOP (Данные из твоих замеров Computed) */
 .header-top {
@@ -204,6 +209,7 @@ width: 300px;
 }
 
 
+
 .header-bottom {
     /* Точный градиент: сверху синий, снизу красный */
     background: linear-gradient(180deg, #0092e4 0%, #dc061f 100%);
@@ -225,22 +231,25 @@ width: 300px;
     margin: 0;
     padding: 0;
     /* Сдвигаем меню чуть правее от начала, как на скрине */
-    margin-left: 40px; 
+    margin-left: 98px; 
 
 }
 
 .main-nav li {
-    margin-right: 40px;
+    margin-right: 20px;
+   
 }
 
 .main-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
+color: var(---, #FFF);
+text-align: center;
+/* Текст 18 апперкейс */
+font-family: Roboto;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 21.6px */
+text-transform: uppercase;
 }
 
 /* Стили поиска */
@@ -250,7 +259,7 @@ width: 300px;
     background: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон как на фото */
     padding: 5px 15px;
     border-radius: 6px;
-    width: 220px;
+    width: 250px;
     height: 40px;
 }
 
@@ -274,7 +283,7 @@ width: 300px;
 .header-right-group {
     display: flex;
     align-items: center;
-    gap: 50px; /* Расстояние между поиском и кабинетом */
+    gap: 45px; /* Расстояние между поиском и кабинетом */
     margin-left: auto;
 }
 
@@ -282,9 +291,10 @@ width: 300px;
 .header-cabinet {
     display: flex;
     align-items: center;
-    gap: 12px; /* Расстояние между иконкой и текстом */
+    gap: 5px; /* Расстояние между иконкой и текстом */
     text-decoration: none; /* Убираем подчеркивание у ссылки */
     transition: opacity 0.3s ease;
+ 
 }
 
 .header-cabinet:hover {
@@ -294,18 +304,25 @@ width: 300px;
 .cabinet-text {
     display: flex;
     flex-direction: column;
-    /* Убираем лишние отступы, чтобы строки стояли плотнее */
+  
     margin: 0;
     line-height: 1.2;
+    color: #FFB0B9;
+font-family: Roboto;
+font-size: 11px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 13.2px */
 }
 
 .cabinet-title {
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 300;
     text-transform: uppercase; /* Крупно и капсом */
     margin-bottom: 2px;
+    
 }
 
 .cabinet-desc {
@@ -326,10 +343,10 @@ width: 300px;
 .slider-wrapper {
     position: relative;
     /* Размеры строго по твоему скриншоту */
-    max-width: 1400px; 
+    max-width: 1140px; 
     height: 501px;
  
-    margin: -40px 0 0 30px;
+    margin: -38px 0 0 230px;
     background: #F0F0F0; /* Твой цвет из Style */
     border-radius: 5px; /* Твой радиус из Style */
     overflow: hidden;
@@ -351,8 +368,7 @@ width: 300px;
     justify-content: flex-end; /* justify-content: flex-end из твоего Layout */
     align-items: center;      /* align-items: center из твоего Layout */
     
-    /* Твой паддинг: сверху/снизу 43px, справа 0, слева 570px */
-    /* Это дает много места слева под текст и прижимает контент вправо */
+
     padding: 43px 0 43px 570px; 
     box-sizing: border-box;
     position: relative;
@@ -374,10 +390,10 @@ width: 300px;
 
 .slide-content {
     position: absolute;
-    left: 60px; /* Отступ текста от левого края коробки */
-    top: 50%;
+    left: 40px; /* Отступ текста от левого края коробки */
+    top: 47%;
     transform: translateY(-50%);
-    width: 480px; /* Ограничиваем ширину текста, чтобы не налезал на картинку */
+    width: 500px; /* Ограничиваем ширину текста, чтобы не налезал на картинку */
     z-index: 2;
 }
 
@@ -395,9 +411,13 @@ width: 300px;
     object-fit: contain;
 }
 .slide-title {
-    font-size: 38px;
-    font-weight: 700;
-    margin-bottom: 20px;
+   color: var(---, #000);
+font-family: Roboto;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 38.4px */
+margin-bottom: 30px;
 }
 
 .slide-list {
@@ -409,9 +429,9 @@ width: 300px;
 .slide-item {
     position: relative;
     padding-left: 25px;
-    margin-bottom: 12px;
-    font-weight: 300; /* Твой font-weight */
-    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 400; /* Твой font-weight */
+    font-size: 15px;
 }
 
 .slide-item::before {
@@ -425,11 +445,11 @@ width: 300px;
 
 .slide-btn {
     display: inline-block;
-    padding: 15px 30px;
+    padding: 11px 23px;
     background: #dc061f;
     color: #fff;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 5px;
     font-weight: 700;
 }
 
@@ -444,6 +464,20 @@ width: 300px;
     gap: 10px;
 }
 
+/* Этот стиль сработает ТОЛЬКО для второго слайда */
+.slide-content--second {
+    /* Отрицательное значение в translateY поднимает блок вверх */
+    /* Подбери число (например, -20px или -40px), как тебе больше нравится */
+    transform: translateY(-180px) !important; 
+}
+.slide-content--third {
+    /* Здесь текста еще больше, можно поднять посильнее */
+    margin-top: -30px;
+}
+.slide-content--fourth {
+    /* Отрицательный маржин вытолкнет блок вверх */
+    margin-top: -40px; 
+}
 .dot {
     width: 12px;
     height: 12px;
