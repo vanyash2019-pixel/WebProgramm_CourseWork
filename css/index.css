@@ -563,6 +563,112 @@ line-height: 120%; /* 19.2px */
     border: none; /* Убираем стандартную 3D-рамку тега hr */
     border-bottom: 4px solid #f0f0f0; /* Рисуем аккуратную светло-серую линию */
     margin-top: 45px; /* Отталкиваем линию вниз от текста */
-    margin-bottom: 0;
+    margin-bottom: 20px;
  
+}
+
+.services {
+  padding: 20px 0 20px 0; 
+ margin-left: 115px;
+    
+}
+.services .title-main {
+
+color: var(---, #BF0016);
+
+font-family: Roboto;
+font-size: 34px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 40.8px */
+ margin-bottom: 30px;
+}
+
+.services__grid {
+    display: grid;
+    /* По умолчанию 3 колонки */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 7px;
+   
+}
+
+.service-card {
+    position: relative;
+    display: block;
+    height: 235px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    width: 360px;
+
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
+    z-index: 1;
+}
+
+.service-card__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   z-index: 5;
+    box-sizing: border-box;
+}
+
+.service-card__title {
+       display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 17px;
+   
+    line-height: 120%;
+    text-transform: uppercase;
+    align-items: center;
+    color: #fff;
+    width: 75%;
+}
+
+.service-card__arrow {
+    color: #fff;
+    font-style: normal;
+    font-size: 20px;
+}
+/* Создаем красную заливку, скрытую по умолчанию */
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* Используем твой градиент из макета */
+    background: linear-gradient(0.00deg, rgb(191, 0, 22) -0.001%, rgb(234, 92, 95) 100.002%);
+    transition: all .3s ease;
+    
+    /* Состояния по умолчанию: скрыто */
+    opacity: 0;
+    visibility: hidden;
+    
+    /* Ставим z-index между фоновой картинкой и текстом */
+    z-index: 3; 
+}
+/* При наведении на карточку меняем состояние её псевдоэлемента */
+.service-card:hover::before {
+    opacity: 1;
+    visibility: visible;
 }
