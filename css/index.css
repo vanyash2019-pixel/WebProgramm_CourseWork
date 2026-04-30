@@ -1143,3 +1143,132 @@ flex-shrink: 0;
 .v-btn, .v-dot {
     pointer-events: auto; /* А на кнопки и точки кликать всё еще можно */
 }
+
+/* --- СЕКЦИЯ: ЭТАПЫ УСТАНОВКИ --- */
+.section-steps {
+    padding: 20px 0 0 110px;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.step-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.section-steps .title-main
+{
+    color: var(---, #BF0016);
+text-align: left;
+/* Заголовок 1 */
+font-family: Roboto;
+font-size: 34px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 40.8px */
+}
+
+
+.step-wrapper {
+    display: flex;
+   justify-content: flex-start;
+    align-items: stretch; /* Чтобы колонки были одной высоты, если нужно */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* --- КОЛОНКА 1: ВИДЕО --- */
+.step-video-block {
+
+    width: 555px;
+margin-top:  20px;
+}
+
+.step-video-poster {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Пропорция как на макете */
+    background-size: cover;
+    background-position: center;
+    background-color: #e0e0e0;
+    border-radius: 8px; /* Слегка скругляем углы */
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    
+}
+
+/* Кнопка Play по центру */
+.step-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    padding: 0;
+}
+
+.step-play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1); /* Слегка увеличивается при наведении */
+    opacity: 0.9;
+}
+
+/* --- КОЛОНКА 2: СПИСОК --- */
+.step-list {
+    flex: 0 0 45%; /* Занимает 45% ширины (оставляем воздух между колонок) */
+    display: flex;
+    flex-direction: column;
+    gap: 29px; /* Расстояние между этапами */
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start; /* Прижимаем кружок и текст к верху */
+    gap: 15px;
+}
+
+/* Красный кружок с цифрой */
+.step-number {
+    flex-shrink: 0; /* Чтобы кружок не сжимался */
+
+width: 40px;
+height: 40px;
+    background-color: #BF0016;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Текстовая часть этапа */
+.step-text {
+   color: var(---2, #333);
+/* Текст 16 */
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 19.2px */
+}
+
+.step-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 8px 0;
+}
+
+.step-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    margin: 0;
+}
+

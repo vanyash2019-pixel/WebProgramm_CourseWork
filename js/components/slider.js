@@ -197,3 +197,22 @@ document.addEventListener('DOMContentLoaded', function() {
         changeSlide(currentIndex);
     });
 });
+
+
+
+const playBtn = document.getElementById('play-button');
+const iframe = document.getElementById('video-iframe');
+const container = document.getElementById('video-container');
+
+if (playBtn && iframe) {
+    playBtn.addEventListener('click', function() {
+        // Берем ссылку из data-src и ставим в src, чтобы видео начало грузиться
+        const videoSrc = iframe.getAttribute('data-src');
+        iframe.setAttribute('src', videoSrc);
+        
+        // Показываем видео, скрываем кнопку и убираем фон постера
+        iframe.style.display = 'block';
+        playBtn.style.display = 'none';
+        container.style.backgroundImage = 'none';
+    });
+}
