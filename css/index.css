@@ -495,19 +495,16 @@ margin-bottom: 30px;
     padding: 20px 0 20px 0; /* Отступы сверху и снизу всей секции */
     background-color: #ffffff;
     margin-left: 115px;
-   
 }
 
 /* Красный заголовок */
 .about .title-main {
-   color: var(---, #BF0016);
-
-/* Заголовок 1 */
+color: var(---, #BF0016);
 font-family: Roboto;
 font-size: 34px;
 font-style: normal;
 font-weight: 400;
-line-height: 120%; /* 40.8px */
+line-height: 120%; 
 margin-bottom: 19px;
 }
 
@@ -527,9 +524,6 @@ margin-bottom: 10px;
 .about__list {
     list-style: none; /* Убираем стандартные черные точки браузера */
     padding: 0;
-  
-   
-    
 }
 
 .about__list li {
@@ -603,8 +597,6 @@ line-height: 120%; /* 40.8px */
     text-decoration: none;
     transition: transform 0.3s ease;
     width: 360px;
- 
-
 }
 
 .service-card:hover {
@@ -678,6 +670,7 @@ line-height: 120%; /* 40.8px */
 .equipment-catalog {
  padding: 20px 0 20px 0; 
  margin-left: 115px;
+ margin-bottom: 20px;
 
 }
 .equipment-catalog .title-main
@@ -747,4 +740,406 @@ font-weight: 500;
 line-height: 120%; /* 20.4px */
 margin-left: 35px;
 width: 50%;
+}
+
+.works {
+    padding: 20px 0;
+    overflow: hidden; /* Чтобы слайды не создавали горизонтальную прокрутку */
+ 
+}
+
+/* Заголовок секции */
+.works .title-main {
+    color: #BF0016;
+    font-family: 'Roboto', sans-serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 10px;
+    margin-left: 60px; /* Твой специфический отступ */
+}
+
+
+
+
+
+/* Обертка для JS-слайдера */
+.hero-slider-work {
+    position: relative;
+    width: 100%;
+}
+
+.works-line {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* --- ФОН СЛАЙДА (НА ВСЮ ШИРИНУ) --- */
+.works-slide-item {
+    position: relative;
+    flex: 0 0 100%; /* Каждый слайд равен ширине экрана */
+    width: 100%;
+    min-height: 550px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* Центрируем контент по горизонтали */
+    align-items: center;    /* Центрируем по вертикали */
+    padding: 60px 0;
+}
+
+/* Светлое наложение на фон */
+.works-slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85); /* Делаем картинку полупрозрачной */
+    z-index: 1;
+}
+
+/* Уникальный контейнер внутри слайда (замена .container) */
+.works-slide-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px; /* Максимальная ширина контента */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* --- ТЕКСТОВАЯ ЧАСТЬ (СЛЕВА) --- */
+.works-info {
+    flex: 0 0 55%; /* Занимает 55% ширины */
+    display: flex;
+    flex-direction: column;
+}
+
+.works-info__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.works-info__list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 35px;
+}
+
+.works-info__item {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.4;
+}
+
+/* Красные точки в списке */
+.works-info__item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: #BF0016;
+    border-radius: 50%;
+}
+
+/* Кнопки */
+.works-info__btns {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-red {
+    display: inline-block;
+    background-color: #BF0016;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-red:hover {
+    background-color: #900011;
+}
+
+/* --- ГАЛЕРЕЯ (СПРАВА) --- */
+.works-gallery {
+    flex: 0 0 400px; /* Фиксированная ширина сетки картинок */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+}
+
+.works-gallery__img {
+    aspect-ratio: 4 / 3;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: #f0f0f0; /* Цвет-заглушка */
+}
+
+/* --- ПАГИНАЦИЯ (ТОЧКИ) --- */
+.works-pagination {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #BF0016;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background-color: #BF0016;
+}
+
+/* Общий сброс для секции */
+.section-works {
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Базовые настройки секции */
+.section-works {
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+}
+
+.v-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    margin-top: -20px;
+}
+
+/* Заголовок по методичке */
+ .section-works .title-main {
+    color: #BF0016;
+    font-family: 'Roboto', sans-serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 30px;
+    margin-left: 60px; /* Твой специфический отступ */
+}
+
+/* Настройки линии слайдов */
+.v-slider-wrapper {
+    position: relative;
+    width: 100%;
+    cursor: grab; /* Меняет курсор на «руку» */
+    user-select: none; /* Запрещает выделение текста при перетаскивании */
+    touch-action: pan-y;
+}
+
+.v-slider-line {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* --- СТИЛЬ СЛАЙДА --- */
+.v-slide {
+    position: relative;
+    flex: 0 0 100vw; /* Каждый слайд строго на всю ширину окна */
+    width: 100vw;
+    max-height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+}
+
+/* Светлое наложение */
+.v-slide__overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    z-index: 1;
+}
+
+/* Контент внутри слайда */
+.v-slide__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-left: 210px;
+}
+
+/* ТЕКСТ (СЛЕВА) */
+.v-slide__text {
+ color: var(---2, #333);
+font-family: Roboto;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 20.4px */
+
+}
+
+.v-slide__title {
+color: var(---2, #333);
+font-family: Roboto;
+font-size: 36px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 43.2px */
+text-transform: uppercase;
+margin-top: -1px;
+margin-bottom: 20px;
+}
+
+.v-slide__subtitle {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+  
+}
+
+.v-slide__list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.v-slide__list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #444;
+}
+
+.v-slide__list li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 5px;
+    width: 10px; height: 10px;
+    background: #BF0016;
+    border-radius: 50%;
+}
+
+/* Кнопки */
+.v-slide__btns {
+    display: flex;
+    gap: 15px;
+    margin-top: 140px;
+}
+
+.v-btn {
+display: flex;
+height: 42px;
+padding: 10px 20px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 5px;
+background: var(---, #BF0016);
+width: 135px;
+text-decoration: none;
+color: #ffffff;
+}
+
+
+.v-btn--outline {
+   display: flex;
+height: 42px;
+padding: 10px 20px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 5px;
+background: var(---, #BF0016);
+width: 220px;
+text-decoration: none;
+color: #ffffff;
+}
+
+/* ГАЛЕРЕЯ (СПРАВА) */
+.v-slide__gallery {
+    flex: 0 0 450px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-right: 35px;
+}
+
+.v-gallery-item {
+    aspect-ratio: 4 / 3;
+width: 260px;
+height: 190px;
+flex-shrink: 0;
+}
+
+/* Точки */
+.v-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(13%);
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.v-dot {
+    width: 16px; height: 16px;
+    border: 2px solid #BF0016;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.v-dot.active {
+    background: #BF0016;
+}
+.v-slider-wrapper:active {
+    cursor: grabbing; /* При зажатии рука «сжимается» */
+}
+
+.v-gallery-item, .v-slide {
+    pointer-events: none; /* Чтобы картинки не мешали перетаскиванию */
+}
+
+.v-btn, .v-dot {
+    pointer-events: auto; /* А на кнопки и точки кликать всё еще можно */
 }
