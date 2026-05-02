@@ -216,3 +216,58 @@ if (playBtn && iframe) {
         container.style.backgroundImage = 'none';
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('partner-track');
+    const btnPrev = document.getElementById('partner-prev');
+    const btnNext = document.getElementById('partner-next');
+
+    // Проверяем, что ВСЕ элементы найдены, иначе выходим
+    if (!track || !btnPrev || !btnNext) return;
+
+    // --- 1. ЛОГИКА СТРЕЛОК ---
+    btnNext.addEventListener('click', () => {
+        const item = track.querySelector('.partner-item');
+        if (item) {
+            const scrollAmount = item.clientWidth + 30; // ширина + gap
+            track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    });
+
+    btnPrev.addEventListener('click', () => {
+        const item = track.querySelector('.partner-item');
+        if (item) {
+            const scrollAmount = item.clientWidth + 30;
+            track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        }
+    });
+
+    // --- 2. ЛОГИКА ПЕРЕТАСКИВАНИЯ (DRAG) ---
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    track.addEventListener('mousedown', (e) => {
+        isDown = true;
+        track.classList.add('is-dragging'); // Класс для отключения snap и smooth (из прошлого шага)
+        startX = e.pageX - track.offsetLeft;
+        scrollLeft = track.scrollLeft;
+    });
+
+    const stopDragging = () => {
+        if (!isDown) return;
+        isDown = false;
+        track.classList.remove('is-dragging');
+    };
+
+    track.addEventListener('mouseleave', stopDragging);
+    track.addEventListener('mouseup', stopDragging);
+
+    track.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault(); // Запрещаем выделение текста
+        const x = e.pageX - track.offsetLeft;
+        const walk = (x - startX) * 1.5; // Скорость прокрутки
+        track.scrollLeft = scrollLeft - walk;
+    });
+});

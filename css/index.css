@@ -1149,6 +1149,7 @@ flex-shrink: 0;
     padding: 20px 0 0 110px;
     background-color: #fff;
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 45px;
 }
 
 .step-container {
@@ -1272,3 +1273,117 @@ line-height: 120%; /* 19.2px */
     margin: 0;
 }
 
+/* --- Секция партнеров --- */
+.partners-section {
+     padding: 20px 0 0 110px;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.partners-title {
+    color: var(---, #BF0016);
+text-align: left;
+/* Заголовок 1 */
+font-family: Roboto;
+font-size: 34px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 40.8px */ 
+margin-bottom: 10px;
+}
+
+.partners-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Сам скроллящийся блок */
+.partners-track {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Магнитная прокрутка (прилипает к элементам) */
+    scroll-behavior: smooth; /* Плавная прокрутка при клике на стрелки */
+    padding: 20px 0;
+    width: 100%;
+    
+    /* Прячем стандартный ползунок прокрутки для красоты */
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.partners-track::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.partner-item {
+    flex: 0 0 calc(20% - 24px); /* Показываем 5 логотипов на экране (100% / 5 минус отступы) */
+    scroll-snap-align: center; /* Элемент будет центрироваться при скролле */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px; /* Минимальная ширина, чтобы на мобилках не сжимались в точку */
+}
+
+.partner-item img {
+    max-width: 100%;
+    max-height: 220px; /* Ограничиваем высоту, чтобы логотипы смотрелись ровно */
+    object-fit: contain;
+    filter: grayscale(100%); /* Делаем их серыми, как на макете */
+    opacity: 0.7;
+    transition: all 0.3s ease;
+
+}
+
+/* При наведении логотип становится цветным и ярким */
+.partner-item img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* --- Стрелочки --- */
+.partners-arrow {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+.partners-arrow:hover {
+    transform: translateY(-50%) scale(1.1); /* Легкое увеличение при наведении */
+}
+
+.partners-arrow.prev {
+    left: -80px; /* Выносим за левый край контейнера */
+}
+
+.partners-arrow.next {
+    right: -60px; /* Выносим за правый край контейнера */
+}
+/* Добавляем специальный класс, который будем включать через JS */
+.partners-track.is-dragging {
+    scroll-snap-type: none; /* Отключаем магнит */
+    scroll-behavior: auto;  /* Отключаем плавность, чтобы трек мгновенно следовал за курсором */
+    cursor: grabbing;
+}
+
+.partners-track {
+    /* ... твои старые стили ... */
+    scroll-behavior: smooth; /* Для стрелочек оставляем плавность */
+    user-select: none;       /* Запрещаем выделение текста/картинок при перетаскивании */
+}
+
+.partner-item img {
+    pointer-events: none;    /* Чтобы браузер не пытался "утащить" саму картинку как файл */
+}
