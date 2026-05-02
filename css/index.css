@@ -1393,6 +1393,7 @@ margin-bottom: 10px;
      padding: 20px 0 0 110px;
     background-color: #fff;
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 62px;
 }
 
 .map-title {
@@ -1421,3 +1422,65 @@ margin-bottom: 30px;
     width: 100%;
     height: 100%;
 }
+
+/* --- Секция "Остались вопросы" --- */
+.callback-section {
+    background-color: #f4f4f4;
+    padding: 30px 0; /* Уменьшили внутренние отступы в 2 раза, чтобы полоска была узкой */
+}
+
+.callback-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Расталкиваем заголовок влево, а форму вправо */
+    gap: 20px;
+    flex-wrap: nowrap; /* ЗАПРЕЩАЕМ перенос на новую строку, чтобы всё было в ряд */
+}
+
+.callback-title {
+    color: #cc0000;
+    font-size: 20px; /* Немного уменьшили шрифт, чтобы влезло */
+    font-weight: 500;
+    white-space: nowrap; /* Запрещаем тексту разрываться на две строки */
+    flex-shrink: 0; /* Запрещаем заголовку сжиматься */
+    margin-left: 54px;
+  
+}
+
+.callback-form {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Чуть меньше отступы между инпутами */
+    flex-grow: 1; /* Форма забирает свободное место */
+    justify-content: flex-end; /* Прижимаем инпуты к правому краю */
+margin-left: 50px;
+}
+
+.callback-input {
+    padding: 12px 15px; /* Уменьшили высоту полей */
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 256px; /* Немного ужали ширину полей */
+    outline: none;
+    
+}
+
+.callback-btn {
+    background-color: #cc0000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px; /* Уменьшили высоту кнопки */
+    font-size: 15px;
+    white-space: nowrap;
+    cursor: pointer;
+    flex-shrink: 0;
+    width: 180px;;
+font-family: Roboto;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 21.6px */
+}
+
