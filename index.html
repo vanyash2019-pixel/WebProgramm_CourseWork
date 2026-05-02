@@ -6,6 +6,7 @@
     <title>ЕГДС — Единая Городская Диспетчерская Служба</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -560,6 +561,17 @@
                     <path d="M9 5L16 12L9 19" stroke="#cc0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </button>
+        </div>
+    </div>
+</section>
+
+<section class="map-section">
+    <div class="step-container"> <!-- Твой контейнер для выравнивания по ширине -->
+        <h2 class="map-title">Карта барьеров</h2>
+        
+        <!-- Контейнер, куда загрузится карта -->
+        <div class="map-wrapper">
+            <div id="yandex-map"></div>
         </div>
     </div>
 </section>

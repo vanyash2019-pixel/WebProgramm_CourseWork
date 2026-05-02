@@ -271,3 +271,36 @@ document.addEventListener('DOMContentLoaded', () => {
         track.scrollLeft = scrollLeft - walk;
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Проверяем, есть ли на странице блок для карты и загрузился ли скрипт Яндекса
+    if (document.getElementById('yandex-map') && typeof ymaps !== 'undefined') {
+        
+        // Функция инициализации карты
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map("yandex-map", {
+                // Координаты центра карты (сейчас это Москва)
+                center: [55.755819, 37.617644], 
+                zoom: 10, // Масштаб (чем больше цифра, тем ближе)
+                // Оставляем только нужные элементы управления (зум и ползунок)
+                controls: ['zoomControl', 'fullscreenControl'] 
+            });
+
+            // Создаем тестовую метку
+            var myPlacemark = new ymaps.Placemark([55.755819, 37.617644], {
+                hintContent: 'Главный барьер',
+                balloonContent: 'Здесь находится описание объекта'
+            }, {
+                // Опции метки (можно поменять цвет)
+                preset: 'islands#redIcon'
+            });
+
+            // Добавляем метку на карту
+            myMap.geoObjects.add(myPlacemark);
+            
+            // Если нужно, чтобы карта не зумилась колесиком мыши (чтобы не мешать скроллу сайта)
+            // Раскомментируй строку ниже:
+            // myMap.behaviors.disable('scrollZoom');
+        });
+    }
+});
