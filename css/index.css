@@ -123,6 +123,7 @@ line-height: 120%; /* 19.2px */
     align-items: center;
     text-decoration: none;
     gap: 15px;
+    margin-left: 30px;
 }
 
 .header-logo img {
@@ -157,6 +158,7 @@ width: 300px;
     display: flex;
     align-items: flex-start;
     gap: 12px;
+  
 }
 
 .contact-link {
@@ -230,14 +232,14 @@ width: 300px;
     list-style: none;
     margin: 0;
     padding: 0;
-    /* Сдвигаем меню чуть правее от начала, как на скрине */
-    margin-left: 98px; 
+   height: 100%;
+    margin-left: 90px; 
 
 }
 
 .main-nav li {
     margin-right: 20px;
-   
+   height: 100%;
 }
 
 .main-nav a {
@@ -1339,7 +1341,7 @@ margin-bottom: 10px;
 }
 
 /* При наведении логотип становится цветным и ярким */
-.partner-item img:hover {
+.partner-item:hover img {
     filter: grayscale(0%);
     opacity: 1;
 }
@@ -1388,6 +1390,7 @@ margin-bottom: 10px;
 .partner-item img {
     pointer-events: none;    /* Чтобы браузер не пытался "утащить" саму картинку как файл */
 }
+
 /* --- Секция Карты --- */
 .map-section {
      padding: 20px 0 0 110px;
@@ -1638,327 +1641,178 @@ line-height: 120%; /* 21.6px */
     color: #cccccc;
 }
 
+/* Базовое состояние нашего хедера (добавь это к .header-bottom) */
+.header-bottom {
+    transition: background 0.3s; /* Плавная смена цвета если нужно */
+}
 
 
+/* Начальное состояние клона: он всегда зафиксирован, но спрятан выше экрана */
+.header-bottom--sticky {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    margin: 0 !important;
+    transform: translateY(-100%); /* Прячем за верхнюю границу */
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s;
+    opacity: 0;
+    pointer-events: none; /* Пока не видно — нельзя кликнуть */
+}
 
-/* ОБЩАЯ ОБЕРТКА КОНТЕНТА */
-.b-services-wrapper {
+/* Когда добавляем этот класс — меню плавно выезжает */
+.header-bottom--sticky.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto; /* Теперь ссылки работают */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Чтобы клон визуально не отличался, убедись, что градиент на месте */
+.header-bottom--sticky {
+    background: linear-gradient(180deg, #0092e4 0%, #dc061f 100%) !important;
+}
+
+--- ВЫПАДАЮЩЕЕ МЕНЮ --- */
+
+/* 1. Настраиваем родителя */
+.main-nav .has-dropdown {
+    position: relative; /* Важно! Относительно него будет позиционироваться выпадашка */
     display: flex;
-    justify-content: space-between;
-    gap: 40px; /* Расстояние между текстом и меню */
-    margin-top: 70px;
-    margin-left: 173px;
-    
-}
-.page-title
-{
-color: var(---2, #333);
-/* Заголовок 1 */
-font-family: Roboto;
-font-size: 32px;
-font-style: normal;
-font-weight: 400;
-line-height: 120%; /* 40.8px */
-margin-left: 173px;
-
-}
-.text-page h2 {
-    color: #cc0000; /* Как в оригинале — красный заголовок */
-    font-size: 28px;
-    margin-bottom: 21px;
-}
-
-.text-page p {
-    line-height: 1.7;
-    margin-bottom: 15px;
-    color: #313131;
-    color: var(---2, #333);
-font-family: Roboto;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-
-
-}
-
-/* БЛОК С ЛОГОТИПОМ CAME */
-.brand-promo {
-    display: flex;
-    gap: 25px;
-    background: #f9f9f9;
-    padding: 20px;
-    margin: 30px 0;
     align-items: center;
+    height: 63px; /* Растягиваем на всю высоту шапки, чтобы мышка не "теряла" меню */
 }
 
-
-.brand-promo__logo { width: 30%; }
-.brand-promo__logo img { max-width: 100%; height: auto; }
-.brand-promo__text { width: 70%; }
-
-/* САЙДБАР (ПРАВАЯ КОЛОНКА) */
-.b-sidebar {
-    background: #f4f4f4; /* Серый фон как на image_00a1c2.png */
-    border-radius: 4px;
-    height: fit-content; /* Чтобы не растягивался до конца страницы */
-   display: flex;
-width: 270px;
-padding: 30px;
-flex-direction: column;
-align-items: flex-start;
-gap: 20px;
-margin-right: -4px;
-margin-top: -30px;
-}
-
-.b-sidebar__title {
-    display: block;
-    font-weight: bold;
-    margin-bottom: -12px;
-    font-size: 16px;
-}
-
-.b-sidebar__list {
+/* 2. Базовые стили самой плашки (скрыта по умолчанию) */
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Прикрепляем ровно к нижнему краю шапки */
+    left: 0;
+    width: 280px; /* Ширина как на скрине */
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Мягкая тень */
     list-style: none;
-    padding: 0;
+    padding: 15px 0;
+    margin: -10px;
+    
+  
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px); /* Слегка сдвигаем вниз для эффекта выезда */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
-.b-sidebar__item {
-    border-bottom:none
+
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Возвращаем на место */
 }
 
-.b-sidebar__link {
-   display: flex;
-    justify-content: space-between;
+/* 4. Настраиваем пункты внутри выпадающего меню */
+.dropdown-menu li {
+    margin: 0px; /* Сбрасываем отступы от главного меню */
+
+}
+.dropdown-menu li:last-child {
+    border-bottom: none; /* Убираем полоску у последнего пункта */
+}
+
+/* 5. Настраиваем ссылки внутри (цвет, шрифт, отступы) */
+.main-nav .dropdown-menu a {
+    display: block;
+    padding: 20px 20px;
+    color: #E26666; /* Цвет как на твоем скриншоте */
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: none; /* Отменяем капс */
+    text-align: left; /* Выравниваем по левому краю */
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* 6. Эффект при наведении на конкретную ссылку внутри выпадашки */
+.main-nav .dropdown-menu a:hover {
+    background: #f9f9f9; /* Легкий серый фон */
+    color: #cc0000;      /* Текст становится темнее/ярче */
+}
+
+.header-bottom, 
+.header-bottom__wrapper, 
+.container-2 {
+    overflow: visible !important;
+}
+
+/* Все пункты меню должны занимать 100% высоты полоски */
+.main-nav > li {
+    height: 100%;
+    display: flex;
     align-items: center;
-    padding: 8px 0;
-    text-decoration: none;
-    color: #313131;
-    font-size: 16px;
-    transition: 0.3s;
-    
+    margin-right: 0; /* Убираем лишние отступы, заменим их паддингами у ссылок */
 }
-.b-sidebar__link span {
-    flex-shrink: 0; /* Не даем стрелке сжиматься */
-    width: 20px;    /* Задаем ей свое место */
-    text-align: right;
-    transition: transform 0.2s;
-    margin-left: 20px; /* Минимальный отступ от текста */
-} 
-.b-sidebar__link:hover {
-  
-    color: #888;
-}
-.b-sidebar__link:hover span {
-    transform: translateX(8px); 
-    display: inline-block; /* Гарантируем, что трансформация сработает */
-}
-.b-sidebar__link svg {
-    opacity: 0.6;
+.main-nav li {
+    height: 63px;   /* Фиксированная высота как у всей полоски */
+    display: block; /* Или flex */
 }
 
-/* ХЛЕБНЫЕ КРОШКИ */
-.breadcrumbs {
-    margin-top: 18px;  
-    margin-left: 174px;    
- color: rgba(70, 70, 70, 0.50);
-font-family: Roboto;
-font-size: 15px;
-font-style: normal;
-font-weight: 400;
-line-height: 120%; 
-margin-bottom: 17px;
-}
 
-.breadcrumbs a {
-    color: #888888;       /* Серый цвет для ссылок */
-    text-decoration: none; /* Убираем подчеркивание */
-    transition: color 0.3s ease;
-}
-
-.breadcrumbs a:hover {
-    color: #333333;       /* При наведении становится чуть темнее */
-    text-decoration: none; /* На всякий случай дублируем, чтобы не появилось */
-}
-
-/* Цвет разделителя (слэша) и текущей страницы */
-.breadcrumbs span, 
-.breadcrumbs .separator {
-    color: #888888;
-    margin: 0 0px;        /* Небольшие отступы вокруг слэша */
-}
-
-/* Последний элемент (текущая страница), можно оставить серым или сделать чуть темнее */
-.breadcrumbs span:last-child {
-    color: #888888;
-}
-
-.b-services-content {
-    /* flex: 1 заставляет блок занять всё доступное пространство в контейнере */
-    flex: 1; 
-    /* Увеличиваем лимит ширины. Поставь 1000px или даже 1100px */
-    max-width: 870px; 
-}
-.container--wide {
-    max-width: 1400px; /* Или 90%, чтобы оставить небольшие поля по бокам */
-    width: 100%;
-}
-.p-extra-margin {
-    margin-top: 20px; /* Увеличиваем отступ сверху именно для этого абзаца */
-}
-.p-extra-margin-2 {
-    margin-top: 16px; /* Увеличиваем отступ сверху именно для этого абзаца */
-}
-.p-extra-margin-3 {
-    margin-top: 20px; /* Увеличиваем отступ сверху именно для этого абзаца */
-}
-.p-extra-margin-4 {
-    margin-top: 24px; /* Увеличиваем отступ сверху именно для этого абзаца */
-}
-.p-extra-margin-5 {
-    margin-top: 18px; /* Увеличиваем отступ сверху именно для этого абзаца */
-}
-.p-extra-margin-6 {
-    margin-top: 20px; /* Увеличиваем отступ сверху именно для этого абзаца */
-}
-.p-extra-margin-7 {
-    margin-top: 16px; /* Увеличиваем отступ сверху именно для этого абзаца */
-}
-.p-extra-margin-8 {
-    margin-top: 22px; /* Увеличиваем отступ сверху именно для этого абзаца */
-   
-}
-/* --- ПРОМО БЛОК CAME --- */
-.brand-promo-box {
+/* Общий стиль для всех ссылок в шапке */
+.main-nav > li > a {
+    height: 100%;
     display: flex;
-    align-items: flex-start; /* Прижимаем логотип и текст к верхнему краю */
-    gap: 67px;               /* Расстояние между логотипом и текстом */
-    background-color: #ffffff;
-    margin-top: 38px;        /* Отступ от предыдущего абзаца */
-    padding: 20px 0;         /* Небольшие отступы сверху и снизу (по желанию можно убрать) */
-    width: 100%;
-}
-
-.brand-promo-box__logo {
-    
-    flex: 0 0 203px; 
-   
-}
-
-.brand-promo-box__logo img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-top: -30px;
-}
-
-.brand-promo-box__text {
-    flex: 1; /* Текст забирает всё оставшееся место справа (аналог width: 70%) */
-}
-
-/* Настройки красного заголовка внутри блока */
-.brand-promo-box__text h2 {
-    color: #cc0000;          /* Тот самый красный цвет */
-    font-size: 28px;         /* Размер заголовка */
-    font-weight: 500;
+    align-items: center;
+    padding: 0 10px; /* Одинаковые отступы для всех */
+    color: #fff !important;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
     text-transform: uppercase;
-    margin-top: 0;           /* Убираем отступ сверху, чтобы было вровень с картинкой */
-    margin-bottom: 25px;     /* Отступ до текста под заголовком */
-}
-
-.brand-promo-box__text p {
-    margin-bottom: 0;        /* Убираем лишний нижний отступ */
-    color: var(--2, #333);   /* Твой стандартный цвет текста */
-    line-height: 1.6;
-}
-
-/* Общий контейнер карточки */
-.b-services-card-horizontal {
-    display: flex;
-    align-items: flex-start;
-    gap: 1px;
-    margin-top: 40px;
-    padding-bottom: 20px;
-
-    background-color: #f4f4f4; /* Светло-серый фон */
-    width: 900px;
-    padding: 35px;           /* Отступ от края фона до контента внутри */
-    border-radius: 4px;
-
-    margin-bottom: 40px;
+    transition: background 0.3s;
     
 }
 
-/* Блок с картинкой */
-.b-card-pic {
-    flex: 0 0 250px; /* Фиксированная ширина картинки как на скриншоте */
+
+/* Состояние "Каталога" и других ссылок при наведении (можно добавить легкое затемнение) */
+.main-nav > li:hover > a {
+    background: rgba(0, 0, 0, 0.1);
 }
 
-.b-card-pic img {
-    width: 84%;
-    height: auto;
+/* --- ВЫПАДАЮЩЕЕ МЕНЮ --- */
+
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250px;
+    background: #fff;
+    padding: 10px 0;
+    margin: 0;
+    list-style: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+}
+
+/* Показываем меню только при наведении на пункт */
+.has-dropdown:hover .dropdown-menu {
     display: block;
-    margin-left: 4px;
-    margin-top: -4px;
 }
 
-/* Блок с текстом */
-.b-card-content {
-    flex: 1;
-}
-
-/* Заголовок с подчеркиванием */
-.b-card-header {
-    border-bottom: 1px solid #EA5C5F80; /* Серая линия под заголовком */
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-}
-
-.b-card-title {
-
-   
-    text-decoration: none;
-  
-    color: var(---2, #333);
-/* Заголовок 3 */
-font-family: Roboto;
-font-size: 24px;
-font-style: normal;
-font-weight: 400;
-line-height: 120%; /* 28.8px */
-}
-
-/* Описание */
-.b-card-text {
+/* Ссылки внутри выпадающего меню */
+.dropdown-menu a {
+    color: #E26666 !important; /* Твой коралловый цвет */
+    padding: 12px 25px;
+    display: block;
     font-size: 16px;
-    line-height: 1.5;
-    color: #333;
-    margin-bottom: 60px;
+    text-transform: none !important; /* Обычный шрифт, не капс */
+    text-align: left;
+    height: auto; /* Тут высота зависит от текста */
 }
 
-/* Кнопка "Подробнее" */
-.btn-more {
-    display: inline-block;
-    background-color: #cc0000; /* Фирменный красный */
-    color: #fff;
-    padding: 12px 28px;
-    text-decoration: none;
-    border-radius: 6px;
-    
-    transition: background-color 0.3s;
-    color: var(---, #FFF);
-/* Текст 18 */
-font-family: Roboto;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 120%; /* 21.6px */
-}
-.b-card-action
-{
-margin-top:  30px;
-}
-
-.btn-more:hover {
-    background-color: #b30000;
+.dropdown-menu a:hover {
+    background: #f9f9f9;
 }

@@ -305,3 +305,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const originalNav = document.querySelector('.header-bottom');
+    // Создаем полную копию меню
+    const stickyNav = originalNav.cloneNode(true);
+    
+    // Добавляем класс-клон и вешаем в body
+    stickyNav.classList.add('header-bottom--sticky');
+    document.body.appendChild(stickyNav);
+
+    let isScrolling;
+    const threshold = 500; // Порог появления
+
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+
+        // Скрываем клон при каждом движении
+        stickyNav.classList.remove('is-visible');
+        window.clearTimeout(isScrolling);
+
+        if (scrollPosition > threshold) {
+            isScrolling = setTimeout(function() {
+                if (window.scrollY > threshold) {
+                    stickyNav.classList.add('is-visible');
+                }
+            }, 1000);
+        }
+    });
+});
