@@ -273,34 +273,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Проверяем, есть ли на странице блок для карты и загрузился ли скрипт Яндекса
+а
     if (document.getElementById('yandex-map') && typeof ymaps !== 'undefined') {
-        
-        // Функция инициализации карты
+
         ymaps.ready(function () {
             var myMap = new ymaps.Map("yandex-map", {
                 // Координаты центра карты (сейчас это Москва)
                 center: [55.755819, 37.617644], 
-                zoom: 10, // Масштаб (чем больше цифра, тем ближе)
-                // Оставляем только нужные элементы управления (зум и ползунок)
+                zoom: 10, 
                 controls: ['zoomControl', 'fullscreenControl'] 
             });
 
-            // Создаем тестовую метку
+        
             var myPlacemark = new ymaps.Placemark([55.755819, 37.617644], {
                 hintContent: 'Главный барьер',
                 balloonContent: 'Здесь находится описание объекта'
             }, {
-                // Опции метки (можно поменять цвет)
+   
                 preset: 'islands#redIcon'
             });
 
-            // Добавляем метку на карту
             myMap.geoObjects.add(myPlacemark);
-            
-            // Если нужно, чтобы карта не зумилась колесиком мыши (чтобы не мешать скроллу сайта)
-            // Раскомментируй строку ниже:
-            // myMap.behaviors.disable('scrollZoom');
+        
         });
     }
 });
@@ -308,23 +302,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function()
+ {
     const originalNav = document.querySelector('.header-bottom');
-    // Создаем полную копию меню
+
     const stickyNav = originalNav.cloneNode(true);
-    
-    // Добавляем класс-клон и вешаем в body
+
     stickyNav.classList.add('header-bottom--sticky');
+
     document.body.appendChild(stickyNav);
 
     let isScrolling;
-    const threshold = 500; // Порог появления
+
+    const threshold = 500; 
 
     window.addEventListener('scroll', function() {
         const scrollPosition = window.scrollY;
 
-        // Скрываем клон при каждом движении
         stickyNav.classList.remove('is-visible');
+
         window.clearTimeout(isScrolling);
 
         if (scrollPosition > threshold) {
