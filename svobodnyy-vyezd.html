@@ -6,6 +6,8 @@
     <title>Автоматика проезда</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css"> 
+    <link rel="stylesheet" href="css/svobodnyy-vyezd.css">
+        <script src="/js/components/slider.js"></script>
 </head>
 <body>
 
@@ -85,7 +87,14 @@
         <div class="header-bottom__wrapper">
             <ul class="main-nav">
                 <li><a href="#">Услуги</a></li>
-                <li><a href="#">Каталог Оборудования</a></li>
+             <li class="has-dropdown main-nav__item--catalog">
+                    <a href="#" class="catalog-btn">Каталог Оборудования</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="avtomatika.html">Автоматика проезда</a></li>
+                        <li><a href="radioupravlenie.html">Радиоуправление</a></li>
+                        <li><a href="svobodnyy-vyezd.html">Свободный выезд</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Теория</a></li>
                 <li><a href="#">Контакты</a></li>
             </ul>
@@ -115,13 +124,113 @@
         </div>
 </nav>
     </header>
+    
+    <main class="page-main" style="min-height: 60vh;">
+
+        <div class="container container--wide">
+            <!-- Блок хлебных крошек (Breadcrumbs) -->
+            <nav class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="/" title="Главная" itemprop="item">
+                        <span itemprop="name">Главная</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </span>
+
+                <span class="separator">/</span>
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name">Свободный выезд</span>
+                    <meta itemprop="position" content="3" />
+                </span>
+            </nav>
+
+            <!-- Заголовок страницы -->
+            <div class="page-header">
+                <h1 class="page-title">Свободный выезд</h1>
+            </div>
+
+            <!-- Контейнер для управления внутренними потоками -->
+            <div class="services-container">
+                <!-- Основная обертка контента (Две колонки) -->
+                <div class="b-services-wrapper">
+                    
+              <div class="b-services-content">
+                    <article class="text-page">
+                    	<p>Чаще всего индукционная петля используется как способ открытия шлагбаума на выезд.<br>
+Данный способ обеспечивает беспрепятственный выезд с территории.</p>
+<br>
+<h2 class="red-title">Цифровые детекторы транспортного средства: зачем нужны и как их выбрать?</h2>
+<br>
+
+<p>Пожалуй, самый простой способ управления стрелой автоматического шлагбаума — это индукционная петля. В комплект поставки данного устройства всегда входит провод для создания самой петли и датчик, который будет регистрировать факт присутствия автомобиля в контролируемой зоне. Провод укладывается под асфальт рядом с пропускным пунктом, а датчик устанавливается на сам шлагбаум. Этот тандем создан для обнаружения различных предметов из металла.</p>
+<br>
+<p>Важным параметром датчика является возможность автоматической настройки чувствительности. Ведь петля заметит любой металлический объект, который будет находиться над ней. Но по сути, именно датчик примет решение — реагировать на это шлагбауму или нет. Если учесть, что такой способ управления не предполагает у пользователей наличие идентификатора (брелок, метка, карта), то пройти через стрелу, например, маме с коляской может быть проблематично.</p>
+<br>
+<p>Поэтому чаще всего на своих объектах мы устанавливаем цифровой детектор обнаружения транспортного средства Сame SMA. У этого датчика есть возможность автоматической настройки чувствительности, то есть он способен реагировать даже на совсем небольшие объекты. Но это не все его преимущества. Также он сам производит свою настройку и тестирование. А ещё имеет оптимальное соотношение цены и качества.</p>
+<br>
+<p>Если прибавить к этому плюсы всей индукционной петли в целом (низкий уровень ложных срабатываний, малая стоимость, высокая работоспособность в любых погодных условиях, долговечность), то получается отличный вариант для удобного выезда с закрытой территории. </p>
+<br>
+<h2>Хотите установить индукционную петлю и детектор обнаружения транспортного средства Came?</h2> 
+<br>
+<p>Позвоните или напишите в нашу компанию «ЕГДС-СПб», на сайте которой находитесь. Мы занимаемся монтажом и обслуживанием шлагбаумов и всех видов систем управления для них. Имеем штат опытных специалистов и можем провести все необходимые работы «под ключ». Перед оформлением заказа вы можете получить бесплатную консультацию.</p>
+					
 
 
-    <!-- =========================================
-         ПУСТОЙ MAIN (Пока здесь ничего нет, оставим место)
-         ========================================= -->
-    <main style="min-height: 60vh;">
-        <!-- Задали минимальную высоту, чтобы футер не прилип к шапке -->
+                        <div class="b-services-row">
+    <div class="b-services-card-horizontal">
+        <!-- Картинка слева -->
+        <div class="b-card-pic">
+            <a href="shlagbaumy/">
+                <img src="/assets/d15nclv8o3i0dn2cvnx5q1cuqftrwdiz.jpeg" alt="Петля">
+            </a>
+        </div>
+
+        <!-- Контент справа -->
+        <div class="b-card-content">
+            <div class="b-card-header">
+                <a href="Petla/" class="b-card-title">Двойная индукционная петля</a>
+            </div>
+            
+            <p class="b-card-text">
+            Индукционные петли CAME SMA: принцип работы и преимущества. Многие знакомы с итальянской фирмой Came, как с производителем качественных автоматических шлагбаумов. Их устройства серии Gard установлены практически в каждом втором российском дворе.
+            </p>
+
+            <div class="b-card-action">
+                <a class="btn-more" href="shlagbaumy/">Подробнее</a>
+            </div>
+        </div>
+    </div>
+</div>
+                        </article>
+                    </div>
+
+                    
+
+               
+                  <aside class="b-sidebar">
+    <span class="b-sidebar__title">Смотрите также:</span>
+    <ul class="b-sidebar__list">
+        <li class="b-sidebar__item">
+            <a href="avtomatika.html" class="b-sidebar__link">
+                Автоматика проезда <span>→</span>
+            </a>
+        </li> 
+        <li class="b-sidebar__item">
+            <a href="radioupravlenie.html" class="b-sidebar__link">
+                Радиоуправление <span>→</span>
+            </a>
+        </li>
+        <li class="b-sidebar__item">
+            <a href="svobodnyy-vyezd.html" class="b-sidebar__link">
+                Свободный выезд <span>→</span>
+            </a>
+        </li>
+    </ul>
+</aside>
+
+                </div>
+            </div> 
+        </div> <!-- Задали минимальную высоту, чтобы футер не прилип к шапке -->
     </main>
 
 
@@ -230,7 +339,16 @@
             </p>
         </div>
 
-    </div> <!-- /footer-container -->
+    </div> 
 </footer>
+<script type="module">
+    import { initSlider } from './js/components/slider.js';
+
+    // Запускаем слайдер, когда документ готов
+    document.addEventListener('DOMContentLoaded', () => {
+        initSlider();
+        
+    });
+</script>
 </body>
 </html>

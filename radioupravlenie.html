@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css"> 
      <link rel="stylesheet" href="css/radioupravlenie.css"> 
+         <script src="/js/components/slider.js"></script>
 </head>
 <body>
 
@@ -86,7 +87,14 @@
         <div class="header-bottom__wrapper">
             <ul class="main-nav">
                 <li><a href="#">Услуги</a></li>
-                <li><a href="#">Каталог Оборудования</a></li>
+              <li class="has-dropdown main-nav__item--catalog">
+                    <a href="#" class="catalog-btn">Каталог Оборудования</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="avtomatika.html">Автоматика проезда</a></li>
+                        <li><a href="radioupravlenie.html">Радиоуправление</a></li>
+                        <li><a href="svobodnyy-vyezd.html">Свободный выезд</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Теория</a></li>
                 <li><a href="#">Контакты</a></li>
             </ul>
@@ -207,8 +215,7 @@
             </div>
             
             <p class="b-card-text">
-             Управление шлагбаумом с помощью системы радиоуправления — это всем известные брелоки или пульты. Такой способ удобен и недорог. Но обеспечивает ли он высокую безопасность? В интернете легко можно купить копирующее устройство, с помощью которого сделать дубликат брелка. Этим часто пользуются злоумышленники, чтобы попасть на закрытую территорию. Они подают скопированный сигнал на приёмник, а автоматика шлагбаума поднимает стрелу.
-
+             Управление шлагбаумом с помощью системы радиоуправления — это всем известные брелоки или пульты. Такой способ удобен и недорог. Но обеспечивает ли он высокую безопасность? В интернете легко можно купить копирующее устройство, с помощью которого сделать дубликат брелка.
             <div class="b-card-action">
                 <a class="btn-more" href="Nero/">Подробнее</a>
             </div>
@@ -365,7 +372,16 @@
             </p>
         </div>
 
-    </div> <!-- /footer-container -->
+    </div>
 </footer>
+<script type="module">
+    import { initSlider } from './js/components/slider.js';
+
+    // Запускаем слайдер, когда документ готов
+    document.addEventListener('DOMContentLoaded', () => {
+        initSlider();
+        
+    });
+</script>
 </body>
 </html>
