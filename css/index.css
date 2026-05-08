@@ -4,7 +4,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+:root {
+    --bg-main: #ffffff;
+    --bg-secondary: #f0f0f0;
+    --bg-cards: #fcfcfc;
+    --text-main: #333333;
+    --text-title: #BF0016; /* Твой красный */
+    --border-color: #f0f0f0;
+    --header-top-bg: rgb(240, 240, 240);
+}
 body {
     font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -96,7 +104,7 @@ line-height: 120%; /* 19.2px */
 }
 /* --- HEADER CENTER (На основе твоих замеров) --- */
 .header-center {
-    background-color: #ffffff;
+   background-color: var(--bg-main);
     padding: 9px 0; /* Создаем высоту блока за счет внутренних отступов */
     border-bottom: 1px solid #f0f0f0;
     padding-left: 120px;
@@ -337,7 +345,7 @@ line-height: 120%; /* 13.2px */
 /* Основная секция */
 .hero-slider {
     margin-top: 40px;
-    background-color: #ffffff; /* Теперь тут белый */
+   background-color: var(--bg-main);
     padding: 40px 0;
     width: 100%;
 }
@@ -495,7 +503,7 @@ margin-bottom: 30px;
 /* --- СЕКЦИЯ О КОМПАНИИ --- */
 .about {
     padding: 20px 0 20px 0; /* Отступы сверху и снизу всей секции */
-    background-color: #ffffff;
+   background-color: var(--bg-main);
     margin-left: 115px;
 }
 

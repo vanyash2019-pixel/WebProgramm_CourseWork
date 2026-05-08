@@ -272,33 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-а
-    if (document.getElementById('yandex-map') && typeof ymaps !== 'undefined') {
-
-        ymaps.ready(function () {
-            var myMap = new ymaps.Map("yandex-map", {
-                // Координаты центра карты (сейчас это Москва)
-                center: [55.755819, 37.617644], 
-                zoom: 10, 
-                controls: ['zoomControl', 'fullscreenControl'] 
-            });
-
-        
-            var myPlacemark = new ymaps.Placemark([55.755819, 37.617644], {
-                hintContent: 'Главный барьер',
-                balloonContent: 'Здесь находится описание объекта'
-            }, {
-   
-                preset: 'islands#redIcon'
-            });
-
-            myMap.geoObjects.add(myPlacemark);
-        
-        });
-    }
-});
-
 
 
 
@@ -331,4 +304,71 @@ document.addEventListener('DOMContentLoaded', function()
             }, 1000);
         }
     });
+});
+
+
+// 1. Находим кнопки по ID
+const darkBtn = document.getElementById('theme-dark');
+const lightBtn = document.getElementById('theme-light');
+
+// Функция для установки темы
+function setTheme(themeName) {
+    if (themeName === 'dark') {
+        document.body.classList.add('dark');
+    } else {
+        document.body.classList.remove('dark');
+    }
+    // Сохраняем выбор в память браузера
+    localStorage.setItem('theme', themeName);
+}
+
+// 2. Слушатели кликов
+darkBtn.addEventListener('click', () => setTheme('dark'));
+lightBtn.addEventListener('click', () => setTheme('light'));
+
+// 3. Проверка при загрузке страницы
+// 3. Проверка при загрузке страницы
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme === 'dark') {
+    // Если пользователь сам выбрал темную — включаем
+    document.body.classList.add('dark');
+} else if (savedTheme === 'light') {
+    // Если пользователь сам выбрал светлую — выключаем
+    document.body.classList.remove('dark');
+} else {
+    // ЕСЛИ ЗАШЕЛ ВПЕРВЫЕ (в памяти пусто)
+    // Принудительно выключаем темную тему
+    document.body.classList.remove('dark');
+    localStorage.setItem('theme', 'light'); // Опционально: сразу запоминаем это
+}
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    if (document.getElementById('yandex-map') && typeof ymaps !== 'undefined') {
+
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map("yandex-map", {
+                // Координаты центра карты (сейчас это Москва)
+                center: [55.755819, 37.617644], 
+                zoom: 10, 
+                controls: ['zoomControl', 'fullscreenControl'] 
+            });
+
+        
+            var myPlacemark = new ymaps.Placemark([55.755819, 37.617644], {
+                hintContent: 'Главный барьер',
+                balloonContent: 'Здесь находится описание объекта'
+            }, {
+   
+                preset: 'islands#redIcon'
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        
+        });
+    }
 });

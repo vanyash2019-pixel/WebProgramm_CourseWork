@@ -1,0 +1,344 @@
+/* Основные переменные для перекраски */
+body.dark {
+    --bg-main: #1a1a1a;       /* Основной фон (был белый) */
+    --bg-secondary: #252525;  /* Для блоков типа header-top и callback */
+    --text-main: #f0f0f0;     /* Основной текст */
+    --border-color: #333333;  /* Цвет линий и рамок */
+}
+
+/* Применяем переменные к твоим классам */
+body.dark {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
+
+/* Хедеры */
+body.dark .header-top {
+    background-color: #111111;
+    border-bottom: 1px solid var(--border-color);
+}
+
+body.dark .header-center {
+    background-color: var(--bg-main);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Слайдер (тот что в коробке) */
+body.dark .slider-wrapper {
+    background: #2d2d2d; /* Серый фон слайдера делаем темнее */
+}
+
+body.dark .slide-title, 
+body.dark .slide-item,
+body.dark .about__text,
+body.dark .about__list li,
+body.dark .equipment-card__title {
+    color: var(--text-main);
+}
+
+/* Карточки оборудования */
+body.dark .equipment-card {
+    background: #252525;
+    border-color: var(--border-color);
+}
+
+body.dark .equipment-card__icon {
+    background: #1a1a1a;
+    border-right: 1px solid var(--border-color);
+}
+
+/* Секция "Остались вопросы" (Callback) */
+body.dark .callback-section {
+    background-color: #222222;
+}
+
+body.dark .callback-input {
+    background-color: #333333;
+    border: 1px solid #444444;
+    color: white;
+}
+
+/* Слайдер работ (v-slide) */
+body.dark .v-slide__overlay {
+    background: rgba(0, 0, 0, 0.7); /* Делаем подложку темнее для контраста текста */
+}
+
+body.dark .v-slide__title,
+body.dark .v-slide__text {
+    color: #ffffff;
+}
+/* Перекрашиваем все ссылки в навигации хедера при темной теме */
+body.dark .header-top__nav a {
+    color: #ffffff !important; /* Делаем текст чисто белым */
+}
+
+/* Цвет при наведении в темной теме (сделаем светло-голубым для видимости) */
+body.dark .header-top__nav a:hover {
+    color: #008BDA; 
+}
+
+/* Если нужно, чтобы адрес тоже стал светлее (сейчас он у тебя rgb(51, 51, 51)) */
+body.dark .header-location {
+    color: #e0e0e0;
+}
+/* Перекрашиваем центральную часть хедера (Лого и контакты) */
+
+/* 1. Логотип: ЕГДС */
+body.dark .logo-name {
+    color: #ffffff !important;
+}
+
+/* 2. Описание логотипа: Единая Городская... */
+body.dark .logo-desc {
+    color: #b0b0b0 !important; /* Делаем чуть светлее, чтобы текст не пропадал */
+}
+
+/* 3. Ссылки контактов (Почта и Телефоны) */
+body.dark .contact-link {
+    color: #ffffff !important;
+}
+
+/* 4. Синие кнопки (Обратная связь и Заказать звонок) */
+body.dark .contact-btn {
+    color: #008BDA !important; /* Оставляем синим для акцента */
+    border-bottom-color: #008BDA !important;
+}
+
+body.dark .contact-btn:hover {
+    color: #ffffff !important;
+    border-bottom-color: #ffffff !important;
+}
+
+/* 5. Иконки (если хочешь их немного подсветить) */
+body.dark .custom-icon {
+    filter: brightness(0) invert(1) grayscale(1); /* Делает темные иконки светлыми */
+    opacity: 0.8;
+}
+/* --- СЕКЦИЯ "ПРИМЕРЫ РАБОТ" --- */
+
+/* 1. Главный заголовок секции */
+body.dark .title-main {
+    color: #ffffff !important;
+}
+
+/* 2. Заголовки внутри слайдов (АВТОЦЕНТР BMW и т.д.) */
+body.dark .v-slide__title {
+    color: #ffffff !important;
+}
+
+/* 3. Подзаголовки и весь список (то самое серое описание) */
+body.dark .v-slide__subtitle,
+body.dark .v-slide__list li {
+    color: #e0e0e0 !important; /* Делаем светло-серым/белым */
+}
+
+/* 4. Затемнение фона слайда (overlay) */
+/* Чтобы текст лучше читался, сделаем подложку чуть темнее */
+body.dark .v-slide__overlay {
+    background: rgba(0, 0, 0, 0.75) !important; 
+}
+
+/* 5. Кнопки в слайдере */
+body.dark .v-btn {
+    background-color: #BF0016 !important; /* Твой основной красный */
+    color: #ffffff !important;
+}
+
+body.dark .v-btn--outline {
+    background-color: transparent !important;
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
+}
+
+body.dark .v-btn--outline:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+/* 6. Пагинация (точки внизу) */
+body.dark .v-dot {
+    background-color: #555555 !important;
+}
+
+body.dark .v-dot.active {
+    background-color: #ffffff !important;
+}
+/* Перекрашиваем фон всей секции "Примеры работ" */
+body.dark .section-works {
+    background-color: #1a1a1a !important; /* Тот же цвет, что и у остального фона */
+   
+}
+
+/* Если внутри есть контейнер с фоном, его тоже красим */
+body.dark .v-container {
+    background-color: transparent !important;
+}
+
+/* Если у слайдера есть своя подложка или обертка с фоном */
+body.dark .v-slider-wrapper {
+    background-color: #1a1a1a !important;
+}
+/* --- СЕКЦИЯ "ЭТАПЫ УСТАНОВКИ" --- */
+
+/* 1. Фон всей секции */
+body.dark .section-steps {
+    background-color: #1a1a1a !important; /* Наш основной темный цвет */
+}
+
+/* 2. Заголовок "Этапы установки" */
+body.dark .section-steps .title-main {
+    color: #ffffff !important;
+}
+
+/* 3. Заголовки этапов (Инициатива, Получение разрешения и т.д.) */
+body.dark .step-title {
+    color: #ffffff !important;
+}
+
+/* 4. Описание этапов (серый текст) */
+body.dark .step-desc {
+    color: #b0b0b0 !important; /* Светло-серый, чтобы глазам было приятно */
+}
+
+/* 5. Видео-блок (если у него есть белая рамка или тень) */
+body.dark .step-video-poster {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important; /* Сделаем тень темнее */
+    border: 1px solid #333 !important; /* Добавим тонкую границу */
+}
+
+/* 6. Кружки с номерами (1, 2, 3, 4) */
+/* Если они у тебя красные, можно оставить как есть, они хорошо смотрятся. 
+   Но если хочешь их чуть подправить: */
+body.dark .step-number {
+    background-color: #BF0016 !important; /* Твой красный */
+    color: #ffffff !important;
+    border: 2px solid #1a1a1a !important; /* Чтобы они "отделялись" от фона */
+}
+
+/* 7. Общая обертка списка (на случай если там есть фон) */
+body.dark .step-list {
+    background-color: transparent !important;
+}
+/* Фон всей секции партнеров */
+body.dark .partners-section {
+    background-color: #1a1a1a !important;
+}
+
+/* Фон всей секции */
+body.dark .partners-section {
+    background-color: #1a1a1a !important;
+}
+
+/* Заголовок секции */
+body.dark .partners-title {
+    color: #ffffff !important;
+}
+
+/* Сами логотипы — делаем их светлыми карточками */
+body.dark .partner-item {
+    background-color: #ffffff !important; /* Белый фон для самой картинки */
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9; /* Чтобы не слишком ярко "горели" */
+}
+
+/* Убираем странные фильтры, если ты их добавлял */
+body.dark .partner-item img {
+    filter: none !important;
+    max-width: 100%;
+}
+/* 1. Карточки партнеров (делаем их мягко-серыми) */
+body.dark .partner-item {
+    background-color: #333333 !important; /* Темно-серый фон карточки */
+    border: 1px solid #444444 !important; /* Тонкая граница, чтобы карточка не сливалась */
+    padding: 15px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Эффект при наведении на карточку */
+body.dark .partner-item:hover {
+    background-color: #444444 !important;
+    transform: translateY(-5px); /* Легкий подъем карточки */
+}
+
+/* 3. Окончательно убираем белый фон у секции "Этапы" и "Партнеры" */
+body.dark .partners-section,
+body.dark .section-steps {
+    background-color: #1a1a1a !important; /* Глубокий темный фон */
+}
+
+/* 4. Текст описания под логотипами (если он есть, как на скрине МКД...) */
+body.dark .partner-item span, 
+body.dark .partner-item p,
+body.dark .partner-item div {
+    color: #cccccc !important; /* Светло-серый текст */
+}
+/* --- СЕКЦИЯ С КАРТОЙ (из твоего кода) --- */
+
+/* Фон всей секции, где находится карта */
+body.dark section.map-section, 
+body.dark .map-wrapper {
+    background-color: #1a1a1a !important;
+}
+
+/* Заголовок "Карта барьеров" */
+body.dark .map-section h2,
+body.dark .map-section .title-main {
+    color: #ffffff !important;
+}
+
+/* Контейнер самой карты */
+body.dark #yandex-map {
+    border: 1px solid #333 !important; /* Тонкая рамка, чтобы карта не сливалась */
+    filter: invert(0) hue-rotate(0deg) brightness(0.8); /* Немного приглушаем яркость самой карты */
+}
+
+/* --- ИСПРАВЛЕНИЕ ПАРТНЕРОВ (чтобы не было "странно") --- */
+
+body.dark .partners-section {
+    background-color: #1a1a1a !important;
+}
+
+body.dark .partner-item {
+    background-color: #252525 !important; /* Темно-серый, но не черный */
+    border: 1px solid #333 !important;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Если логотипы на белом фоне, сделаем их чуть прозрачнее, 
+   чтобы они не "резали" глаз ярким белым цветом */
+body.dark .partner-item img {
+    opacity: 0.8;
+    filter: grayscale(1) contrast(1.2); /* Делаем стильно-черно-белыми */
+    transition: 0.3s;
+}
+
+body.dark .partner-item:hover img {
+    opacity: 1;
+    filter: grayscale(0); /* При наведении возвращаем цвет */
+}
+
+/* --- ТЕКСТ В ШАПКЕ И КОНТАКТАХ --- */
+
+body.dark .header-top, 
+body.dark .header-main {
+    background-color: #111111 !important;
+}
+
+body.dark .header-top__nav a,
+body.dark .contact-link,
+body.dark .logo-name,
+body.dark .header-location {
+    color: #ffffff !important;
+}
+
+body.dark .logo-desc {
+    color: #999999 !important;
+}
