@@ -342,3 +342,123 @@ body.dark .header-location {
 body.dark .logo-desc {
     color: #999999 !important;
 }
+
+/* Фон всей страницы и заголовки */
+body.dark .page-main {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+body.dark .page-title {
+    color: #ffffff !important;
+}
+
+/* Хлебные крошки */
+body.dark .breadcrumbs a {
+    color: #aaaaaa !important;
+}
+
+body.dark .breadcrumbs .separator,
+body.dark .breadcrumbs span {
+    color: #666666 !important;
+}
+/* Основной текст статьи */
+body.dark .text-page p {
+    color: #cccccc !important;
+}
+
+body.dark .red-title {
+    color: #ff4444 !important; /* Делаем красный чуть ярче для контраста */
+}
+
+/* Серая плашка с логотипом CAME */
+body.dark .brand-promo-box {
+    background-color: #252525 !important;
+    border: 1px solid #333333 !important;
+}
+
+body.dark .brand-promo-box__text h2,
+body.dark .brand-promo-box__text p {
+    color: #ffffff !important;
+}
+/* Горизонтальная карточка (Шлагбаумы) */
+body.dark .b-services-card-horizontal {
+    background-color: #222222 !important;
+    border: 1px solid #333333 !important;
+}
+
+body.dark .b-card-title {
+    color: #ffffff !important;
+}
+
+body.dark .b-card-text {
+    color: #bbbbbb !important;
+}
+
+/* Боковая панель (Смотрите также) */
+body.dark .b-sidebar {
+    background-color: #222222 !important;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+body.dark .b-sidebar__title {
+    color: #ffffff !important;
+}
+
+body.dark .b-sidebar__link {
+    color: #cccccc !important;
+    border-bottom-color: #444444 !important;
+}
+
+body.dark .b-sidebar__link:hover {
+    color: #ff4444 !important;
+}
+body.dark .callback-section {
+    background-color: #111111 !important;
+}
+
+body.dark .callback-title {
+    color: #ffffff !important;
+}
+
+/* Инпуты (поля ввода) */
+body.dark .callback-input {
+    background-color: #333333 !important;
+    border: 1px solid #444444 !important;
+    color: #ffffff !important;
+}
+
+body.dark .callback-input::placeholder {
+    color: #888888 !important;
+}
+/* Делаем логотип CAME подходящим под темную тему */
+body.dark .brand-promo-box__logo img {
+    /* Инвертируем цвета: белый станет черным, а черный — белым */
+    filter: invert(1); 
+    
+    /* Смешиваем фон картинки с фоном блока, чтобы убрать границы */
+    mix-blend-mode: screen; 
+    
+    /* Немного приглушим яркость, чтобы логотип не светился слишком сильно */
+    opacity: 0.9;
+    transition: 0.3s ease;
+}
+
+/* Эффект при наведении — возвращаем как было */
+body.dark .brand-promo-box__logo img:hover {
+    filter: invert(0);
+    mix-blend-mode: normal;
+    opacity: 1;
+}
+/* Заголовок модуля радиоуправления */
+body.dark .page-title-2 {
+    color: #ffffff !important;
+}
+
+/* Если на этой странице есть еще подзаголовки h2 или h3, 
+   лучше добавить общее правило, чтобы они тоже не "терялись" */
+body.dark .text-page h2,
+body.dark .text-page h3 {
+    color: #ffffff !important;
+}
