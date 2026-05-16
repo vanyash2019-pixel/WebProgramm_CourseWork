@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Двойная индукционная петля</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css"> 
+    <link rel="stylesheet" href="css/barrier.css"> 
+    <link rel="stylesheet" href="css/dark-theme.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/js/components/slider.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top__wrapper">
+                    <nav class="header-top__nav">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" id="theme-dark">
+                                    <span>🌙 Темная тема</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" id="theme-light">
+                                    <span>☀️ Светлая тема</span>
+                                </a>
+                            </li>
+                            <li><a href="#">Наши работы</a></li>
+                            <li><a href="#">Сотрудничество</a></li>
+                            <li><a href="#">Вакансии</a></li>
+                            <li><a href="#">Новости</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header-top__address">
+                        <a class="header-location" href="#">
+                            <span>г. СПБ, наб. р. Карповки, 5И</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-center">
+            <div class="container-2">
+                <div class="header-center__wrapper">
+                    <div class="header-center__logo-block">
+                        <a class="header-logo" href="/">
+                            <img src="assets/logo.png" alt="logo" class="logo-img">
+                            <div class="logo-text-group">
+                                <span class="logo-name">ЕГДС</span>
+                                <span class="logo-desc">Единая Городская Диспетчерская Служба Санкт-Петербурга</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="header-contacts-group">
+                        <div class="header-contact">
+                            <div class="contact-icon">
+                                <img src="assets/envelope-regular 1.png" alt="mail" class="custom-icon">
+                            </div>
+                            <div class="contact-content">
+                                <a href="mailto:office@egdsk-spb.ru" class="contact-link">office@egdsk-spb.ru</a>
+                                <a href="#" class="contact-btn">Обратная связь</a>
+                            </div>
+                        </div>
+
+                        <div class="header-contact">
+                            <div class="contact-icon">
+                                <img src="assets/lucide_phone-call.png" alt="phone" class="custom-icon">
+                            </div>
+                            <div class="contact-content">
+                                <a href="tel:+78001003899" class="contact-link">+7(800)100-38-99</a>
+                                <a href="#" class="contact-btn">Заказать звонок</a>
+                            </div>
+                        </div>
+
+                        <div class="header-contact">
+                            <div class="contact-icon" style="width: 20px;"></div> 
+                            <div class="contact-content">
+                                <a href="tel:+78123093663" class="contact-link">+7(812)309-36-63</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="header-bottom">
+            <div class="container-2">
+                <div class="header-bottom__wrapper">
+                    <div class="main-nav">
+                        <li><a href="#">Услуги</a></li>
+                        <li class="has-dropdown main-nav__item--catalog">
+                            <a href="#" class="catalog-btn">Каталог Оборудования</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="avtomatika.html">Автоматика проезда</a></li>
+                                <li><a href="radioupravlenie.html">Радиоуправление</a></li>
+                                <li><a href="svobodnyy-vyezd.html">Свободный выезд</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Теория</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </div>
+
+                    <div class="header-right-group">
+                        <div class="header-search">
+                            <input type="text" placeholder="" class="search-input">
+                            <button class="search-btn">
+                                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 19L14.65 14.65M17 9C17 13.4183 13.4183 17 9 17C4.58172 17 1 13.4183 1 9C1 4.58172 4.58172 1 9 1C13.4183 1 17 4.58172 17 9Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <a href="#" class="header-cabinet">
+                            <div class="cabinet-icon">
+                                <img src="assets/iconoir_profile-circle.png" class="cabinet-icon">
+                            </div>
+                            <div class="cabinet-text">
+                                <span class="cabinet-title">Кабинет</span>
+                                <span class="cabinet-desc">Вход для клиентов</span>
+                            </div>
+                        </a>
+                    </div> 
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<main class="page-main">
+        <div class="container container--wide">
+            <nav class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="/" title="Главная" itemprop="item"><span itemprop="name">Главная</span></a>
+                    <meta itemprop="position" content="1" />
+                </span>
+                <span class="separator">/</span>
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="svobodnyy-vyezd.html" title="Свободный выезд" itemprop="item"><span itemprop="name">Свободный выезд</span></a>
+                    <meta itemprop="position" content="2" />
+                </span>
+                <span class="separator">/</span>
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name">Двойные индукционные петли (стр. 2)</span>
+                    <meta itemprop="position" content="3" />
+                </span>
+            </nav>
+
+            <div class="page-header">
+                <h1 class="page-title">Двойные индукционные петли</h1>
+            </div>
+
+            <div class="services-container">
+                <div class="b-services-wrapper">
+                    <div class="b-services-content">
+                        <div class="b-services-row">
+                            
+                            <div class="b-services-card-horizontal">
+                                <div class="b-card-pic"><img src="assets/dual-detector-m2.jpg" alt="Детектор MATRIX2-24"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header"><span class="b-card-title">Двухканальный петлевой детектор MATRIX2-24</span></div>
+                                    <p class="b-card-text">Профессиональный контроллер для одновременного подключения двух индукционных контуров. Идеален для систем определения направления движения транспорта.</p>
+                                    <div class="b-card-price">14 500 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more">В корзину</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal">
+                                <div class="b-card-pic"><img src="assets/ready-loop-6.jpg" alt="Петля 6м"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header"><span class="b-card-title">Готовая индукционная петля LP-6 (контур 2х1м)</span></div>
+                                    <p class="b-card-text">Собранный в заводских условиях шнур длиной 6 метров со стабильным шагом витков. Ускоряет монтаж в дорожное полотно перед шлагбаумами.</p>
+                                    <div class="b-card-price">5 400 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more">В корзину</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal">
+                                <div class="b-card-pic"><img src="assets/ready-loop-10.jpg" alt="Петля 10м"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header"><span class="b-card-title">Готовая индукционная петля LP-10 (контур 3х2м)</span></div>
+                                    <p class="b-card-text">Увеличенный индукционный контур для надежной фиксации крупногабаритного грузового транспорта и спецтехники. Длина кабеля 10 метров.</p>
+                                    <div class="b-card-price">7 200 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more">В корзину</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal">
+                                <div class="b-card-pic"><img src="assets/loop-sealant.jpg" alt="Герметик"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header"><span class="b-card-title">Полиуретановый герметик для петель (дилатационный)</span></div>
+                                    <p class="b-card-text">Высокоэластичный состав для заливки швов в асфальте и бетоне после укладки двойной индукционной петли. Защищает кабель от влаги и сдвигов грунта.</p>
+                                    <div class="b-card-price">1 800 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more">В корзину</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal">
+                                <div class="b-card-pic"><img src="assets/detector-din-2.jpg" alt="Детектор DIN"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header"><span class="b-card-title">Двухканальный детектор присутствия на DIN-рейку</span></div>
+                                    <p class="b-card-text">Компактный модуль для установки в блок управления автоматики. Поддерживает раздельную настройку чувствительности для каждой из двух петель.</p>
+                                    <div class="b-card-price">12 900 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more">В корзину</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal">
+                                <div class="b-card-pic"><img src="assets/loop-wire-100.jpg" alt="Провод для петли"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header"><span class="b-card-title">Высокопрочный кабель для петель (бухта 100м)</span></div>
+                                    <p class="b-card-text">Специализированный медный многожильный кабель в изоляции из сшитого полиэтилена. Устойчив к экстремальным температурам и воздействию ГСМ.</p>
+                                    <div class="b-card-price">9 800 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more">В корзину</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal">
+                                <div class="b-card-pic"><img src="assets/feig-vek.jpg" alt="Контроллер FEIG"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header"><span class="b-card-title">Промышленный контроллер петель FEIG VEK VEK-M2H</span></div>
+                                    <p class="b-card-text">Интеллектуальный двухканальный детектор с функцией автоматической калибровки и защитой от перекрестных помех смежных магнитных контуров.</p>
+                                    <div class="b-card-price">19 200 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more">В корзину</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal">
+                                <div class="b-card-pic"><img src="assets/junction-box-loop.jpg" alt="Коробка IP67"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header"><span class="b-card-title">Распределительная коробка для петель IP67</span></div>
+                                    <p class="b-card-text">Герметичный бокс повышенной прочности для надежной коммутации выводов индукционной петли со считывающим коаксиальным фидером.</p>
+                                    <div class="b-card-price">1 150 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more">В корзину</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal">
+                                <div class="b-card-pic"><img src="assets/loop-tester.jpg" alt="Тестер петли"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header"><span class="b-card-title">Диагностический прибор-тестер индукционных систем</span></div>
+                                    <p class="b-card-text">Портативный инструмент для замера индуктивности, рабочей частоты и добротности контура. Помогает оперативно находить скрытые обрывы в дорожном полотне.</p>
+                                    <div class="b-card-price">22 500 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more">В корзину</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="pagination">
+                            <span class="pagination-label">Страница:</span>
+                            <a href="catalog-svobodnyy-vyezd.html" class="page-link">1</a>
+                            <a href="#" class="page-link active">2</a>
+                        </div>
+                    </div>
+
+
+                    <aside class="b-sidebar">
+                        <span class="b-sidebar__title">Смотрите также:</span>
+                        <ul class="b-sidebar__list">
+                            <li class="b-sidebar__item">
+                                <a href="avtomatika.html" class="b-sidebar__link">
+                                    Автоматика проезда <span>→</span>
+                                </a>
+                            </li> 
+                            <li class="b-sidebar__item">
+                                <a href="radioupravlenie.html" class="b-sidebar__link">
+                                    Радиоуправление <span>→</span>
+                                </a>
+                            </li>
+                            <li class="b-sidebar__item">
+                                <a href="svobodnyy-vyezd.html" class="b-sidebar__link">
+                                    Свободный выезд <span>→</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </div>
+
+        <section class="callback-section">
+            <div class="step-container">
+                <div class="callback-wrapper">
+                    <div class="callback-title">Есть вопросы — мы Вам перезвоним</div>
+                    <form class="callback-form" action="#" method="POST">
+                        <input type="text" name="name" class="callback-input" placeholder="Введите Ваше имя" required>
+                        <input type="tel" name="phone" class="callback-input" placeholder="+375 (___)___-__-__" required>
+                        <button type="submit" class="callback-btn">Заказать звонок</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-col col-help">
+                    <h4 class="footer-heading heading-help">Помощь</h4>
+                    <ul class="footer-list list-help">
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Бренды</a></li>
+                        <li><a href="#">Наши работы</a></li>
+                        <li><a href="#">Сотрудничество</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                        <li><a href="#">Новости</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col col-services">
+                    <h4 class="footer-heading heading-services">Услуги</h4>
+                    <ul class="footer-list list-services">
+                        <li><a href="#">Диспетчеризация</a></li>
+                        <li><a href="#">Автоматизация проезда</a></li>
+                        <li><a href="#">Система умный шлагбаум</a></li>
+                        <li><a href="#">Видеонаблюдение</a></li>
+                        <li><a href="#">Контроль доступа</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col col-products">
+                    <h4 class="footer-heading heading-products">Товары</h4>
+                    <div class="products-grid-wrapper">
+                        <ul class="footer-list list-products-left">
+                            <li><a href="#">Автоматика проезда</a></li>
+                            <li><a href="#">Свободный выезд</a></li>
+                            <li><a href="#">Распознавание автомобильных номеров</a></li>
+                            <li><a href="#">UNF метки</a></li>
+                            <li><a href="#">Радиоуправление</a></li>
+                        </ul>
+                        <ul class="footer-list list-products-right">
+                            <li><a href="#">GSM управление</a></li>
+                            <li><a href="#">Система заявок</a></li>
+                            <li><a href="#">Видеонаблюдение</a></li>
+                            <li><a href="#">Контроль доступа</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-col col-contacts">
+                    <h4 class="footer-heading heading-contacts">Контакты</h4>
+                    <ul class="spec-contact-list">
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-map-marker"></i></div>
+                            <div class="spec-contact-content">
+                                <span class="spec-contact-text">Санкт-Петербург, наб. р. Карповки 5И</span>
+                            </div>
+                        </li>
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-phone"></i></div>
+                            <div class="spec-contact-content">
+                                <span class="spec-contact-text">
+                                    8 (800)100-38-99<br>
+                                    +7(812)309-36-63
+                                </span>
+                            </div>
+                        </li>
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-envelope"></i></div>
+                            <div class="spec-contact-content">
+                                <a href="mailto:office@intellekt-pro.ru" class="spec-contact-link">office@intellekt-pro.ru</a>
+                            </div>
+                        </li>
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-clock-o"></i></div>
+                            <div class="spec-contact-content">
+                                <span class="spec-contact-text">Пн-Пт, 10-19</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright-text">
+                    2010-2024, Системы безопасности в Санкт-Петербурге (СПБ) | Интеллект Про | Все права защищены.<br>
+                    Информация о ценах на сайте не является публичной офертой.
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script type="module">
+    import { initSlider } from './js/components/slider.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initSlider();
+    });
+</script>
+</body>
+</html>

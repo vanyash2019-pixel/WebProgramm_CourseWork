@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Двойная индукционная петля</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css"> 
+    <link rel="stylesheet" href="css/barrier.css"> 
+    <link rel="stylesheet" href="css/dark-theme.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/js/components/slider.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top__wrapper">
+                    <nav class="header-top__nav">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" id="theme-dark">
+                                    <span>🌙 Темная тема</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" id="theme-light">
+                                    <span>☀️ Светлая тема</span>
+                                </a>
+                            </li>
+                            <li><a href="#">Наши работы</a></li>
+                            <li><a href="#">Сотрудничество</a></li>
+                            <li><a href="#">Вакансии</a></li>
+                            <li><a href="#">Новости</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header-top__address">
+                        <a class="header-location" href="#">
+                            <span>г. СПБ, наб. р. Карповки, 5И</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-center">
+            <div class="container-2">
+                <div class="header-center__wrapper">
+                    <div class="header-center__logo-block">
+                        <a class="header-logo" href="/">
+                            <img src="assets/logo.png" alt="logo" class="logo-img">
+                            <div class="logo-text-group">
+                                <span class="logo-name">ЕГДС</span>
+                                <span class="logo-desc">Единая Городская Диспетчерская Служба Санкт-Петербурга</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="header-contacts-group">
+                        <div class="header-contact">
+                            <div class="contact-icon">
+                                <img src="assets/envelope-regular 1.png" alt="mail" class="custom-icon">
+                            </div>
+                            <div class="contact-content">
+                                <a href="mailto:office@egdsk-spb.ru" class="contact-link">office@egdsk-spb.ru</a>
+                                <a href="#" class="contact-btn">Обратная связь</a>
+                            </div>
+                        </div>
+
+                        <div class="header-contact">
+                            <div class="contact-icon">
+                                <img src="assets/lucide_phone-call.png" alt="phone" class="custom-icon">
+                            </div>
+                            <div class="contact-content">
+                                <a href="tel:+78001003899" class="contact-link">+7(800)100-38-99</a>
+                                <a href="#" class="contact-btn">Заказать звонок</a>
+                            </div>
+                        </div>
+
+                        <div class="header-contact">
+                            <div class="contact-icon" style="width: 20px;"></div> 
+                            <div class="contact-content">
+                                <a href="tel:+78123093663" class="contact-link">+7(812)309-36-63</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="header-bottom">
+            <div class="container-2">
+                <div class="header-bottom__wrapper">
+                    <div class="main-nav">
+                        <li><a href="#">Услуги</a></li>
+                        <li class="has-dropdown main-nav__item--catalog">
+                            <a href="#" class="catalog-btn">Каталог Оборудования</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="avtomatika.html">Автоматика проезда</a></li>
+                                <li><a href="radioupravlenie.html">Радиоуправление</a></li>
+                                <li><a href="svobodnyy-vyezd.html">Свободный выезд</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Теория</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </div>
+
+                    <div class="header-right-group">
+                        <div class="header-search">
+                            <input type="text" placeholder="" class="search-input">
+                            <button class="search-btn">
+                                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 19L14.65 14.65M17 9C17 13.4183 13.4183 17 9 17C4.58172 17 1 13.4183 1 9C1 4.58172 4.58172 1 9 1C13.4183 1 17 4.58172 17 9Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <a href="#" class="header-cabinet">
+                            <div class="cabinet-icon">
+                                <img src="assets/iconoir_profile-circle.png" class="cabinet-icon">
+                            </div>
+                            <div class="cabinet-text">
+                                <span class="cabinet-title">Кабинет</span>
+                                <span class="cabinet-desc">Вход для клиентов</span>
+                            </div>
+                        </a>
+                    </div> 
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <div class="container container--wide">
+            <nav class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="/" title="Главная" itemprop="item">
+                        <span itemprop="name">Главная</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </span>
+
+                <span class="separator">/</span>
+
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="svobodnyy-vyezd.html" title="Свободный выезд" itemprop="item">
+                        <span itemprop="name">Свободный выезд</span>
+                    </a>
+                    <meta itemprop="position" content="3" />
+                </span>
+
+                <span class="separator">/</span>
+
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name">Двойная индукционная петля</span>
+                    <meta itemprop="position" content="4" />
+                </span>
+            </nav>
+
+            <div class="page-header">
+                <h1 class="page-title">Двойная индукционная петля</h1>
+            </div>
+
+            <div class="services-container">
+                <div class="b-services-wrapper">
+                    <div class="b-services-content">
+                        <article class="text-page">
+                            
+                            <div class="video-wrapper">
+                                <iframe 
+                                    src="https://rutube.ru/play/embed/4df0b22c4f40104650041ed096c70523/" 
+                                    title="Двойная индукционная петля" 
+                                    frameborder="0" 
+                                    allow="clipboard-write; autoplay" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+
+                            <p>Двойная индукционная петля используется для обнаружения транспортных средств, двигающихся на выезд, с помощью электромагнитной петли. Датчик снабжен микропроцессором и предназначен для контроля доступа и управления транспортными потоками. Принцип работы состоит в измерении изменения индуктивности в магнитной петле при прохождении над ней транспортного средства.</p>
+                            <p>Чувствительный элемент электромагнитного датчика определяет наличие транспортного средства, размещенного на поверхности над индукционной петлей, образованной двумя или более витками провода, уложенного в полотно дороги. Когда транспортное средство проезжает над петлей, измеряется изменение индуктивности. При обнаружении срабатывают выходные реле и шлагбаум открывается.</p>
+                            
+                            <h2 class="page-title-2">Индукционные петли CAME SMA: принцип работы и преимущества.</h2>
+                            <p>Многие знакомы с итальянской фирмой Came, как с производителем качественных автоматических шлагбаумов. Их устройства серии Gard установлены практически в каждом втором российском дворе. Но не все знают, что эта компания также занимается автоматикой для шлагбаумов и ворот. Тоже весьма успешно.</p>
+                            <p>Например, большой популярностью пользуются индукционные петли Came SMA и SMA2 (с возможностью подключения одной и двух петель соответственно).</p>
+                            <p>Оба этих устройства имеют одинаковый принцип работы. Это магнитный датчик для обнаружения транспортных средств в зоне перед шлагбаумом. Он реагирует на появление автомобиля в радиусе его действия. А точнее измеряет изменение индуктивности в магнитной петле, которая создается с помощью провода, уложенного на дороге под асфальтом. Когда машина появляется в контролируемой зоне, сигнал от датчика передается системе управления для открытия стрелы. Такие приборы обычно устанавливают на выезде с объекта, так как с помощью них невозможно проверить наличие права доступа. Но их невысокая стоимость, стабильность и высокая скорость работы делают их актуальным и востребованным вариантом управления.</p>
+                            
+                            <p><b>Плюсами индукционной петли от фирмы Came являются:</b></p>
+                            <ul class="catalog-list-marker_list">
+                                <li>Датчик с самонастройкой и самотестированием.</li>
+                                <li>Возможность совместной работы с разными автоматическими системами.</li>
+                                <li>Высокая чувствительность, которая позволяет обнаруживать даже небольшие объекты (велосипед, детская коляска).</li>
+                            </ul>
+                            
+                            <p>А ещё высокое качество всех элементов индукционной петли, что очень немаловажно. Ведь сама петля укладывается под дорожное покрытие, вскрывать которое повторно никому не доставит удовольствия.</p>
+                            <p>Мы будем рады, если эта информация поможет Вам выбрать нужный Вам функционал, а мы с радостью воплотим Ваши желания в нашей системе «Умный шлагбаум».</p>
+
+                            <div class="b-services-row">
+                                <div class="b-services-card-horizontal">
+                                    <div class="b-card-pic">
+                                        <img src="/upload/iblock/d37/hsyxf3dxu8pfgeo4ipggpho0h739zd4t.jpeg" alt="CAME SMA">
+                                    </div>
+                                    <div class="b-card-content">
+                                        <div class="b-card-header">
+                                            <span class="b-card-title">CAME SMA Цифровой детектор транспортного средства</span>
+                                        </div>
+                                        <p class="b-card-text">
+                                            Датчик магнитный одноканальный для обнаружения транспортных средств. Автоматическая настройка датчика. Самотестирование датчика. Различные варианты работы выходных контактов реле. Совместимость с любой автоматической системой САМЕ.
+                                        </p>
+                                        <div class="b-card-price">23 000 руб.</div>
+                                        <div class="b-card-action">
+                                            <button class="btn-more">В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="b-services-card-horizontal">
+                                    <div class="b-card-pic">
+                                        <img src="/upload/iblock/500/i37v5h7c6ua75qjj4iflr7g346e96xft.jpeg" alt="CAME SMA2">
+                                    </div>
+                                    <div class="b-card-content">
+                                        <div class="b-card-header">
+                                            <span class="b-card-title">CAME SMA2 Цифровой детектор транспортного средства</span>
+                                        </div>
+                                        <p class="b-card-text">
+                                            Датчик магнитный двухканальный для одновременного контроля двух независимых индукционных петель. Оптимальное решение для раздельного контроля въезда и выезда.
+                                        </p>
+                                        <div class="b-card-price">30 000 руб.</div>
+                                        <div class="b-card-action">
+                                            <button class="btn-more">В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="b-services-card-horizontal">
+                                    <div class="b-card-pic">
+                                        <img src="/upload/iblock/d37/hsyxf3dxu8pfgeo4ipggpho0h739zd4t.jpeg" alt="Провод индукционной петли CAME">
+                                    </div>
+                                    <div class="b-card-content">
+                                        <div class="b-card-header">
+                                            <span class="b-card-title">Кабель для индукционной петли CAME (пробег 50м)</span>
+                                        </div>
+                                        <p class="b-card-text">
+                                            Специализированный высокопрочный термостойкий провод для формирования витков индукционной петли в дорожном полотне под асфальт или плитку. Обеспечивает долговечность и стабильность индуктивности.
+                                        </p>
+                                        <div class="b-card-price">6 500 руб.</div>
+                                        <div class="b-card-action">
+                                            <button class="btn-more">В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pagination">
+    <span class="pagination-label">Страница:</span>
+    <a href="#" class="page-link active">1</a>
+    <a href="catalog-svobodnyy-vyezd-2.html" class="page-link">2</a>
+</div>
+                  
+                        </article>
+                    </div>
+
+
+                    <aside class="b-sidebar">
+                        <span class="b-sidebar__title">Смотрите также:</span>
+                        <ul class="b-sidebar__list">
+                            <li class="b-sidebar__item">
+                                <a href="avtomatika.html" class="b-sidebar__link">
+                                    Автоматика проезда <span>→</span>
+                                </a>
+                            </li> 
+                            <li class="b-sidebar__item">
+                                <a href="radioupravlenie.html" class="b-sidebar__link">
+                                    Радиоуправление <span>→</span>
+                                </a>
+                            </li>
+                            <li class="b-sidebar__item">
+                                <a href="svobodnyy-vyezd.html" class="b-sidebar__link">
+                                    Свободный выезд <span>→</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </div>
+
+        <section class="callback-section">
+            <div class="step-container">
+                <div class="callback-wrapper">
+                    <div class="callback-title">Есть вопросы — мы Вам перезвоним</div>
+                    <form class="callback-form" action="#" method="POST">
+                        <input type="text" name="name" class="callback-input" placeholder="Введите Ваше имя" required>
+                        <input type="tel" name="phone" class="callback-input" placeholder="+375 (___)___-__-__" required>
+                        <button type="submit" class="callback-btn">Заказать звонок</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-col col-help">
+                    <h4 class="footer-heading heading-help">Помощь</h4>
+                    <ul class="footer-list list-help">
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Бренды</a></li>
+                        <li><a href="#">Наши работы</a></li>
+                        <li><a href="#">Сотрудничество</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                        <li><a href="#">Новости</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col col-services">
+                    <h4 class="footer-heading heading-services">Услуги</h4>
+                    <ul class="footer-list list-services">
+                        <li><a href="#">Диспетчеризация</a></li>
+                        <li><a href="#">Автоматизация проезда</a></li>
+                        <li><a href="#">Система умный шлагбаум</a></li>
+                        <li><a href="#">Видеонаблюдение</a></li>
+                        <li><a href="#">Контроль доступа</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col col-products">
+                    <h4 class="footer-heading heading-products">Товары</h4>
+                    <div class="products-grid-wrapper">
+                        <ul class="footer-list list-products-left">
+                            <li><a href="#">Автоматика проезда</a></li>
+                            <li><a href="#">Свободный выезд</a></li>
+                            <li><a href="#">Распознавание автомобильных номеров</a></li>
+                            <li><a href="#">UNF метки</a></li>
+                            <li><a href="#">Радиоуправление</a></li>
+                        </ul>
+                        <ul class="footer-list list-products-right">
+                            <li><a href="#">GSM управление</a></li>
+                            <li><a href="#">Система заявок</a></li>
+                            <li><a href="#">Видеонаблюдение</a></li>
+                            <li><a href="#">Контроль доступа</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-col col-contacts">
+                    <h4 class="footer-heading heading-contacts">Контакты</h4>
+                    <ul class="spec-contact-list">
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-map-marker"></i></div>
+                            <div class="spec-contact-content">
+                                <span class="spec-contact-text">Санкт-Петербург, наб. р. Карповки 5И</span>
+                            </div>
+                        </li>
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-phone"></i></div>
+                            <div class="spec-contact-content">
+                                <span class="spec-contact-text">
+                                    8 (800)100-38-99<br>
+                                    +7(812)309-36-63
+                                </span>
+                            </div>
+                        </li>
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-envelope"></i></div>
+                            <div class="spec-contact-content">
+                                <a href="mailto:office@intellekt-pro.ru" class="spec-contact-link">office@intellekt-pro.ru</a>
+                            </div>
+                        </li>
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-clock-o"></i></div>
+                            <div class="spec-contact-content">
+                                <span class="spec-contact-text">Пн-Пт, 10-19</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright-text">
+                    2010-2024, Системы безопасности в Санкт-Петербурге (СПБ) | Интеллект Про | Все права защищены.<br>
+                    Информация о ценах на сайте не является публичной офертой.
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script type="module">
+    import { initSlider } from './js/components/slider.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initSlider();
+    });
+</script>
+</body>
+</html>

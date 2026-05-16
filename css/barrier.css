@@ -409,3 +409,35 @@ body.dark .page-link {
     color: #ccc;
 }
 body.dark .page-link:hover { background: #333; }
+
+/* Стили для списков с кастомными маркерами */
+.catalog-list-marker_list {
+    list-style: none; /* Убираем стандартные кружочки браузера */
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+
+.catalog-list-marker_list li {
+    position: relative;
+    padding-left: 25px; /* Оставляем место для нашего кастомного маркера */
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* Создаем сам кастомный маркер через псевдоэлемент */
+.catalog-list-marker_list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px; /* Смещаем вниз, чтобы маркер был по центру первой строки текста */
+    width: 8px;
+    height: 8px;
+    background-color: #ff4444; /* Цвет маркера (акцентный цвет сайта) */
+    border-radius: 50%; /* Делаем маркер круглым. Убери эту строку, если хочешь квадратики */
+    transition: transform 0.3s ease; /* Плавная анимация при наведении */
+}
+
+/* Небольшой интерактив при наведении на пункт списка */
+.catalog-list-marker_list li:hover::before {
+    transform: scale(1.3); /* Маркер слегка увеличивается */
+}

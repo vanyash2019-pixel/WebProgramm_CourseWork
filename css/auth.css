@@ -1,0 +1,134 @@
+  /* Сброс стилей */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7f6; /* Нейтральный фон страницы */
+        }
+
+        /* Центрирование контейнера на экране */
+        .auth-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        /* Центральный одноколоночный блок */
+        .auth-container {
+            width: 100%;
+            max-width: 450px; /* Компактная ширина для одной колонки */
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e0e6e9;
+            padding: 40px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* Ссылка "Назад к каталогу" */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            color: #7f8c8d;
+            text-decoration: none;
+            transition: color 0.2s;
+            margin-bottom: 30px; /* Фиксированный отступ снизу, чтобы форма её не перекрывала */
+        }
+        .back-link:hover {
+            color: #0056b3;
+        }
+        .back-link span {
+            margin-right: 8px;
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        /* Переключатель вкладок (Вход / Регистрация) */
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e0e6e9;
+        }
+        .tab-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            font-weight: 700;
+            color: #95a5a6;
+            padding: 10px 0;
+            margin-right: 30px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        .tab-btn:hover {
+            color: #34495e;
+        }
+        .tab-btn.active {
+            color: #2c3e50;
+            border-bottom-color: #0056b3; /* Наш фирменный синий */
+        }
+
+        /* Управление видимостью форм */
+        .auth-form {
+            display: none;
+        }
+        .auth-form.active {
+            display: block;
+        }
+
+        /* Поля ввода */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #dcdfe3;
+            border-radius: 6px;
+            font-size: 15px;
+            color: #2c3e50;
+            box-sizing: border-box;
+            background-color: #fbfcfc;
+            transition: all 0.2s;
+        }
+        .form-group input:focus {
+            border-color: #0056b3;
+            background-color: #ffffff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.05);
+        }
+
+        /* Кнопка отправки */
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background-color: #0056b3;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+        .btn-submit:hover {
+            background-color: #004085;
+        }
