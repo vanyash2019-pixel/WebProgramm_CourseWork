@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Иван Техников",
+      "email": "user@mail.ru",
+      "phone": "+7 (999) 111-22-33",
+      "password": "user123",
+      "role": "user"
+    },
+    {
+      "id": "FB5S_Gm_OiY",
+      "name": "иван",
+      "email": "vanyash2019@gmail.com",
+      "phone": "2412412412",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "kBfqx8VYlt4",
+      "name": "Иваннннннн н",
+      "email": "rtyrew@gmail.com",
+      "phone": "+31231231231",
+      "password": "12345678",
+      "role": "user"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
