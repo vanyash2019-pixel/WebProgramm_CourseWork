@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина оборудования</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css"> 
+    <link rel="stylesheet" href="css/barrier.css"> 
+</head>
+<body>
+    <div class="wrapper">
+        <main class="page-main" style="padding: 40px 0;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+                <h1 class="page-title" style="margin-bottom: 30px;">Корзина товаров</h1>
+                
+                <div id="cart-wrapper"></div>
+                
+                <div id="cart-summary" style="margin-top: 30px; text-align: right; display: none;">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 15px;">Итого: <span id="total-sum">0</span> руб.</h2>
+                    <button class="btn-more" style="padding: 12px 30px; font-size: 1.1rem;">Оформить заявку</button>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <a href="avtomatika.html" style="color: #007bff; text-decoration: none;">&larr; Вернуться в каталог</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const wrapper = document.getElementById('cart-wrapper');
+            const summary = document.getElementById('cart-summary');
+            const totalSumElement = document.getElementById('total-sum');
+
+            function renderCart() {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                wrapper.innerHTML = '';
+                
+                if (cart.length === 0) {
+                    wrapper.innerHTML = '<p style="font-size: 1.2rem; color: #666;">Ваша корзина пуста.</p>';
+                    summary.style.display = 'none';
+                    return;
+                }
+
+                summary.style.display = 'block';
+                let totalSum = 0;
+
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    totalSum += itemTotal;
+
+                    const row = document.createElement('div');
+                    row.style.display = 'flex';
+                    row.style.alignItems = 'center';
+                    row.style.justifyContent = 'space-between';
+                    row.style.borderBottom = '1px solid #ddd';
+                    row.style.padding = '15px 0';
+
+                    row.innerHTML = `
+                        <div style="display: flex; align-items: center; gap: 20px;">
+                            <img src="${item.img}" style="width: 90px; height: auto; border-radius: 4px;">
+                            <div>
+                                <h3 style="margin: 0 0 5px 0; font-size: 1.2rem;">${item.name}</h3>
+                                <p style="margin: 0; color: #666;">Цена: ${parseInt(item.price).toLocaleString()} руб.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 30px;">
+                            <span style="font-size: 1.1rem;">Кол-во: ${item.quantity}</span>
+                            <span style="font-size: 1.1rem; font-weight: bold;">${itemTotal.toLocaleString()} руб.</span>
+                            <button class="btn-delete" data-id="${item.id}" style="background: #e74c3c; color: #fff; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">Удалить</button>
+                        </div>
+                    `;
+                    wrapper.appendChild(row);
+                });
+
+                totalSumElement.textContent = totalSum.toLocaleString();
+
+                document.querySelectorAll('.btn-delete').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const id = e.target.getAttribute('data-id');
+                        let currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+                        currentCart = currentCart.filter(item => item.id !== id);
+                        localStorage.setItem('cart', JSON.stringify(currentCart));
+                        renderCart();
+                    });
+                });
+            }
+
+            renderCart();
+        });
+    </script>
+</body>
+</html>

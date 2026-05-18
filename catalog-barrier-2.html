@@ -109,31 +109,23 @@
                 <li><a href="#">Контакты</a></li>
             </ul>
 
-            <div class="header-right-group">
-                
-                <div class="header-search">
-                    <input type="text" placeholder="" class="search-input">
-                    <button class="search-btn">
-                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 19L14.65 14.65M17 9C17 13.4183 13.4183 17 9 17C4.58172 17 1 13.4183 1 9C1 4.58172 4.58172 1 9 1C13.4183 1 17 4.58172 17 9Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
+         
+           <div class="header-right-group">
+                            <div class="header-search">
+                                <input type="text" placeholder="" class="search-input">
+                                <button class="search-btn">
+                                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 19L14.65 14.65M17 9C17 13.4183 13.4183 17 9 17C4.58172 17 1 13.4183 1 9C1 4.58172 4.58172 1 9 1C13.4183 1 17 4.58172 17 9Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="auth-zone" id="auth-zone"></div>
+                        </div> 
+                    </div>
                 </div>
-
-                <a href="#" class="header-cabinet">
-                    <div class="cabinet-icon">
-                 <img src="assets/iconoir_profile-circle.png" class="cabinet-icon">
-                    </div>
-                    <div class="cabinet-text">
-                        <span class="cabinet-title">Кабинет</span>
-                        <span class="cabinet-desc">Вход для клиентов</span>
-                    </div>
-                </a>
-
-            </div> </div>
-        </div>
-</nav>
-    </header>
+            </nav>
+        </header>
 
 <main class="page-main">
         <div class="container container--wide">
@@ -161,154 +153,142 @@
             <div class="services-container">
                 <div class="b-services-wrapper">
                     <div class="b-services-content">
-                        <div class="b-services-row">
-                            
-                            <div class="b-services-card-horizontal">
-                                <div class="b-card-pic"><img src="assets/nero-8661.jpg" alt="Считыватель 8661"></div>
-                                <div class="b-card-content">
-                                    <div class="b-card-header"><span class="b-card-title">Считыватель 8661 (антивандальный)</span></div>
-                                    <ul class="catalog-list-marker_list">
-                                        <li>Усиленный корпус для защиты от механических повреждений</li>
-                                        <li>Стабильная работа в широком диапазоне температур</li>
-                                        <li>Высокая износостойкость в местах интенсивного проезда</li>
-                                    </ul>
-                                    <div class="b-card-price">6 200 руб.</div>
-                                    <div class="b-card-action">
-                                        <button class="btn-more">В корзину</button>
-                                    </div>
-                                </div>
-                            </div>
+<div class="b-services-row">
+    <div class="b-services-card-horizontal" data-id="4" data-name="Считыватель 8661 (антивандальный)" data-price="6200" data-img="assets/nero-8661.jpg" data-features="Интерфейс: Wiegand;Дальность чтения: до 10 см;Материал: нержавеющая сталь;Питание: 12В">
+        <div class="b-card-pic"><img src="assets/nero-8661.jpg" alt="Считыватель 8661"></div>
+        <div class="b-card-content">
+            <div class="b-card-header"><span class="b-card-title">Считыватель 8661 (антивандальный)</span></div>
+            <p class="b-card-text">
+                Усиленный корпус для защиты от механических повреждений. Стабильная работа в широком диапазоне температур и высокая износостойкость в местах интенсивного проезда.
+            </p>
+            <div class="b-card-price">6 200 руб.</div>
+            <div class="b-card-action">
+                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
+                <button class="btn-more buy-btn-catalog">В корзину</button>
+            </div>
+        </div>
+    </div>
 
-                            <div class="b-services-card-horizontal">
-                                <div class="b-card-pic"><img src="assets/remote-4.jpg" alt="Пульт 8101-4"></div>
-                                <div class="b-card-content">
-                                    <div class="b-card-header"><span class="b-card-title">Пульт Radio 8101-4 (4-канальный)</span></div>
-                                    <ul class="catalog-list-marker_list">
-                                        <li>Управление четырьмя независимыми объектами доступа</li>
-                                        <li>Подходит для ворот, шлагбаумов и элементов освещения</li>
-                                        <li>Удобное переключение каналов с одного устройства</li>
-                                    </ul>
-                                    <div class="b-card-price">2 800 руб.</div>
-                                    <div class="b-card-action">
-                                        <button class="btn-more">В корзину</button>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="b-services-card-horizontal" data-id="5" data-name="Пульт Radio 8101-4 (4-канальный)" data-price="2800" data-img="assets/remote-4.jpg" data-features="Частота: 433.92 МГц;Радиус действия: до 150 м;Батарейка: CR2032;Динамический код: есть">
+        <div class="b-card-pic"><img src="assets/remote-4.jpg" alt="Пульт 8101-4"></div>
+        <div class="b-card-content">
+            <div class="b-card-header"><span class="b-card-title">Пульт Radio 8101-4 (4-канальный)</span></div>
+            <p class="b-card-text">
+                Удобное управление четырьмя независимыми объектами доступа с одного устройства. Отлично подходит для совместного контроля ворот, шлагбаумов и элементов внешнего освещения.
+            </p>
+            <div class="b-card-price">2 800 руб.</div>
+            <div class="b-card-action">
+                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
+                <button class="btn-more buy-btn-catalog">В корзину</button>
+            </div>
+        </div>
+    </div>
 
-                            <div class="b-services-card-horizontal">
-                                <div class="b-card-pic"><img src="assets/receiver-8113.jpg" alt="Приемник 8113"></div>
-                                <div class="b-card-content">
-                                    <div class="b-card-header"><span class="b-card-title">Приемник Radio 8113 IP65</span></div>
-                                    <ul class="catalog-list-marker_list">
-                                        <li>Исполнительное устройство для незаметного скрытого монтажа</li>
-                                        <li>Идеально спроектирован для автоматизации роллет и маркиз</li>
-                                        <li>Защищенный герметичный корпус стандарта IP65</li>
-                                    </ul>
-                                    <div class="b-card-price">3 500 руб.</div>
-                                    <div class="b-card-action">
-                                        <button class="btn-more">В корзину</button>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="b-services-card-horizontal" data-id="6" data-name="Приемник Radio 8113 IP65" data-price="3500" data-img="assets/receiver-8113.jpg" data-features="Количество каналов: 1;Память: до 1000 пультов;Макс. мощность: 600 Вт;Температура: от -30 до +50°C">
+        <div class="b-card-pic"><img src="assets/receiver-8113.jpg" alt="Приемник 8113"></div>
+        <div class="b-card-content">
+            <div class="b-card-header"><span class="b-card-title">Приемник Radio 8113 IP65</span></div>
+            <p class="b-card-text">
+                Исполнительное устройство в защищенном герметичном корпусе стандарта IP65. Идеально спроектировано для автоматизации роллет, маркиз и незаметного скрытого монтажа.
+            </p>
+            <div class="b-card-price">3 500 руб.</div>
+            <div class="b-card-action">
+                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
+                <button class="btn-more buy-btn-catalog">В корзину</button>
+            </div>
+        </div>
+    </div>
 
-                            <div class="b-services-card-horizontal">
-                                <div class="b-card-pic"><img src="assets/antenna.jpg" alt="Антенна"></div>
-                                <div class="b-card-content">
-                                    <div class="b-card-header"><span class="b-card-title">Внешняя антенна Nero</span></div>
-                                    <ul class="catalog-list-marker_list">
-                                        <li>Значительное увеличение базового радиуса приема сигнала</li>
-                                        <li>Стабильное соединение в условиях плотной городской застройки</li>
-                                        <li>Эффективное преодоление сильных индустриальных радиопомех</li>
-                                    </ul>
-                                    <div class="b-card-price">1 200 руб.</div>
-                                    <div class="b-card-action">
-                                        <button class="btn-more">В корзину</button>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="b-services-card-horizontal" data-id="7" data-name="Внешняя антенна Nero" data-price="1200" data-img="assets/antenna.jpg" data-features="Длина кабеля: 2.5 м;Тип разъема: SMA;Коэффициент усиления: 3 дБ;Монтаж: на кронштейн">
+        <div class="b-card-pic"><img src="assets/antenna.jpg" alt="Антенна"></div>
+        <div class="b-card-content">
+            <div class="b-card-header"><span class="b-card-title">Внешняя антенна Nero</span></div>
+            <p class="b-card-text">
+                Обеспечивает значительное увеличение базового радиуса приема радиосигнала. Гарантирует стабильное соединение в условиях плотной застройки и сильных индустриальных помех.
+            </p>
+            <div class="b-card-price">1 200 руб.</div>
+            <div class="b-card-action">
+                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
+                <button class="btn-more buy-btn-catalog">В корзину</button>
+            </div>
+        </div>
+    </div>
 
-                            <div class="b-services-card-horizontal">
-                                <div class="b-card-pic"><img src="assets/ip-module.jpg" alt="IP модуль"></div>
-                                <div class="b-card-content">
-                                    <div class="b-card-header"><span class="b-card-title">Интерфейсный модуль IP-Gateway</span></div>
-                                    <ul class="catalog-list-marker_list">
-                                        <li>Интеграция и надежная связь системы Nero с сетью Интернет</li>
-                                        <li>Удобное управление точками доступа через мобильное приложение</li>
-                                        <li>Удаленный контроль состояния автоматики в реальном времени</li>
-                                    </ul>
-                                    <div class="b-card-price">8 900 руб.</div>
-                                    <div class="b-card-action">
-                                        <button class="btn-more">В корзину</button>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="b-services-card-horizontal" data-id="8" data-name="Интерфейсный модуль IP-Gateway" data-price="8900" data-img="assets/ip-module.jpg" data-features="Протокол: Wi-Fi / Ethernet;Приложение: Nero Home;Питание: 5В (Type-C);Поддержка сценариев: есть">
+        <div class="b-card-pic"><img src="assets/ip-module.jpg" alt="IP модуль"></div>
+        <div class="b-card-content">
+            <div class="b-card-header"><span class="b-card-title">Интерфейсный модуль IP-Gateway</span></div>
+            <p class="b-card-text">
+                Обеспечивает интеграцию и надежную связь оборудования Nero с сетью Интернет. Позволяет удаленно контролировать состояние автоматики в реальном времени через мобильное приложение.
+            </p>
+            <div class="b-card-price">8 900 руб.</div>
+            <div class="b-card-action">
+                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
+                <button class="btn-more buy-btn-catalog">В корзину</button>
+            </div>
+        </div>
+    </div>
 
-                            <div class="b-services-card-horizontal">
-                                <div class="b-card-pic"><img src="assets/power.jpg" alt="Блок питания"></div>
-                                <div class="b-card-content">
-                                    <div class="b-card-header"><span class="b-card-title">Блок питания 12В/2А DIN</span></div>
-                                    <ul class="catalog-list-marker_list">
-                                        <li>Специализированный форм-фактор для монтажа на DIN-рейку</li>
-                                        <li>Встроенная электронная защита от короткого замыкания</li>
-                                        <li>Стабильная подача тока для бесперебойной работы СКУД</li>
-                                    </ul>
-                                    <div class="b-card-price">950 руб.</div>
-                                    <div class="b-card-action">
-                                        <button class="btn-more">В корзину</button>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="b-services-card-horizontal" data-id="9" data-name="Блок питания 12В/2А DIN" data-price="950" data-img="assets/power.jpg" data-features="Входное напряжение: 220В;Выходной ток: 2А;Ширина: 2 DIN модуля;Индикация сети: светодиод">
+        <div class="b-card-pic"><img src="assets/power.jpg" alt="Блок питания"></div>
+        <div class="b-card-content">
+            <div class="b-card-header"><span class="b-card-title">Блок питания 12В/2А DIN</span></div>
+            <p class="b-card-text">
+                Специализированный источник питания в форм-факторе для удобного монтажа на DIN-рейку. Оснащен встроенной электронной защитой от короткого замыкания для стабильной работы СКУД.
+            </p>
+            <div class="b-card-price">950 руб.</div>
+            <div class="b-card-action">
+                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
+                <button class="btn-more buy-btn-catalog">В корзину</button>
+            </div>
+        </div>
+    </div>
 
-                            <div class="b-services-card-horizontal">
-                                <div class="b-card-pic"><img src="assets/lock.jpg" alt="Замок"></div>
-                                <div class="b-card-content">
-                                    <div class="b-card-header"><span class="b-card-title">Электромагнитный замок ML-280</span></div>
-                                    <ul class="catalog-list-marker_list">
-                                        <li>Максимальная удерживающая сила до 280 кг</li>
-                                        <li>Полная интеграция в состав любых современных систем СКУД</li>
-                                        <li>Оптимальный выбор для офисных дверей и уличных калиток</li>
-                                    </ul>
-                                    <div class="b-card-price">3 200 руб.</div>
-                                    <div class="b-card-action">
-                                        <button class="btn-more">В корзину</button>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="b-services-card-horizontal" data-id="10" data-name="Электромагнитный замок ML-280" data-price="3200" data-img="assets/lock.jpg" data-features="Потребление: 350 мА;Тип монтажа: накладной;Габариты: 250х42х25 мм;Датчик состояния двери: нет">
+        <div class="b-card-pic"><img src="assets/lock.jpg" alt="Замок"></div>
+        <div class="b-card-content">
+            <div class="b-card-header"><span class="b-card-title">Электромагнитный замок ML-280</span></div>
+            <p class="b-card-text">
+                Надежный замок с максимальной удерживающей силой до 280 кг. Оптимальный выбор для интеграции в состав современных систем контроля доступа на офисных дверях и уличных калитках.
+            </p>
+            <div class="b-card-price">3 200 руб.</div>
+            <div class="b-card-action">
+                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
+                <button class="btn-more buy-btn-catalog">В корзину</button>
+            </div>
+        </div>
+    </div>
 
-                            <div class="b-services-card-horizontal">
-                                <div class="b-card-pic"><img src="assets/button.jpg" alt="Кнопка"></div>
-                                <div class="b-card-content">
-                                    <div class="b-card-header"><span class="b-card-title">Кнопка выхода сенсорная</span></div>
-                                    <ul class="catalog-list-marker_list">
-                                        <li>Бесконтактное гигиеничное управление открытием замка</li>
-                                        <li>Понятная световая индикация текущего состояния точки прохода</li>
-                                        <li>Износостойкая лицевая панель для долговечной службы</li>
-                                    </ul>
-                                    <div class="b-card-price">1 500 руб.</div>
-                                    <div class="b-card-action">
-                                        <button class="btn-more">В корзину</button>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="b-services-card-horizontal" data-id="11" data-name="Кнопка выхода сенсорная" data-price="1500" data-img="assets/button.jpg" data-features="Тип контактов: НО/НЗ;Материал: aluminum alloy;Ресурс: более 1 000 000 нажатий;Подсветка: двухцветная">
+        <div class="b-card-pic"><img src="assets/button.jpg" alt="Кнопка"></div>
+        <div class="b-card-content">
+            <div class="b-card-header"><span class="b-card-title">Кнопка выхода сенсорная</span></div>
+            <p class="b-card-text">
+                Обеспечивает бесконтактное гигиеничное управление открытием замка. Модель оснащена понятной световой индикацией состояния точечного прохода и прочной износостойкой панелью.
+            </p>
+            <div class="b-card-price">1 500 руб.</div>
+            <div class="b-card-action">
+                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
+                <button class="btn-more buy-btn-catalog">В корзину</button>
+            </div>
+        </div>
+    </div>
 
-                            <div class="b-services-card-horizontal">
-                                <div class="b-card-pic"><img src="assets/z5r.jpg" alt="Контроллер"></div>
-                                <div class="b-card-content">
-                                    <div class="b-card-header"><span class="b-card-title">Контроллер автономный Z-5R</span></div>
-                                    <ul class="catalog-list-marker_list">
-                                        <li>Классическое и надежное автономное решение для управления</li>
-                                        <li>Энергонезависимая память с поддержкой до 1364 ключей</li>
-                                        <li>Простая процедура программирования новых идентификаторов</li>
-                                    </ul>
-                                    <div class="b-card-price">1 100 руб.</div>
-                                    <div class="b-card-action">
-                                        <button class="btn-more">В корзину</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
+    <div class="b-services-card-horizontal" data-id="12" data-name="Контроллер автономный Z-5R" data-price="1100" data-img="assets/z5r.jpg" data-features="Протокол считывателя: iButton / Wiegand;Режимы работы: Обычный / Accept / Trigger / Toggle;Выход для замка: полевой транзистор;Ток коммутации: до 5А">
+        <div class="b-card-pic"><img src="assets/z5r.jpg" alt="Контроллер"></div>
+        <div class="b-card-content">
+            <div class="b-card-header"><span class="b-card-title">Контроллер автономный Z-5R</span></div>
+            <p class="b-card-text">
+                Классическое автономное решение для систем контроля доступа. Обладает энергонезависимой памятью с поддержкой до 1364 ключей и простой процедурой добавления идентификаторов.
+            </p>
+            <div class="b-card-price">1 100 руб.</div>
+            <div class="b-card-action">
+                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
+                <button class="btn-more buy-btn-catalog">В корзину</button>
+            </div>
+        </div>
+    </div>
+</div>
                     <!-- Пагинация -->
                     <div class="pagination">
                         <span class="pagination-label">Страница:</span>
@@ -453,7 +433,20 @@
 
     </div> <!-- /footer-container -->
 </footer>
-
+<div id="product-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-window">
+        <button id="modal-close" class="close-btn">&times;</button>
+        <div class="modal-grid">
+            <img id="modal-img" src="" alt="">
+            <div class="modal-info">
+                <h3 id="modal-title" style="margin-top: 0; font-size: 1.5rem;"></h3>
+                <div id="modal-price" style="font-weight: bold; font-size: 1.3rem; color: #e74c3c; margin-bottom: 10px;"></div>
+                <ul id="modal-specs" style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;"></ul>
+                 <button class="btn-more buy-btn-catalog">В корзину</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script type="module">
     import { initSlider } from './js/components/slider.js';
 
@@ -463,5 +456,8 @@
         
     });
 </script>
+<script type="module" src="js/catalog-auth-guard.js"></script>
+   <script src="js/auth.js"></script>
+      <script src="js/card.js"></script>
 </body>
 </html>
