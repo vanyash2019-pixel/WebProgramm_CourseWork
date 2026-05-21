@@ -1,88 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Сначала обновляем шапку, чтобы пользователь сразу видел свой статус (Вошел/Не вошел)
+    // Сразу при загрузке страницы проверяем статус пользователя и обновляем шапку
     updateAuthHeader();
 
-    const tabs = document.querySelectorAll('.tab-btn');
-    const forms = document.querySelectorAll('.auth-form');
+    // === ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК (ВХОД / РЕГИСТРАЦИЯ) ===
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const authForms = document.querySelectorAll('.auth-form');
 
-    // 1. Переключение табов (Вход / Регистрация)
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            forms.forEach(f => f.classList.remove('active'));
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            authForms.forEach(form => form.classList.remove('active'));
 
-            tab.classList.add('active');
-            const targetFormId = tab.getAttribute('data-tab');
-            const targetForm = document.getElementById(targetFormId);
+            button.classList.add('active');
+            const tabId = button.getAttribute('data-tab');
+            const targetForm = document.getElementById(tabId);
             if (targetForm) {
                 targetForm.classList.add('active');
             }
         });
     });
 
-    const API_URL = 'http://localhost:3000/users';
+    // === УПРАВЛЕНИЕ СПОСОБОМ ЗАДАНИЯ ПАРОЛЯ ===
+    const passMethodRadios = document.querySelectorAll('input[name="pass-method"]');
+    const manualPasswordBlock = document.getElementById('manual-password-block');
+    const regPasswordInput = document.getElementById('reg-password');
+    const regPasswordConfirmInput = document.getElementById('reg-password-confirm');
 
-    // 2. Обработка РЕГИСТРАЦИИ
-    const registerForm = document.getElementById('register-form');
-    if (registerForm) {
-        registerForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const name = document.getElementById('reg-name').value.trim();
-            const email = document.getElementById('reg-email').value.trim().toLowerCase();
-            const phone = document.getElementById('reg-phone').value.trim();
-            const password = document.getElementById('reg-password').value;
-
-            try {
-                // Получаем ВСЕХ пользователей для проверки уникальности email
-                const checkResponse = await fetch(API_URL);
-                const allUsers = await checkResponse.json();
-
-                // Ищем, есть ли уже такой email
-                const emailExists = allUsers.some(user => user.email === email);
-
-                if (emailExists) {
-                    alert('Пользователь с таким E-mail уже зарегистрирован!');
-                    return;
-                }
-
-                // Создаем нового пользователя
-                const newUser = {
-                    id: String(Date.now()),
-                    name: name,
-                    email: email,
-                    phone: phone,
-                    password: password,
-                    role: 'user'
-                };
-
-                // Записываем в БД
-                const response = await fetch(API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(newUser)
-                });
-
-                if (response.ok) {
-                    alert('Регистрация успешна! Теперь войдите в аккаунт.');
-                    registerForm.reset();
-                    
-                    // Автоматически переключаем на вкладку "Вход"
-                    const loginTabBtn = document.querySelector('[data-tab="login-form"]');
-                    if (loginTabBtn) {
-                        loginTabBtn.click();
-                    }
-                }
-
-            } catch (error) {
-                console.error('Ошибка при регистрации:', error);
-                alert('Не удалось связаться с сервером.');
+    passMethodRadios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            if (e.target.value === 'auto') {
+                if (manualPasswordBlock) manualPasswordBlock.style.display = 'none';
+                if (regPasswordInput) regPasswordInput.required = false;
+                if (regPasswordConfirmInput) regPasswordConfirmInput.required = false;
+            } else {
+                if (manualPasswordBlock) manualPasswordBlock.style.display = 'block';
+                if (regPasswordInput) regPasswordInput.required = true;
+                if (regPasswordConfirmInput) regPasswordConfirmInput.required = true;
             }
+        });
+    });
+
+    // === ГЕНЕРАЦИЯ НИКНЕЙМА ===
+    const generateNickBtn = document.getElementById('btn-generate-nick');
+    const nicknameInput = document.getElementById('reg-nickname');
+
+    if (generateNickBtn && nicknameInput) {
+        generateNickBtn.addEventListener('click', () => {
+            const randomNum = Math.floor(1000 + Math.random() * 9000);
+            nicknameInput.value = `User_${randomNum}`;
         });
     }
 
-    // 3. Обработка ВХОДА
+    // === АКТИВАЦИЯ КНОПКИ РЕГИСТРАЦИИ ПО ЧЕКБОКСУ ===
+    const agreementCheckbox = document.getElementById('reg-agreement');
+    const registerSubmitBtn = document.getElementById('btn-register-submit');
+
+    if (agreementCheckbox && registerSubmitBtn) {
+        agreementCheckbox.addEventListener('change', (e) => {
+            registerSubmitBtn.disabled = !e.target.checked;
+        });
+    }
+
+    // ==========================================
+    // === ЛОГИКА АВТОРИЗАЦИИ (ВХОД) ===
+    // ==========================================
     const loginForm = document.getElementById('login-form');
+
     if (loginForm) {
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -91,29 +74,41 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('login-password').value;
 
             try {
-                // Получаем массив пользователей с сервера
-                const response = await fetch(API_URL);
-                const allUsers = await response.json();
+                // Ищем пользователя на сервере по email
+                const response = await fetch(`http://localhost:3000/users?email=${email}`);
+                
+                if (!response.ok) {
+                    throw new Error('Ошибка сервера при авторизации');
+                }
 
-                // Ищем совпадение email и пароля
-                const foundUser = allUsers.find(user => user.email === email && user.password === password);
+                const users = await response.json();
 
-                if (foundUser) {
-                    alert(`Успешный вход! Добро пожаловать, ${foundUser.name}.`);
+                if (users.length > 0) {
+                    const loggedUser = users[0];
 
-                    // Сохраняем данные в localStorage
-                    localStorage.setItem('currentUser', JSON.stringify({
-                        id: foundUser.id,
-                        name: foundUser.name,
-                        email: foundUser.email,
-                        role: foundUser.role
-                    }));
+                    // Сверяем пароль прямо в JavaScript
+                    if (String(loggedUser.password) === String(password)) {
+                        
+                        // Сохраняем сессию в localStorage
+                        localStorage.setItem('currentUser', JSON.stringify({
+                            id: loggedUser.id,
+                            name: loggedUser.name,
+                            email: loggedUser.email,
+                            role: loggedUser.role || 'user'
+                        }));
 
-                    // Обновляем шапку и перенаправляем на главную страницу
-                    updateAuthHeader();
-                    window.location.href = 'index.html'; 
+                        alert(`Успешный вход! Добро пожаловать, ${loggedUser.name}.`);
+
+                        // Обновляем шапку, чтобы сразу применились изменения
+                        updateAuthHeader();
+
+                        // Возвращаемся на главную страницу
+                        window.location.href = 'index.html'; 
+                    } else {
+                        alert('Неверный Пароль!');
+                    }
                 } else {
-                    alert('Неверный Email или Пароль!');
+                    alert('Пользователь с таким Email не найден!');
                 }
 
             } catch (error) {
@@ -122,9 +117,92 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ==========================================
+    // === ЛОГИКА РЕГИСТРАЦИИ ===
+    // ==========================================
+    const registerForm = document.getElementById('register-form');
+
+    if (registerForm) {
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const lastName = document.getElementById('reg-lastname').value.trim();
+            const firstName = document.getElementById('reg-firstname').value.trim();
+            const middleName = document.getElementById('reg-middlename').value.trim();
+            const birthday = document.getElementById('reg-birthday').value;
+            const email = document.getElementById('reg-email').value.trim().toLowerCase();
+            const phone = document.getElementById('reg-phone').value.trim();
+            const nickname = nicknameInput ? nicknameInput.value.trim() : '';
+            const passMethod = document.querySelector('input[name="pass-method"]:checked').value;
+
+            let password = '';
+
+            if (passMethod === 'auto') {
+                password = Math.random().toString(36).slice(-8); 
+            } else {
+                password = regPasswordInput.value;
+                const passwordConfirm = regPasswordConfirmInput.value;
+
+                if (password.length < 6) {
+                    alert('Пароль должен быть не менее 6 символов!');
+                    return;
+                }
+                if (password !== passwordConfirm) {
+                    alert('Пароль и подтверждение не совпадают!');
+                    return;
+                }
+            }
+
+            // Склеиваем ФИО в одно поле name для совместимости с твоей шапкой
+            const newUser = {
+                id: String(Date.now()),
+                name: `${lastName} ${firstName} ${middleName}`.trim(),
+                email: email,
+                phone: phone,
+                birthday: birthday,
+                nickname: nickname,
+                password: password,
+                role: "user"
+            };
+
+            try {
+                const checkResponse = await fetch(`http://localhost:3000/users?email=${email}`);
+                const existingUsers = await checkResponse.json();
+
+                if (existingUsers.length > 0) {
+                    alert('Пользователь с таким E-mail уже зарегистрирован!');
+                    return;
+                }
+
+                const response = await fetch('http://localhost:3000/users', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(newUser)
+                });
+
+                if (response.ok) {
+                    if (passMethod === 'auto') {
+                        alert(`Регистрация успешна! Ваш автоматически сгенерированный пароль: ${password}`);
+                    } else {
+                        alert('Регистрация успешна! Теперь войдите в аккаунт.');
+                    }
+                    
+                    registerForm.reset();
+                    const loginTabBtn = document.querySelector('[data-tab="login-form"]');
+                    if (loginTabBtn) loginTabBtn.click();
+                }
+
+            } catch (error) {
+                console.error('Ошибка при регистрации:', error);
+                alert('Не удалось связаться с сервером.');
+            }
+        });
+    }
 });
 
 
+// === ТВОЯ ФУНКЦИЯ ОБНОВЛЕНИЯ ШАПКИ САЙТА ===
 function updateAuthHeader() {
     const authZone = document.getElementById('auth-zone');
     if (!authZone) return;
@@ -136,7 +214,6 @@ function updateAuthHeader() {
         const user = JSON.parse(userRaw);
         const lkPage = user.role === 'admin' ? 'admin.html' : 'lk.html';
 
-        // Сохраняем твою родную структуру, но адаптируем под данные юзера
         authZone.innerHTML = `
             <div style="display: flex; align-items: center; gap: 15px;">
                 <a href="${lkPage}" class="header-cabinet">
@@ -165,7 +242,6 @@ function updateAuthHeader() {
 
     } else {
         // --- 2. ПОЛЬЗОВАТЕЛЬ НЕ АВТОРИЗОВАН ---
-        // Твоя исходная чистая вёрстка один в один
         authZone.innerHTML = `
             <a href="auth.html" class="header-cabinet">
                 <div class="cabinet-icon">

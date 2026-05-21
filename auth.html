@@ -35,24 +35,82 @@
             <button type="submit" class="btn-submit">Войти</button>
         </form>
 
-        <form id="register-form" class="auth-form">
+      <form id="register-form" class="auth-form">
             <div class="form-group">
-                <label for="reg-name">Ваше имя</label>
-                <input type="text" id="reg-name" required placeholder="Иван И.">
+                <label for="reg-lastname">Фамилия *</label>
+                <input type="text" id="reg-lastname" required placeholder="Иванов">
+                <span class="error-msg" id="err-lastname" style="color: #ff4d4d; font-size: 12px;"></span>
             </div>
+
             <div class="form-group">
-                <label for="reg-email">E-mail</label>
+                <label for="reg-firstname">Имя *</label>
+                <input type="text" id="reg-firstname" required placeholder="Иван">
+                <span class="error-msg" id="err-firstname" style="color: #ff4d4d; font-size: 12px;"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="reg-middlename">Отчество</label>
+                <input type="text" id="reg-middlename" placeholder="Иванович">
+            </div>
+
+            <div class="form-group">
+                <label for="reg-birthday">Дата рождения * (от 16 лет)</label>
+                <input type="date" id="reg-birthday" required>
+                <span class="error-msg" id="err-birthday" style="color: #ff4d4d; font-size: 12px;"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="reg-email">E-mail *</label>
                 <input type="email" id="reg-email" required placeholder="example@mail.ru">
+                <span class="error-msg" id="err-email" style="color: #ff4d4d; font-size: 12px;"></span>
             </div>
+
             <div class="form-group">
-                <label for="reg-phone">Телефон</label>
-                <input type="tel" id="reg-phone" required placeholder="+7 (___) ___-__-__">
+                <label for="reg-phone">Телефон *</label>
+                <input type="tel" id="reg-phone" maxlength="13" placeholder="+375XXXXXXXXX">
+                <span class="error-msg" id="err-phone" style="color: #ff4d4d; font-size: 12px;"></span>
             </div>
-            <div class="form-group">
-                <label for="reg-password">Придумайте Пароль</label>
-                <input type="password" id="reg-password" required placeholder="Минимум 6 символов">
+
+       <div class="form-group" style="margin-top: 15px;">
+                <label>Способ задания пароля *</label>
+                <div class="radio-group">
+                    <label class="inline-label">
+                        <input type="radio" name="pass-method" value="manual" checked> Сам
+                    </label>
+                    <label class="inline-label">
+                        <input type="radio" name="pass-method" value="auto"> Автоматически
+                    </label>
+                </div>
             </div>
-            <button type="submit" class="btn-submit">Зарегистрироваться</button>
+
+            <div id="manual-password-block">
+                <div class="form-group">
+                    <label for="reg-password">Пароль *</label>
+                    <input type="password" id="reg-password" placeholder="Минимум 6 символов">
+                    <span class="error-msg" id="err-password" style="color: #ff4d4d; font-size: 12px;"></span>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password-confirm">Повторите пароль *</label>
+                    <input type="password" id="reg-password-confirm">
+                    <span class="error-msg" id="err-password-confirm" style="color: #ff4d4d; font-size: 12px;"></span>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;">
+                <label for="reg-nickname">Никнейм *</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" id="reg-nickname" required style="flex: 1;">
+                    <button type="button" id="btn-generate-nick" style="padding: 0 15px; cursor: pointer;">Сгенерировать</button>
+                </div>
+                <span class="error-msg" id="err-nickname" style="color: #ff4d4d; font-size: 12px;"></span>
+            </div>
+
+          <div class="checkbox-group">
+                <input type="checkbox" id="reg-agreement" required>
+                <label for="reg-agreement" class="inline-label">Согласен с правилами *</label>
+            </div>
+
+            <button type="submit" id="btn-register-submit" class="btn-submit" disabled>Зарегистрироваться</button>
         </form>
 
     </div>

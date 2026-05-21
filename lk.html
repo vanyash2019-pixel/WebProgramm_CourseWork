@@ -101,51 +101,57 @@
             </nav>
         </header>
 
-        <main class="main">
-            <section class="lk-section">
-                <div class="container-2">
-                    
-                    <div class="lk-wrapper" id="lk-main-block">
-                        <aside class="lk-sidebar">
-                            <ul class="lk-menu">
-                                <li class="lk-menu__item active"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Мой профиль</a></li>
-                                <li class="lk-menu__item"><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Мои заказы</a></li>
-                            </ul>
-                        </aside>
+     <main class="main">
+    <section class="lk-section">
+        <div class="container-2">
+            
+            <div class="lk-wrapper" id="lk-main-block">
+                <aside class="lk-sidebar">
+                    <ul class="lk-menu">
+                        <li class="lk-menu__item active" id="menu-profile-btn"><a href="javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i> Мой профиль</a></li>
+                        <li class="lk-menu__item" id="menu-orders-btn"><a href="javascript:void(0)"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Мои заказы</a></li>
+                    </ul>
+                </aside>
 
-                        <div class="lk-content">
-                            <h2 class="lk-title">Личные данные</h2>
-                            
-                            <form id="profile-form" class="profile-grid">
-                                <div class="profile-field">
-                                    <label class="profile-label" for="user-name">Имя пользователя</label>
-                                    <input type="text" id="user-name" class="profile-input" required placeholder="Загрузка...">
-                                </div>
-                                <div class="profile-field">
-                                    <label class="profile-label" for="user-email">Ваш E-mail</label>
-                                    <input type="email" id="user-email" class="profile-input" required placeholder="Загрузка...">
-                                </div>
-                                <div class="profile-field">
-                                    <label class="profile-label" for="user-phone">Телефон</label>
-                                    <input type="text" id="user-phone" class="profile-input" placeholder="Загрузка...">
-                                </div>
-                                <div class="profile-field">
-                                    <label class="profile-label">Статус аккаунта</label>
-                                    <div class="profile-status-text" id="user-role">Загрузка...</div>
-                                </div>
+                <div class="lk-content">
+                    <div id="lk-profile-content">
+                        <h2 class="lk-title">Личные данные</h2>
+                        <form id="profile-form" class="profile-grid">
+                            <div class="profile-field">
+                                <label class="profile-label" for="user-name">Имя пользователя</label>
+                                <input type="text" id="user-name" class="profile-input" required placeholder="Загрузка...">
+                            </div>
+                            <div class="profile-field">
+                                <label class="profile-label" for="user-email">Ваш E-mail</label>
+                                <input type="email" id="user-email" class="profile-input" required placeholder="Загрузка...">
+                            </div>
+                            <div class="profile-field">
+                                <label class="profile-label" for="user-phone">Телефон</label>
+                                <input type="text" maxlength="13" id="user-phone" class="profile-input" placeholder="Загрузка...">
+                            </div>
+                            <div class="profile-field">
+                                <label class="profile-label">Статус аккаунта</label>
+                                <div class="profile-status-text" id="user-role">Загрузка...</div>
+                            </div>
 
-                                <div class="profile-actions">
-                                    <button type="submit" class="lk-save-btn">Сохранить изменения</button>
-                                    <button type="button" class="lk-logout-btn" id="lk-internal-logout">Выйти</button>
-                                </div>
-                            </form>
-                        </div>
+                            <div class="profile-actions">
+                                <button type="submit" class="lk-save-btn">Сохранить изменения</button>
+                                <button type="button" class="lk-logout-btn" id="lk-internal-logout">Выйти</button>
+                            </div>
+                        </form>
                     </div>
 
+                    <div id="lk-orders-content" style="display: none;">
+                        <h2 class="lk-title">Мои заказы</h2>
+                        <div id="orders-list-container">
+                            </div>
+                    </div>
                 </div>
-            </section>
-        </main>
+            </div>
 
+        </div>
+    </section>
+</main>
 <footer class="site-footer">
     <div class="footer-container">
         
