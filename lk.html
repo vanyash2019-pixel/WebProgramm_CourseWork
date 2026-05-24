@@ -73,7 +73,7 @@
                 <div class="container-2">
                     <div class="header-bottom__wrapper">
                         <ul class="main-nav">
-                            <li><a href="#">Услуги</a></li>
+                  
                             <li class="has-dropdown main-nav__item--catalog">
                                 <a href="#" class="catalog-btn">Каталог Оборудования</a>
                                 <ul class="dropdown-menu">
@@ -82,7 +82,7 @@
                                     <li><a href="svobodnyy-vyezd.html">Свободный выезд</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Теория</a></li>
+                           <li><a href="card.html">Корзина</a></li>
                             <li><a href="#">Контакты</a></li>
                         </ul>
                         <div class="header-right-group">
@@ -257,7 +257,16 @@
     </div> <!-- /footer-container -->
 </footer>
     </div>
-
+<div id="status-modal" class="status-modal-overlay" style="display: none;">
+    <div class="status-modal-content">
+     <div class="status-modal-header">
+    <h3>Статус заказа</h3>
+    <button id="close-status-modal" class="close-modal-btn" onclick="closeStatusModal()">&times;</button>
+</div>
+        <div class="status-modal-body" id="status-timeline-container">
+            </div>
+    </div>
+</div>
     <script src="js/auth.js"></script>
     <script src="js/lk.js"></script>
 </body>

@@ -169,3 +169,21 @@
     margin-top: 15px;
     margin-bottom: 20px;
 }
+/* Стили для заблокированной кнопки регистрации */
+#btn-register-submit:disabled {
+    background-color: #cccccc !important; /* Делаем фон серым */
+    color: #888888 !important; /* Делаем текст тусклым */
+    cursor: not-allowed !important; /* Тот самый курсор-барьер (перечеркнутый круг) */
+    border: 1px solid #bbbbbb !important; /* Серая рамка (если нужна) */
+    box-shadow: none !important; /* Убираем тени, если они были */
+    transform: none !important; /* Убираем анимацию нажатия/наведения, если была */
+    pointer-events: auto; /* Гарантирует, что курсор-барьер сработает */
+}
+/* Стили для кнопки "Выйти" в шапке */
+.logout-btn {
+    color: #ffffff !important; /* Делает текст белым */
+    text-decoration: none; /* Убирает нижнее подчеркивание, если оно есть */
+    font-weight: 500;
+    transition: color 0.2s ease; /* Плавность для эффекта наведения */
+}
+

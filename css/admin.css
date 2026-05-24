@@ -1,0 +1,243 @@
+/* ==========================================================================
+   ПАНЕЛЬ АДМИНИСТРАТОРА ЕГДС — ПОЛНЫЙ СТИЛЬ
+   ========================================================================== */
+
+/* --- Базовые сбросы и переменные --- */
+:root {
+    --primary-blue: #0092e4;
+    --primary-red: #dc061f;
+    --dark-bg: #1f1f1f;
+    --light-gray: #f4f6f9;
+    --border-color: #e0e0e0;
+    --text-color: #333333;
+    --success-green: #2ecc71;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+}
+
+/* --- 1. Шапка админки (Верхняя панель) --- */
+.admin-header {
+    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--primary-red) 100%);
+    height: 63px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.admin-header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.admin-logo-block {
+    display: flex;
+    align-items: center;
+    margin-left: 90px; /* Отступ совпадает с главным меню сайта */
+}
+
+.admin-logo-block span {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admin-right-group {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.admin-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.admin-back-btn:hover {
+    opacity: 0.8;
+}
+
+/* --- 2. Основная рабочая область (Лэйаут) --- */
+.admin-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.admin-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #222;
+    border-left: 5px solid var(--primary-red);
+    padding-left: 15px;
+}
+
+/* Карточки-блоки для контента (отзывы, пользователи и т.д.) */
+.admin-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.admin-card__title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- 3. Таблицы данных (Вывод пользователей/отзывов) --- */
+.admin-table-wrapper {
+    overflow-x: auto; /* Чтобы на мобилках таблица скроллилась, а не ломала верстку */
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.admin-table th {
+    background-color: #f8f9fa;
+    color: #555;
+    font-weight: 700;
+    padding: 14px 16px;
+    border-bottom: 2px solid var(--border-color);
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.admin-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+.admin-table tbody tr:hover {
+    background-color: rgba(0, 146, 228, 0.03); /* Легкий синий подсвет при наведении */
+}
+
+/* --- 4. Кнопки управления деятельностью --- */
+.btn-admin {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-admin:active {
+    transform: scale(0.98);
+}
+
+/* Кнопка удаления (одобрения/модерации) */
+.btn-admin--delete {
+    background-color: #fff2f3;
+    color: var(--primary-red);
+    border: 1px solid rgba(220, 6, 31, 0.2);
+}
+
+.btn-admin--delete:hover {
+    background-color: var(--primary-red);
+    color: #fff;
+}
+
+.btn-admin--approve {
+    background-color: #e8f8f0;
+    color: var(--success-green);
+    border: 1px solid rgba(46, 204, 113, 0.2);
+}
+
+.btn-admin--approve:hover {
+    background-color: var(--success-green);
+    color: #fff;
+}
+
+/* --- 5. Статусы (Бэйджи) --- */
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.status-badge--admin {
+    background-color: rgba(220, 6, 31, 0.1);
+    color: var(--primary-red);
+}
+
+.status-badge--user {
+    background-color: rgba(0, 146, 224, 0.1);
+    color: var(--primary-blue);
+}
+
+/* --- 6. Заглушка «Доступ запрещен» (Если зашел не админ) --- */
+.access-denied-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.access-denied-icon {
+    font-size: 80px;
+    color: var(--primary-red);
+    margin-bottom: 20px;
+}
+
+.access-denied-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.access-denied-text {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 25px;
+}
+/* Выравнивание контейнера по центру, как на главном сайте */
+.admin-header .container-2 {
+    max-width: 1300px; /* Если у тебя на главной другая ширина, поставь её (например, 1170px или 1280px) */
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin-right: 170px;
+}

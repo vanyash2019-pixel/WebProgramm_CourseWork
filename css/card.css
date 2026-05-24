@@ -248,3 +248,169 @@
                 text-align: center;
             }
         }
+         Общие стили для нового модального окна */
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+}
+
+.modal-content-wrapper {
+    background-color: var(--bg-card, #ffffff); /* Используем переменные твоей темы, если есть, или белый */
+    color: var(--text-color, #333333);
+    padding: 25px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+/* Изменение фона для темной темы, если у тебя используются классы */
+body.dark-theme .modal-content-wrapper {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
+.modal-header-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+body.dark-theme .modal-header-block {
+    border-bottom-color: #444;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #888;
+}
+.close-modal-btn:hover { color: #f44336; }
+
+.modal-form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-field-group label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.required-star { color: #f44336; }
+
+.form-field-group input, 
+.form-field-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: var(--bg-input, #fff);
+    color: var(--text-input, #000);
+}
+body.dark-theme .form-field-group input,
+body.dark-theme .form-field-group textarea {
+    background-color: #333;
+    border-color: #555;
+    color: #fff;
+}
+
+.modal-footer-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cancel-action-btn {
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.cancel-action-btn:hover { background-color: #d5d5d5; }
+
+.confirm-action-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.confirm-action-btn:hover { background-color: #218838; }
+
+#order-modal {
+    /* JS будет переключать это свойство на flex */
+    display: none; 
+    
+    /* Отрываем окно от остального контента и фиксируем на экране */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Делаем темный полупрозрачный фон (оверлей) вокруг формы */
+    background-color: rgba(0, 0, 0, 0.6); 
+    
+    /* Вытаскиваем окно ПОВЕРХ футера, хедера и всех остальных блоков */
+    z-index: 9999; 
+    
+    /* Выравниваем само окно с формой ровно по центру экрана */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для самой карточки с формой внутри окна (если класс называется так) */
+#order-modal .modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+}
+/* Стили для кнопки подтверждения заказа внутри формы */
+#order-submit-form button[type="submit"] {
+    background-color: #cc0000; /* Тот самый красный цвет */
+    color: #ffffff; /* Белый текст */
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px; /* Скругляем углы, если нужно */
+    cursor: pointer;
+    transition: background-color 0.2s ease; /* Плавное изменение цвета */
+}
+
+/* Эффект при наведении мыши (делаем цвет чуть темнее) */
+#order-submit-form button[type="submit"]:hover {
+    background-color: #990000; 
+}

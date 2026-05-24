@@ -221,56 +221,104 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Кнопка "ОФОРМИТЬ ЗАЯВКУ"
-      const checkoutBtn = document.getElementById('checkout-btn');
-        if (checkoutBtn) {
-            checkoutBtn.addEventListener('click', async () => {
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                if (cart.length === 0) {
-                    alert('Ваша корзина пуста!');
-                    return;
-                }
+   // === ЛОГИКА ОФОРМЛЕНИЯ ЗАКАЗА ЧЕРЕЗ МОДАЛЬНОЕ ОКНО ===
+ // === ЛОГИКА ОФОРМЛЕНИЯ ЗАКАЗА ЧЕРЕЗ МОДАЛЬНОЕ ОКНО (ОБНОВЛЕННАЯ) ===
+const checkoutBtn = document.getElementById('checkout-btn');
+const orderModal = document.getElementById('order-modal');
+const orderForm = document.getElementById('order-submit-form');
 
-                // Проверяем, авторизован ли пользователь перед покупкой
-                const userRaw = localStorage.getItem('currentUser');
-                if (!userRaw) {
-                    alert('Для оформления заявки необходимо авторизоваться в личном кабинете!');
-                    window.location.href = 'auth.html'; // отправляем логиниться
-                    return;
-                }
-                const currentUser = JSON.parse(userRaw);
-
-                const totalSum = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-                
-                // Формируем объект заказа со связью по userId и начальным статусом
-                const orderData = {
-                    userId: currentUser.id, // Вот эта критически важная привязка!
-                    items: cart,
-                    totalPrice: totalSum,
-                    date: new Date().toLocaleString(),
-                    status: "Принята" // Стартовый статус для Ф-12
-                };
-
-                try {
-                    const response = await fetch('http://localhost:3000/orders', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(orderData)
-                    });
-
-                    if (response.ok) {
-                        alert('Заявка успешно оформлена! Вы можете отслеживать её в личном кабинете.');
-                        localStorage.removeItem('cart');
-                        window.location.reload();
-                    } else {
-                        alert('Не удалось сохранить заказ на сервере.');
-                    }
-                } catch (error) {
-                    console.error('Ошибка при отправке заказа:', error);
-                    alert('Произошла ошибка при связи с сервером.');
-                }
-            });
+// 1. Открытие модального окна
+if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', () => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (cart.length === 0) {
+            alert('Ваша корзина пуста!');
+            return;
         }
 
+        const userRaw = localStorage.getItem('currentUser');
+        if (!userRaw) {
+            alert('Для оформления заявки необходимо авторизоваться!');
+            window.location.href = 'auth.html';
+            return;
+        }
+
+        if (orderModal) {
+            orderModal.style.display = 'flex';
+            
+            // Устанавливаем фокус на первое поле формы ввода
+            const firstInput = orderForm?.querySelector('input, textarea');
+            if (firstInput) firstInput.focus();
+        } else {
+            console.error('Ошибка: HTML-элемент #order-modal не найден на странице!');
+        }
+    });
+}
+
+// 2. Закрытие модального окна (через делегирование событий)
+if (orderModal) {
+    orderModal.addEventListener('click', (e) => {
+        // Закрываем, если клик был по крестику, кнопке "Отмена" или по темному фону
+        const isCloseButton = e.target.closest('#order-modal-close, #order-modal-cancel');
+        const isOverlay = e.target === orderModal;
+
+        if (isCloseButton || isOverlay) {
+            orderModal.style.display = 'none';
+            if (orderForm) orderForm.reset();
+        }
+    });
+}
+
+// 3. Отправка формы
+if (orderForm) {
+    orderForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        
+        // Безопасное получение значений из полей (если поля нет, будет пустая строка)
+        const addressEl = document.getElementById('order-address');
+        const commentEl = document.getElementById('order-comment');
+        const addressValue = addressEl ? addressEl.value.trim() : '';
+        const commentValue = commentEl ? commentEl.value.trim() : '';
+
+        const totalSum = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+        const orderData = {
+            userId: currentUser.id,
+            userName: currentUser.name,
+            userPhone: currentUser.phone,
+            items: cart,
+            totalPrice: totalSum,
+            date: new Date().toLocaleString(),
+            address: addressValue,
+            comment: commentValue,
+            status: "Принята"
+        };
+
+        try {
+            const response = await fetch('http://localhost:3000/orders', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(orderData)
+            });
+
+            if (response.ok) {
+                alert('Заявка успешно оформлена!');
+                localStorage.removeItem('cart');
+                orderModal.style.display = 'none';
+                orderForm.reset();
+                window.location.reload(); 
+            } else {
+                alert('Не удалось сохранить заказ на сервере.');
+            }
+        } catch (error) {
+            console.error('Ошибка при отправке заказа:', error);
+            alert('Произошла ошибка при связи с сервером.');
+        }
+    });
+}
         // Первичный запуск отрисовки при загрузке страницы корзины
         renderCart();
     }

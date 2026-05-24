@@ -14,7 +14,7 @@
       "email": "vanyash2019@gmail.com",
       "phone": "2412412412",
       "password": "123456",
-      "role": "user"
+      "role": "admin"
     },
     {
       "id": "kBfqx8VYlt4",
@@ -38,6 +38,36 @@
       "email": "vanyash222019@gmail.com",
       "phone": "+375222221312",
       "password": "312312312",
+      "role": "user"
+    },
+    {
+      "id": "_B-X3YVYliY",
+      "name": "мвыф авашваы онекрупц",
+      "email": "ufhduhfsduh@gmail.com",
+      "phone": "+375894395839",
+      "birthday": "2005-12-04",
+      "nickname": "иванчай2004",
+      "password": "123456Qw!",
+      "role": "user"
+    },
+    {
+      "id": "ghLUafjMrT4",
+      "name": "аывпртвиЫЫра фцуаыпвро павроровпы",
+      "email": "vanyash201967890@gmail.com",
+      "phone": "+375234564352",
+      "birthday": "2005-04-28",
+      "nickname": "dsafdasvsd",
+      "password": "123456Qw!",
+      "role": "user"
+    },
+    {
+      "id": "PbtJ8ufmhec",
+      "name": "fghjk чварпощлджх",
+      "email": "vanyash20194567890-@gmail.com",
+      "phone": "+375123456789",
+      "birthday": "2005-02-17",
+      "nickname": "вйцайцуацу",
+      "password": "123456Qw!",
       "role": "user"
     }
   ],
@@ -525,8 +555,71 @@
       ],
       "totalPrice": 346500,
       "date": "5/21/2026, 9:12:46 PM",
-      "status": "Принята",
+      "status": "В обработке",
       "id": "EenlINVnzyo"
+    },
+    {
+      "userId": "aTAviRxYYUc",
+      "items": [
+        {
+          "id": "13",
+          "name": "Шлагбаум GARD 5000 (Серый)",
+          "price": 115500,
+          "img": "assets/came-g5000.jpg",
+          "quantity": 5
+        }
+      ],
+      "totalPrice": 577500,
+      "date": "5/23/2026, 4:48:42 PM",
+      "status": "В обработке",
+      "id": "Wonb1QVHhDM"
+    },
+    {
+      "userId": "aTAviRxYYUc",
+      "userName": "иван123",
+      "items": [
+        {
+          "id": "13",
+          "name": "Шлагбаум GARD 5000 (Серый)",
+          "price": 115500,
+          "img": "assets/came-g5000.jpg",
+          "quantity": 2
+        }
+      ],
+      "totalPrice": 231000,
+      "date": "5/23/2026, 4:54:03 PM",
+      "address": "г новокуйбшвкс",
+      "comment": "короче хочу что юы все было чики пуки",
+      "status": "В обработке",
+      "id": "9KiQTfVwG8M"
+    },
+    {
+      "userId": "FB5S_Gm_OiY",
+      "userName": "иван",
+      "items": [
+        {
+          "id": "13",
+          "name": "Шлагбаум GARD 5000 (Серый)",
+          "price": 115500,
+          "img": "assets/came-g5000.jpg",
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 115500,
+      "date": "5/24/2026, 10:45:21 PM",
+      "address": "fdg",
+      "comment": "vdsfb",
+      "status": "Принята",
+      "id": "KPAC4k6axWw"
+    }
+  ],
+  "reviews": [
+    {
+      "userId": "aTAviRxYYUc",
+      "author": "иван123",
+      "text": "м",
+      "date": "23.05.2026",
+      "id": "X0U_s9ND5o4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

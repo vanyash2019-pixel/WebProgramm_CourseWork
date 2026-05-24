@@ -94,7 +94,7 @@
                 <div class="container-2">
                     <div class="header-bottom__wrapper">
                         <ul class="main-nav">
-                            <li><a href="#">Услуги</a></li>
+                  
                             <li class="has-dropdown main-nav__item--catalog">
                                 <a href="#" class="catalog-btn">Каталог Оборудования</a>
                                 <ul class="dropdown-menu">
@@ -230,5 +230,27 @@
 
     <script src="js/auth.js"></script>
    <script src="js/card.js"></script>
+   <div id="order-modal" class="custom-modal" style="display: none;">
+    <div class="modal-content-wrapper">
+        <div class="modal-header-block">
+            <h2>Детали доставки</h2>
+            <button id="order-modal-close" class="close-modal-btn">&times;</button>
+        </div>
+        <form id="order-submit-form" class="modal-form-body">
+            <div class="form-field-group">
+                <label for="order-address">Адрес доставки <span class="required-star">*</span></label>
+                <input type="text" id="order-address" placeholder="г. Санкт-Петербург, ул. ... д. ... кв. ..." required>
+            </div>
+            <div class="form-field-group">
+                <label for="order-comment">Комментарий к заказу</label>
+                <textarea id="order-comment" rows="4" placeholder="Например: код домофона, удобное время, особенности проезда..."></textarea>
+            </div>
+            <div class="modal-footer-actions">
+                <button type="button" id="order-modal-cancel" class="cancel-action-btn">Отмена</button>
+                <button type="submit" class="confirm-action-btn">ПОДТВЕРДИТЬ ЗАКАЗ</button>
+            </div>
+        </form>
+    </div>
+</div>
 </body>
 </html>

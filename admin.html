@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель администратора ЕГДС</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <header class="admin-header">
+        <div class="container-2"> <div class="admin-header__wrapper">
+                <div class="admin-logo-block">
+                    <span>⚙️ Панель администратора ЕГДС</span>
+                </div>
+                <div class="admin-right-group">
+                    <a href="index.html" class="admin-back-btn">
+                        <i class="fa fa-home"></i> Вернуться на сайт
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   <main class="admin-container">
+    <h1 class="admin-title">Управление системой</h1>
+
+    <div class="admin-card">
+        <h2 class="admin-card__title">
+            <i class="fa fa-shopping-basket"></i> Управление заказами и заявками
+        </h2>
+        <div id="admin-orders-list">
+            <p style="color: #666; padding: 15px;">Загрузка заказов...</p>
+        </div>
+    </div>
+
+    <div class="admin-card">
+        <h2 class="admin-card__title">
+            <i class="fa fa-comments"></i> Модерация отзывов
+        </h2>
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Автор и дата</th>
+                        <th style="width: 55%;">Текст отзыва</th>
+                        <th style="width: 20%;">Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-reviews-list">
+                    <tr>
+                        <td colspan="3" style="text-align:center; color: #666; padding: 20px;">
+                            Загрузка отзывов...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

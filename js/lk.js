@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!userRaw) {
         if (mainBlock) {
             mainBlock.innerHTML = `
-                <div class="access-denied" style="text-align: center; padding: 40px; width: 100%;">
-                    <h2 style="font-size: 26px; color: #cc0000; margin-bottom: 15px; font-weight:700;">ДОСТУП ОГРАНИЧЕН</h2>
-                    <p style="margin-bottom: 25px; color: #666; font-size: 15px;">Для просмотра личного кабинета необходимо авторизоваться на сайте.</p>
-                    <a href="auth.html" style="color: #ffffff; background: #cc0000; padding: 12px 25px; text-decoration: none; border-radius: 4px; font-weight: bold; text-transform: uppercase; font-size: 13px; display: inline-block; letter-spacing:0.5px;">Войти в аккаунт</a>
+                <div class="access-denied">
+                    <h2>ДОСТУП ОГРАНИЧЕН</h2>
+                    <p>Для просмотра личного кабинета необходимо авторизоваться на сайте.</p>
+                    <a href="auth.html" class="btn-login">Войти в аккаунт</a>
                 </div>
             `;
         }
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const sessionUser = JSON.parse(userRaw);
     const API_URL = `http://localhost:3000/users/${sessionUser.id}`;
-    const ORDERS_API_URL = `http://localhost:3000/orders`; // Путь к коллекции заказов
+    const ORDERS_API_URL = `http://localhost:3000/orders`; 
 
     // Элементы профиля
     const nameInput = document.getElementById('user-name');
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const roleDiv = document.getElementById('user-role');
     const profileForm = document.getElementById('profile-form');
 
-    // Элементы переключения вкладок и контента
+    // Элементы переключения вкладок
     const menuProfileBtn = document.getElementById('menu-profile-btn');
     const menuOrdersBtn = document.getElementById('menu-orders-btn');
     const profileContent = document.getElementById('lk-profile-content');
@@ -36,17 +36,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let userPasswordBackup = "";
 
-    // 2. Подгружаем актуальные данные пользователя с json-server
+    // 2. Подгружаем актуальные данные пользователя
     fetch(API_URL)
         .then(res => {
             if (!res.ok) throw new Error('Ошибка сети');
             return res.json();
         })
         .then(userData => {
-            nameInput.value = userData.name || '';
-            emailInput.value = userData.email || '';
-            phoneInput.value = userData.phone || '';
-            roleDiv.textContent = userData.role === 'admin' ? 'Администратор' : 'Клиент ЕГДС';
+            if (nameInput) nameInput.value = userData.name || '';
+            if (emailInput) emailInput.value = userData.email || '';
+            if (phoneInput) phoneInput.value = userData.phone || '';
+            
+            if (roleDiv) {
+                roleDiv.textContent = (userData.role === 'admin' || userData.role === 'administrator') 
+                    ? 'Администратор' 
+                    : 'Клиент ЕГДС';
+            }
             userPasswordBackup = userData.password;
         })
         .catch(err => {
@@ -54,29 +59,29 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Ошибка загрузки данных с сервера. Возможно, json-server не запущен.');
         });
 
-    // 3. Логика переключения вкладок в Личном кабинете
+    // 3. Логика переключения вкладок
     if (menuProfileBtn && menuOrdersBtn) {
         menuProfileBtn.addEventListener('click', () => {
             menuProfileBtn.classList.add('active');
             menuOrdersBtn.classList.remove('active');
-            profileContent.style.display = 'block';
-            ordersContent.style.display = 'none';
+            if (profileContent) profileContent.style.display = 'block';
+            if (ordersContent) ordersContent.style.display = 'none';
         });
 
         menuOrdersBtn.addEventListener('click', () => {
             menuOrdersBtn.classList.add('active');
             menuProfileBtn.classList.remove('active');
-            profileContent.style.display = 'none';
-            ordersContent.style.display = 'block';
+            if (profileContent) profileContent.style.display = 'none';
+            if (ordersContent) ordersContent.style.display = 'block';
             
-            // Вызываем загрузку заказов при переходе на вкладку
             loadUserOrders();
         });
     }
 
-    // 4. Функция загрузки и отображения заказов конкретного пользователя
+    // 4. Функция загрузки и отображения заказов
     async function loadUserOrders() {
-        ordersListContainer.innerHTML = '<p style="color: #666;">Загрузка истории заказов...</p>';
+        if (!ordersListContainer) return;
+        ordersListContainer.innerHTML = '<p class="lk-status-message">Загрузка истории заказов...</p>';
         
         try {
             const response = await fetch(`${ORDERS_API_URL}?userId=${sessionUser.id}`);
@@ -85,37 +90,47 @@ document.addEventListener('DOMContentLoaded', () => {
             const orders = await response.json();
             
             if (orders.length === 0) {
-                ordersListContainer.innerHTML = '<p style="color: #666; font-size: 15px; padding: 10px 0;">У вас пока нет оформленных заказов или заявок.</p>';
+                ordersListContainer.innerHTML = '<p class="lk-status-message">У вас пока нет оформленных заказов или заявок.</p>';
                 return;
             }
+
+            // Функция определения класса цвета для статуса
+            const getStatusClass = (status) => {
+                switch(status) {
+                    case 'Принята': return 'status--accepted';      
+                    case 'В обработке': return 'status--processing';  
+                    case 'Готов': return 'status--ready';        
+                    case 'Отменен': return 'status--cancelled';      
+                    default: return 'status--default';             
+                }
+            };
             
-            let html = '';
-            orders.forEach(order => {
+            ordersListContainer.innerHTML = orders.map(order => {
                 const itemsList = order.items.map(item => `${item.name} (${item.quantity} шт.)`).join(', ');
+                const currentStatus = order.status || 'Приняta';
+                const statusClass = getStatusClass(currentStatus);
                 
-                html += `
-                    <div class="order-item" style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 4px; background: #fff;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: bold; border-bottom: 1px solid #eee; padding-bottom: 5px;">
-                            <span style="color: #333;">Заказ №${order.id} от ${order.date}</span>
-                            <span style="color: #cc0000;">${order.status || 'Принята'}</span>
-                        </div>
-                        <p style="margin: 5px 0; color: #555; font-size: 14px;"><strong>Товары:</strong> ${itemsList}</p>
-                        <p style="margin: 5px 0; color: #111; font-size: 15px; font-weight: bold;"><strong>Сумма заказа:</strong> ${order.totalPrice.toLocaleString()} руб.</p>
-                    </div>
-                `;
-            });
-            
-            ordersListContainer.innerHTML = html;
+             return `
+    <div class="order-item">
+        <div class="order-item__header">
+            <span class="order-item__header-title">Заказ №${order.id} от ${order.date}</span>
+            <span class="${statusClass}">${currentStatus}</span>
+        </div>
+        <p class="order-item__products"><strong>Товары:</strong> ${itemsList}</p>
+        <p class="order-item__total"><strong>Сумма заказа:</strong> ${order.totalPrice.toLocaleString()} руб.</p>
+        
+       <button class="order-status-btn" onclick="openStatusModal('${currentStatus}', '${order.date}')">История статусов</button>
+    </div>
+`;
+            }).join('');
             
         } catch (error) {
             console.error('Ошибка загрузки заказов:', error);
-            ordersListContainer.innerHTML = '<p style="color: #cc0000;">Не удалось загрузить историю заказов.</p>';
+            ordersListContainer.innerHTML = '<p class="lk-status-message lk-error-message">Не удалось загрузить историю заказов.</p>';
         }
     }
 
-    // =========================================================
-    // 5. Обработка отправки формы профиля (Сохранение изменений)
-    // =========================================================
+    // 5. Сохранение изменений профиля
     if (profileForm) {
         profileForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -124,13 +139,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const updatedEmail = emailInput.value.trim().toLowerCase();
             const updatedPhone = phoneInput.value.trim();
 
-            // --- НОВАЯ ВАЛИДАЦИЯ ДЛИНЫ ТЕЛЕФОНА ---
             if (updatedPhone.length > 13) {
                 alert('Ошибка: Номер телефона не может быть длиннее 13 символов!');
                 return;
             }
 
-            if (updatedPhone.length < 9) { // Небольшая проверка на слишком короткий номер
+            if (updatedPhone.length < 9) {
                 alert('Ошибка: Номер телефона слишком короткий!');
                 return;
             }
@@ -178,13 +192,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
             } catch (error) {
-                console.error('Ошибка при更新 профиля:', error);
+                console.error('Ошибка при обновлении профиля:', error);
                 alert('Произошла ошибка при связи с сервером.');
             }
         });
     }
 
-    // 6. Обработчик кнопки выхода внутри ЛК
+    // 6. Обработчик кнопки выхода
     const internalLogoutBtn = document.getElementById('lk-internal-logout');
     if (internalLogoutBtn) {
         internalLogoutBtn.addEventListener('click', () => {
@@ -194,3 +208,63 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// Открытие окна (теперь принимает и статус, и дату заказа)
+window.openStatusModal = function(currentStatus, orderDate) {
+    const modal = document.getElementById('status-modal');
+    const timelineContainer = document.getElementById('status-timeline-container');
+
+    const standardFlow = ['Принята', 'В обработке', 'Готов'];
+    let html = '<div class="timeline">';
+
+    if (currentStatus === 'Отменен') {
+        html += `
+            <div class="timeline-item active">
+                <div class="timeline-title">Принята</div>
+                <div class="timeline-date">${orderDate}</div>
+            </div>
+            <div class="timeline-item cancelled">
+                <div class="timeline-title">Отменен</div>
+            </div>
+        `;
+    } else {
+        let currentIndex = standardFlow.indexOf(currentStatus);
+        
+        standardFlow.forEach((step, index) => {
+            let isActiveClass = (index <= currentIndex) ? 'active' : '';
+            
+            // Логика вывода дат
+            let dateHtml = '';
+            if (index === 0) {
+                // На первый шаг всегда ставим дату создания заказа
+                dateHtml = `<div class="timeline-date">${orderDate}</div>`;
+            } else if (index === currentIndex) {
+                // На текущий активный шаг пишем статус
+                dateHtml = `<div class="timeline-date">Текущий этап</div>`;
+            }
+            
+            html += `
+                <div class="timeline-item ${isActiveClass}">
+                    <div class="timeline-title">${step}</div>
+                    ${dateHtml}
+                </div>
+            `;
+        });
+    }
+
+    html += '</div>';
+    timelineContainer.innerHTML = html;
+    modal.style.display = 'flex';
+};
+
+// Железобетонная функция закрытия по крестику
+window.closeStatusModal = function() {
+    document.getElementById('status-modal').style.display = 'none';
+};
+
+// Закрытие по клику мимо окна (по темному фону)
+window.onclick = function(event) {
+    const modal = document.getElementById('status-modal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+};
