@@ -241,3 +241,57 @@ body {
     box-sizing: border-box;
     margin-right: 170px;
 }
+/* --- Стили для карточек заказов в админке --- */
+.admin-order-card {
+    margin-bottom: 20px;
+}
+
+.admin-order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.admin-order-date {
+    color: #666;
+    font-size: 14px;
+}
+
+.admin-order-details p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+.admin-order-price {
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.admin-order-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: var(--light-gray);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.admin-order-actions label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.admin-order-select {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    outline: none;
+    font-family: inherit;
+}
+
+.admin-btn-right {
+    margin-left: auto; /* Толкает кнопку удаления в правый край */
+}

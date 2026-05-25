@@ -106,7 +106,7 @@
                     </ul>
                 </li>
                <li><a href="card.html">Корзина</a></li>
-                <li><a href="#">Контакты</a></li>
+                    <li><a href="favorites.html">Избранное</a></li>
             </ul>
 
            
@@ -157,6 +157,9 @@
 <div class="b-services-row">
     
     <div class="b-services-card-horizontal" data-id="4">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/nero-8661.jpg" alt="Считыватель 8661"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Считыватель 8661 (антивандальный)</span></div>
@@ -172,6 +175,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="5">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/remote-4.jpg" alt="Пульт 8101-4"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Пульт Radio 8101-4 (4-канальный)</span></div>
@@ -187,6 +193,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="6">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/receiver-8113.jpg" alt="Приемник 8113"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Приемник Radio 8113 IP65</span></div>
@@ -202,6 +211,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="7">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/antenna.jpg" alt="Антенна"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Внешняя антенна Nero</span></div>
@@ -217,6 +229,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="8">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/ip-module.jpg" alt="IP модуль"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Интерфейсный модуль IP-Gateway</span></div>
@@ -232,6 +247,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="9">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/power.jpg" alt="Блок питания"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Блок питания 12В/2А DIN</span></div>
@@ -247,6 +265,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="10">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/lock.jpg" alt="Замок"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Электромагнитный замок ML-280</span></div>
@@ -262,6 +283,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="11">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/button.jpg" alt="Кнопка"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Кнопка выхода сенсорная</span></div>
@@ -277,6 +301,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="12">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/z5r.jpg" alt="Контроллер"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Контроллер автономный Z-5R</span></div>
@@ -459,6 +486,7 @@
         
     });
 </script>
+   <script src="js/favorites.js"></script>
 <script type="module" src="js/catalog-auth-guard.js"></script>
 <script src="js/auth.js"></script>
    <script src="js/card.js"></script>

@@ -65,28 +65,47 @@ function renderAdminOrders(orders) {
 
     const statuses = ['Принята', 'В обработке', 'Готов', 'Отменен'];
 
-    container.innerHTML = orders.map(order => {
-        const currentStatus = order.status || 'Принята';
-        const itemsText = order.items.map(i => `${i.name} (${i.quantity} шт.)`).join(', ');
+    try {
+        container.innerHTML = orders.map(order => {
+            // Заглушки на случай, если данных нет в db.json
+            const currentStatus = order.status || 'Принята';
+            const userName = order.userName || 'Не указан';
+            const address = order.address || 'Не указан';
+            const commentText = order.comment || 'Нет комментария';
+            
+            // Проверка товаров
+            const itemsText = (order.items && Array.isArray(order.items)) 
+                ? order.items.map(i => `${i.name} (${i.quantity} шт.)`).join(', ') 
+                : 'Товары не найдены';
 
-        return `
-            <div class="admin-card" style="margin-bottom: 20px;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
-                    <strong>Заказ №${order.id} | Пользователь ID: ${order.userId}</strong>
-                    <span style="color: #666; font-size: 14px;"><i class="fa fa-clock-o"></i> ${order.date}</span>
+            return `
+                <div class="admin-card" id="order-card-${order.id}" style="margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                        <strong>Заказ №${order.id} | Клиент: ${userName} (ID: ${order.userId})</strong>
+                        <span style="color: #666; font-size: 14px;"><i class="fa fa-clock-o"></i> ${order.date}</span>
+                    </div>
+                    <p style="margin: 8px 0; font-size: 15px;"><strong>Адрес:</strong> ${address}</p>
+                    <p style="margin: 8px 0; font-size: 15px;"><strong>Товары:</strong> ${itemsText}</p>
+                    <p style="margin: 8px 0; font-size: 15px;"><strong>Комментарий:</strong> ${commentText}</p>
+                    <p style="margin: 8px 0; font-size: 15px;"><strong>Сумма:</strong> <span style="color: var(--primary-blue); font-weight: 700;">${order.totalPrice} руб.</span></p>
+                    
+                    <div style="margin-top: 15px; display: flex; gap: 10px; align-items: center; background: var(--light-gray); padding: 10px; border-radius: 4px;">
+                        <label style="font-size: 14px; font-weight: 500;">Изменить статус:</label>
+                        <select onchange="updateOrderStatus('${order.id}', this.value)" style="padding: 6px 12px; border-radius: 4px; border: 1px solid var(--border-color); outline: none; font-family: Roboto;">
+                            ${statuses.map(s => `<option value="${s}" ${s === currentStatus ? 'selected' : ''}>${s}</option>`).join('')}
+                        </select>
+                        
+                        <button onclick="deleteOrder('${order.id}')" class="btn-admin btn-admin--delete" style="margin-left: auto;" title="Удалить заказ">
+                            <i class="fa fa-trash"></i> Удалить
+                        </button>
+                    </div>
                 </div>
-                <p style="margin: 8px 0; font-size: 15px;"><strong>Товары:</strong> ${itemsText}</p>
-                <p style="margin: 8px 0; font-size: 15px;"><strong>Сумма:</strong> <span style="color: var(--primary-blue); font-weight: 700;">${order.totalPrice} руб.</span></p>
-                
-                <div style="margin-top: 15px; display: flex; gap: 10px; align-items: center; background: var(--light-gray); padding: 10px; border-radius: 4px;">
-                    <label style="font-size: 14px; font-weight: 500;">Изменить статус:</label>
-                    <select onchange="updateOrderStatus('${order.id}', this.value)" style="padding: 6px 12px; border-radius: 4px; border: 1px solid var(--border-color); outline: none; font-family: Roboto;">
-                        ${statuses.map(s => `<option value="${s}" ${s === currentStatus ? 'selected' : ''}>${s}</option>`).join('')}
-                    </select>
-                </div>
-            </div>
-        `;
-    }).join('');
+            `;
+        }).join('');
+    } catch (e) {
+        console.error("Ошибка при отрисовке заказов:", e);
+        container.innerHTML = `<p style="color: red; padding: 15px;">Ошибка отображения заказов. Проверьте консоль.</p>`;
+    }
 }
 
 window.updateOrderStatus = async function(orderId, newStatus) {
@@ -100,6 +119,27 @@ window.updateOrderStatus = async function(orderId, newStatus) {
     } catch (err) {
         console.error(err);
         alert('Ошибка при обновлении статуса заказа');
+    }
+};
+
+window.deleteOrder = async function(orderId) {
+    if (confirm('Вы уверены, что хотите безвозвратно удалить этот заказ?')) {
+        try {
+            const response = await fetch(`${API_URL}/orders/${orderId}`, { method: 'DELETE' });
+            if (!response.ok) throw new Error('Ошибка удаления заказа');
+            
+            const card = document.getElementById(`order-card-${orderId}`);
+            if (card) {
+                card.style.opacity = '0';
+                card.style.transition = 'opacity 0.3s ease';
+                setTimeout(() => card.remove(), 300);
+            } else {
+                loadAdminData();
+            }
+        } catch (err) {
+            console.error(err);
+            alert('Ошибка при удалении заказа');
+        }
     }
 };
 

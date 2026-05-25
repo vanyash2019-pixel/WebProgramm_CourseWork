@@ -104,7 +104,7 @@
                             </ul>
                         </li>
                            <li><a href="card.html">Корзина</a></li>
-                        <li><a href="#">Контакты</a></li>
+                      <li><a href="favorites.html">Избранное</a></li>
                     </div>
 
                    
@@ -191,6 +191,9 @@
 
          <div class="b-services-row">
     <div class="b-services-card-horizontal" data-id="25">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic">
             <img src="/upload/iblock/d37/hsyxf3dxu8pfgeo4ipggpho0h739zd4t.jpeg" alt="CAME SMA">
         </div>
@@ -210,6 +213,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="26">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic">
             <img src="/upload/iblock/500/i37v5h7c6ua75qjj4iflr7g346e96xft.jpeg" alt="CAME SMA2">
         </div>
@@ -229,6 +235,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="27">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic">
             <img src="/upload/iblock/d37/hsyxf3dxu8pfgeo4ipggpho0h739zd4t.jpeg" alt="Провод индукционной петли CAME">
         </div>
@@ -404,6 +413,7 @@
         initSlider();
     });
 </script>
+   <script src="js/favorites.js"></script>
 <script type="module" src="js/catalog-auth-guard.js"></script>
 <script src="js/auth.js"></script>
    <script src="js/card.js"></script>

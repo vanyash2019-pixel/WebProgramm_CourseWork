@@ -575,25 +575,6 @@
       "id": "Wonb1QVHhDM"
     },
     {
-      "userId": "aTAviRxYYUc",
-      "userName": "иван123",
-      "items": [
-        {
-          "id": "13",
-          "name": "Шлагбаум GARD 5000 (Серый)",
-          "price": 115500,
-          "img": "assets/came-g5000.jpg",
-          "quantity": 2
-        }
-      ],
-      "totalPrice": 231000,
-      "date": "5/23/2026, 4:54:03 PM",
-      "address": "г новокуйбшвкс",
-      "comment": "короче хочу что юы все было чики пуки",
-      "status": "В обработке",
-      "id": "9KiQTfVwG8M"
-    },
-    {
       "userId": "FB5S_Gm_OiY",
       "userName": "иван",
       "items": [
@@ -611,6 +592,23 @@
       "comment": "vdsfb",
       "status": "Принята",
       "id": "KPAC4k6axWw"
+    },
+    {
+      "userId": "FB5S_Gm_OiY",
+      "userName": "иван",
+      "items": [
+        {
+          "id": "13",
+          "price": 115500,
+          "quantity": 4
+        }
+      ],
+      "totalPrice": 462000,
+      "date": "5/25/2026, 11:28:29 PM",
+      "address": "das",
+      "comment": "afs",
+      "status": "Принята",
+      "id": "uYvqrB61bY0"
     }
   ],
   "reviews": [
@@ -622,5 +620,6 @@
       "id": "X0U_s9ND5o4"
     }
   ],
+  "favorites": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

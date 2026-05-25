@@ -104,7 +104,7 @@
                             </ul>
                         </li>
                           <li><a href="card.html">Корзина</a></li>
-                        <li><a href="#">Контакты</a></li>
+                          <li><a href="favorites.html">Избранное</a></li>
                     </div>
 
                  
@@ -154,6 +154,9 @@
                      <div class="b-services-row">
     
     <div class="b-services-card-horizontal" data-id="28">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/dual-detector-m2.jpg" alt="Детектор MATRIX2-24"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Двухканальный петлевой детектор MATRIX2-24</span></div>
@@ -167,6 +170,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="29">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/ready-loop-6.jpg" alt="Петля 6м"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Готовая индукционная петля LP-6 (контур 2х1м)</span></div>
@@ -180,6 +186,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="30">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/ready-loop-10.jpg" alt="Петля 10м"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Готовая индукционная петля LP-10 (контур 3х2м)</span></div>
@@ -193,6 +202,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="31">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/loop-sealant.jpg" alt="Герметик"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Полиуретановый герметик для петель (дилатационный)</span></div>
@@ -206,6 +218,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="32">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/detector-din-2.jpg" alt="Детектор DIN"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Двухканальный детектор присутствия на DIN-рейку</span></div>
@@ -219,6 +234,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="33">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/loop-wire-100.jpg" alt="Провод для петли"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Высокопрочный кабель для петель (бухта 100м)</span></div>
@@ -232,6 +250,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="34">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/feig-vek.jpg" alt="Контроллер FEIG"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Промышленный контроллер петель FEIG VEK VEK-M2H</span></div>
@@ -245,6 +266,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="35">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/junction-box-loop.jpg" alt="Коробка IP67"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Распределительная коробка для петель IP67</span></div>
@@ -258,6 +282,9 @@
     </div>
 
     <div class="b-services-card-horizontal" data-id="36">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/loop-tester.jpg" alt="Тестер петли"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Диагностический прибор-тестер индукционных систем</span></div>
@@ -426,6 +453,7 @@
         initSlider();
     });
 </script>
+   <script src="js/favorites.js"></script>
 <script type="module" src="js/catalog-auth-guard.js"></script>
 <script src="js/auth.js"></script>
    <script src="js/card.js"></script>

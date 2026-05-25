@@ -618,6 +618,8 @@ line-height: 120%; /* 19.2px */
 
 
 
+
+
 .equipment-catalog {
  padding: 20px 0 20px 0; 
  margin-left: 115px;
@@ -1764,4 +1766,48 @@ line-height: 120%; /* 21.6px */
 
 .dropdown-menu a:hover {
     background: #f9f9f9;
+}
+/* Делаем так, чтобы карточка была базой для позиционирования */
+.b-services-card-horizontal {
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Настройка кнопки сердечка в углу */
+.favorite-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #d9534f;
+    padding: 0;
+}
+
+/* На всякий случай добавим эффект при наведении */
+.favorite-btn:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+/* Остальные стили */
+.b-card-pic img {
+    max-width: 100%;
+}
+
+.b-card-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.b-card-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
 }

@@ -106,7 +106,7 @@
                     </ul>
                 </li>
                    <li><a href="card.html">Корзина</a></li>
-                <li><a href="#">Контакты</a></li>
+                  <li><a href="favorites.html">Избранное</a></li>
             </ul>
 
          
@@ -155,7 +155,10 @@
                     <div class="b-services-content">
 <div class="b-services-row">
 
-    <div class="b-services-card-horizontal" data-id="16" data-name="Фотоэлементы безопасности DIR10" data-price="4300" data-img="assets/photocells.jpg" data-features="Дальность действия: до 10 м;Питание: 12-24В AC/DC;Тип монтажа: накладной;Материал корпуса: ABS-пластик">
+    <div class="b-services-card-horizontal" data-id="16" >
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/photocells.jpg" alt="Фотоэлементы безопасности DIR10"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Фотоэлементы безопасности DIR10</span></div>
@@ -170,7 +173,10 @@
         </div>
     </div>
 
-    <div class="b-services-card-horizontal" data-id="17" data-name="Сигнальная лампа KLED 24В" data-price="3100" data-img="assets/lamp.jpg" data-features="Тип источника: LED;Напряжение питания: 24В;Встроенная антенна: есть (433 МГц);Класс защиты: IP54">
+    <div class="b-services-card-horizontal" data-id="17" >
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/lamp.jpg" alt="Сигнальная лампа KLED 24В"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Сигнальная лампа KLED 24В</span></div>
@@ -185,7 +191,10 @@
         </div>
     </div>
 
-    <div class="b-services-card-horizontal" data-id="18" data-name="Обогреватель тумбы шлагбаума PSR1" data-price="4900" data-img="assets/heater.jpg" data-features="Мощность: 50 Вт;Температура включения: ниже +5°C;Питание: 220В;Тип крепления: бандажный">
+    <div class="b-services-card-horizontal" data-id="18" >
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/heater.jpg" alt="Обогреватель тумбы шлагбаума PSR1"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Обогреватель тумбы шлагбаума PSR1</span></div>
@@ -200,7 +209,10 @@
         </div>
     </div>
 
-    <div class="b-services-card-horizontal" data-id="19" data-name="GSM-модуль RC-200 (на 2000 номеров)" data-price="7200" data-img="assets/gsm-mod.jpg" data-features="Память: до 2000 номеров;Настройка: SMS / USB-кабель;Реле управления: 1 шт (до 5А);Стандарт связи: 2G / GPRS">
+    <div class="b-services-card-horizontal" data-id="19">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/gsm-mod.jpg" alt="GSM-модуль RC-200"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">GSM-модуль RC-200 (на 2000 номеров)</span></div>
@@ -215,7 +227,10 @@
         </div>
     </div>
 
-    <div class="b-services-card-horizontal" data-id="20" data-name="Двухканальный петлевой детектор SMA2" data-price="11800" data-img="assets/loop-det.jpg" data-features="Количество каналов: 2 канала;Настройка чувствительности: автоматическая;Тип монтажа: DIN-рейка;Индикация неисправности петли: Да">
+    <div class="b-services-card-horizontal" data-id="20">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/loop-det.jpg" alt="Двухканальный петлевой детектор SMA2"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Двухканальный петлевой детектор SMA2</span></div>
@@ -230,7 +245,10 @@
         </div>
     </div>
 
-    <div class="b-services-card-horizontal" data-id="21" data-name="Радиобрелок Intro II 8501-4" data-price="3400" data-img="assets/intro-remote.jpg" data-features="Серия: Intro II;Тип кода: защищенный динамический;Частота: 434.42 МГц;Количество каналов: 4">
+    <div class="b-services-card-horizontal" data-id="21">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/intro-remote.jpg" alt="Радиобрелок Intro II 8501-4"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Радиобрелок Intro II 8501-4</span></div>
@@ -245,7 +263,10 @@
         </div>
     </div>
 
-    <div class="b-services-card-horizontal" data-id="22" data-name="Кодовая панель врезная KEY-90" data-price="5100" data-img="assets/keypad.jpg" data-features="Количество кодов: до 99;Подсветка клавиш: светодиодная;Материал: цинковый сплав;Тип установки: врезной">
+    <div class="b-services-card-horizontal" data-id="22" >
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/keypad.jpg" alt="Кодовая панель врезная KEY-90"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Кодовая панель врезная KEY-90</span></div>
@@ -260,7 +281,10 @@
         </div>
     </div>
 
-    <div class="b-services-card-horizontal" data-id="23" data-name="Стрела прямоугольная для шлагбаума 4м" data-price="9600" data-img="assets/boom-4m.jpg" data-features="Длина: 4000 мм;Сечение: 60х40 мм;Материал: алюминий;Светоотражатели в комплекте: Да">
+    <div class="b-services-card-horizontal" data-id="23">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/boom-4m.jpg" alt="Стрела прямоугольная для шлагбаума 4м"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Стрела прямоугольная для шлагбаума 4м</span></div>
@@ -275,7 +299,10 @@
         </div>
     </div>
 
-    <div class="b-services-card-horizontal" data-id="24" data-name="Радиоприемник внешний Intro II 8513" data-price="4200" data-img="assets/intro-receiver.jpg" data-features="Совместимость: пульты Intro II;Память устройства: 500 пультов;Класс защиты корпуса: IP55;Питание устройства: 12-24В AC/DC">
+    <div class="b-services-card-horizontal" data-id="24">
+          <button class="favorite-btn" onclick="toggleFavorite(this)">
+        <i class="fa fa-heart-o"></i>
+    </button>
         <div class="b-card-pic"><img src="assets/intro-receiver.jpg" alt="Радиоприемник внешний Intro II 8513"></div>
         <div class="b-card-content">
             <div class="b-card-header"><span class="b-card-title">Радиоприемник внешний Intro II 8513</span></div>
@@ -458,6 +485,7 @@
         
     });
 </script>
+   <script src="js/favorites.js"></script>
 <script type="module" src="js/catalog-auth-guard.js"></script>
    <script src="js/auth.js"></script>
       <script src="js/card.js"></script>
