@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         buyButtons.forEach(button => {
             button.classList.add('disabled-style');
             // Опционально: можно поменять текст кнопки, чтобы сразу было понятно
-            button.textContent = ' Купить'; 
+            button.textContent = ' В корзину'; 
         });
     }
 

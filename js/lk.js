@@ -107,28 +107,62 @@ document.addEventListener('DOMContentLoaded', () => {
             
             ordersListContainer.innerHTML = orders.map(order => {
                 const itemsList = order.items.map(item => `${item.name} (${item.quantity} шт.)`).join(', ');
-                const currentStatus = order.status || 'Приняta';
+                const currentStatus = order.status || 'Принята';
                 const statusClass = getStatusClass(currentStatus);
                 
-             return `
-    <div class="order-item">
-        <div class="order-item__header">
-            <span class="order-item__header-title">Заказ №${order.id} от ${order.date}</span>
-            <span class="${statusClass}">${currentStatus}</span>
-        </div>
-        <p class="order-item__products"><strong>Товары:</strong> ${itemsList}</p>
-        <p class="order-item__total"><strong>Сумма заказа:</strong> ${order.totalPrice.toLocaleString()} руб.</p>
-        
-       <button class="order-status-btn" onclick="openStatusModal('${currentStatus}', '${order.date}')">История статусов</button>
-    </div>
-`;
+                // Кнопка «Отменить заказ» показывается, только если он не Готов и не Отменен
+                const showCancelBtn = (currentStatus !== 'Отменен' && currentStatus !== 'Готов');
+                const cancelBtnHtml = showCancelBtn 
+                    ? `<button class="order-cancel-btn" onclick="cancelOrder('${order.id}')">Отменить заказ</button>` 
+                    : '';
+                
+                return `
+                    <div class="order-item">
+                        <div class="order-item__header">
+                            <span class="order-item__header-title">Заказ №${order.id} от ${order.date}</span>
+                            <span class="${statusClass}">${currentStatus}</span>
+                        </div>
+                        <p class="order-item__products"><strong>Товары:</strong> ${itemsList}</p>
+                        <p class="order-item__total"><strong>Сумма заказа:</strong> ${order.totalPrice.toLocaleString()} руб.</p>
+                        
+                        <div class="order-item__actions">
+                            <button class="order-status-btn" onclick="openStatusModal('${currentStatus}', '${order.date}')">История статусов</button>
+                            ${cancelBtnHtml}
+                        </div>
+                    </div>
+                `;
             }).join('');
             
         } catch (error) {
             console.error('Ошибка загрузки заказов:', error);
-            ordersListContainer.innerHTML = '<p class="lk-status-message lk-error-message">Не удалось загрузить историю заказов.</p>';
+            ordersListContainer.innerHTML = '<p class="lk-status-message lk-error-message">Не удалось загрузить история заказов.</p>';
         }
     }
+
+    // === ФУНКЦИЯ ОТМЕНЫ ЗАКАЗА ===
+    // Помещена внутрь DOMContentLoaded, чтобы иметь доступ к функции loadUserOrders()
+    window.cancelOrder = async function(orderId) {
+        if (!confirm('Вы уверены, что хотите отменить этот заказ?')) return;
+
+        try {
+            // Используем метод PATCH, чтобы обновить только статус, не затирая остальные данные заказа
+            const response = await fetch(`${ORDERS_API_URL}/${orderId}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ status: 'Отменен' })
+            });
+
+            if (response.ok) {
+                alert('Заказ успешно отменен!');
+                loadUserOrders(); // Перерисовываем список заказов с новым статусом
+            } else {
+                alert('Не удалось отменить заказ на сервере.');
+            }
+        } catch (error) {
+            console.error('Ошибка при отмене заказа:', error);
+            alert('Произошла ошибка при связи с сервером.');
+        }
+    };
 
     // 5. Сохранение изменений профиля
     if (profileForm) {
@@ -208,7 +242,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-// Открытие окна (теперь принимает и статус, и дату заказа)
+
+// === ЛОГИКА МОДАЛЬНОГО ОКНА СТАТУСОВ ===
 window.openStatusModal = function(currentStatus, orderDate) {
     const modal = document.getElementById('status-modal');
     const timelineContainer = document.getElementById('status-timeline-container');
@@ -222,8 +257,9 @@ window.openStatusModal = function(currentStatus, orderDate) {
                 <div class="timeline-title">Принята</div>
                 <div class="timeline-date">${orderDate}</div>
             </div>
-            <div class="timeline-item cancelled">
+            <div class="timeline-item cancelled active">
                 <div class="timeline-title">Отменен</div>
+                <div class="timeline-date">Заказ аннулирован</div>
             </div>
         `;
     } else {
@@ -232,13 +268,10 @@ window.openStatusModal = function(currentStatus, orderDate) {
         standardFlow.forEach((step, index) => {
             let isActiveClass = (index <= currentIndex) ? 'active' : '';
             
-            // Логика вывода дат
             let dateHtml = '';
             if (index === 0) {
-                // На первый шаг всегда ставим дату создания заказа
                 dateHtml = `<div class="timeline-date">${orderDate}</div>`;
             } else if (index === currentIndex) {
-                // На текущий активный шаг пишем статус
                 dateHtml = `<div class="timeline-date">Текущий этап</div>`;
             }
             
@@ -256,12 +289,10 @@ window.openStatusModal = function(currentStatus, orderDate) {
     modal.style.display = 'flex';
 };
 
-// Железобетонная функция закрытия по крестику
 window.closeStatusModal = function() {
     document.getElementById('status-modal').style.display = 'none';
 };
 
-// Закрытие по клику мимо окна (по темному фону)
 window.onclick = function(event) {
     const modal = document.getElementById('status-modal');
     if (event.target === modal) {
