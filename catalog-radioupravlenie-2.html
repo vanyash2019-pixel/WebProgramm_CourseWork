@@ -3,503 +3,624 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Автоматика проезда</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>Nero Electronics (стр. 2)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css"> 
-     <link rel="stylesheet" href="css/barrier.css"> 
-     <link rel="stylesheet" href="css/dark-theme.css"> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <script src="/js/components/slider.js"></script>
+    <link rel="stylesheet" href="css/barrier.css"> 
+    <link rel="stylesheet" href="css/dark-theme.css"> 
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/js/components/slider.js"></script>
 </head>
 <body>
 
- <div class="wrapper">
-        <header class="header" id="header">
-            
-                  <div class="header-top">
-                <div class="container">
-                    <div class="header-top__wrapper">
-                        <nav class="header-top__nav">
-                  <ul>
-        <li>
-            <a href="javascript:void(0)" id="theme-dark">
-                <span>🌙 Темная тема</span>
-            </a>
-        </li>
-        <li>
-            <a href="javascript:void(0)" id="theme-light">
-                <span>☀️ Светлая тема</span>
-            </a>
-        </li>
-                                <li><a href="#">Наши работы</a></li>
-                                <li><a href="#">Сотрудничество</a></li>
-                                <li><a href="#">Вакансии</a></li>
-                                <li><a href="#">Новости</a></li>
+<div class="wrapper">
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top__wrapper">
+                    <nav class="header-top__nav">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" id="theme-dark">
+                                    <span class="ru">🌙 Темная тема</span><span class="en">🌙 Dark theme</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" id="theme-light">
+                                    <span class="ru">☀️ Светлая тема</span><span class="en">☀️ Light theme</span>
+                                </a>
+                            </li>
+                            
+                            <!-- Переключатель языка -->
+                            <li class="lang-switcher">
+                                <button type="button" id="lang-ru" class="lang-btn active">RUS</button>
+                                <button type="button" id="lang-en" class="lang-btn">ENG</button>
+                            </li>
+                            
+                            <li><a href="#"><span class="ru">Наши работы</span><span class="en">Our Works</span></a></li>
+                            <li><a href="#"><span class="ru">Сотрудничество</span><span class="en">Cooperation</span></a></li>
+                            <li><a href="#"><span class="ru">Вакансии</span><span class="en">Vacancies</span></a></li>
+                            <li><a href="#"><span class="ru">Новости</span><span class="en">News</span></a></li>
+                        </ul>
+                    </nav>
+                    <div class="header-top__address">
+                        <a class="header-location" href="#">
+                            <span><span class="ru">г. СПБ, наб. р. Карповки, 5И</span><span class="en">St. Petersburg, Karpovka Embankment, 5I</span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-center">
+            <div class="container-2">
+                <div class="header-center__wrapper">
+                    <div class="header-center__logo-block">
+                        <a class="header-logo" href="/">
+                            <img src="assets/logo.png" alt="logo" class="logo-img">
+                            <div class="logo-text-group">
+                                <span class="logo-name">ЕГДС</span>
+                                <span class="logo-desc">
+                                    <span class="ru">Единая Городская Диспетчерская Служба Санкт-Петербурга</span>
+                                    <span class="en">Unified City Dispatch Service of St. Petersburg</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="header-contacts-group">
+                        <div class="header-contact">
+                            <div class="contact-icon">
+                                <img src="assets/envelope-regular 1.png" alt="mail" class="custom-icon">
+                            </div>
+                            <div class="contact-content">
+                                <a href="mailto:office@egdsk-spb.ru" class="contact-link">office@egdsk-spb.ru</a>
+                                <a href="#" class="contact-btn">
+                                    <span class="ru">Обратная связь</span><span class="en">Feedback</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="header-contact">
+                            <div class="contact-icon">
+                                <img src="assets/lucide_phone-call.png" alt="phone" class="custom-icon">
+                            </div>
+                            <div class="contact-content">
+                                <a href="tel:+78001003899" class="contact-link">+7(800)100-38-99</a>
+                                <a href="#" class="contact-btn">
+                                    <span class="ru">Заказать звонок</span><span class="en">Request a call</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="header-contact">
+                            <div class="contact-icon" style="width: 20px;"></div> 
+                            <div class="contact-content">
+                                <a href="tel:+78123093663" class="contact-link">+7(812)309-36-63</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="header-bottom">
+            <div class="container-2">
+                <div class="header-bottom__wrapper">
+                    <ul class="main-nav">
+                        <li class="has-dropdown main-nav__item--catalog">
+                            <a href="#" class="catalog-btn">
+                                <span class="ru">Каталог Оборудования</span><span class="en">Equipment Catalog</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="avtomatika.html"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></a></li>
+                                <li><a href="radioupravlenie.html"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></a></li>
+                                <li><a href="svobodnyy-vyezd.html"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></a></li>
+                                <li><a href="full-catalog.html"><span class="ru">Полный каталог</span><span class="en">Full Catalog</span></a></li>
                             </ul>
-                        </nav>
-                        <div class="header-top__address">
-                            <a class="header-location" href="#">
-                                <span>г. СПБ, наб. р. Карповки, 5И</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="header-center">
-                   <div class="container-2">
-                    <div class="header-center__wrapper">
-                        
-                        <div class="header-center__logo-block">
-                            <a class="header-logo" href="/">
-                                <img src="assets/logo.png" alt="logo" class="logo-img">
-                                <div class="logo-text-group">
-                                    <span class="logo-name">ЕГДС</span>
-                                    <span class="logo-desc">Единая Городская Диспетчерская Служба Санкт-Петербурга</span>
-                                </div>
-                            </a>
-                        </div>
-
-                  <div class="header-contacts-group">
-    <div class="header-contact">
-        <div class="contact-icon">
-            <img src="assets/envelope-regular 1.png" alt="mail" class="custom-icon">
-        </div>
-        <div class="contact-content">
-            <a href="mailto:office@egdsk-spb.ru" class="contact-link">office@egdsk-spb.ru</a>
-            <a href="#" class="contact-btn">Обратная связь</a>
-        </div>
-    </div>
-
-    <div class="header-contact">
-        <div class="contact-icon">
-            <img src="assets/lucide_phone-call.png" alt="phone" class="custom-icon">
-        </div>
-        <div class="contact-content">
-            <a href="tel:+78001003899" class="contact-link">+7(800)100-38-99</a>
-            <a href="#" class="contact-btn">Заказать звонок</a>
-        </div>
-    </div>
-
-    <div class="header-contact">
-        <div class="contact-icon" style="width: 20px;"></div> 
-        <div class="contact-content">
-            <a href="tel:+78123093663" class="contact-link">+7(812)309-36-63</a>
-        </div>
-    </div>
-</div>
-                    </div>
-                </div>
-            </div>
-
-<nav class="header-bottom">
-   <div class="container-2">
-        <div class="header-bottom__wrapper">
-            <ul class="main-nav">
-              
-                    <li class="has-dropdown main-nav__item--catalog">
-                    <a href="#" class="catalog-btn">Каталог Оборудования</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="avtomatika.html">Автоматика проезда</a></li>
-                        <li><a href="radioupravlenie.html">Радиоуправление</a></li>
-                        <li><a href="svobodnyy-vyezd.html">Свободный выезд</a></li>
-                          <li><a href="full-catalog.html">Полный каталог товаров</a></li>
+                        </li>
+                        <li><a href="card.html"><span class="ru">Корзина</span><span class="en">Cart</span></a></li>
+                        <li><a href="favorites.html"><span class="ru">Избранное</span><span class="en">Favorites</span></a></li>
                     </ul>
-                </li>
-               <li><a href="card.html">Корзина</a></li>
-                    <li><a href="favorites.html">Избранное</a></li>
-            </ul>
-
-           
-           <div class="header-right-group">
-                        
-
-                            <div class="auth-zone" id="auth-zone"></div>
-                        </div> 
-                    </div>
+                    <div class="header-right-group">
+                        <div class="auth-zone" id="auth-zone"></div>
+                    </div> 
                 </div>
-            </nav>
-        </header>
-
-<main class="page-main">
-    <div class="container container--wide">
-        <!-- Хлебные крошки (3 уровень) -->
-        <nav class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                <a href="/" title="Главная" itemprop="item"><span itemprop="name">Главная</span></a>
-                <meta itemprop="position" content="1" />
-            </span>
-            <span class="separator">/</span>
-            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                <a href="radioupravlenie.html" title="Радиоуправление" itemprop="item"><span itemprop="name">Радиоуправление</span></a>
-                <meta itemprop="position" content="2" />
-            </span>
-            <span class="separator">/</span>
-            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                <span itemprop="name">Nero Electronics (стр. 2)</span>
-                <meta itemprop="position" content="3" />
-            </span>
+            </div>
         </nav>
+    </header>
 
-        <div class="page-header">
-            <h1 class="page-title">Nero Electronics</h1>
-        </div>
+    <main class="page-main">
+        <div class="container container--wide">
+            <nav class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="/" title="Главная" itemprop="item"><span itemprop="name"><span class="ru">Главная</span><span class="en">Home</span></span></a>
+                    <meta itemprop="position" content="1" />
+                </span>
+                <span class="separator">/</span>
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="radioupravlenie.html" title="Радиоуправление" itemprop="item"><span itemprop="name"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></span></a>
+                    <meta itemprop="position" content="2" />
+                </span>
+                <span class="separator">/</span>
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name"><span class="ru">Nero Electronics (стр. 2)</span><span class="en">Nero Electronics (Page 2)</span></span>
+                    <meta itemprop="position" content="3" />
+                </span>
+            </nav>
 
-        <div class="services-container">
-            <div class="b-services-wrapper">
-                <div class="b-services-content">
-<div class="b-services-row">
-    
-    <div class="b-services-card-horizontal" data-id="4">
-          <button class="favorite-btn" onclick="toggleFavorite(this)">
-        <i class="fa fa-heart-o"></i>
-    </button>
-        <div class="b-card-pic"><img src="assets/nero-8661.jpg" alt="Считыватель 8661"></div>
-        <div class="b-card-content">
-            <div class="b-card-header"><span class="b-card-title">Считыватель 8661 (антивандальный)</span></div>
-            <p class="b-card-text">
-                Усиленный корпус для установки в местах с риском механических повреждений. Работает в широком диапазоне температур.
-            </p>
-            <div class="b-card-price">6 200 руб.</div>
-            <div class="b-card-action">
-                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
-                <button class="btn-more buy-btn-catalog">В корзину</button>
+            <div class="page-header">
+                <h1 class="page-title"><span class="ru">Nero Electronics</span><span class="en">Nero Electronics</span></h1>
+            </div>
+
+            <div class="services-container">
+                <div class="b-services-wrapper">
+                    <div class="b-services-content">
+                        <div class="b-services-row">
+                            <div class="b-services-card-horizontal" data-id="4">
+                                <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                    <i class="fa fa-heart-o"></i>
+                                </button>
+                                <div class="b-card-pic"><img src="assets/16.jpg" alt="Считыватель 8661"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header">
+                                        <span class="b-card-title">
+                                            <span class="ru">Считыватель 8661 (антивандальный)</span>
+                                            <span class="en">8661 Reader (Anti-vandal)</span>
+                                        </span>
+                                    </div>
+                                    <p class="b-card-text">
+                                        <span class="ru">Усиленный корпус для установки в местах с риском механических повреждений. Работает в широком диапазоне температур.</span>
+                                        <span class="en">Reinforced housing for installation in areas at risk of mechanical damage. Operates in a wide temperature range.</span>
+                                    </p>
+                                    <div class="b-card-price">6 200 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more btn-details" style="margin-right: 10px;">
+                                            <span class="ru">Подробнее</span><span class="en">Details</span>
+                                        </button>
+                                        <button class="btn-more buy-btn-catalog">
+                                            <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal" data-id="5">
+                                <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                    <i class="fa fa-heart-o"></i>
+                                </button>
+                                <div class="b-card-pic"><img src="assets/17.jpg" alt="Пульт 8101-4"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header">
+                                        <span class="b-card-title">
+                                            <span class="ru">Пульт Radio 8101-4 (4-канальный)</span>
+                                            <span class="en">Radio 8101-4 Remote (4-channel)</span>
+                                        </span>
+                                    </div>
+                                    <p class="b-card-text">
+                                        <span class="ru">Позволяет управлять четырьмя объектами (например, ворота, шлагбаум и освещение) с одного устройства.</span>
+                                        <span class="en">Allows controlling four objects (e.g., gates, barrier gate and lighting) from one device.</span>
+                                    </p>
+                                    <div class="b-card-price">2 800 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more btn-details" style="margin-right: 10px;">
+                                            <span class="ru">Подробнее</span><span class="en">Details</span>
+                                        </button>
+                                        <button class="btn-more buy-btn-catalog">
+                                            <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal" data-id="6">
+                                <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                    <i class="fa fa-heart-o"></i>
+                                </button>
+                                <div class="b-card-pic"><img src="assets/18.jpg" alt="Приемник 8113"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header">
+                                        <span class="b-card-title">
+                                            <span class="ru">Приемник Radio 8113 IP65</span>
+                                            <span class="en">Radio 8113 IP65 Receiver</span>
+                                        </span>
+                                    </div>
+                                    <p class="b-card-text">
+                                        <span class="ru">Исполнительное устройство для скрытого монтажа. Идеально подходит для управления роллетами и маркизами.</span>
+                                        <span class="en">Actuator device for concealed installation. Ideal for controlling roller shutters and awnings.</span>
+                                    </p>
+                                    <div class="b-card-price">3 500 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more btn-details" style="margin-right: 10px;">
+                                            <span class="ru">Подробнее</span><span class="en">Details</span>
+                                        </button>
+                                        <button class="btn-more buy-btn-catalog">
+                                            <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal" data-id="7">
+                                <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                    <i class="fa fa-heart-o"></i>
+                                </button>
+                                <div class="b-card-pic"><img src="assets/19.webp" alt="Антенна"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header">
+                                        <span class="b-card-title">
+                                            <span class="ru">Внешняя антенна Nero</span>
+                                            <span class="en">Nero External Antenna</span>
+                                        </span>
+                                    </div>
+                                    <p class="b-card-text">
+                                        <span class="ru">Увеличивает радиус приема сигнала в условиях плотной застройки или сильных радиопомех.</span>
+                                        <span class="en">Increases signal reception range in conditions of dense development or strong radio interference.</span>
+                                    </p>
+                                    <div class="b-card-price">1 200 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more btn-details" style="margin-right: 10px;">
+                                            <span class="ru">Подробнее</span><span class="en">Details</span>
+                                        </button>
+                                        <button class="btn-more buy-btn-catalog">
+                                            <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal" data-id="8">
+                                <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                    <i class="fa fa-heart-o"></i>
+                                </button>
+                                <div class="b-card-pic"><img src="assets/20.jpg" alt="IP модуль"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header">
+                                        <span class="b-card-title">
+                                            <span class="ru">Интерфейсный модуль IP-Gateway</span>
+                                            <span class="en">IP-Gateway Interface Module</span>
+                                        </span>
+                                    </div>
+                                    <p class="b-card-text">
+                                        <span class="ru">Обеспечивает связь системы Nero с интернетом для управления доступом через мобильное приложение.</span>
+                                        <span class="en">Provides Nero system connection to the internet for access control via mobile app.</span>
+                                    </p>
+                                    <div class="b-card-price">8 900 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more btn-details" style="margin-right: 10px;">
+                                            <span class="ru">Подробнее</span><span class="en">Details</span>
+                                        </button>
+                                        <button class="btn-more buy-btn-catalog">
+                                            <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal" data-id="9">
+                                <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                    <i class="fa fa-heart-o"></i>
+                                </button>
+                                <div class="b-card-pic"><img src="assets/21.jpg" alt="Блок питания"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header">
+                                        <span class="b-card-title">
+                                            <span class="ru">Блок питания 12В/2А DIN</span>
+                                            <span class="en">12V/2A DIN Power Supply</span>
+                                        </span>
+                                    </div>
+                                    <p class="b-card-text">
+                                        <span class="ru">Специализированный блок питания для монтажа на DIN-рейку. Защита от короткого замыкания.</span>
+                                        <span class="en">Specialized power supply for DIN-rail mounting. Short circuit protection.</span>
+                                    </p>
+                                    <div class="b-card-price">950 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more btn-details" style="margin-right: 10px;">
+                                            <span class="ru">Подробнее</span><span class="en">Details</span>
+                                        </button>
+                                        <button class="btn-more buy-btn-catalog">
+                                            <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal" data-id="10">
+                                <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                    <i class="fa fa-heart-o"></i>
+                                </button>
+                                <div class="b-card-pic"><img src="assets/22.webp" alt="Замок"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header">
+                                        <span class="b-card-title">
+                                            <span class="ru">Электромагнитный замок ML-280</span>
+                                            <span class="en">ML-280 Electromagnetic Lock</span>
+                                        </span>
+                                    </div>
+                                    <p class="b-card-text">
+                                        <span class="ru">Сила удержания 280 кг. Предназначен для работы в составе СКУД на офисных и калиточных дверях.</span>
+                                        <span class="en">Holding force 280 kg. Designed for use in access control systems on office and gate doors.</span>
+                                    </p>
+                                    <div class="b-card-price">3 200 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more btn-details" style="margin-right: 10px;">
+                                            <span class="ru">Подробнее</span><span class="en">Details</span>
+                                        </button>
+                                        <button class="btn-more buy-btn-catalog">
+                                            <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal" data-id="11">
+                                <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                    <i class="fa fa-heart-o"></i>
+                                </button>
+                                <div class="b-card-pic"><img src="assets/23.jpg" alt="Кнопка"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header">
+                                        <span class="b-card-title">
+                                            <span class="ru">Кнопка выхода сенсорная</span>
+                                            <span class="en">Touch Exit Button</span>
+                                        </span>
+                                    </div>
+                                    <p class="b-card-text">
+                                        <span class="ru">Бесконтактное управление открытием. Световая индикация состояния замка.</span>
+                                        <span class="en">Contactless opening control. Light indication of lock status.</span>
+                                    </p>
+                                    <div class="b-card-price">1 500 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more btn-details" style="margin-right: 10px;">
+                                            <span class="ru">Подробнее</span><span class="en">Details</span>
+                                        </button>
+                                        <button class="btn-more buy-btn-catalog">
+                                            <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="b-services-card-horizontal" data-id="12">
+                                <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                    <i class="fa fa-heart-o"></i>
+                                </button>
+                                <div class="b-card-pic"><img src="assets/24.webp" alt="Контроллер"></div>
+                                <div class="b-card-content">
+                                    <div class="b-card-header">
+                                        <span class="b-card-title">
+                                            <span class="ru">Контроллер автономный Z-5R</span>
+                                            <span class="en">Z-5R Standalone Controller</span>
+                                        </span>
+                                    </div>
+                                    <p class="b-card-text">
+                                        <span class="ru">Классическое решение для управления замком. Поддерживает до 1364 ключей.</span>
+                                        <span class="en">Classic solution for lock control. Supports up to 1364 keys.</span>
+                                    </p>
+                                    <div class="b-card-price">1 100 руб.</div>
+                                    <div class="b-card-action">
+                                        <button class="btn-more btn-details" style="margin-right: 10px;">
+                                            <span class="ru">Подробнее</span><span class="en">Details</span>
+                                        </button>
+                                        <button class="btn-more buy-btn-catalog">
+                                            <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Пагинация -->
+                        <div class="pagination">
+                            <span class="pagination-label"><span class="ru">Страница:</span><span class="en">Page:</span></span>
+                            <a href="catalog-radioupravlenie.html" class="page-link">1</a>
+                            <a href="#" class="page-link active">2</a>
+                        </div>
+                    </div>
+
+                    <!-- Сайдбар -->
+                    <aside class="b-sidebar">
+                        <span class="b-sidebar__title"><span class="ru">Смотрите также:</span><span class="en">See also:</span></span>
+                        <ul class="b-sidebar__list">
+                            <li class="b-sidebar__item">
+                                <a href="avtomatika.html" class="b-sidebar__link">
+                                    <span class="ru">Автоматика проезда</span><span class="en">Access Automation</span> <span>→</span>
+                                </a>
+                            </li> 
+                            <li class="b-sidebar__item">
+                                <a href="radioupravlenie.html" class="b-sidebar__link">
+                                    <span class="ru">Радиоуправление</span><span class="en">Radio Control</span> <span>→</span>
+                                </a>
+                            </li>
+                            <li class="b-sidebar__item">
+                                <a href="svobodnyy-vyezd.html" class="b-sidebar__link">
+                                    <span class="ru">Свободный выезд</span><span class="en">Free Exit</span> <span>→</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="b-services-card-horizontal" data-id="5">
-          <button class="favorite-btn" onclick="toggleFavorite(this)">
-        <i class="fa fa-heart-o"></i>
-    </button>
-        <div class="b-card-pic"><img src="assets/remote-4.jpg" alt="Пульт 8101-4"></div>
-        <div class="b-card-content">
-            <div class="b-card-header"><span class="b-card-title">Пульт Radio 8101-4 (4-канальный)</span></div>
-            <p class="b-card-text">
-                Позволяет управлять четырьмя объектами (например, ворота, шлагбаум и освещение) с одного устройства.
-            </p>
-            <div class="b-card-price">2 800 руб.</div>
-            <div class="b-card-action">
-                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
-                <button class="btn-more buy-btn-catalog">В корзину</button>
+        
+        <section class="callback-section">
+            <div class="step-container">
+                <div class="callback-wrapper">
+                    <div class="callback-content">
+                        <h3 class="callback-title">
+                            <span class="ru">Если у вас появилось желание оставить отзыв, то не ждите! Нам важно ваше мнение!</span>
+                            <span class="en">If you want to leave a review, don't wait! Your opinion matters to us!</span>
+                        </h3>
+                    </div>
+                    <div class="callback-action">
+                        <button type="button" id="open-review-modal" class="callback-btn">
+                            <span class="ru">Написать отзыв</span><span class="en">Leave a Review</span>
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
-    <div class="b-services-card-horizontal" data-id="6">
-          <button class="favorite-btn" onclick="toggleFavorite(this)">
-        <i class="fa fa-heart-o"></i>
-    </button>
-        <div class="b-card-pic"><img src="assets/receiver-8113.jpg" alt="Приемник 8113"></div>
-        <div class="b-card-content">
-            <div class="b-card-header"><span class="b-card-title">Приемник Radio 8113 IP65</span></div>
-            <p class="b-card-text">
-                Исполнительное устройство для скрытого монтажа. Идеально подходит для управления роллетами и маркизами.
-            </p>
-            <div class="b-card-price">3 500 руб.</div>
-            <div class="b-card-action">
-                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
-                <button class="btn-more buy-btn-catalog">В корзину</button>
-            </div>
-        </div>
-    </div>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-col col-help">
+                    <h4 class="footer-heading heading-help">
+                        <span class="ru">Помощь</span><span class="en">Help</span>
+                    </h4>
+                    <ul class="footer-list list-help">
+                        <li><a href="#"><span class="ru">О компании</span><span class="en">About Company</span></a></li>
+                        <li><a href="#"><span class="ru">Бренды</span><span class="en">Brands</span></a></li>
+                        <li><a href="#"><span class="ru">Наши работы</span><span class="en">Our Works</span></a></li>
+                        <li><a href="#"><span class="ru">Сотрудничество</span><span class="en">Cooperation</span></a></li>
+                        <li><a href="#"><span class="ru">Вакансии</span><span class="en">Vacancies</span></a></li>
+                        <li><a href="#"><span class="ru">Новости</span><span class="en">News</span></a></li>
+                    </ul>
+                </div>
 
-    <div class="b-services-card-horizontal" data-id="7">
-          <button class="favorite-btn" onclick="toggleFavorite(this)">
-        <i class="fa fa-heart-o"></i>
-    </button>
-        <div class="b-card-pic"><img src="assets/antenna.jpg" alt="Антенна"></div>
-        <div class="b-card-content">
-            <div class="b-card-header"><span class="b-card-title">Внешняя антенна Nero</span></div>
-            <p class="b-card-text">
-                Увеличивает радиус приема сигнала в условиях плотной застройки или сильных радиопомех.
-            </p>
-            <div class="b-card-price">1 200 руб.</div>
-            <div class="b-card-action">
-                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
-                <button class="btn-more buy-btn-catalog">В корзину</button>
-            </div>
-        </div>
-    </div>
+                <div class="footer-col col-services">
+                    <h4 class="footer-heading heading-services">
+                        <span class="ru">Услуги</span><span class="en">Services</span>
+                    </h4>
+                    <ul class="footer-list list-services">
+                        <li><a href="#"><span class="ru">Диспетчеризация</span><span class="en">Dispatching</span></a></li>
+                        <li><a href="#"><span class="ru">Автоматизация проезда</span><span class="en">Access Automation</span></a></li>
+                        <li><a href="#"><span class="ru">Система умный шлагбаум</span><span class="en">Smart Barrier System</span></a></li>
+                        <li><a href="#"><span class="ru">Видеонаблюдение</span><span class="en">Video Surveillance</span></a></li>
+                        <li><a href="#"><span class="ru">Контроль доступа</span><span class="en">Access Control</span></a></li>
+                    </ul>
+                </div>
 
-    <div class="b-services-card-horizontal" data-id="8">
-          <button class="favorite-btn" onclick="toggleFavorite(this)">
-        <i class="fa fa-heart-o"></i>
-    </button>
-        <div class="b-card-pic"><img src="assets/ip-module.jpg" alt="IP модуль"></div>
-        <div class="b-card-content">
-            <div class="b-card-header"><span class="b-card-title">Интерфейсный модуль IP-Gateway</span></div>
-            <p class="b-card-text">
-                Обеспечивает связь системы Nero с интернетом для управления доступом через мобильное приложение.
-            </p>
-            <div class="b-card-price">8 900 руб.</div>
-            <div class="b-card-action">
-                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
-                <button class="btn-more buy-btn-catalog">В корзину</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="b-services-card-horizontal" data-id="9">
-          <button class="favorite-btn" onclick="toggleFavorite(this)">
-        <i class="fa fa-heart-o"></i>
-    </button>
-        <div class="b-card-pic"><img src="assets/power.jpg" alt="Блок питания"></div>
-        <div class="b-card-content">
-            <div class="b-card-header"><span class="b-card-title">Блок питания 12В/2А DIN</span></div>
-            <p class="b-card-text">
-                Специализированный блок питания для монтажа на DIN-рейку. Защита от короткого замыкания.
-            </p>
-            <div class="b-card-price">950 руб.</div>
-            <div class="b-card-action">
-                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
-                <button class="btn-more buy-btn-catalog">В корзину</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="b-services-card-horizontal" data-id="10">
-          <button class="favorite-btn" onclick="toggleFavorite(this)">
-        <i class="fa fa-heart-o"></i>
-    </button>
-        <div class="b-card-pic"><img src="assets/lock.jpg" alt="Замок"></div>
-        <div class="b-card-content">
-            <div class="b-card-header"><span class="b-card-title">Электромагнитный замок ML-280</span></div>
-            <p class="b-card-text">
-                Сила удержания 280 кг. Предназначен для работы в составе СКУД на офисных и калиточных дверях.
-            </p>
-            <div class="b-card-price">3 200 руб.</div>
-            <div class="b-card-action">
-                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
-                <button class="btn-more buy-btn-catalog">В корзину</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="b-services-card-horizontal" data-id="11">
-          <button class="favorite-btn" onclick="toggleFavorite(this)">
-        <i class="fa fa-heart-o"></i>
-    </button>
-        <div class="b-card-pic"><img src="assets/button.jpg" alt="Кнопка"></div>
-        <div class="b-card-content">
-            <div class="b-card-header"><span class="b-card-title">Кнопка выхода сенсорная</span></div>
-            <p class="b-card-text">
-                Бесконтактное управление открытием. Световая индикация состояния замка.
-            </p>
-            <div class="b-card-price">1 500 руб.</div>
-            <div class="b-card-action">
-                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
-                <button class="btn-more buy-btn-catalog">В корзину</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="b-services-card-horizontal" data-id="12">
-          <button class="favorite-btn" onclick="toggleFavorite(this)">
-        <i class="fa fa-heart-o"></i>
-    </button>
-        <div class="b-card-pic"><img src="assets/z5r.jpg" alt="Контроллер"></div>
-        <div class="b-card-content">
-            <div class="b-card-header"><span class="b-card-title">Контроллер автономный Z-5R</span></div>
-            <p class="b-card-text">
-                Классическое решение для управления замком. Поддерживает до 1364 ключей.
-            </p>
-            <div class="b-card-price">1 100 руб.</div>
-            <div class="b-card-action">
-                <button class="btn-more btn-details" style="margin-right: 10px;">Подробнее</button>
-                <button class="btn-more buy-btn-catalog">В корзину</button>
-            </div>
-        </div>
-    </div>
-
-</div>
-                    <!-- Пагинация -->
-                    <div class="pagination">
-                        <span class="pagination-label">Страница:</span>
-                        <a href="catalog-radioupravlenie.html" class="page-link">1</a>
-                        <a href="#" class="page-link active">2</a>
+                <div class="footer-col col-products">
+                    <h4 class="footer-heading heading-products">
+                        <span class="ru">Товары</span><span class="en">Products</span>
+                    </h4>
+                    <div class="products-grid-wrapper">
+                        <ul class="footer-list list-products-left">
+                            <li><a href="#"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></a></li>
+                            <li><a href="#"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></a></li>
+                            <li><a href="#"><span class="ru">Распознавание номеров</span><span class="en">License Plate Recognition</span></a></li>
+                            <li><a href="#"><span class="ru">UNF метки</span><span class="en">UNF Tags</span></a></li>
+                            <li><a href="#"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></a></li>
+                        </ul>
+                        <ul class="footer-list list-products-right">
+                            <li><a href="#"><span class="ru">GSM управление</span><span class="en">GSM Control</span></a></li>
+                            <li><a href="#"><span class="ru">Система заявок</span><span class="en">Request System</span></a></li>
+                            <li><a href="#"><span class="ru">Видеонаблюдение</span><span class="en">Video Surveillance</span></a></li>
+                            <li><a href="#"><span class="ru">Контроль доступа</span><span class="en">Access Control</span></a></li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Сайдбар -->
-                 <aside class="b-sidebar">
-    <span class="b-sidebar__title">Смотрите также:</span>
-    <ul class="b-sidebar__list">
-        <li class="b-sidebar__item">
-            <a href="avtomatika.html" class="b-sidebar__link">
-                Автоматика проезда <span>→</span>
-            </a>
-        </li> 
-        <li class="b-sidebar__item">
-            <a href="radioupravlenie.html" class="b-sidebar__link">
-                Радиоуправление <span>→</span>
-            </a>
-        </li>
-        <li class="b-sidebar__item">
-            <a href="svobodnyy-vyezd.html" class="b-sidebar__link">
-                Свободный выезд <span>→</span>
-            </a>
-        </li>
-    </ul>
-</aside>
-            </div>
-        </div>
-    </div>
-    
-<section class="callback-section">
-    <div class="step-container">
-        <div class="callback-wrapper">
-            
-            <div class="callback-content">
-                <h3 class="callback-title">Если у вас появилось желание оставить отзыв, то не ждите! Нам важно ваше мнение!</h3>
-            
-            </div>
-            
-            <div class="callback-action">
-                <button type="button" id="open-review-modal" class="callback-btn">Написать отзыв</button>
-            </div>
-            
-        </div>
-    </div>
-</section>
-</main>
-
-
-
-
-
-
-    
-<footer class="site-footer">
-    <div class="footer-container">
-        
-        <div class="footer-top">
-            
-            <!-- Колонку 1: ПОМОЩЬ -->
-            <div class="footer-col col-help">
-                <h4 class="footer-heading heading-help">Помощь</h4>
-                <ul class="footer-list list-help">
-                    <li><a href="#">О компании</a></li>
-                    <li><a href="#">Бренды</a></li>
-                    <li><a href="#">Наши работы</a></li>
-                    <li><a href="#">Сотрудничество</a></li>
-                    <li><a href="#">Вакансии</a></li>
-                    <li><a href="#">Новости</a></li>
-                </ul>
-            </div>
-
-            <!-- Колонка 2: УСЛУГИ -->
-            <div class="footer-col col-services">
-                <h4 class="footer-heading heading-services">Услуги</h4>
-                <ul class="footer-list list-services">
-                    <li><a href="#">Диспетчеризация</a></li>
-                    <li><a href="#">Автоматизация проезда</a></li>
-                    <li><a href="#">Система умный шлагбаум</a></li>
-                    <li><a href="#">Видеонаблюдение</a></li>
-                    <li><a href="#">Контроль доступа</a></li>
-                </ul>
-            </div>
-
-            <!-- Колонка 3: ТОВАРЫ -->
-            <div class="footer-col col-products">
-                <h4 class="footer-heading heading-products">Товары</h4>
-                <div class="products-grid-wrapper">
-                    <!-- Левая подколонка товаров -->
-                    <ul class="footer-list list-products-left">
-                        <li><a href="#">Автоматика проезда</a></li>
-                        <li><a href="#">Свободный выезд</a></li>
-                        <li><a href="#">Распознавание автомобильных номеров</a></li>
-                        <li><a href="#">UNF метки</a></li>
-                        <li><a href="#">Радиоуправление</a></li>
-                    </ul>
-                    <!-- Правая подколонка товаров -->
-                    <ul class="footer-list list-products-right">
-                        <li><a href="#">GSM управление</a></li>
-                        <li><a href="#">Система заявок</a></li>
-                        <li><a href="#">Видеонаблюдение</a></li>
-                        <li><a href="#">Контроль доступа</a></li>
+                <div class="footer-col col-contacts">
+                    <h4 class="footer-heading heading-contacts">
+                        <span class="ru">Контакты</span><span class="en">Contacts</span>
+                    </h4>
+                    <ul class="spec-contact-list">
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-map-marker"></i></div>
+                            <div class="spec-contact-content">
+                                <span class="spec-contact-text">
+                                    <span class="ru">Санкт-Петербург, наб. р. Карповки 5И</span>
+                                    <span class="en">St. Petersburg, Karpovka Embankment, 5I</span>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-phone"></i></div>
+                            <div class="spec-contact-content">
+                                <span class="spec-contact-text">
+                                    <span class="ru">8 (800)100-38-99<br>+7(812)309-36-63</span>
+                                    <span class="en">8 (800)100-38-99<br>+7(812)309-36-63</span>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-envelope"></i></div>
+                            <div class="spec-contact-content">
+                                <a href="mailto:office@intellekt-pro.ru" class="spec-contact-link">office@intellekt-pro.ru</a>
+                            </div>
+                        </li>
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-clock-o"></i></div>
+                            <div class="spec-contact-content">
+                                <span class="spec-contact-text">
+                                    <span class="ru">Пн-Пт, 10-19</span>
+                                    <span class="en">Mon-Fri, 10:00-19:00</span>
+                                </span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Колонка 4: КОНТАКТЫ -->
-   <div class="footer-col col-contacts">
-    <h4 class="footer-heading heading-contacts">Контакты</h4>
-    <ul class="spec-contact-list">
-        <!-- Адрес -->
-        <li class="spec-contact-item">
-            <div class="spec-contact-icon"><i class="fa fa-map-marker"></i></div>
-            <div class="spec-contact-content">
-                <span class="spec-contact-text">Санкт-Петербург, наб. р. Карповки 5И</span>
+            <div class="footer-bottom">
+                <p class="copyright-text">
+                    <span class="ru">2010-2024, Системы безопасности в Санкт-Петербурге (СПБ) | Интеллект Про | Все права защищены.<br>Информация о ценах на сайте не является публичной офертой.</span>
+                    <span class="en">2010-2024, Security Systems in St. Petersburg | Intellekt Pro | All rights reserved.<br>Price information on the website is not a public offer.</span>
+                </p>
             </div>
-        </li>
-        
-        <!-- Телефоны -->
-        <li class="spec-contact-item">
-            <div class="spec-contact-icon"><i class="fa fa-phone"></i></div>
-            <div class="spec-contact-content">
-                <span class="spec-contact-text">
-                    8 (800)100-38-99<br>
-                    +7(812)309-36-63
-                </span>
-            </div>
-        </li>
-        
-        <!-- Почта -->
-        <li class="spec-contact-item">
-            <div class="spec-contact-icon"><i class="fa fa-envelope"></i></div>
-            <div class="spec-contact-content">
-                <a href="mailto:office@intellekt-pro.ru" class="spec-contact-link">office@intellekt-pro.ru</a>
-            </div>
-        </li>
-        
-        <!-- Время работы -->
-        <li class="spec-contact-item">
-            <div class="spec-contact-icon"><i class="fa fa-clock-o"></i></div>
-            <div class="spec-contact-content">
-                <span class="spec-contact-text">Пн-Пт, 10-19</span>
-            </div>
-        </li>
-    </ul>
-</div>
-        </div> <!-- /footer-top -->
-
-        <!-- Нижняя часть: КОПИРАЙТ -->
-        <div class="footer-bottom">
-            <p class="copyright-text">
-                2010-2024, Системы безопасности в Санкт-Петербурге (СПБ) | Интеллект Про | Все права защищены.<br>
-                Информация о ценах на сайте не является публичной офертой.
-            </p>
         </div>
+    </footer>
 
-    </div> <!-- /footer-container -->
-</footer>
-<div id="product-modal" class="modal-overlay" style="display: none;">
-    <div class="modal-window">
-        <button id="modal-close" class="close-btn">&times;</button>
-        <div class="modal-grid">
-            <img id="modal-img" src="" alt="">
-            <div class="modal-info">
-                <h3 id="modal-title" style="margin-top: 0; font-size: 1.5rem;"></h3>
-                <div id="modal-price" style="font-weight: bold; font-size: 1.3rem; color: #e74c3c; margin-bottom: 10px;"></div>
-                <ul id="modal-specs" style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;"></ul>
-                 <button class="btn-more buy-btn-catalog">В корзину</button>
+    <!-- Модальное окно отзыва (с переведёнными placeholder) -->
+    <div id="review-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
+        <div class="modal-content" style="background: #fff; padding: 30px; border-radius: 8px; max-width: 500px; width: 90%; position: relative;">
+            <span id="close-review-modal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #999;">&times;</span>
+            <h3 style="margin-top: 0; margin-bottom: 20px; font-size: 22px; color: #333;">
+                <span class="ru">Оставить отзыв</span><span class="en">Leave a Review</span>
+            </h3>
+            <form id="review-form">
+                <input type="text" id="review-author" 
+                       data-placeholder-ru="Ваше имя" 
+                       data-placeholder-en="Your Name" 
+                       placeholder="Ваше имя" 
+                       required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                
+                <textarea id="review-text" 
+                          data-placeholder-ru="Напишите ваш отзыв здесь..." 
+                          data-placeholder-en="Write your review here..." 
+                          placeholder="Напишите ваш отзыв здесь..." 
+                          required style="width: 100%; height: 150px; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; resize: vertical; box-sizing: border-box; font-family: inherit;"></textarea>
+                
+                <button type="submit" style="width: 100%; padding: 12px; background: #cc0000; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 16px;">
+                    <span class="ru">Отправить отзыв</span><span class="en">Send Review</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно товара (динамическое) -->
+    <div id="product-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-window">
+            <button id="modal-close" class="close-btn">&times;</button>
+            <div class="modal-grid">
+                <img id="modal-img" src="" alt="">
+                <div class="modal-info">
+                    <h3 id="modal-title" style="margin-top: 0; font-size: 1.5rem;"></h3>
+                    <div id="modal-price" style="font-weight: bold; font-size: 1.3rem; color: #e74c3c; margin-bottom: 10px;"></div>
+                    <ul id="modal-specs" style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;"></ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<script type="module">
-    import { initSlider } from './js/components/slider.js';
 
-    // Запускаем слайдер, когда документ готов
-    document.addEventListener('DOMContentLoaded', () => {
-        initSlider();
-        
-    });
-</script>
-   <script src="js/favorites.js"></script>
-<script type="module" src="js/catalog-auth-guard.js"></script>
-<script src="js/auth.js"></script>
-   <script src="js/card.js"></script>
+    <!-- Скрипты -->
+    <script type="module">
+        import { initSlider } from './js/components/slider.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            initSlider();
+        });
+    </script>
+    <script src="js/favorites.js"></script>
+    <script type="module" src="js/catalog-auth-guard.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/reviews.js"></script>
+    
+    <!-- Переключатель языка (правильное имя файла) -->
+    <script src="js/language.js"></script>
 </body>
 </html>

@@ -1,464 +1,679 @@
-/* Основные переменные для перекраски */
-body.dark {
-    --bg-main: #1a1a1a;       /* Основной фон (был белый) */
-    --bg-secondary: #252525;  /* Для блоков типа header-top и callback */
-    --text-main: #f0f0f0;     /* Основной текст */
-    --border-color: #333333;  /* Цвет линий и рамок */
+body.dark, body.dark-theme {
+    --bg-main: #1a1a1a;
+    --bg-secondary: #252525;
+    --text-main: #f0f0f0;
+    --border-color: #333333;
+    background-color: #1a1a1a;
+    color: #ffffff;
 }
 
-/* Применяем переменные к твоим классам */
-body.dark {
-    background-color: var(--bg-main);
-    color: var(--text-main);
-}
-
-/* Хедеры */
-body.dark .header-top {
+body.dark .header-top, body.dark-theme .header-top {
     background-color: #111111;
     border-bottom: 1px solid var(--border-color);
 }
 
-body.dark .header-center {
+body.dark .header-center, body.dark-theme .header-center {
     background-color: var(--bg-main);
     border-bottom: 1px solid var(--border-color);
 }
 
-/* Слайдер (тот что в коробке) */
-body.dark .slider-wrapper {
-    background: #2d2d2d; /* Серый фон слайдера делаем темнее */
+body.dark .slider-wrapper, body.dark-theme .slider-wrapper {
+    background: #2d2d2d;
 }
 
-body.dark .slide-title, 
-body.dark .slide-item,
-body.dark .about__text,
-body.dark .about__list li,
-body.dark .equipment-card__title {
+body.dark .slide-title, body.dark-theme .slide-title,
+body.dark .slide-item, body.dark-theme .slide-item,
+body.dark .about__text, body.dark-theme .about__text,
+body.dark .about__list li, body.dark-theme .about__list li,
+body.dark .equipment-card__title, body.dark-theme .equipment-card__title {
     color: var(--text-main);
 }
 
-/* Карточки оборудования */
-body.dark .equipment-card {
+body.dark .equipment-card, body.dark-theme .equipment-card {
     background: #252525;
     border-color: var(--border-color);
 }
 
-body.dark .equipment-card__icon {
+body.dark .equipment-card__icon, body.dark-theme .equipment-card__icon {
     background: #1a1a1a;
     border-right: 1px solid var(--border-color);
 }
 
-/* Секция "Остались вопросы" (Callback) */
-body.dark .callback-section {
-    background-color: #222222;
-}
-
-body.dark .callback-input {
-    background-color: #333333;
-    border: 1px solid #444444;
-    color: white;
-}
-
-/* Слайдер работ (v-slide) */
-body.dark .v-slide__overlay {
-    background: rgba(0, 0, 0, 0.7); /* Делаем подложку темнее для контраста текста */
-}
-
-body.dark .v-slide__title,
-body.dark .v-slide__text {
-    color: #ffffff;
-}
-/* Перекрашиваем все ссылки в навигации хедера при темной теме */
-body.dark .header-top__nav a {
-    color: #ffffff !important; /* Делаем текст чисто белым */
-}
-
-/* Цвет при наведении в темной теме (сделаем светло-голубым для видимости) */
-body.dark .header-top__nav a:hover {
-    color: #008BDA; 
-}
-
-/* Если нужно, чтобы адрес тоже стал светлее (сейчас он у тебя rgb(51, 51, 51)) */
-body.dark .header-location {
-    color: #e0e0e0;
-}
-/* Перекрашиваем центральную часть хедера (Лого и контакты) */
-
-/* 1. Логотип: ЕГДС */
-body.dark .logo-name {
-    color: #ffffff !important;
-}
-
-/* 2. Описание логотипа: Единая Городская... */
-body.dark .logo-desc {
-    color: #b0b0b0 !important; /* Делаем чуть светлее, чтобы текст не пропадал */
-}
-
-/* 3. Ссылки контактов (Почта и Телефоны) */
-body.dark .contact-link {
-    color: #ffffff !important;
-}
-
-/* 4. Синие кнопки (Обратная связь и Заказать звонок) */
-body.dark .contact-btn {
-    color: #008BDA !important; /* Оставляем синим для акцента */
-    border-bottom-color: #008BDA !important;
-}
-
-body.dark .contact-btn:hover {
-    color: #ffffff !important;
-    border-bottom-color: #ffffff !important;
-}
-
-/* 5. Иконки (если хочешь их немного подсветить) */
-body.dark .custom-icon {
-    filter: brightness(0) invert(1) grayscale(1); /* Делает темные иконки светлыми */
-    opacity: 0.8;
-}
-/* --- СЕКЦИЯ "ПРИМЕРЫ РАБОТ" --- */
-
-/* 1. Главный заголовок секции */
-body.dark .title-main {
-    color: #ffffff !important;
-}
-
-/* 2. Заголовки внутри слайдов (АВТОЦЕНТР BMW и т.д.) */
-body.dark .v-slide__title {
-    color: #ffffff !important;
-}
-
-/* 3. Подзаголовки и весь список (то самое серое описание) */
-body.dark .v-slide__subtitle,
-body.dark .v-slide__list li {
-    color: #e0e0e0 !important; /* Делаем светло-серым/белым */
-}
-
-/* 4. Затемнение фона слайда (overlay) */
-/* Чтобы текст лучше читался, сделаем подложку чуть темнее */
-body.dark .v-slide__overlay {
-    background: rgba(0, 0, 0, 0.75) !important; 
-}
-
-/* 5. Кнопки в слайдере */
-body.dark .v-btn {
-    background-color: #BF0016 !important; /* Твой основной красный */
-    color: #ffffff !important;
-}
-
-body.dark .v-btn--outline {
-    background-color: transparent !important;
-    border: 1px solid #ffffff !important;
-    color: #ffffff !important;
-}
-
-body.dark .v-btn--outline:hover {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-}
-
-/* 6. Пагинация (точки внизу) */
-body.dark .v-dot {
-    background-color: #555555 !important;
-}
-
-body.dark .v-dot.active {
-    background-color: #ffffff !important;
-}
-/* Перекрашиваем фон всей секции "Примеры работ" */
-body.dark .section-works {
-    background-color: #1a1a1a !important; /* Тот же цвет, что и у остального фона */
-   
-}
-
-/* Если внутри есть контейнер с фоном, его тоже красим */
-body.dark .v-container {
-    background-color: transparent !important;
-}
-
-/* Если у слайдера есть своя подложка или обертка с фоном */
-body.dark .v-slider-wrapper {
-    background-color: #1a1a1a !important;
-}
-/* --- СЕКЦИЯ "ЭТАПЫ УСТАНОВКИ" --- */
-
-/* 1. Фон всей секции */
-body.dark .section-steps {
-    background-color: #1a1a1a !important; /* Наш основной темный цвет */
-}
-
-/* 2. Заголовок "Этапы установки" */
-body.dark .section-steps .title-main {
-    color: #ffffff !important;
-}
-
-/* 3. Заголовки этапов (Инициатива, Получение разрешения и т.д.) */
-body.dark .step-title {
-    color: #ffffff !important;
-}
-
-/* 4. Описание этапов (серый текст) */
-body.dark .step-desc {
-    color: #b0b0b0 !important; /* Светло-серый, чтобы глазам было приятно */
-}
-
-/* 5. Видео-блок (если у него есть белая рамка или тень) */
-body.dark .step-video-poster {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important; /* Сделаем тень темнее */
-    border: 1px solid #333 !important; /* Добавим тонкую границу */
-}
-
-/* 6. Кружки с номерами (1, 2, 3, 4) */
-/* Если они у тебя красные, можно оставить как есть, они хорошо смотрятся. 
-   Но если хочешь их чуть подправить: */
-body.dark .step-number {
-    background-color: #BF0016 !important; /* Твой красный */
-    color: #ffffff !important;
-    border: 2px solid #1a1a1a !important; /* Чтобы они "отделялись" от фона */
-}
-
-/* 7. Общая обертка списка (на случай если там есть фон) */
-body.dark .step-list {
-    background-color: transparent !important;
-}
-/* Фон всей секции партнеров */
-body.dark .partners-section {
-    background-color: #1a1a1a !important;
-}
-
-/* Фон всей секции */
-body.dark .partners-section {
-    background-color: #1a1a1a !important;
-}
-
-/* Заголовок секции */
-body.dark .partners-title {
-    color: #ffffff !important;
-}
-
-/* Сами логотипы — делаем их светлыми карточками */
-body.dark .partner-item {
-    background-color: #ffffff !important; /* Белый фон для самой картинки */
-    padding: 15px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.9; /* Чтобы не слишком ярко "горели" */
-}
-
-/* Убираем странные фильтры, если ты их добавлял */
-body.dark .partner-item img {
-    filter: none !important;
-    max-width: 100%;
-}
-/* 1. Карточки партнеров (делаем их мягко-серыми) */
-body.dark .partner-item {
-    background-color: #333333 !important; /* Темно-серый фон карточки */
-    border: 1px solid #444444 !important; /* Тонкая граница, чтобы карточка не сливалась */
-    padding: 15px;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-}
-
-
-
-/* Эффект при наведении на карточку */
-body.dark .partner-item:hover {
-    background-color: #444444 !important;
-    transform: translateY(-5px); /* Легкий подъем карточки */
-}
-
-/* 3. Окончательно убираем белый фон у секции "Этапы" и "Партнеры" */
-body.dark .partners-section,
-body.dark .section-steps {
-    background-color: #1a1a1a !important; /* Глубокий темный фон */
-}
-
-/* 4. Текст описания под логотипами (если он есть, как на скрине МКД...) */
-body.dark .partner-item span, 
-body.dark .partner-item p,
-body.dark .partner-item div {
-    color: #cccccc !important; /* Светло-серый текст */
-}
-/* --- СЕКЦИЯ С КАРТОЙ (из твоего кода) --- */
-
-/* Фон всей секции, где находится карта */
-body.dark section.map-section, 
-body.dark .map-wrapper {
-    background-color: #1a1a1a !important;
-}
-
-/* Заголовок "Карта барьеров" */
-body.dark .map-section h2,
-body.dark .map-section .title-main {
-    color: #ffffff !important;
-}
-
-/* Контейнер самой карты */
-body.dark #yandex-map {
-    border: 1px solid #333 !important; /* Тонкая рамка, чтобы карта не сливалась */
-    filter: invert(0) hue-rotate(0deg) brightness(0.8); /* Немного приглушаем яркость самой карты */
-}
-
-/* --- ИСПРАВЛЕНИЕ ПАРТНЕРОВ (чтобы не было "странно") --- */
-
-body.dark .partners-section {
-    background-color: #1a1a1a !important;
-}
-
-body.dark .partner-item {
-    background-color: #252525 !important; /* Темно-серый, но не черный */
-    border: 1px solid #333 !important;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-/* Если логотипы на белом фоне, сделаем их чуть прозрачнее, 
-   чтобы они не "резали" глаз ярким белым цветом */
-body.dark .partner-item img {
-    opacity: 0.8;
-    filter: grayscale(1) contrast(1.2); /* Делаем стильно-черно-белыми */
-    transition: 0.3s;
-}
-
-body.dark .partner-item:hover img {
-    opacity: 1;
-    filter: grayscale(0); /* При наведении возвращаем цвет */
-}
-
-/* --- ТЕКСТ В ШАПКЕ И КОНТАКТАХ --- */
-
-body.dark .header-top, 
-body.dark .header-main {
+body.dark .callback-section, body.dark-theme .callback-section {
     background-color: #111111 !important;
 }
 
-body.dark .header-top__nav a,
-body.dark .contact-link,
-body.dark .logo-name,
-body.dark .header-location {
-    color: #ffffff !important;
-}
-
-body.dark .logo-desc {
-    color: #999999 !important;
-}
-
-/* Фон всей страницы и заголовки */
-body.dark .page-main {
-    background-color: #1a1a1a !important;
-    color: #ffffff !important;
-}
-
-body.dark .page-title {
-    color: #ffffff !important;
-}
-
-/* Хлебные крошки */
-body.dark .breadcrumbs a {
-    color: #aaaaaa !important;
-}
-
-body.dark .breadcrumbs .separator,
-body.dark .breadcrumbs span {
-    color: #666666 !important;
-}
-/* Основной текст статьи */
-body.dark .text-page p {
-    color: #cccccc !important;
-}
-
-body.dark .red-title {
-    color: #ff4444 !important; /* Делаем красный чуть ярче для контраста */
-}
-
-/* Серая плашка с логотипом CAME */
-body.dark .brand-promo-box {
-    background-color: #252525 !important;
-    border: 1px solid #333333 !important;
-}
-
-body.dark .brand-promo-box__text h2,
-body.dark .brand-promo-box__text p {
-    color: #ffffff !important;
-}
-/* Горизонтальная карточка (Шлагбаумы) */
-body.dark .b-services-card-horizontal {
-    background-color: #222222 !important;
-    border: 1px solid #333333 !important;
-}
-
-body.dark .b-card-title {
-    color: #ffffff !important;
-}
-
-body.dark .b-card-text {
-    color: #bbbbbb !important;
-}
-
-/* Боковая панель (Смотрите также) */
-body.dark .b-sidebar {
-    background-color: #222222 !important;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-body.dark .b-sidebar__title {
-    color: #ffffff !important;
-}
-
-body.dark .b-sidebar__link {
-    color: #cccccc !important;
-    border-bottom-color: #444444 !important;
-}
-
-body.dark .b-sidebar__link:hover {
-    color: #ff4444 !important;
-}
-body.dark .callback-section {
-    background-color: #111111 !important;
-}
-
-body.dark .callback-title {
-    color: #ffffff !important;
-}
-
-/* Инпуты (поля ввода) */
-body.dark .callback-input {
+body.dark .callback-input, body.dark-theme .callback-input {
     background-color: #333333 !important;
     border: 1px solid #444444 !important;
     color: #ffffff !important;
 }
 
-body.dark .callback-input::placeholder {
+body.dark .v-slide__overlay, body.dark-theme .v-slide__overlay {
+    background: rgba(0, 0, 0, 0.75) !important;
+}
+
+body.dark .v-slide__title, body.dark-theme .v-slide__title,
+body.dark .v-slide__text, body.dark-theme .v-slide__text,
+body.dark .title-main, body.dark-theme .title-main {
+    color: #ffffff !important;
+}
+
+body.dark .header-top__nav a, body.dark-theme .header-top__nav a {
+    color: #ffffff !important;
+}
+
+body.dark .header-top__nav a:hover, body.dark-theme .header-top__nav a:hover {
+    color: #008BDA;
+}
+
+body.dark .header-location, body.dark-theme .header-location {
+    color: #e0e0e0 !important;
+}
+
+body.dark .logo-name, body.dark-theme .logo-name {
+    color: #ffffff !important;
+}
+
+body.dark .logo-desc, body.dark-theme .logo-desc {
+    color: #999999 !important;
+}
+
+body.dark .contact-link, body.dark-theme .contact-link {
+    color: #ffffff !important;
+}
+
+body.dark .contact-btn, body.dark-theme .contact-btn {
+    color: #008BDA !important;
+    border-bottom-color: #008BDA !important;
+}
+
+body.dark .contact-btn:hover, body.dark-theme .contact-btn:hover {
+    color: #ffffff !important;
+    border-bottom-color: #ffffff !important;
+}
+
+body.dark .custom-icon, body.dark-theme .custom-icon {
+    filter: brightness(0) invert(1) grayscale(1);
+    opacity: 0.8;
+}
+
+body.dark .v-slide__subtitle, body.dark-theme .v-slide__subtitle,
+body.dark .v-slide__list li, body.dark-theme .v-slide__list li {
+    color: #e0e0e0 !important;
+}
+
+body.dark .v-btn, body.dark-theme .v-btn {
+    background-color: #BF0016 !important;
+    color: #ffffff !important;
+}
+
+body.dark .v-btn--outline, body.dark-theme .v-btn--outline {
+    background-color: transparent !important;
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
+}
+
+body.dark .v-btn--outline:hover, body.dark-theme .v-btn--outline:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+body.dark .v-dot, body.dark-theme .v-dot {
+    background-color: #555555 !important;
+}
+
+body.dark .v-dot.active, body.dark-theme .v-dot.active {
+    background-color: #ffffff !important;
+}
+
+body.dark .section-works, body.dark-theme .section-works,
+body.dark .v-slider-wrapper, body.dark-theme .v-slider-wrapper {
+    background-color: #1a1a1a !important;
+}
+
+body.dark .v-container, body.dark-theme .v-container {
+    background-color: transparent !important;
+}
+
+body.dark .section-steps, body.dark-theme .section-steps {
+    background-color: #1a1a1a !important;
+}
+
+body.dark .step-title, body.dark-theme .step-title {
+    color: #ffffff !important;
+}
+
+body.dark .step-desc, body.dark-theme .step-desc {
+    color: #b0b0b0 !important;
+}
+
+body.dark .step-video-poster, body.dark-theme .step-video-poster {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid #333 !important;
+}
+
+body.dark .step-number, body.dark-theme .step-number {
+    background-color: #BF0016 !important;
+    color: #ffffff !important;
+    border: 2px solid #1a1a1a !important;
+}
+
+body.dark .step-list, body.dark-theme .step-list {
+    background-color: transparent !important;
+}
+
+body.dark .partners-section, body.dark-theme .partners-section {
+    background-color: #1a1a1a !important;
+}
+
+body.dark .partners-title, body.dark-theme .partners-title {
+    color: #ffffff !important;
+}
+
+body.dark .partner-item, body.dark-theme .partner-item {
+    background-color: #252525 !important;
+    border: 1px solid #333 !important;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+body.dark .partner-item:hover, body.dark-theme .partner-item:hover {
+    background-color: #444444 !important;
+    transform: translateY(-5px);
+}
+
+body.dark .partner-item img, body.dark-theme .partner-item img {
+    opacity: 0.8;
+    filter: grayscale(1) contrast(1.2);
+    transition: 0.3s;
+    max-width: 100%;
+}
+
+body.dark .partner-item:hover img, body.dark-theme .partner-item:hover img {
+    opacity: 1;
+    filter: grayscale(0);
+}
+
+body.dark .partner-item span, body.dark-theme .partner-item span,
+body.dark .partner-item p, body.dark-theme .partner-item p,
+body.dark .partner-item div, body.dark-theme .partner-item div {
+    color: #cccccc !important;
+}
+
+body.dark section.map-section, body.dark-theme section.map-section,
+body.dark .map-wrapper, body.dark-theme .map-wrapper {
+    background-color: #1a1a1a !important;
+}
+
+body.dark #yandex-map, body.dark-theme #yandex-map {
+    border: 1px solid #333 !important;
+    filter: invert(0) hue-rotate(0deg) brightness(0.8);
+}
+
+body.dark .page-main, body.dark-theme .page-main {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+body.dark .page-title, body.dark-theme .page-title {
+    color: #ffffff !important;
+}
+
+body.dark .breadcrumbs a, body.dark-theme .breadcrumbs a {
+    color: #aaaaaa !important;
+}
+
+body.dark .breadcrumbs .separator, body.dark-theme .breadcrumbs .separator,
+body.dark .breadcrumbs span, body.dark-theme .breadcrumbs span {
+    color: #666666 !important;
+}
+
+body.dark .text-page p, body.dark-theme .text-page p {
+    color: #cccccc !important;
+}
+
+body.dark .red-title, body.dark-theme .red-title {
+    color: #ff4444 !important;
+}
+
+body.dark .brand-promo-box, body.dark-theme .brand-promo-box {
+    background-color: #252525 !important;
+    border: 1px solid #333333 !important;
+}
+
+body.dark .brand-promo-box__text h2, body.dark-theme .brand-promo-box__text h2,
+body.dark .brand-promo-box__text p, body.dark-theme .brand-promo-box__text p {
+    color: #ffffff !important;
+}
+
+body.dark .b-services-card-horizontal, body.dark-theme .b-services-card-horizontal {
+    background-color: #1e1e1e !important;
+    border: 1px solid #333333 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .b-services-card-horizontal:hover, body.dark-theme .b-services-card-horizontal:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .b-card-title, body.dark-theme .b-card-title {
+    color: #ffffff !important;
+}
+
+body.dark .b-card-text, body.dark-theme .b-card-text {
+    color: #bbbbbb !important;
+}
+
+body.dark .b-sidebar, body.dark-theme .b-sidebar {
+    background-color: #222222 !important;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+body.dark .b-sidebar__title, body.dark-theme .b-sidebar__title {
+    color: #ffffff !important;
+}
+
+body.dark .b-sidebar__link, body.dark-theme .b-sidebar__link {
+    color: #cccccc !important;
+    border-bottom-color: #444444 !important;
+}
+
+body.dark .b-sidebar__link:hover, body.dark-theme .b-sidebar__link:hover {
+    color: #ff4444 !important;
+}
+
+body.dark .callback-title, body.dark-theme .callback-title {
+    color: #ffffff !important;
+}
+
+body.dark .callback-input::placeholder, body.dark-theme .callback-input::placeholder {
     color: #888888 !important;
 }
-/* Делаем логотип CAME подходящим под темную тему */
-body.dark .brand-promo-box__logo img {
-    /* Инвертируем цвета: белый станет черным, а черный — белым */
-    filter: invert(1); 
-    
-    /* Смешиваем фон картинки с фоном блока, чтобы убрать границы */
-    mix-blend-mode: screen; 
-    
-    /* Немного приглушим яркость, чтобы логотип не светился слишком сильно */
+
+body.dark .brand-promo-box__logo img, body.dark-theme .brand-promo-box__logo img {
+    filter: invert(1);
+    mix-blend-mode: screen;
     opacity: 0.9;
     transition: 0.3s ease;
 }
 
-/* Эффект при наведении — возвращаем как было */
-body.dark .brand-promo-box__logo img:hover {
+body.dark .brand-promo-box__logo img:hover, body.dark-theme .brand-promo-box__logo img:hover {
     filter: invert(0);
     mix-blend-mode: normal;
     opacity: 1;
 }
-/* Заголовок модуля радиоуправления */
-body.dark .page-title-2 {
+
+body.dark .page-title-2, body.dark-theme .page-title-2,
+body.dark .text-page h2, body.dark-theme .text-page h2,
+body.dark .text-page h3, body.dark-theme .text-page h3 {
     color: #ffffff !important;
 }
 
-/* Если на этой странице есть еще подзаголовки h2 или h3, 
-   лучше добавить общее правило, чтобы они тоже не "терялись" */
-body.dark .text-page h2,
-body.dark .text-page h3 {
+body.dark .cart-section, body.dark-theme .cart-section {
+    background-color: var(--bg-main);
+}
+
+body.dark .cart-title, body.dark-theme .cart-title {
+    color: var(--text-main);
+}
+
+body.dark .cart-table, body.dark-theme .cart-table,
+body.dark .cart-checkout-panel, body.dark-theme .cart-checkout-panel,
+body.dark .cart-empty-msg, body.dark-theme .cart-empty-msg {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+body.dark .cart-item, body.dark-theme .cart-item {
+    border-bottom-color: var(--border-color);
+}
+
+body.dark .cart-item__name, body.dark-theme .cart-item__name,
+body.dark .cart-item__total, body.dark-theme .cart-item__total,
+body.dark .cart-total-sum, body.dark-theme .cart-total-sum {
+    color: var(--text-main);
+}
+
+body.dark .cart-item__price-each, body.dark-theme .cart-item__price-each,
+body.dark .cart-total-label, body.dark-theme .cart-total-label {
+    color: #b0b0b0;
+}
+
+body.dark .cart-item__img-wrapper, body.dark-theme .cart-item__img-wrapper {
+    background-color: #ffffff;
+    border-color: var(--border-color);
+}
+
+body.dark .counter-block, body.dark-theme .counter-block {
+    background-color: #333333;
+    border-color: var(--border-color);
+}
+
+body.dark .counter-btn, body.dark-theme .counter-btn {
+    background-color: #444444;
+    color: var(--text-main);
+}
+
+body.dark .counter-btn:hover, body.dark-theme .counter-btn:hover {
+    background-color: #555555;
+}
+
+body.dark .counter-value, body.dark-theme .counter-value {
+    color: var(--text-main);
+}
+
+body.dark .cart-back-btn, body.dark-theme .cart-back-btn {
+    color: #e0e0e0;
+}
+
+body.dark .cart-back-btn:hover, body.dark-theme .cart-back-btn:hover {
+    color: #ffffff;
+}
+
+body.dark .favorites-section, body.dark-theme .favorites-section {
+    background-color: #1a1a1a;
+}
+
+body.dark .favorites-subtitle, body.dark-theme .favorites-subtitle {
+    color: #aaaaaa;
+}
+
+body.dark .fav-card, body.dark-theme .fav-card {
+    background: #1e1e1e;
+    border: 1px solid #333333;
+}
+
+body.dark .fav-card__img-wrapper, body.dark-theme .fav-card__img-wrapper {
+    background-color: #2a2a2a;
+}
+
+body.dark .fav-card__title, body.dark-theme .fav-card__title {
+    color: #ffffff;
+}
+
+body.dark .fav-btn-delete, body.dark-theme .fav-btn-delete {
+    background-color: #333333;
+    color: #cccccc;
+    border: 1px solid #444444;
+}
+
+body.dark .fav-btn-delete:hover, body.dark-theme .fav-btn-delete:hover {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+body.dark .empty-message, body.dark-theme .empty-message {
+    color: #aaaaaa;
+}
+
+body.dark .favorite-btn, body.dark-theme .favorite-btn {
+    background: transparent;
+    border: none;
+    color: #888888;
+}
+
+body.dark .favorite-btn:hover, body.dark-theme .favorite-btn:hover {
+    background: transparent;
+    color: #ff4444;
+}
+
+body.dark .catalog-page-section .title-main, body.dark-theme .catalog-page-section .title-main {
+    color: #ffffff;
+}
+
+body.dark #full-catalog-container p, body.dark-theme #full-catalog-container p {
+    color: #aaaaaa !important;
+}
+
+body.dark .catalog-sidebar, body.dark-theme .catalog-sidebar {
+    background: #1e1e1e !important;
+    border: 1px solid #333333 !important;
+}
+
+body.dark .filter-group h4, body.dark-theme .filter-group h4 {
     color: #ffffff !important;
+}
+
+body.dark .filter-input, body.dark-theme .filter-input,
+body.dark .filter-select, body.dark-theme .filter-select,
+body.dark .price-inputs input, body.dark-theme .price-inputs input {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border: 1px solid #444444 !important;
+}
+
+body.dark .btn-reset, body.dark-theme .btn-reset {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border: 1px solid #444444 !important;
+}
+
+body.dark .btn-reset:hover, body.dark-theme .btn-reset:hover {
+    background-color: #cc0000 !important;
+}
+
+body.dark .product-card, body.dark-theme .product-card {
+    background: #1e1e1e;
+    border: 1px solid #333333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .card-img-wrapper, body.dark-theme .card-img-wrapper,
+body.dark .b-card-pic, body.dark-theme .b-card-pic {
+    background: none;
+    border-right: none;
+}
+
+body.dark .card-title, body.dark-theme .card-title {
+    color: #ffffff;
+}
+
+body.dark .card-desc, body.dark-theme .card-desc {
+    color: #aaaaaa;
+}
+
+body.dark .card-price, body.dark-theme .card-price,
+body.dark .b-card-price, body.dark-theme .b-card-price {
+    color: #ffffff;
+}
+
+body.dark .card-footer, body.dark-theme .card-footer {
+    border-top: 1px solid #333333;
+}
+
+body.dark .btn-details, body.dark-theme .btn-details {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+body.dark .btn-details:hover, body.dark-theme .btn-details:hover {
+    background-color: #444444;
+}
+
+body.dark .buy-btn-catalog.disabled-style, body.dark-theme .buy-btn-catalog.disabled-style {
+    background-color: #333333 !important;
+    border-color: #444444 !important;
+    color: #777777 !important;
+}
+
+body.dark .no-products, body.dark-theme .no-products {
+    background: #1e1e1e;
+    border: 1px dashed #444444;
+    color: #aaaaaa;
+}
+
+body.dark .modal-window, body.dark-theme .modal-window {
+    background: #1e1e1e;
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+
+body.dark .modal-window h3, body.dark-theme .modal-window h3,
+body.dark #modal-title, body.dark-theme #modal-title {
+    color: #ffffff;
+}
+
+body.dark #modal-specs, body.dark-theme #modal-specs {
+    color: #dddddd;
+}
+
+body.dark .close-btn, body.dark-theme .close-btn {
+    color: #888888;
+}
+
+body.dark .close-btn:hover, body.dark-theme .close-btn:hover {
+    color: #ffffff;
+}
+body.dark .lk-section, body.dark-theme .lk-section {
+    background-color: #121212 !important;
+}
+
+body.dark .lk-sidebar, body.dark-theme .lk-sidebar {
+    background-color: #1e1e1e !important;
+    border: 1px solid #333333 !important;
+}
+
+body.dark .lk-menu__item a, body.dark-theme .lk-menu__item a {
+    color: #aaaaaa !important;
+}
+
+body.dark .lk-menu__item.active, body.dark-theme .lk-menu__item.active {
+    background-color: #BF0016 !important;
+}
+
+body.dark .lk-menu__item.active a, body.dark-theme .lk-menu__item.active a {
+    color: #ffffff !important;
+}
+
+body.dark .lk-content, body.dark-theme .lk-content {
+    background-color: #1e1e1e !important;
+    border: 1px solid #333333 !important;
+}
+
+body.dark .lk-title, body.dark-theme .lk-title {
+    color: #ffffff !important;
+}
+
+body.dark .profile-label, body.dark-theme .profile-label {
+    color: #aaaaaa !important;
+}
+
+body.dark .profile-input, body.dark-theme .profile-input {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border: 1px solid #444444 !important;
+}
+
+body.dark .profile-status-text, body.dark-theme .profile-status-text {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border: 1px solid #444444 !important;
+    padding: 12px !important;
+    border-radius: 4px !important;
+}
+
+body.dark .lk-save-btn, body.dark-theme .lk-save-btn {
+    background-color: #BF0016 !important;
+    color: #ffffff !important;
+}
+
+body.dark .lk-logout-btn, body.dark-theme .lk-logout-btn {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border: 1px solid #444444 !important;
+}
+
+body.dark .order-item, body.dark-theme .order-item {
+    background-color: #1e1e1e !important;
+    border: 1px solid #333333 !important;
+    color: #ffffff !important;
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+    border-radius: 6px !important;
+}
+
+body.dark .order-item__header-title, body.dark-theme .order-item__header-title {
+    color: #ffffff !important;
+}
+
+body.dark .order-item__products, body.dark-theme .order-item__products,
+body.dark .order-item__total, body.dark-theme .order-item__total {
+    color: #cccccc !important;
+}
+
+body.dark .status--accepted, body.dark-theme .status--accepted {
+    color: #54a0ff !important;
+}
+
+body.dark .status--processing, body.dark-theme .status--processing {
+    color: #ff9f43 !important;
+}
+
+body.dark .status--ready, body.dark-theme .status--ready {
+    color: #1dd1a1 !important;
+}
+
+body.dark .status--cancelled, body.dark-theme .status--cancelled {
+    color: #ff6b6b !important;
+}
+
+body.dark .status--default, body.dark-theme .status--default {
+    color: #eeeeee !important;
+}
+
+body.dark .order-status-btn, body.dark-theme .order-status-btn {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border: 1px solid #444444 !important;
+    padding: 8px 16px !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+}
+
+body.dark .order-cancel-btn, body.dark-theme .order-cancel-btn {
+    background-color: #BF0016 !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    margin-left: 10px !important;
+}
+
+body.dark .status-modal-content, body.dark-theme .status-modal-content {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+    border: 1px solid #333333 !important;
+}
+
+body.dark .status-modal-header, body.dark-theme .status-modal-header {
+    border-bottom: 1px solid #333333 !important;
+    color: #ffffff !important;
+}
+
+body.dark .close-modal-btn, body.dark-theme .close-modal-btn {
+    color: #ffffff !important;
+}
+
+body.dark .timeline-item, body.dark-theme .timeline-item {
+    color: #555555 !important;
+}
+
+body.dark .timeline-item.active, body.dark-theme .timeline-item.active {
+    color: #ffffff !important;
+}
+
+body.dark .timeline-date, body.dark-theme .timeline-date {
+    color: #aaaaaa !important;
+}
+
+body.dark .timeline-item.cancelled.active, body.dark-theme .timeline-item.cancelled.active {
+    color: #ff6b6b !important;
+}
+
+body.dark .lk-status-message, body.dark-theme .lk-status-message {
+    color: #aaaaaa !important;
 }

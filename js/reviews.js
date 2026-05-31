@@ -1,3 +1,10 @@
+// js/reviews.js
+
+// === ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ДЛЯ ПЕРЕВОДОВ ===
+function getUIText(ru, en) {
+    return document.body.classList.contains('lang-en') ? en : ru;
+}
+
 // =========================================================
 // ЛОГИКА ОТЗЫВОВ (Модалка + Отправка на json-server)
 // =========================================================
@@ -30,6 +37,15 @@ if (closeReviewBtn && reviewModal) {
     });
 }
 
+// Закрытие модалки по клику на фон
+if (reviewModal) {
+    reviewModal.addEventListener('click', (e) => {
+        if (e.target === reviewModal) {
+            reviewModal.style.display = 'none';
+        }
+    });
+}
+
 // Отправка отзыва на сервер
 if (reviewForm) {
     reviewForm.addEventListener('submit', async (e) => {
@@ -59,15 +75,49 @@ if (reviewForm) {
             });
 
             if (response.ok) {
-                alert('Спасибо! Ваш отзыв успешно отправлен.');
+                // === ИСПРАВЛЕНО: Перевод сообщения об успехе ===
+                const successMsg = getUIText(
+                    'Спасибо! Ваш отзыв успешно отправлен.',
+                    'Thank you! Your review has been successfully submitted.'
+                );
+                alert(successMsg);
                 reviewForm.reset();
                 reviewModal.style.display = 'none';
             } else {
-                alert('Не удалось отправить отзыв.');
+                // === ИСПРАВЛЕНО: Перевод сообщения об ошибке ===
+                const errorMsg = getUIText(
+                    'Не удалось отправить отзыв.',
+                    'Failed to submit your review.'
+                );
+                alert(errorMsg);
             }
         } catch (error) {
             console.error('Ошибка при отправке отзыва:', error);
-            alert('Ошибка связи с сервером. Проверьте json-server.');
+            // === ИСПРАВЛЕНО: Перевод сообщения о сетевой ошибке ===
+            const netErrorMsg = getUIText(
+                'Ошибка связи с сервером. Проверьте json-server.',
+                'Server connection error. Please check if json-server is running.'
+            );
+            alert(netErrorMsg);
         }
     });
 }
+
+// === 🎯 НОВОЕ: Слушаем событие смены языка для обновления placeholder ===
+window.addEventListener('languageChanged', () => {
+    // Обновляем placeholder у полей ввода в модальном окне
+    const authorInput = document.getElementById('review-author');
+    const textInput = document.getElementById('review-text');
+    
+    if (authorInput && authorInput.dataset.placeholderRu) {
+        authorInput.placeholder = document.body.classList.contains('lang-en') 
+            ? authorInput.dataset.placeholderEn 
+            : authorInput.dataset.placeholderRu;
+    }
+    
+    if (textInput && textInput.dataset.placeholderRu) {
+        textInput.placeholder = document.body.classList.contains('lang-en') 
+            ? textInput.dataset.placeholderEn 
+            : textInput.dataset.placeholderRu;
+    }
+});

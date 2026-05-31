@@ -1450,7 +1450,7 @@ line-height: 120%; /* 21.6px */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 1600px;
+    width: 1512spx;
     padding: 60px 230px 26px 230px;
     gap: 15px;
     box-sizing: border-box;
@@ -1811,3 +1811,71 @@ line-height: 120%; /* 21.6px */
     font-weight: bold;
     color: #333;
 }
+/* Переключатель языка в шапке */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 10px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+    color: #cc0000;
+    background: rgba(204, 0, 0, 0.1);
+}
+
+.lang-separator {
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* Для тёмной темы */
+body.dark .lang-btn {
+    color: #fff;
+}
+
+body.dark .lang-btn:hover,
+body.dark .lang-btn.active {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.15);
+}
+/* По умолчанию показываем русский, скрываем английский */
+.en { display: none; }
+.ru { display: inline; }
+
+/* Если у body стоит класс lang-en */
+body.lang-en .ru { display: none; }
+body.lang-en .en { display: inline; }
+
+        .en { display: none; }
+        .ru { display: inline; }
+        body.lang-en .ru { display: none !important; }
+        body.lang-en .en { display: inline !important; }
+        /* Для блочных элементов */
+        body.lang-en .en.block { display: block !important; }
+        .ru.block { display: block; }
+        /* Кнопки языка */
+        .lang-switcher { display: flex; align-items: center; gap: 6px; padding: 0 10px; }
+        .lang-btn {
+            background: none; border: none; color: inherit; font-weight: 600; 
+            cursor: pointer; padding: 4px 8px; border-radius: 4px; transition: 0.2s;
+            font-size: 14px;
+        }
+        .lang-btn:hover, .lang-btn.active { color: #cc0000; background: rgba(204,0,0,0.1); }
+        .lang-separator { opacity: 0.4; font-size: 14px; }
+        /* Для тёмной темы */
+        body.dark .lang-btn { color: #fff; }
+        body.dark .lang-btn:hover, body.dark .lang-btn.active { color: #ff6b6b; background: rgba(255,107,107,0.15); }

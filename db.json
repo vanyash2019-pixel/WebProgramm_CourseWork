@@ -75,505 +75,829 @@
     {
       "id": "1",
       "name": "Устройство считывающее 8660",
+      "nameEn": "8660 Reading Device",
       "price": 5750,
       "category": "СКУД и Радиоуправление",
-      "img": "assets/reader-8660.jpg",
+      "categoryEn": "ACS & Radio Control",
+      "img": "assets/13.png",
       "description": "Предназначено для систем контроля доступа (СКУД). Считывает номера радиобрелоков на частоте 434 МГц и передает код в контроллер по протоколам iButton или Wiegand.",
+      "descriptionEn": "Designed for access control systems (ACS). Reads radio key fob numbers at 434 MHz and transmits code to controller via iButton or Wiegand protocols.",
       "features": [
         "Частота: 434 МГц",
         "Протоколы: iButton, Wiegand",
-        "Назначение: systems СКУД",
+        "Назначение: системы СКУД",
         "Защита корпуса: IP65"
+      ],
+      "featuresEn": [
+        "Frequency: 434 MHz",
+        "Protocols: iButton, Wiegand",
+        "Purpose: ACS systems",
+        "Case protection: IP65"
       ]
     },
     {
       "id": "2",
       "name": "Комплект (Считыватель 8660 + Z-5R Net)",
+      "nameEn": "Kit (8660 Reader + Z-5R Net)",
       "price": 14000,
-      "img": "assets/nero-kit.jpg",
+      "img": "assets/14.jpg",
       "category": "СКУД и Радиоуправление",
+      "categoryEn": "ACS & Radio Control",
       "description": "Готовое решение для организации полноценной системы управления доступом на базе сетевого контроллера и конвертера Z-397 Web.",
+      "descriptionEn": "Ready-made solution for organizing a full-featured access control system based on network controller and Z-397 Web converter.",
       "features": [
         "Состав: Считыватель 8660, Контроллер Z-5R Net",
         "Интерфейсы: Wi-Fi, Ethernet через конвертер",
         "Управление: через Web-интерфейс",
         "Готовое решение: Да"
+      ],
+      "featuresEn": [
+        "Contents: 8660 Reader, Z-5R Net Controller",
+        "Interfaces: Wi-Fi, Ethernet via converter",
+        "Control: via Web interface",
+        "Ready-made solution: Yes"
       ]
     },
     {
       "id": "3",
       "name": "Мини-пульт двухканальный Radio 8101-2M",
+      "nameEn": "Radio 8101-2M Dual-Channel Mini Remote",
       "price": 2100,
-      "img": "assets/radio-remote.jpg",
+      "img": "assets/15.webp",
       "category": "СКУД и Радиоуправление",
+      "categoryEn": "ACS & Radio Control",
       "description": "Компактный пульт ДУ для управления воротами, шлагбаумами и роллетами. Поддерживает два независимых канала управления.",
+      "descriptionEn": "Compact remote control for managing gates, barrier gates and roller shutters. Supports two independent control channels.",
       "features": [
         "Количество каналов: 2 независимых",
         "Назначение: ворота, шлагбаумы, роллеты",
         "Элемент питания: CR2032",
         "Дальность действия: до 100м"
+      ],
+      "featuresEn": [
+        "Number of channels: 2 independent",
+        "Purpose: gates, barrier gates, roller shutters",
+        "Power source: CR2032",
+        "Operating range: up to 100m"
       ]
     },
     {
       "id": "4",
       "name": "Считыватель 8661 (антивандальный)",
+      "nameEn": "8661 Reader (Anti-vandal)",
       "price": 6200,
       "category": "СКУД и Радиоуправление",
-      "img": "assets/nero-8661.jpg",
+      "categoryEn": "ACS & Radio Control",
+      "img": "assets/16.jpg",
       "description": "Усиленный корпус для установки в местах с риском механических повреждений. Работает в широком диапазоне температур.",
+      "descriptionEn": "Reinforced housing for installation in areas at risk of mechanical damage. Operates in a wide temperature range.",
       "features": [
         "Интерфейс: Wiegand",
         "Дальность чтения: до 10 см",
         "Материал: нержавеющая сталь",
         "Питание: 12В"
+      ],
+      "featuresEn": [
+        "Interface: Wiegand",
+        "Reading range: up to 10 cm",
+        "Material: stainless steel",
+        "Power supply: 12V"
       ]
     },
     {
       "id": "5",
       "name": "Пульт Radio 8101-4 (4-канальный)",
+      "nameEn": "Radio 8101-4 Remote (4-channel)",
       "price": 2800,
       "category": "СКУД и Радиоуправление",
-      "img": "assets/remote-4.jpg",
+      "categoryEn": "ACS & Radio Control",
+      "img": "assets/17.jpg",
       "description": "Позволяет управлять четырьмя объектами (например, ворота, шлагбаум и освещение) с одного устройства.",
+      "descriptionEn": "Allows controlling four objects (e.g., gates, barrier gate and lighting) from one device.",
       "features": [
         "Частота: 433.92 МГц",
         "Радиус действия: до 150 м",
         "Батарейка: CR2032",
         "Динамический код: есть"
+      ],
+      "featuresEn": [
+        "Frequency: 433.92 MHz",
+        "Operating range: up to 150 m",
+        "Battery: CR2032",
+        "Dynamic code: yes"
       ]
     },
     {
       "id": "6",
       "name": "Приемник Radio 8113 IP65",
+      "nameEn": "Radio 8113 IP65 Receiver",
       "price": 3500,
       "category": "СКУД и Радиоуправление",
-      "img": "assets/receiver-8113.jpg",
+      "categoryEn": "ACS & Radio Control",
+      "img": "assets/18.jpg",
       "description": "Исполнительное устройство для скрытого монтажа. Идеально подходит для управления роллетами и маркизами.",
+      "descriptionEn": "Actuator device for concealed installation. Ideal for controlling roller shutters and awnings.",
       "features": [
         "Количество каналов: 1",
         "Память: до 1000 пультов",
         "Макс. мощность: 600 Вт",
         "Температура: от -30 до +50°C"
+      ],
+      "featuresEn": [
+        "Number of channels: 1",
+        "Memory: up to 1000 remotes",
+        "Max. power: 600 W",
+        "Temperature: from -30 to +50°C"
       ]
     },
     {
       "id": "7",
       "name": "Внешняя антенна Nero",
+      "nameEn": "Nero External Antenna",
       "price": 1200,
       "category": "СКУД и Радиоуправление",
-      "img": "assets/antenna.jpg",
+      "categoryEn": "ACS & Radio Control",
+      "img": "assets/19.webp",
       "description": "Увеличивает радиус приема сигнала в условиях плотной застройки или сильных радиопомех.",
+      "descriptionEn": "Increases signal reception range in conditions of dense development or strong radio interference.",
       "features": [
         "Длина кабеля: 2.5 м",
         "Тип разъема: SMA",
         "Коэффициент усиления: 3 дБ",
         "Монтаж: на кронштейн"
+      ],
+      "featuresEn": [
+        "Cable length: 2.5 m",
+        "Connector type: SMA",
+        "Gain: 3 dB",
+        "Mounting: on bracket"
       ]
     },
     {
       "id": "8",
       "name": "Интерфейсный модуль IP-Gateway",
+      "nameEn": "IP-Gateway Interface Module",
       "price": 8900,
       "category": "СКУД и Радиоуправление",
-      "img": "assets/ip-module.jpg",
+      "categoryEn": "ACS & Radio Control",
+      "img": "assets/20.jpg",
       "description": "Обеспечивает связь системы Nero с интернетом для управления доступом через мобильное приложение.",
+      "descriptionEn": "Provides Nero system connection to the internet for access control via mobile app.",
       "features": [
         "Протокол: Wi-Fi / Ethernet",
         "Приложение: Nero Home",
         "Питание: 5В (Type-C)",
         "Поддержка сценариев: есть"
+      ],
+      "featuresEn": [
+        "Protocol: Wi-Fi / Ethernet",
+        "App: Nero Home",
+        "Power: 5V (Type-C)",
+        "Scenario support: yes"
       ]
     },
     {
       "id": "9",
       "name": "Блок питания 12В/2А DIN",
+      "nameEn": "12V/2A DIN Power Supply",
       "price": 950,
       "category": "СКУД и Радиоуправление",
-      "img": "assets/power.jpg",
+      "categoryEn": "ACS & Radio Control",
+      "img": "assets/21.jpg",
       "description": "Специализированный блок питания для монтажа на DIN-рейку. Защита от короткого замыкания.",
+      "descriptionEn": "Specialized power supply for DIN-rail mounting. Short circuit protection.",
       "features": [
         "Входное напряжение: 220В",
         "Выходной ток: 2А",
         "Ширина: 2 DIN модуля",
         "Индикация сети: светодиод"
+      ],
+      "featuresEn": [
+        "Input voltage: 220V",
+        "Output current: 2A",
+        "Width: 2 DIN modules",
+        "Network indicator: LED"
       ]
     },
     {
       "id": "10",
       "name": "Электромагнитный замок ML-280",
+      "nameEn": "ML-280 Electromagnetic Lock",
       "price": 3200,
       "category": "СКУД и Радиоуправление",
-      "img": "assets/lock.jpg",
+      "categoryEn": "ACS & Radio Control",
+      "img": "assets/22.webp",
       "description": "Сила удержания 280 кг. Предназначен для работы в составе СКУД на офисных и калиточных дверях.",
+      "descriptionEn": "Holding force 280 kg. Designed for use in access control systems on office and gate doors.",
       "features": [
         "Потребление: 350 мА",
         "Тип монтажа: накладной",
         "Габариты: 250х42х25 мм",
         "Датчик состояния двери: нет"
+      ],
+      "featuresEn": [
+        "Power consumption: 350 mA",
+        "Mounting type: surface",
+        "Dimensions: 250x42x25 mm",
+        "Door status sensor: no"
       ]
     },
     {
       "id": "11",
       "name": "Кнопка выхода сенсорная",
+      "nameEn": "Touch Exit Button",
       "price": 1500,
       "category": "СКУД и Радиоуправление",
-      "img": "assets/button.jpg",
+      "categoryEn": "ACS & Radio Control",
+      "img": "assets/23.jpg",
       "description": "Бесконтактное управление открытием. Световая индикация состояния замка.",
+      "descriptionEn": "Contactless opening control. Light indication of lock status.",
       "features": [
         "Тип контактов: НО/НЗ",
-        "Материал: aluminium alloy",
+        "Материал: алюминиевый сплав",
         "Ресурс: более 1 000 000 нажатий",
         "Подсветка: двухцветная"
+      ],
+      "featuresEn": [
+        "Contact type: NO/NC",
+        "Material: aluminum alloy",
+        "Service life: over 1,000,000 presses",
+        "Backlight: two-color"
       ]
     },
     {
       "id": "12",
       "name": "Контроллер автономный Z-5R",
+      "nameEn": "Z-5R Standalone Controller",
       "price": 1100,
       "category": "СКУД и Радиоуправление",
-      "img": "assets/z5r.jpg",
+      "categoryEn": "ACS & Radio Control",
+      "img": "assets/24.webp",
       "description": "Классическое решение для управления замком. Поддерживает до 1364 ключей.",
+      "descriptionEn": "Classic solution for lock control. Supports up to 1364 keys.",
       "features": [
         "Протокол считывателя: iButton / Wiegand",
         "Режимы работы: Обычный / Accept / Trigger",
         "Выход для замка: полевой транзистор",
         "Ток коммутации: до 5А"
+      ],
+      "featuresEn": [
+        "Reader protocol: iButton / Wiegand",
+        "Operating modes: Normal / Accept / Trigger",
+        "Lock output: field-effect transistor",
+        "Switching current: up to 5A"
       ]
     },
     {
       "id": "13",
       "name": "Шлагбаум GARD 5000 (Серый)",
+      "nameEn": "Barrier Gate GARD 5000 (Gray)",
       "price": 115500,
       "category": "Шлагбаумы и автоматика",
-      "img": "assets/came-g5000.jpg",
+      "categoryEn": "Barrier Gates & Automation",
+      "img": "assets/1.jpg",
       "description": "Автоматический скоростной шлагбаум для средних и широких проездов. Отличный вариант для современных ЖК и бизнес-центров.",
+      "descriptionEn": "Automatic high-speed barrier gate for medium and wide driveways. Excellent choice for modern residential complexes and business centers.",
       "features": [
         "Длина стрелы: 5 м",
         "Интенсивность: 70% (высокая)",
         "Класс защиты: IP54",
         "Время открытия: 4-8 сек"
+      ],
+      "featuresEn": [
+        "Boom length: 5 m",
+        "Intensity: 70% (high)",
+        "Protection class: IP54",
+        "Opening time: 4-8 sec"
       ]
     },
     {
       "id": "14",
       "name": "Шлагбаум GARD 6500 Classico",
+      "nameEn": "Barrier Gate GARD 6500 Classico",
       "price": 125700,
       "category": "Шлагбаумы и автоматика",
-      "img": "assets/came-g6500.jpg",
+      "categoryEn": "Barrier Gates & Automation",
+      "img": "assets/2.webp",
       "description": "Промышленный тумбовый шлагбаум со стрелой повышенного сечения. Идеален для логистических терминалов и крупных предприятий.",
+      "descriptionEn": "Industrial pedestal barrier gate with heavy-duty boom. Ideal for logistics terminals and large enterprises.",
       "features": [
         "Длина стрелы: 6.5 м",
         "Интенсивность: 100%",
         "Класс защиты: IP54",
         "Цвет тумбы: оранжевый (RAL 2004)"
+      ],
+      "featuresEn": [
+        "Boom length: 6.5 m",
+        "Intensity: 100%",
+        "Protection class: IP54",
+        "Pedestal color: orange (RAL 2004)"
       ]
     },
     {
       "id": "15",
       "name": "Шлагбаум GARD 4000SX (Компактный)",
+      "nameEn": "Barrier Gate GARD 4000SX (Compact)",
       "price": 75400,
       "category": "Шлагбаумы и автоматика",
-      "img": "assets/came-g4000.jpg",
+      "categoryEn": "Barrier Gates & Automation",
+      "img": "assets/3.jpeg",
       "description": "Бюджетный и быстрый шлагбаум для малых проездов. Быстрое время отклика и легкая балансировка пружинного механизма.",
+      "descriptionEn": "Budget and fast barrier gate for small driveways. Quick response time and easy spring mechanism balancing.",
       "features": [
         "Длина стрелы: 4 м",
         "Интенсивность: высокая",
         "Время открытия: от 2 сек",
         "Тип монтажа: левосторонний"
+      ],
+      "featuresEn": [
+        "Boom length: 4 m",
+        "Intensity: high",
+        "Opening time: from 2 sec",
+        "Mounting type: left-side"
       ]
     },
     {
       "id": "16",
       "name": "Фотоэлементы безопасности DIR10",
+      "nameEn": "DIR10 Safety Photoelectric Sensors",
       "price": 4300,
       "category": "Шлагбаумы и автоматика",
-      "img": "assets/photocells.jpg",
+      "categoryEn": "Barrier Gates & Automation",
+      "img": "assets/4.jpg",
       "description": "Инфракрасные датчики присутствия. Предотвращают опускание стрелы шлагбаума, если в зоне проезда находится автомобиль или человек.",
+      "descriptionEn": "Infrared presence sensors. Prevent barrier gate boom from lowering if a vehicle or person is in the passage zone.",
       "features": [
         "Дальность действия: до 10 м",
         "Питание: 12-24В AC/DC",
         "Тип монтажа: накладной",
         "Материал корпуса: ABS-пластик"
+      ],
+      "featuresEn": [
+        "Operating range: up to 10 m",
+        "Power supply: 12-24V AC/DC",
+        "Mounting type: surface",
+        "Case material: ABS plastic"
       ]
     },
     {
       "id": "17",
       "name": "Сигнальная лампа KLED 24В",
+      "nameEn": "KLED 24V Warning Lamp",
       "price": 3100,
       "category": "Шлагбаумы и автоматика",
-      "img": "assets/lamp.jpg",
+      "categoryEn": "Barrier Gates & Automation",
+      "img": "assets/5.jpeg",
       "description": "Светодиодная лампа оповещения о начале движения автоматики. Повышает безопасность проезда в темное время суток.",
+      "descriptionEn": "LED warning lamp indicating automation movement start. Improves passage safety in dark hours.",
       "features": [
         "Тип источника: LED",
         "Напряжение питания: 24В",
         "Встроенная антенна: есть (433 МГц)",
         "Класс защиты: IP54"
+      ],
+      "featuresEn": [
+        "Light source type: LED",
+        "Supply voltage: 24V",
+        "Built-in antenna: yes (433 MHz)",
+        "Protection class: IP54"
       ]
     },
     {
       "id": "18",
       "name": "Обогреватель тумбы шлагбаума PSR1",
+      "nameEn": "PSR1 Barrier Gate Pedestal Heater",
       "price": 4900,
       "category": "Шлагбаумы и автоматика",
-      "img": "assets/heater.jpg",
+      "categoryEn": "Barrier Gates & Automation",
+      "img": "assets/6.jpg",
       "description": "Нагревательный элемент с термостатом для обеспечения бесперебойной работы редуктора шлагбаума в экстремальные зимние морозы.",
+      "descriptionEn": "Heating element with thermostat ensuring uninterrupted barrier gate gearbox operation in extreme winter frosts.",
       "features": [
         "Мощность: 50 Вт",
         "Температура включения: ниже +5°C",
         "Питание: 220В",
         "Тип крепления: бандажный"
+      ],
+      "featuresEn": [
+        "Power: 50 W",
+        "Activation temperature: below +5°C",
+        "Power supply: 220V",
+        "Mounting type: band clamp"
       ]
     },
     {
       "id": "19",
       "name": "GSM-модуль RC-200 (на 2000 номеров)",
+      "nameEn": "RC-200 GSM Module (2000 numbers)",
       "price": 7200,
       "category": "Шлагбаумы и автоматика",
-      "img": "assets/gsm-mod.jpg",
+      "categoryEn": "Barrier Gates & Automation",
+      "img": "assets/7.webp",
       "description": "Контроллер для открытия шлагбаума или ворот с помощью бесплатного телефонного звонка с мобильного телефона.",
+      "descriptionEn": "Controller for opening barrier gate or gates via free phone call from mobile phone.",
       "features": [
         "Память: до 2000 номеров",
         "Настройка: SMS / USB-кабель",
         "Реле управления: 1 шт (до 5А)",
         "Стандарт связи: 2G / GPRS"
+      ],
+      "featuresEn": [
+        "Memory: up to 2000 numbers",
+        "Configuration: SMS / USB cable",
+        "Control relay: 1 pcs (up to 5A)",
+        "Communication standard: 2G / GPRS"
       ]
     },
     {
       "id": "20",
       "name": "Двухканальный петлевой детектор SMA2",
+      "nameEn": "SMA2 Dual-Channel Loop Detector",
       "price": 11800,
       "category": "Шлагбаумы и автоматика",
-      "img": "assets/loop-det.jpg",
+      "categoryEn": "Barrier Gates & Automation",
+      "img": "assets/8.webp",
       "description": "Датчик индукционной петли для обнаружения транспортных средств над заложенным в асфальт кабелем. Используется для автоматического выезда.",
+      "descriptionEn": "Induction loop sensor for detecting vehicles over cable laid in asphalt. Used for automatic exit.",
       "features": [
         "Количество каналов: 2 канала",
         "Настройка чувствительности: автоматическая",
         "Тип монтажа: DIN-рейка",
         "Индикация неисправности петли: Да"
+      ],
+      "featuresEn": [
+        "Number of channels: 2 channels",
+        "Sensitivity adjustment: automatic",
+        "Mounting type: DIN rail",
+        "Loop fault indication: Yes"
       ]
     },
     {
       "id": "21",
       "name": "Радиобрелок Intro II 8501-4",
+      "nameEn": "Intro II 8501-4 Radio Key Fob",
       "price": 3400,
       "category": "Шлагбаумы и автоматика",
-      "img": "assets/intro-remote.jpg",
+      "categoryEn": "Barrier Gates & Automation",
+      "img": "assets/9.webp",
       "description": "Четырехканальный пульт премиум-серии Intro II с защищенным от сканирования и код-грабберов динамическим кодом.",
+      "descriptionEn": "Four-channel premium series Intro II remote with dynamic code protected against scanning and code grabbers.",
       "features": [
         "Серия: Intro II",
         "Тип кода: защищенный динамический",
         "Частота: 434.42 МГц",
         "Количество каналов: 4"
+      ],
+      "featuresEn": [
+        "Series: Intro II",
+        "Code type: protected dynamic",
+        "Frequency: 434.42 MHz",
+        "Number of channels: 4"
       ]
     },
     {
       "id": "22",
       "name": "Кодовая панель врезная KEY-90",
+      "nameEn": "KEY-90 Recessed Keypad",
       "price": 5100,
       "category": "Шлагбаумы и автоматика",
-      "img": "assets/keypad.jpg",
-      "description": "Цифровая клавиатура в металлическом корпусе для ограничения доступа на territory по секретному коду-паролю.",
+      "categoryEn": "Barrier Gates & Automation",
+      "img": "assets/10.jpeg",
+      "description": "Цифровая клавиатура в металлическом корпусе для ограничения доступа на территорию по секретному коду-паролю.",
+      "descriptionEn": "Digital keypad in metal housing for restricting area access via secret password code.",
       "features": [
         "Количество кодов: до 99",
         "Подсветка клавиш: светодиодная",
         "Материал: цинковый сплав",
         "Тип установки: врезной"
+      ],
+      "featuresEn": [
+        "Number of codes: up to 99",
+        "Key backlight: LED",
+        "Material: zinc alloy",
+        "Installation type: recessed"
       ]
     },
     {
       "id": "23",
       "name": "Стрела прямоугольная для шлагбаума 4м",
+      "nameEn": "4m Rectangular Boom for Barrier Gate",
       "price": 9600,
       "category": "Шлагбаумы и автоматика",
-      "img": "assets/boom-4m.jpg",
+      "categoryEn": "Barrier Gates & Automation",
+      "img": "assets/11.jpg",
       "description": "Алюминиевая стрела прямоугольного сечения со светоотражающими наклейками и пазами для установки демпфирующего шнура.",
+      "descriptionEn": "Aluminum rectangular-section boom with reflective stickers and grooves for damping cord installation.",
       "features": [
         "Длина: 4000 мм",
         "Сечение: 60х40 мм",
         "Материал: алюминий",
         "Светоотражатели в комплекте: Да"
+      ],
+      "featuresEn": [
+        "Length: 4000 mm",
+        "Section: 60x40 mm",
+        "Material: aluminum",
+        "Reflectors included: Yes"
       ]
     },
     {
       "id": "24",
       "name": "Радиоприемник внешний Intro II 8513",
+      "nameEn": "Intro II 8513 External Radio Receiver",
       "price": 4200,
       "category": "Шлагбаумы и автоматика",
-      "img": "assets/intro-receiver.jpg",
+      "categoryEn": "Barrier Gates & Automation",
+      "img": "assets/12.webp",
       "description": "Внешний одноканальный приемник для работы с пультами серии Intro II. Позволяет подключить защищенное радиоуправление к любому шлагбауму сторонних брендов.",
+      "descriptionEn": "External single-channel receiver for use with Intro II series remotes. Allows connecting protected radio control to any third-party barrier gate.",
       "features": [
         "Совместимость: пульты Intro II",
         "Память устройства: 500 пультов",
         "Класс защиты корпуса: IP55",
         "Питание устройства: 12-24В AC/DC"
+      ],
+      "featuresEn": [
+        "Compatibility: Intro II remotes",
+        "Device memory: 500 remotes",
+        "Case protection class: IP55",
+        "Device power supply: 12-24V AC/DC"
       ]
     },
     {
       "id": "25",
       "name": "CAME SMA Цифровой детектор транспортного средства",
+      "nameEn": "CAME SMA Digital Vehicle Detector",
       "price": 23000,
       "category": "Шлагбаумы и автоматика",
-      "img": "/upload/iblock/d37/hsyxf3dxu8pfgeo4ipggpho0h739zd4t.jpeg",
+      "categoryEn": "Barrier Gates & Automation",
+      "img": "assets/25.jpg",
       "description": "Датчик магнитный одноканальный для обнаружения транспортных средств. Автоматическая настройка датчика. Самотестирование датчика. Различные варианты работы выходных контактов реле. Совместимость с любой автоматической системой САМЕ.",
+      "descriptionEn": "Single-channel magnetic sensor for vehicle detection. Automatic sensor calibration. Sensor self-testing. Various output relay contact operation modes. Compatible with any CAME automatic system.",
       "features": [
         "Тип датчика: магнитный одноканальный",
         "Настройка: автоматическая",
         "Самотестирование: есть",
         "Совместимость: автоматика CAME"
+      ],
+      "featuresEn": [
+        "Sensor type: single-channel magnetic",
+        "Calibration: automatic",
+        "Self-testing: yes",
+        "Compatibility: CAME automation"
       ]
     },
     {
       "id": "26",
       "name": "CAME SMA2 Цифровой детектор транспортного средства",
+      "nameEn": "CAME SMA2 Digital Vehicle Detector",
       "price": 30000,
       "category": "Шлагбаумы и автоматика",
-      "img": "/upload/iblock/500/i37v5h7c6ua75qjj4iflr7g346e96xft.jpeg",
+      "categoryEn": "Barrier Gates & Automation",
+      "img": "assets/26.jpg",
       "description": "Датчик магнитный двухканальный для одновременного контроля двух независимых индукционных петель. Оптимальное решение для раздельного контроля въезда и выезда.",
+      "descriptionEn": "Dual-channel magnetic sensor for simultaneous control of two independent induction loops. Optimal solution for separate entry and exit control.",
       "features": [
         "Тип датчика: магнитный двухканальный",
         "Количество петель: 2 независимые",
         "Назначение: раздельный контроль въезда/выезда",
         "Обработка сигнала: цифровая"
+      ],
+      "featuresEn": [
+        "Sensor type: dual-channel magnetic",
+        "Number of loops: 2 independent",
+        "Purpose: separate entry/exit control",
+        "Signal processing: digital"
       ]
     },
     {
       "id": "27",
       "name": "Кабель для индукционной петли CAME (пробег 50м)",
+      "nameEn": "CAME Induction Loop Cable (50m run)",
       "price": 6500,
       "category": "Индукционные петли",
-      "img": "/upload/iblock/d37/hsyxf3dxu8pfgeo4ipggpho0h739zd4t.jpeg",
+      "categoryEn": "Induction Loops",
+      "img": "assets/27.jpg",
       "description": "Специализированный высокопрочный термостойкий провод для формирования витков индукционной петли в дорожном полотне под асфальт или плитку. Обеспечивает долговечность и стабильность индуктивности.",
+      "descriptionEn": "Specialized high-strength heat-resistant wire for forming induction loop turns in road surface under asphalt or tiles. Ensures durability and inductance stability.",
       "features": [
         "Длина кабеля: 50 м",
         "Свойства: высокопрочный, термостойкий",
         "Монтаж: под асфальт или плитку",
         "Стабильность: высокая стойкость индуктивности"
+      ],
+      "featuresEn": [
+        "Cable length: 50 m",
+        "Properties: high-strength, heat-resistant",
+        "Installation: under asphalt or tiles",
+        "Stability: high inductance resistance"
       ]
     },
     {
       "id": "28",
       "name": "Двухканальный петлевой детектор MATRIX2-24",
+      "nameEn": "MATRIX2-24 Dual-Channel Loop Detector",
       "price": 14500,
       "category": "Индукционные петли",
-      "img": "assets/dual-detector-m2.jpg",
+      "categoryEn": "Induction Loops",
+      "img": "assets/28.jpg",
       "description": "Профессиональный контроллер для одновременного подключения двух индукционных контуров. Идеален для систем определения направления движения транспорта.",
+      "descriptionEn": "Professional controller for simultaneous connection of two induction loops. Ideal for vehicle direction detection systems.",
       "features": [
         "Количество контуров: 2",
         "Класс устройства: профессиональный",
         "Питание устройства: 24В",
         "Назначение: определение направления движения"
+      ],
+      "featuresEn": [
+        "Number of loops: 2",
+        "Device class: professional",
+        "Device power: 24V",
+        "Purpose: vehicle direction detection"
       ]
     },
     {
       "id": "29",
       "name": "Готовая индукционная петля LP-6 (контур 2х1м)",
+      "nameEn": "LP-6 Pre-made Induction Loop (2x1m loop)",
       "price": 5400,
       "category": "Индукционные петли",
-      "img": "assets/ready-loop-6.jpg",
+      "categoryEn": "Induction Loops",
+      "img": "assets/29.webp",
       "description": "Собранный в заводских условиях шнур длиной 6 метров со стабильным шагом витков. Ускоряет монтаж в дорожное полотно перед шлагбаумами.",
+      "descriptionEn": "Factory-assembled 6-meter cable with stable turn spacing. Speeds up installation in road surface before barrier gates.",
       "features": [
         "Длина шнура: 6 м",
         "Размер контура: 2х1 м",
         "Изготовление: заводские условия",
         "Назначение: монтаж перед шлагбаумами"
+      ],
+      "featuresEn": [
+        "Cable length: 6 m",
+        "Loop size: 2x1 m",
+        "Manufacturing: factory conditions",
+        "Purpose: installation before barrier gates"
       ]
     },
     {
       "id": "30",
       "name": "Готовая индукционная петля LP-10 (контур 3х2м)",
+      "nameEn": "LP-10 Pre-made Induction Loop (3x2m loop)",
       "price": 7200,
       "category": "Индукционные петли",
-      "img": "assets/ready-loop-10.jpg",
+      "categoryEn": "Induction Loops",
+      "img": "assets/30.jpg",
       "description": "Увеличенный индукционный контур для надежной фиксации крупногабаритного грузового транспорта и спецтехники. Длина кабеля 10 метров.",
+      "descriptionEn": "Extended induction loop for reliable detection of large trucks and special vehicles. Cable length 10 meters.",
       "features": [
         "Длина кабеля: 10 м",
         "Размер контура: 3х2 м",
         "Тип контура: увеличенный",
         "Назначение: фиксация грузового транспорта"
+      ],
+      "featuresEn": [
+        "Cable length: 10 m",
+        "Loop size: 3x2 m",
+        "Loop type: extended",
+        "Purpose: large vehicle detection"
       ]
     },
     {
       "id": "31",
       "name": "Полиуретановый герметик для петель (дилатационный)",
+      "nameEn": "Polyurethane Sealant for Loops (Expansion Joint)",
       "price": 1800,
       "category": "Индукционные петли",
-      "img": "assets/loop-sealant.jpg",
+      "categoryEn": "Induction Loops",
+      "img": "assets/31.jpg",
       "description": "Высокоэластичный состав для заливки швов в асфальте и бетоне после укладки двойной индукционной петли. Защищает кабель от влаги и сдвигов грунта.",
+      "descriptionEn": "Highly elastic compound for filling joints in asphalt and concrete after laying double induction loop. Protects cable from moisture and ground shifts.",
       "features": [
         "Основа состава: полиуретан",
         "Тип шва: дилатационный / деформационный",
         "Эластичность: высокая",
         "Защитные свойства: от влаги и сдвигов грунта"
+      ],
+      "featuresEn": [
+        "Compound base: polyurethane",
+        "Joint type: expansion / deformation",
+        "Elasticity: high",
+        "Protective properties: against moisture and ground shifts"
       ]
     },
     {
       "id": "32",
       "name": "Двухканальный детектор присутствия на DIN-рейку",
+      "nameEn": "Dual-Channel Presence Detector for DIN Rail",
       "price": 12900,
       "category": "Индукционные петли",
-      "img": "assets/detector-din-2.jpg",
+      "categoryEn": "Induction Loops",
+      "img": "assets/32.jpg",
       "description": "Компактный модуль для установки в блок управления автоматики. Поддерживает раздельную настройку чувствительности для каждой из двух петель.",
+      "descriptionEn": "Compact module for installation in automation control unit. Supports separate sensitivity adjustment for each of two loops.",
       "features": [
         "Тип монтажа: на DIN-рейку",
         "Количество каналов: 2 канала контроля",
         "Настройка: раздельная для каждой петли",
         "Форм-фактор: компактный модуль"
+      ],
+      "featuresEn": [
+        "Mounting type: DIN rail",
+        "Number of channels: 2 control channels",
+        "Adjustment: separate for each loop",
+        "Form factor: compact module"
       ]
     },
     {
       "id": "33",
       "name": "Высокопрочный кабель для петель (бухта 100м)",
+      "nameEn": "High-Strength Loop Cable (100m reel)",
       "price": 9800,
       "category": "Индукционные петли",
-      "img": "assets/loop-wire-100.jpg",
+      "categoryEn": "Induction Loops",
+      "img": "assets/33.jpg",
       "description": "Специализированный медный многожильный кабель в изоляции из сшитого полиэтилена. Устойчив к экстремальным температурам и воздействию ГСМ.",
+      "descriptionEn": "Specialized multi-strand copper cable in cross-linked polyethylene insulation. Resistant to extreme temperatures and fuel/oil exposure.",
       "features": [
         "Длина в бухте: 100 м",
         "Материал жилы: медь (многожильный)",
         "Материал изоляции: сшитый полиэтилен",
         "Устойчивость: к температурам и ГСМ"
+      ],
+      "featuresEn": [
+        "Reel length: 100 m",
+        "Conductor material: copper (multi-strand)",
+        "Insulation material: cross-linked polyethylene",
+        "Resistance: to temperatures and fuel/oil"
       ]
     },
     {
       "id": "34",
       "name": "Промышленный контроллер петель FEIG VEK VEK-M2H",
+      "nameEn": "FEIG VEK VEK-M2H Industrial Loop Controller",
       "price": 19200,
       "category": "Индукционные петли",
-      "img": "assets/feig-vek.jpg",
+      "categoryEn": "Induction Loops",
+      "img": "assets/34.jpg",
       "description": "Интеллектуальный двухканальный детектор с функцией автоматической калибровки и защитой от перекрестных помех смежных магнитных контуров.",
+      "descriptionEn": "Intelligent dual-channel detector with auto-calibration function and protection against crosstalk from adjacent magnetic loops.",
       "features": [
         "Производитель/Модель: FEIG VEK-M2H",
         "Количество каналов: 2 канала",
         "Калибровка: автоматическая",
         "Защита: от помех смежных контуров"
+      ],
+      "featuresEn": [
+        "Manufacturer/Model: FEIG VEK-M2H",
+        "Number of channels: 2 channels",
+        "Calibration: automatic",
+        "Protection: against adjacent loop interference"
       ]
     },
     {
       "id": "35",
       "name": "Распределительная коробка для петель IP67",
+      "nameEn": "IP67 Distribution Box for Loops",
       "price": 1150,
       "category": "Индукционные петли",
-      "img": "assets/junction-box-loop.jpg",
+      "categoryEn": "Induction Loops",
+      "img": "assets/35.jpg",
       "description": "Герметичный бокс повышенной прочности для надежной коммутации выводов индукционной петли со считывающим коаксиальным фидером.",
+      "descriptionEn": "High-strength sealed box for reliable connection of induction loop leads to coaxial feeder cable.",
       "features": [
         "Класс защиты: IP67 (герметичный)",
         "Конструкция: бокс повышенной прочности",
         "Назначение: коммутация выводов петли",
         "Тип фидера: коаксиальный"
+      ],
+      "featuresEn": [
+        "Protection class: IP67 (sealed)",
+        "Construction: high-strength box",
+        "Purpose: loop lead connection",
+        "Feeder type: coaxial"
       ]
     },
     {
       "id": "36",
       "name": "Диагностический прибор-тестер индукционных систем",
+      "nameEn": "Induction Systems Diagnostic Tester",
       "price": 22500,
       "category": "Индукционные петли",
-      "img": "assets/loop-tester.jpg",
+      "categoryEn": "Induction Loops",
+      "img": "assets/36.webp",
       "description": "Портативный инструмент для замера индуктивности, рабочей частоты и добротности контура. Помогает оперативно находить скрытые обрывы в дорожном полотне.",
+      "descriptionEn": "Portable tool for measuring inductance, operating frequency and loop Q-factor. Helps quickly locate hidden breaks in road surface.",
       "features": [
         "Тип устройства: портативный тестер",
         "Измеряемые параметры: индуктивность, частота, добротность",
         "Назначение: диагностика систем",
         "Поиск неисправностей: скрытые обрывы кабеля"
+      ],
+      "featuresEn": [
+        "Device type: portable tester",
+        "Measured parameters: inductance, frequency, Q-factor",
+        "Purpose: system diagnostics",
+        "Fault detection: hidden cable breaks"
       ]
     }
   ],
@@ -634,26 +958,47 @@
       "userName": "иван",
       "items": [
         {
-          "id": "13",
-          "price": 115500,
-          "quantity": 4
+          "id": "12",
+          "name": "Контроллер автономный Z-5R",
+          "price": 1100,
+          "img": "assets/24.webp",
+          "quantity": 3
         }
       ],
-      "totalPrice": 462000,
-      "date": "5/25/2026, 11:28:29 PM",
-      "address": "das",
-      "comment": "afs",
+      "totalPrice": 3300,
+      "date": "5/30/2026, 4:58:12 PM",
+      "address": "jgntfsa",
+      "comment": "ngfdsa",
       "status": "Принята",
-      "id": "uYvqrB61bY0"
+      "id": "5fgLrW7ea1Y"
+    },
+    {
+      "userId": "FB5S_Gm_OiY",
+      "userName": "иван",
+      "items": [
+        {
+          "id": "27",
+          "name": "Кабель для индукционной петли CAME (пробег 50м)",
+          "price": 6500,
+          "img": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=500&q=80",
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 6500,
+      "date": "5/30/2026, 9:52:17 PM",
+      "address": "chchchhcchhc",
+      "comment": "в любое время звони, базар",
+      "status": "Принята",
+      "id": "Np5dmEKm7FM"
     }
   ],
   "reviews": [
     {
-      "userId": "aTAviRxYYUc",
-      "author": "иван123",
-      "text": "м",
-      "date": "23.05.2026",
-      "id": "X0U_s9ND5o4"
+      "userId": "FB5S_Gm_OiY",
+      "author": "иван",
+      "text": "o.iuetygrfwqdsa",
+      "date": "31.05.2026",
+      "id": "TtClXIq0cxA"
     }
   ],
   "favorites": [],

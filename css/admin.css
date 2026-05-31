@@ -28,6 +28,7 @@ body {
     display: flex;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
 }
 
 .admin-header__wrapper {
@@ -35,12 +36,13 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
 }
 
 .admin-logo-block {
     display: flex;
     align-items: center;
-    margin-left: 90px; /* Отступ совпадает с главным меню сайта */
+    margin-left: 110px; /* Отступ совпадает с главным меню сайта */
 }
 
 .admin-logo-block span {

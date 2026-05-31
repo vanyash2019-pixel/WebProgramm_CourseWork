@@ -1,4 +1,24 @@
+// js/admin.js
+
 const API_URL = 'http://localhost:3000';
+
+// === ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ДЛЯ ПЕРЕВОДОВ ===
+function getUIText(ru, en) {
+    return document.body.classList.contains('lang-en') ? en : ru;
+}
+
+// === ПЕРЕВОД СТАТУСОВ ЗАКАЗА ===
+function getStatusText(status) {
+    const translations = {
+        'Принята': { ru: 'Принята', en: 'Received' },
+        'В обработке': { ru: 'В обработке', en: 'Processing' },
+        'Готов': { ru: 'Готов', en: 'Ready' },
+        'Отменен': { ru: 'Отменен', en: 'Cancelled' }
+    };
+    const isEn = document.body.classList.contains('lang-en');
+    const t = translations[status];
+    return t ? (isEn ? t.en : t.ru) : status;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. ЗАЩИТА СТРАНИЦЫ
@@ -7,9 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.innerHTML = `
             <div class="access-denied-container">
                 <div class="access-denied-icon"><i class="fa fa-lock"></i></div>
-                <div class="access-denied-title">Доступ запрещен</div>
-                <div class="access-denied-text">У вас нет прав для просмотра этой страницы.</div>
-                <a href="index.html" class="btn-admin btn-admin--approve" style="text-decoration: none;">Вернуться на главную</a>
+                <div class="access-denied-title">${getUIText('Доступ запрещен', 'Access Denied')}</div>
+                <div class="access-denied-text">${getUIText('У вас нет прав для просмотра этой страницы.', 'You do not have permission to view this page.')}</div>
+                <a href="index.html" class="btn-admin btn-admin--approve" style="text-decoration: none;">${getUIText('Вернуться на главную', 'Back to Home')}</a>
             </div>
         `;
         return;
@@ -17,6 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Запускаем загрузку данных
     loadAdminData();
+    
+    // === 🎯 Слушаем событие смены языка ===
+    window.addEventListener('languageChanged', () => {
+        loadAdminData(); // Перезагружаем данные с новыми переводами
+    });
 });
 
 async function loadAdminData() {
@@ -38,12 +63,16 @@ async function loadAdminData() {
     } catch (error) {
         console.error('Ошибка загрузки данных:', error);
         
-        // Корректно выводим сообщение об ошибке прямо в списки, чтобы интерфейс не ломался
         const ordersContainer = document.getElementById('admin-orders-list');
         const reviewsContainer = document.getElementById('admin-reviews-list');
         
+        // === ИСПРАВЛЕНО: Перевод сообщения об ошибке ===
+        const errorMsg = getUIText(
+            'Не удалось загрузить данные с сервера. Проверьте запущен ли бэкенд.',
+            'Failed to load data from server. Check if backend is running.'
+        );
         const errorHTML = `<tr><td colspan="100%" style="text-align:center; color:var(--primary-red); padding: 20px;">
-                            <i class="fa fa-exclamation-triangle"></i> Не удалось загрузить данные с сервера. Проверьте запущен ли бэкенд.
+                            <i class="fa fa-exclamation-triangle"></i> ${errorMsg}
                            </td></tr>`;
         
         if (ordersContainer) ordersContainer.innerHTML = errorHTML;
@@ -59,44 +88,59 @@ function renderAdminOrders(orders) {
     if (!container) return;
 
     if (orders.length === 0) {
-        container.innerHTML = '<p style="color: #666; padding: 15px;">Нет активных заказов.</p>';
+        // === ИСПРАВЛЕНО: Перевод сообщения "нет заказов" ===
+        const noOrdersMsg = getUIText('Нет активных заказов.', 'No active orders.');
+        container.innerHTML = `<p style="color: #666; padding: 15px;">${noOrdersMsg}</p>`;
         return;
     }
 
     const statuses = ['Принята', 'В обработке', 'Готов', 'Отменен'];
+    
+    // === Переводы для интерфейса заказов ===
+    const orderPrefix = getUIText('Заказ №', 'Order #');
+    const clientLabel = getUIText('Клиент', 'Client');
+    const addressLabel = getUIText('Адрес', 'Address');
+    const itemsLabel = getUIText('Товары', 'Items');
+    const commentLabel = getUIText('Комментарий', 'Comment');
+    const totalLabel = getUIText('Сумма', 'Total');
+    const currency = getUIText(' руб.', ' RUB');
+    const changeStatusLabel = getUIText('Изменить статус:', 'Change status:');
+    const deleteBtn = getUIText('Удалить', 'Delete');
 
     try {
         container.innerHTML = orders.map(order => {
-            // Заглушки на случай, если данных нет в db.json
             const currentStatus = order.status || 'Принята';
-            const userName = order.userName || 'Не указан';
-            const address = order.address || 'Не указан';
-            const commentText = order.comment || 'Нет комментария';
+            const userName = order.userName || getUIText('Не указан', 'Not specified');
+            const address = order.address || getUIText('Не указан', 'Not specified');
+            const commentText = order.comment || getUIText('Нет комментария', 'No comment');
             
-            // Проверка товаров
+            // === Перевод названий товаров в заказе ===
             const itemsText = (order.items && Array.isArray(order.items)) 
-                ? order.items.map(i => `${i.name} (${i.quantity} шт.)`).join(', ') 
-                : 'Товары не найдены';
+                ? order.items.map(i => {
+                    const itemName = (document.body.classList.contains('lang-en') && i.nameEn) ? i.nameEn : i.name;
+                    return `${itemName} (${i.quantity} ${getUIText('шт.', 'pcs')})`;
+                }).join(', ') 
+                : getUIText('Товары не найдены', 'Items not found');
 
             return `
                 <div class="admin-card" id="order-card-${order.id}" style="margin-bottom: 20px;">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
-                        <strong>Заказ №${order.id} | Клиент: ${userName} (ID: ${order.userId})</strong>
+                        <strong>${orderPrefix}${order.id} | ${clientLabel}: ${userName} (ID: ${order.userId})</strong>
                         <span style="color: #666; font-size: 14px;"><i class="fa fa-clock-o"></i> ${order.date}</span>
                     </div>
-                    <p style="margin: 8px 0; font-size: 15px;"><strong>Адрес:</strong> ${address}</p>
-                    <p style="margin: 8px 0; font-size: 15px;"><strong>Товары:</strong> ${itemsText}</p>
-                    <p style="margin: 8px 0; font-size: 15px;"><strong>Комментарий:</strong> ${commentText}</p>
-                    <p style="margin: 8px 0; font-size: 15px;"><strong>Сумма:</strong> <span style="color: var(--primary-blue); font-weight: 700;">${order.totalPrice} руб.</span></p>
+                    <p style="margin: 8px 0; font-size: 15px;"><strong>${addressLabel}:</strong> ${address}</p>
+                    <p style="margin: 8px 0; font-size: 15px;"><strong>${itemsLabel}:</strong> ${itemsText}</p>
+                    <p style="margin: 8px 0; font-size: 15px;"><strong>${commentLabel}:</strong> ${commentText}</p>
+                    <p style="margin: 8px 0; font-size: 15px;"><strong>${totalLabel}:</strong> <span style="color: var(--primary-blue); font-weight: 700;">${order.totalPrice}${currency}</span></p>
                     
                     <div style="margin-top: 15px; display: flex; gap: 10px; align-items: center; background: var(--light-gray); padding: 10px; border-radius: 4px;">
-                        <label style="font-size: 14px; font-weight: 500;">Изменить статус:</label>
+                        <label style="font-size: 14px; font-weight: 500;">${changeStatusLabel}</label>
                         <select onchange="updateOrderStatus('${order.id}', this.value)" style="padding: 6px 12px; border-radius: 4px; border: 1px solid var(--border-color); outline: none; font-family: Roboto;">
-                            ${statuses.map(s => `<option value="${s}" ${s === currentStatus ? 'selected' : ''}>${s}</option>`).join('')}
+                            ${statuses.map(s => `<option value="${s}" ${s === currentStatus ? 'selected' : ''}>${getStatusText(s)}</option>`).join('')}
                         </select>
                         
-                        <button onclick="deleteOrder('${order.id}')" class="btn-admin btn-admin--delete" style="margin-left: auto;" title="Удалить заказ">
-                            <i class="fa fa-trash"></i> Удалить
+                        <button onclick="deleteOrder('${order.id}')" class="btn-admin btn-admin--delete" style="margin-left: auto;" title="${deleteBtn}">
+                            <i class="fa fa-trash"></i> ${deleteBtn}
                         </button>
                     </div>
                 </div>
@@ -104,7 +148,8 @@ function renderAdminOrders(orders) {
         }).join('');
     } catch (e) {
         console.error("Ошибка при отрисовке заказов:", e);
-        container.innerHTML = `<p style="color: red; padding: 15px;">Ошибка отображения заказов. Проверьте консоль.</p>`;
+        const renderErrorMsg = getUIText('Ошибка отображения заказов. Проверьте консоль.', 'Error displaying orders. Check console.');
+        container.innerHTML = `<p style="color: red; padding: 15px;">${renderErrorMsg}</p>`;
     }
 }
 
@@ -118,12 +163,18 @@ window.updateOrderStatus = async function(orderId, newStatus) {
         if (!response.ok) throw new Error('Ошибка обновления');
     } catch (err) {
         console.error(err);
-        alert('Ошибка при обновлении статуса заказа');
+        // === ИСПРАВЛЕНО: Перевод ошибки ===
+        alert(getUIText('Ошибка при обновлении статуса заказа', 'Error updating order status'));
     }
 };
 
 window.deleteOrder = async function(orderId) {
-    if (confirm('Вы уверены, что хотите безвозвратно удалить этот заказ?')) {
+    // === ИСПРАВЛЕНО: Перевод подтверждения ===
+    const confirmMsg = getUIText(
+        'Вы уверены, что хотите безвозвратно удалить этот заказ?',
+        'Are you sure you want to permanently delete this order?'
+    );
+    if (confirm(confirmMsg)) {
         try {
             const response = await fetch(`${API_URL}/orders/${orderId}`, { method: 'DELETE' });
             if (!response.ok) throw new Error('Ошибка удаления заказа');
@@ -138,22 +189,30 @@ window.deleteOrder = async function(orderId) {
             }
         } catch (err) {
             console.error(err);
-            alert('Ошибка при удалении заказа');
+            alert(getUIText('Ошибка при удалении заказа', 'Error deleting order'));
         }
     }
 };
 
 // ==========================================
-// ЛОГИКА ОТЗЫВОВ (Табличный вывод по фэншую)
+// ЛОГИКА ОТЗЫВОВ
 // ==========================================
 function renderAdminReviews(reviews) {
     const container = document.getElementById('admin-reviews-list');
     if (!container) return;
 
     if (reviews.length === 0) {
-        container.innerHTML = '<tr><td colspan="3" style="text-align:center; color: #666; padding: 20px;">Отзывов пока нет.</td></tr>';
+        // === ИСПРАВЛЕНО: Перевод сообщения "нет отзывов" ===
+        const noReviewsMsg = getUIText('Отзывов пока нет.', 'No reviews yet.');
+        container.innerHTML = `<tr><td colspan="3" style="text-align:center; color: #666; padding: 20px;">${noReviewsMsg}</td></tr>`;
         return;
     }
+
+    // === Переводы для интерфейса отзывов ===
+    const saveBtn = getUIText('Сохранить', 'Save');
+    const deleteBtn = getUIText('Удалить', 'Delete');
+    const saveTitle = getUIText('Сохранить изменения', 'Save changes');
+    const deleteTitle = getUIText('Удалить отзыв', 'Delete review');
 
     container.innerHTML = reviews.map(r => `
         <tr id="review-row-${r.id}">
@@ -166,11 +225,11 @@ function renderAdminReviews(reviews) {
             </td>
             <td>
                 <div style="display: flex; gap: 8px; white-space: nowrap;">
-                    <button onclick="saveReviewEdit('${r.id}')" class="btn-admin btn-admin--approve" title="Сохранить изменения">
-                        <i class="fa fa-save"></i> Сохранить
+                    <button onclick="saveReviewEdit('${r.id}')" class="btn-admin btn-admin--approve" title="${saveTitle}">
+                        <i class="fa fa-save"></i> ${saveBtn}
                     </button>
-                    <button onclick="deleteReview('${r.id}')" class="btn-admin btn-admin--delete" title="Удалить отзыв">
-                        <i class="fa fa-trash"></i> Удалить
+                    <button onclick="deleteReview('${r.id}')" class="btn-admin btn-admin--delete" title="${deleteTitle}">
+                        <i class="fa fa-trash"></i> ${deleteBtn}
                     </button>
                 </div>
             </td>
@@ -184,7 +243,8 @@ window.saveReviewEdit = async function(reviewId) {
     
     const newText = textarea.value.trim();
     if (!newText) {
-        alert('Отзыв не может быть пустым!');
+        // === ИСПРАВЛЕНО: Перевод ошибки ===
+        alert(getUIText('Отзыв не может быть пустым!', 'Review cannot be empty!'));
         return;
     }
 
@@ -196,20 +256,24 @@ window.saveReviewEdit = async function(reviewId) {
         });
         
         if (!response.ok) throw new Error('Ошибка обновления');
-        alert('Отзыв успешно обновлен!');
+        alert(getUIText('Отзыв успешно обновлен!', 'Review successfully updated!'));
     } catch (err) {
         console.error(err);
-        alert('Ошибка при сохранении отзыва');
+        alert(getUIText('Ошибка при сохранении отзыва', 'Error saving review'));
     }
 };
 
 window.deleteReview = async function(reviewId) {
-    if (confirm('Вы уверены, что хотите безвозвратно удалить этот отзыв?')) {
+    // === ИСПРАВЛЕНО: Перевод подтверждения ===
+    const confirmMsg = getUIText(
+        'Вы уверены, что хотите безвозвратно удалить этот отзыв?',
+        'Are you sure you want to permanently delete this review?'
+    );
+    if (confirm(confirmMsg)) {
         try {
             const response = await fetch(`${API_URL}/reviews/${reviewId}`, { method: 'DELETE' });
             if (!response.ok) throw new Error('Ошибка удаления');
             
-            // Вместо перезапроса всего сервера просто плавно убираем строчку из DOM
             const row = document.getElementById(`review-row-${reviewId}`);
             if (row) {
                 row.style.opacity = '0';
@@ -219,7 +283,7 @@ window.deleteReview = async function(reviewId) {
             }
         } catch (err) {
             console.error(err);
-            alert('Ошибка при удалении отзыва');
+            alert(getUIText('Ошибка при удалении отзыва', 'Error deleting review'));
         }
     }
 };

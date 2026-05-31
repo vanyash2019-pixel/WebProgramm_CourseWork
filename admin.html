@@ -6,60 +6,92 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/lang.css">
+        <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
     <header class="admin-header">
-        <div class="container-2"> <div class="admin-header__wrapper">
+        <div class="container-2">
+            <div class="admin-header__wrapper">
                 <div class="admin-logo-block">
-                    <span>⚙️ Панель администратора ЕГДС</span>
+                    <span>
+                        <span class="ru">⚙️ Панель администратора ЕГДС</span>
+                        <span class="en">⚙️ EGDS Admin Panel</span>
+                    </span>
                 </div>
+                
+                <!-- Переключатель языка (добавлен отдельно) -->
+                <div class="lang-switcher" style="margin-right: 15px;">
+                    <button type="button" id="lang-ru" class="lang-btn active">RUS</button>
+                    <button type="button" id="lang-en" class="lang-btn">ENG</button>
+                </div>
+                
                 <div class="admin-right-group">
                     <a href="index.html" class="admin-back-btn">
-                        <i class="fa fa-home"></i> Вернуться на сайт
+                        <i class="fa fa-home"></i> 
+                        <span class="ru">Вернуться на сайт</span><span class="en">Back to site</span>
                     </a>
                 </div>
             </div>
         </div>
     </header>
 
-   <main class="admin-container">
-    <h1 class="admin-title">Управление системой</h1>
+    <main class="admin-container">
+        <h1 class="admin-title">
+            <span class="ru">Управление системой</span><span class="en">System Management</span>
+        </h1>
 
-    <div class="admin-card">
-        <h2 class="admin-card__title">
-            <i class="fa fa-shopping-basket"></i> Управление заказами и заявками
-        </h2>
-        <div id="admin-orders-list">
-            <p style="color: #666; padding: 15px;">Загрузка заказов...</p>
+        <div class="admin-card">
+            <h2 class="admin-card__title">
+                <i class="fa fa-shopping-basket"></i> 
+                <span class="ru">Управление заказами и заявками</span>
+                <span class="en">Orders & Requests Management</span>
+            </h2>
+            <div id="admin-orders-list">
+                <p style="color: #666; padding: 15px;">
+                    <span class="ru">Загрузка заказов...</span><span class="en">Loading orders...</span>
+                </p>
+            </div>
         </div>
-    </div>
 
-    <div class="admin-card">
-        <h2 class="admin-card__title">
-            <i class="fa fa-comments"></i> Модерация отзывов
-        </h2>
-        <div class="admin-table-wrapper">
-            <table class="admin-table">
-                <thead>
-                    <tr>
-                        <th style="width: 25%;">Автор и дата</th>
-                        <th style="width: 55%;">Текст отзыва</th>
-                        <th style="width: 20%;">Действия</th>
-                    </tr>
-                </thead>
-                <tbody id="admin-reviews-list">
-                    <tr>
-                        <td colspan="3" style="text-align:center; color: #666; padding: 20px;">
-                            Загрузка отзывов...
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="admin-card">
+            <h2 class="admin-card__title">
+                <i class="fa fa-comments"></i> 
+                <span class="ru">Модерация отзывов</span>
+                <span class="en">Review Moderation</span>
+            </h2>
+            <div class="admin-table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">
+                                <span class="ru">Автор и дата</span><span class="en">Author & Date</span>
+                            </th>
+                            <th style="width: 55%;">
+                                <span class="ru">Текст отзыва</span><span class="en">Review Text</span>
+                            </th>
+                            <th style="width: 20%;">
+                                <span class="ru">Действия</span><span class="en">Actions</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-reviews-list">
+                        <tr>
+                            <td colspan="3" style="text-align:center; color: #666; padding: 20px;">
+                                <span class="ru">Загрузка отзывов...</span><span class="en">Loading reviews...</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 
+    <!-- Скрипты -->
     <script src="js/admin.js"></script>
+    
+    <!-- Переключатель языка (правильное имя файла) -->
+    <script src="js/language.js"></script>
 </body>
 </html>

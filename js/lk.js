@@ -1,3 +1,23 @@
+// js/lk.js
+
+// === ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ДЛЯ ПЕРЕВОДА СТАТУСОВ ===
+function getStatusText(status) {
+    const translations = {
+        'Принята': { ru: 'Принята', en: 'Received' },
+        'В обработке': { ru: 'В обработке', en: 'Processing' },
+        'Готов': { ru: 'Готов', en: 'Ready' },
+        'Отменен': { ru: 'Отменен', en: 'Cancelled' }
+    };
+    const isEn = document.body.classList.contains('lang-en');
+    const t = translations[status];
+    return t ? (isEn ? t.en : t.ru) : status;
+}
+
+// === ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ДЛЯ ПЕРЕВОДА ТЕКСТОВ ИНТЕРФЕЙСА ===
+function getUIText(ru, en) {
+    return document.body.classList.contains('lang-en') ? en : ru;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const userRaw = localStorage.getItem('currentUser');
     const mainBlock = document.getElementById('lk-main-block');
@@ -5,11 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Проверяем, авторизован ли пользователь
     if (!userRaw) {
         if (mainBlock) {
+            // === ИСПРАВЛЕНО: Используем переводы ===
+            const title = getUIText('ДОСТУП ОГРАНИЧЕН', 'ACCESS DENIED');
+            const msg = getUIText(
+                'Для просмотра личного кабинета необходимо авторизоваться на сайте.',
+                'You must be logged in to view your personal account.'
+            );
+            const btn = getUIText('Войти в аккаунт', 'Log In');
+            
             mainBlock.innerHTML = `
                 <div class="access-denied">
-                    <h2>ДОСТУП ОГРАНИЧЕН</h2>
-                    <p>Для просмотра личного кабинета необходимо авторизоваться на сайте.</p>
-                    <a href="auth.html" class="btn-login">Войти в аккаунт</a>
+                    <h2>${title}</h2>
+                    <p>${msg}</p>
+                    <a href="auth.html" class="btn-login">${btn}</a>
                 </div>
             `;
         }
@@ -48,15 +76,22 @@ document.addEventListener('DOMContentLoaded', () => {
             if (phoneInput) phoneInput.value = userData.phone || '';
             
             if (roleDiv) {
-                roleDiv.textContent = (userData.role === 'admin' || userData.role === 'administrator') 
-                    ? 'Администратор' 
-                    : 'Клиент ЕГДС';
+                // === ИСПРАВЛЕНО: Перевод роли ===
+                const roleText = (userData.role === 'admin' || userData.role === 'administrator') 
+                    ? getUIText('Администратор', 'Administrator')
+                    : getUIText('Клиент ЕГДС', 'EGDS Customer');
+                roleDiv.textContent = roleText;
             }
             userPasswordBackup = userData.password;
         })
         .catch(err => {
             console.error('Не удалось загрузить профиль с сервера:', err);
-            alert('Ошибка загрузки данных с сервера. Возможно, json-server не запущен.');
+            // === ИСПРАВЛЕНО: Перевод ошибки ===
+            const errorMsg = getUIText(
+                'Ошибка загрузки данных с сервера. Возможно, json-server не запущен.',
+                'Failed to load data from server. Maybe json-server is not running.'
+            );
+            alert(errorMsg);
         });
 
     // 3. Логика переключения вкладок
@@ -81,7 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Функция загрузки и отображения заказов
     async function loadUserOrders() {
         if (!ordersListContainer) return;
-        ordersListContainer.innerHTML = '<p class="lk-status-message">Загрузка истории заказов...</p>';
+        
+        // === ИСПРАВЛЕНО: Перевод сообщения загрузки ===
+        const loadingMsg = getUIText('Загрузка истории заказов...', 'Loading order history...');
+        ordersListContainer.innerHTML = `<p class="lk-status-message">${loadingMsg}</p>`;
         
         try {
             const response = await fetch(`${ORDERS_API_URL}?userId=${sessionUser.id}`);
@@ -90,7 +128,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const orders = await response.json();
             
             if (orders.length === 0) {
-                ordersListContainer.innerHTML = '<p class="lk-status-message">У вас пока нет оформленных заказов или заявок.</p>';
+                // === ИСПРАВЛЕНО: Перевод сообщения "пусто" ===
+                const emptyMsg = getUIText(
+                    'У вас пока нет оформленных заказов или заявок.',
+                    'You have no orders or requests yet.'
+                );
+                ordersListContainer.innerHTML = `<p class="lk-status-message">${emptyMsg}</p>`;
                 return;
             }
 
@@ -105,28 +148,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             };
             
+            // === ИСПРАВЛЕНО: Переводы для карточек заказов ===
+            const currency = getUIText(' руб.', ' RUB');
+            const itemsLabel = getUIText('Товары:', 'Items:');
+            const totalLabel = getUIText('Сумма заказа:', 'Order total:');
+            const statusHistoryBtn = getUIText('История статусов', 'Status history');
+            const cancelBtn = getUIText('Отменить заказ', 'Cancel order');
+            const orderPrefix = getUIText('Заказ №', 'Order #');
+            const orderFrom = getUIText('от', 'from');
+            
             ordersListContainer.innerHTML = orders.map(order => {
-                const itemsList = order.items.map(item => `${item.name} (${item.quantity} шт.)`).join(', ');
-                const currentStatus = order.status || 'Принята';
-                const statusClass = getStatusClass(currentStatus);
+                // === ИСПРАВЛЕНО: Перевод названий товаров в заказе ===
+                const itemsList = order.items.map(item => {
+                    // Если есть nameEn и включен английский — используем его
+                    const itemName = (document.body.classList.contains('lang-en') && item.nameEn) 
+                        ? item.nameEn 
+                        : item.name;
+                    return `${itemName} (${item.quantity} шт.)`;
+                }).join(', ');
+                
+                const currentStatus = getStatusText(order.status || 'Принята');
+                const statusClass = getStatusClass(order.status || 'Принята');
                 
                 // Кнопка «Отменить заказ» показывается, только если он не Готов и не Отменен
-                const showCancelBtn = (currentStatus !== 'Отменен' && currentStatus !== 'Готов');
+                const showCancelBtn = (order.status !== 'Отменен' && order.status !== 'Готов');
                 const cancelBtnHtml = showCancelBtn 
-                    ? `<button class="order-cancel-btn" onclick="cancelOrder('${order.id}')">Отменить заказ</button>` 
+                    ? `<button class="order-cancel-btn" onclick="cancelOrder('${order.id}')">${cancelBtn}</button>` 
                     : '';
                 
                 return `
                     <div class="order-item">
                         <div class="order-item__header">
-                            <span class="order-item__header-title">Заказ №${order.id} от ${order.date}</span>
+                            <span class="order-item__header-title">${orderPrefix}${order.id} ${orderFrom} ${order.date}</span>
                             <span class="${statusClass}">${currentStatus}</span>
                         </div>
-                        <p class="order-item__products"><strong>Товары:</strong> ${itemsList}</p>
-                        <p class="order-item__total"><strong>Сумма заказа:</strong> ${order.totalPrice.toLocaleString()} руб.</p>
+                        <p class="order-item__products"><strong>${itemsLabel}</strong> ${itemsList}</p>
+                        <p class="order-item__total"><strong>${totalLabel}</strong> ${order.totalPrice.toLocaleString()}${currency}</p>
                         
                         <div class="order-item__actions">
-                            <button class="order-status-btn" onclick="openStatusModal('${currentStatus}', '${order.date}')">История статусов</button>
+                            <button class="order-status-btn" onclick="openStatusModal('${order.status || 'Принята'}', '${order.date}')">${statusHistoryBtn}</button>
                             ${cancelBtnHtml}
                         </div>
                     </div>
@@ -135,17 +195,22 @@ document.addEventListener('DOMContentLoaded', () => {
             
         } catch (error) {
             console.error('Ошибка загрузки заказов:', error);
-            ordersListContainer.innerHTML = '<p class="lk-status-message lk-error-message">Не удалось загрузить история заказов.</p>';
+            // === ИСПРАВЛЕНО: Перевод ошибки ===
+            const errorMsg = getUIText('Не удалось загрузить история заказов.', 'Failed to load order history.');
+            ordersListContainer.innerHTML = `<p class="lk-status-message lk-error-message">${errorMsg}</p>`;
         }
     }
 
     // === ФУНКЦИЯ ОТМЕНЫ ЗАКАЗА ===
-    // Помещена внутрь DOMContentLoaded, чтобы иметь доступ к функции loadUserOrders()
     window.cancelOrder = async function(orderId) {
-        if (!confirm('Вы уверены, что хотите отменить этот заказ?')) return;
+        // === ИСПРАВЛЕНО: Перевод подтверждения ===
+        const confirmMsg = getUIText(
+            'Вы уверены, что хотите отменить этот заказ?',
+            'Are you sure you want to cancel this order?'
+        );
+        if (!confirm(confirmMsg)) return;
 
         try {
-            // Используем метод PATCH, чтобы обновить только статус, не затирая остальные данные заказа
             const response = await fetch(`${ORDERS_API_URL}/${orderId}`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
@@ -153,14 +218,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (response.ok) {
-                alert('Заказ успешно отменен!');
-                loadUserOrders(); // Перерисовываем список заказов с новым статусом
+                // === ИСПРАВЛЕНО: Перевод успеха ===
+                const successMsg = getUIText('Заказ успешно отменен!', 'Order successfully cancelled!');
+                alert(successMsg);
+                loadUserOrders();
             } else {
-                alert('Не удалось отменить заказ на сервере.');
+                const errorMsg = getUIText('Не удалось отменить заказ на сервере.', 'Failed to cancel order on server.');
+                alert(errorMsg);
             }
         } catch (error) {
             console.error('Ошибка при отмене заказа:', error);
-            alert('Произошла ошибка при связи с сервером.');
+            const netErrorMsg = getUIText('Произошла ошибка при связи с сервером.', 'Network error while contacting server.');
+            alert(netErrorMsg);
         }
     };
 
@@ -174,12 +243,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const updatedPhone = phoneInput.value.trim();
 
             if (updatedPhone.length > 13) {
-                alert('Ошибка: Номер телефона не может быть длиннее 13 символов!');
+                // === ИСПРАВЛЕНО: Перевод ошибки ===
+                const phoneLongMsg = getUIText(
+                    'Ошибка: Номер телефона не может быть длиннее 13 символов!',
+                    'Error: Phone number cannot be longer than 13 characters!'
+                );
+                alert(phoneLongMsg);
                 return;
             }
 
             if (updatedPhone.length < 9) {
-                alert('Ошибка: Номер телефона слишком короткий!');
+                const phoneShortMsg = getUIText(
+                    'Ошибка: Номер телефона слишком короткий!',
+                    'Error: Phone number is too short!'
+                );
+                alert(phoneShortMsg);
                 return;
             }
 
@@ -189,7 +267,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const emailConflict = allUsers.some(u => u.email === updatedEmail && u.id !== sessionUser.id);
                 if (emailConflict) {
-                    alert('Этот E-mail уже используется другим пользователем!');
+                    // === ИСПРАВЛЕНО: Перевод ошибки ===
+                    const emailTakenMsg = getUIText(
+                        'Этот E-mail уже используется другим пользователем!',
+                        'This email is already used by another user!'
+                    );
+                    alert(emailTakenMsg);
                     return;
                 }
 
@@ -220,14 +303,18 @@ document.addEventListener('DOMContentLoaded', () => {
                         updateAuthHeader();
                     }
 
-                    alert('Данные профиля успешно обновлены!');
+                    // === ИСПРАВЛЕНО: Перевод успеха ===
+                    const successMsg = getUIText('Данные профиля успешно обновлены!', 'Profile data successfully updated!');
+                    alert(successMsg);
                 } else {
-                    alert('Не удалось сохранить данные на сервере.');
+                    const saveErrorMsg = getUIText('Не удалось сохранить данные на сервере.', 'Failed to save data to server.');
+                    alert(saveErrorMsg);
                 }
 
             } catch (error) {
                 console.error('Ошибка при обновлении профиля:', error);
-                alert('Произошла ошибка при связи с сервером.');
+                const netErrorMsg = getUIText('Произошла ошибка при связи с сервером.', 'Network error while contacting server.');
+                alert(netErrorMsg);
             }
         });
     }
@@ -237,10 +324,31 @@ document.addEventListener('DOMContentLoaded', () => {
     if (internalLogoutBtn) {
         internalLogoutBtn.addEventListener('click', () => {
             localStorage.removeItem('currentUser');
-            alert('Вы вышли из профиля.');
+            // === ИСПРАВЛЕНО: Перевод сообщения ===
+            const logoutMsg = getUIText('Вы вышли из профиля.', 'You have logged out.');
+            alert(logoutMsg);
             window.location.href = 'index.html';
         });
     }
+    
+    // === 🎯 НОВОЕ: Слушаем событие смены языка ===
+    window.addEventListener('languageChanged', () => {
+        // Если открыта вкладка заказов — перерисовываем их с новыми переводами
+        if (ordersContent && ordersContent.style.display !== 'none') {
+            loadUserOrders();
+        }
+        // Обновляем роль пользователя (если данные уже загружены)
+        if (roleDiv && sessionUser) {
+            fetch(API_URL)
+                .then(res => res.json())
+                .then(userData => {
+                    const roleText = (userData.role === 'admin' || userData.role === 'administrator') 
+                        ? getUIText('Администратор', 'Administrator')
+                        : getUIText('Клиент ЕГДС', 'EGDS Customer');
+                    roleDiv.textContent = roleText;
+                });
+        }
+    });
 });
 
 // === ЛОГИКА МОДАЛЬНОГО ОКНА СТАТУСОВ ===
@@ -249,17 +357,23 @@ window.openStatusModal = function(currentStatus, orderDate) {
     const timelineContainer = document.getElementById('status-timeline-container');
 
     const standardFlow = ['Принята', 'В обработке', 'Готов'];
+    
+    // === ИСПРАВЛЕНО: Переводы для модального окна ===
+    const cancelledText = getUIText('Отменен', 'Cancelled');
+    const orderCancelledText = getUIText('Заказ аннулирован', 'Order cancelled');
+    const currentStageText = getUIText('Текущий этап', 'Current stage');
+    
     let html = '<div class="timeline">';
 
     if (currentStatus === 'Отменен') {
         html += `
             <div class="timeline-item active">
-                <div class="timeline-title">Принята</div>
+                <div class="timeline-title">${getStatusText('Принята')}</div>
                 <div class="timeline-date">${orderDate}</div>
             </div>
             <div class="timeline-item cancelled active">
-                <div class="timeline-title">Отменен</div>
-                <div class="timeline-date">Заказ аннулирован</div>
+                <div class="timeline-title">${cancelledText}</div>
+                <div class="timeline-date">${orderCancelledText}</div>
             </div>
         `;
     } else {
@@ -272,12 +386,12 @@ window.openStatusModal = function(currentStatus, orderDate) {
             if (index === 0) {
                 dateHtml = `<div class="timeline-date">${orderDate}</div>`;
             } else if (index === currentIndex) {
-                dateHtml = `<div class="timeline-date">Текущий этап</div>`;
+                dateHtml = `<div class="timeline-date">${currentStageText}</div>`;
             }
             
             html += `
                 <div class="timeline-item ${isActiveClass}">
-                    <div class="timeline-title">${step}</div>
+                    <div class="timeline-title">${getStatusText(step)}</div>
                     ${dateHtml}
                 </div>
             `;

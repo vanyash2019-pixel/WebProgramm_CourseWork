@@ -6,9 +6,9 @@
     <title>Полный каталог оборудования — ЕГДС</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">    
+    <link rel="stylesheet" href="css/full-catalog.css">
     <link rel="stylesheet" href="css/dark-theme.css">
    
-     <link rel="stylesheet" href="css/full-catalog.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -19,16 +19,23 @@
                     <div class="header-top__wrapper">
                         <nav class="header-top__nav">
                             <ul>
-                                <li><a href="javascript:void(0)" id="theme-dark"><span>🌙 Темная тема</span></a></li>
-                                <li><a href="javascript:void(0)" id="theme-light"><span>☀️ Светлая тема</span></a></li>
-                                <li><a href="#">Наши работы</a></li>
-                                <li><a href="#">Сотрудничество</a></li>
-                                <li><a href="#">Вакансии</a></li>
-                                <li><a href="#">Новости</a></li>
+                                <li><a href="javascript:void(0)" id="theme-dark"><span class="ru">🌙 Темная тема</span><span class="en">🌙 Dark theme</span></a></li>
+                                <li><a href="javascript:void(0)" id="theme-light"><span class="ru">☀️ Светлая тема</span><span class="en">☀️ Light theme</span></a></li>
+                                
+                                <!-- Переключатель языка -->
+                                <li class="lang-switcher">
+                                    <button type="button" id="lang-ru" class="lang-btn active">RUS</button>
+                                    <button type="button" id="lang-en" class="lang-btn">ENG</button>
+                                </li>
+                                
+                                <li><a href="#"><span class="ru">Наши работы</span><span class="en">Our Works</span></a></li>
+                                <li><a href="#"><span class="ru">Сотрудничество</span><span class="en">Cooperation</span></a></li>
+                                <li><a href="#"><span class="ru">Вакансии</span><span class="en">Vacancies</span></a></li>
+                                <li><a href="#"><span class="ru">Новости</span><span class="en">News</span></a></li>
                             </ul>
                         </nav>
                         <div class="header-top__address">
-                            <a class="header-location" href="#"><span>г. СПБ, наб. р. Карповки, 5И</span></a>
+                            <a class="header-location" href="#"><span><span class="ru">г. СПБ, наб. р. Карповки, 5И</span><span class="en">St. Petersburg, Karpovka Embankment, 5I</span></span></a>
                         </div>
                     </div>
                 </div>
@@ -42,7 +49,10 @@
                                 <img src="assets/logo.png" alt="logo" class="logo-img">
                                 <div class="logo-text-group">
                                     <span class="logo-name">ЕГДС</span>
-                                    <span class="logo-desc">Единая Городская Диспетчерская Служба Санкт-Петербурга</span>
+                                    <span class="logo-desc">
+                                        <span class="ru">Единая Городская Диспетчерская Служба Санкт-Петербурга</span>
+                                        <span class="en">Unified City Dispatch Service of St. Petersburg</span>
+                                    </span>
                                 </div>
                             </a>
                         </div>
@@ -52,14 +62,14 @@
                                 <div class="contact-icon"><img src="assets/envelope-regular 1.png" alt="mail" class="custom-icon"></div>
                                 <div class="contact-content">
                                     <a href="mailto:office@egdsk-spb.ru" class="contact-link">office@egdsk-spb.ru</a>
-                                    <a href="#" class="contact-btn">Обратная связь</a>
+                                    <a href="#" class="contact-btn"><span class="ru">Обратная связь</span><span class="en">Feedback</span></a>
                                 </div>
                             </div>
                             <div class="header-contact">
                                 <div class="contact-icon"><img src="assets/lucide_phone-call.png" alt="phone" class="custom-icon"></div>
                                 <div class="contact-content">
                                     <a href="tel:+78001003899" class="contact-link">+7(800)100-38-99</a>
-                                    <a href="#" class="contact-btn">Заказать звонок</a>
+                                    <a href="#" class="contact-btn"><span class="ru">Заказать звонок</span><span class="en">Request a call</span></a>
                                 </div>
                             </div>
                             <div class="header-contact">
@@ -78,20 +88,21 @@
                     <div class="header-bottom__wrapper">
                         <ul class="main-nav">
                             <li class="has-dropdown main-nav__item--catalog">
-                                <a href="full-catalog.html" class="catalog-btn">Каталог Оборудования</a>
+                                <a href="full-catalog.html" class="catalog-btn">
+                                    <span class="ru">Каталог Оборудования</span><span class="en">Equipment Catalog</span>
+                                </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="avtomatika.html">Автоматика проезда</a></li>
-                                    <li><a href="radioupravlenie.html">Радиоуправление</a></li>
-                                    <li><a href="svobodnyy-vyezd.html">Свободный выезд</a></li>
-                                      <li><a href="full-catalog.html">Полный каталог товаров</a></li>
+                                    <li><a href="avtomatika.html"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></a></li>
+                                    <li><a href="radioupravlenie.html"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></a></li>
+                                    <li><a href="svobodnyy-vyezd.html"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></a></li>
+                                    <li><a href="full-catalog.html"><span class="ru">Полный каталог</span><span class="en">Full Catalog</span></a></li>
                                 </ul>
                             </li>
-                            <li><a href="card.html">Корзина</a></li>
-                            <li><a href="favorites.html">Избранное</a></li>
+                            <li><a href="card.html"><span class="ru">Корзина</span><span class="en">Cart</span></a></li>
+                            <li><a href="favorites.html"><span class="ru">Избранное</span><span class="en">Favorites</span></a></li>
                         </ul>
 
                         <div class="header-right-group">
-                      
                             <div class="auth-zone" id="auth-zone"></div>
                         </div> 
                     </div>
@@ -102,50 +113,67 @@
         <main class="main">
             <section class="catalog-page-section">
                 <div class="container">
-                    <h1 class="title-main" style="margin-bottom: 30px;">Полный каталог оборудования</h1>
+                    <h1 class="title-main" style="margin-bottom: 30px;">
+                        <span class="ru">Полный каталог оборудования</span><span class="en">Full Equipment Catalog</span>
+                    </h1>
 
                     <div class="catalog-layout">
                         
                        <aside class="catalog-sidebar">
     <div class="filter-group">
-        <h4>Поиск по названию</h4>
-        <input type="text" id="filter-search" class="filter-input" placeholder="Введите название...">
+        <h4><span class="ru">Поиск по названию</span><span class="en">Search by name</span></h4>
+        <input type="text" id="filter-search" class="filter-input" 
+               data-placeholder-ru="Введите название..." 
+               data-placeholder-en="Enter name..." 
+               placeholder="Введите название...">
     </div>
 
     <div class="filter-group">
-        <h4>Сортировка</h4>
-        <select id="filter-sort" class="filter-select">
-            <option value="default">По умолчанию</option>
-            <option value="price-asc">Сначала дешевые</option>
-            <option value="price-desc">Сначала дорогие</option>
-            <option value="name-asc">По алфавиту (А-Я)</option>
+        <h4><span class="ru">Сортировка</span><span class="en">Sort by</span></h4>
+        <select id="filter-sort" class="filter-select" 
+                data-label-ru="Сортировка" data-label-en="Sort by">
+            <option value="default" data-ru="По умолчанию" data-en="Default">По умолчанию</option>
+            <option value="price-asc" data-ru="Сначала дешевые" data-en="Price: Low to High">Сначала дешевые</option>
+            <option value="price-desc" data-ru="Сначала дорогие" data-en="Price: High to Low">Сначала дорогие</option>
+            <option value="name-asc" data-ru="По алфавиту (А-Я)" data-en="Alphabetical (A-Z)">По алфавиту (А-Я)</option>
         </select>
     </div>
 
     <div class="filter-group">
-        <h4>Категория</h4>
-        <select id="filter-category" class="filter-select">
-            <option value="all">Все категории</option>
-            <option value="СКУД и Радиоуправление">СКУД и Радиоуправление</option>
-            <option value="Шлагбаумы и автоматика">Шлагбаумы и автоматика</option>
-            <option value="Индукционные петли">Индукционные петли</option>
+        <h4><span class="ru">Категория</span><span class="en">Category</span></h4>
+        <select id="filter-category" class="filter-select"
+                data-label-ru="Категория" data-label-en="Category">
+            <option value="all" data-ru="Все категории" data-en="All categories">Все категории</option>
+            <option value="СКУД и Радиоуправление" data-ru="СКУД и Радиоуправление" data-en="ACS & Radio Control">СКУД и Радиоуправление</option>
+            <option value="Шлагбаумы и автоматика" data-ru="Шлагбаумы и автоматика" data-en="Barrier Gates & Automation">Шлагбаумы и автоматика</option>
+            <option value="Индукционные петли" data-ru="Индукционные петли" data-en="Induction Loops">Индукционные петли</option>
         </select>
     </div>
 
     <div class="filter-group">
-        <h4>Цена (руб.)</h4>
+        <h4><span class="ru">Цена (руб.)</span><span class="en">Price (RUB)</span></h4>
         <div class="price-inputs">
-            <input type="number" id="filter-price-min" placeholder="От">
-            <input type="number" id="filter-price-max" placeholder="До">
+            <input type="number" id="filter-price-min" 
+                   data-placeholder-ru="От" 
+                   data-placeholder-en="From" 
+                   placeholder="От">
+            <input type="number" id="filter-price-max" 
+                   data-placeholder-ru="До" 
+                   data-placeholder-en="To" 
+                   placeholder="До">
         </div>
     </div>
 
-    <button id="filter-reset-btn" class="btn-reset">Сбросить всё</button>
+    <button id="filter-reset-btn" class="btn-reset">
+        <span class="ru">Сбросить всё</span><span class="en">Reset all</span>
+    </button>
 </aside>
 
                         <div class="catalog-content">
                             <div id="full-catalog-container" class="full-catalog-grid">
-                                <p style="color: #666; font-size: 16px;">Загрузка товаров...</p>
+                                <p style="color: #666; font-size: 16px;">
+                                    <span class="ru">Загрузка товаров...</span><span class="en">Loading products...</span>
+                                </p>
                             </div>
                         </div>
 
@@ -158,62 +186,73 @@
             <div class="footer-container">
                 <div class="footer-top">
                     <div class="footer-col col-help">
-                        <h4 class="footer-heading heading-help">Помощь</h4>
+                        <h4 class="footer-heading heading-help">
+                            <span class="ru">Помощь</span><span class="en">Help</span>
+                        </h4>
                         <ul class="footer-list list-help">
-                            <li><a href="#">О компании</a></li>
-                            <li><a href="#">Бренды</a></li>
-                            <li><a href="#">Наши работы</a></li>
-                            <li><a href="#">Сотрудничество</a></li>
-                            <li><a href="#">Вакансии</a></li>
-                            <li><a href="#">Новости</a></li>
+                            <li><a href="#"><span class="ru">О компании</span><span class="en">About Company</span></a></li>
+                            <li><a href="#"><span class="ru">Бренды</span><span class="en">Brands</span></a></li>
+                            <li><a href="#"><span class="ru">Наши работы</span><span class="en">Our Works</span></a></li>
+                            <li><a href="#"><span class="ru">Сотрудничество</span><span class="en">Cooperation</span></a></li>
+                            <li><a href="#"><span class="ru">Вакансии</span><span class="en">Vacancies</span></a></li>
+                            <li><a href="#"><span class="ru">Новости</span><span class="en">News</span></a></li>
                         </ul>
                     </div>
 
                     <div class="footer-col col-services">
-                        <h4 class="footer-heading heading-services">Услуги</h4>
+                        <h4 class="footer-heading heading-services">
+                            <span class="ru">Услуги</span><span class="en">Services</span>
+                        </h4>
                         <ul class="footer-list list-services">
-                            <li><a href="#">Диспетчеризация</a></li>
-                            <li><a href="#">Автоматизация проезда</a></li>
-                            <li><a href="#">Система умный шлагбаум</a></li>
-                            <li><a href="#">Видеонаблюдение</a></li>
-                            <li><a href="#">Контроль доступа</a></li>
+                            <li><a href="#"><span class="ru">Диспетчеризация</span><span class="en">Dispatching</span></a></li>
+                            <li><a href="#"><span class="ru">Автоматизация проезда</span><span class="en">Access Automation</span></a></li>
+                            <li><a href="#"><span class="ru">Система умный шлагбаум</span><span class="en">Smart Barrier System</span></a></li>
+                            <li><a href="#"><span class="ru">Видеонаблюдение</span><span class="en">Video Surveillance</span></a></li>
+                            <li><a href="#"><span class="ru">Контроль доступа</span><span class="en">Access Control</span></a></li>
                         </ul>
                     </div>
 
                     <div class="footer-col col-products">
-                        <h4 class="footer-heading heading-products">Товары</h4>
+                        <h4 class="footer-heading heading-products">
+                            <span class="ru">Товары</span><span class="en">Products</span>
+                        </h4>
                         <div class="products-grid-wrapper">
                             <ul class="footer-list list-products-left">
-                                <li><a href="#">Автоматика проезда</a></li>
-                                <li><a href="#">Свободный выезд</a></li>
-                                <li><a href="#">Распознавание автомобильных номеров</a></li>
-                                <li><a href="#">UNF метки</a></li>
-                                <li><a href="#">Радиоуправление</a></li>
+                                <li><a href="#"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></a></li>
+                                <li><a href="#"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></a></li>
+                                <li><a href="#"><span class="ru">Распознавание номеров</span><span class="en">License Plate Recognition</span></a></li>
+                                <li><a href="#"><span class="ru">UNF метки</span><span class="en">UNF Tags</span></a></li>
+                                <li><a href="#"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></a></li>
                             </ul>
                             <ul class="footer-list list-products-right">
-                                <li><a href="#">GSM управление</a></li>
-                                <li><a href="#">Система заявок</a></li>
-                                <li><a href="#">Видеонаблюдение</a></li>
-                                <li><a href="#">Контроль доступа</a></li>
+                                <li><a href="#"><span class="ru">GSM управление</span><span class="en">GSM Control</span></a></li>
+                                <li><a href="#"><span class="ru">Система заявок</span><span class="en">Request System</span></a></li>
+                                <li><a href="#"><span class="ru">Видеонаблюдение</span><span class="en">Video Surveillance</span></a></li>
+                                <li><a href="#"><span class="ru">Контроль доступа</span><span class="en">Access Control</span></a></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="footer-col col-contacts">
-                        <h4 class="footer-heading heading-contacts">Контакты</h4>
+                        <h4 class="footer-heading heading-contacts">
+                            <span class="ru">Контакты</span><span class="en">Contacts</span>
+                        </h4>
                         <ul class="spec-contact-list">
                             <li class="spec-contact-item">
                                 <div class="spec-contact-icon"><i class="fa fa-map-marker"></i></div>
                                 <div class="spec-contact-content">
-                                    <span class="spec-contact-text">Санкт-Петербург, наб. р. Карповки 5И</span>
+                                    <span class="spec-contact-text">
+                                        <span class="ru">Санкт-Петербург, наб. р. Карповки 5И</span>
+                                        <span class="en">St. Petersburg, Karpovka Embankment, 5I</span>
+                                    </span>
                                 </div>
                             </li>
                             <li class="spec-contact-item">
                                 <div class="spec-contact-icon"><i class="fa fa-phone"></i></div>
                                 <div class="spec-contact-content">
                                     <span class="spec-contact-text">
-                                        8 (800)100-38-99<br>
-                                        +7(812)309-36-63
+                                        <span class="ru">8 (800)100-38-99<br>+7(812)309-36-63</span>
+                                        <span class="en">8 (800)100-38-99<br>+7(812)309-36-63</span>
                                     </span>
                                 </div>
                             </li>
@@ -226,7 +265,10 @@
                             <li class="spec-contact-item">
                                 <div class="spec-contact-icon"><i class="fa fa-clock-o"></i></div>
                                 <div class="spec-contact-content">
-                                    <span class="spec-contact-text">Пн-Пт, 10-19</span>
+                                    <span class="spec-contact-text">
+                                        <span class="ru">Пн-Пт, 10-19</span>
+                                        <span class="en">Mon-Fri, 10:00-19:00</span>
+                                    </span>
                                 </div>
                             </li>
                         </ul>
@@ -235,31 +277,44 @@
 
                 <div class="footer-bottom">
                     <p class="copyright-text">
-                        2010-2024, Системы безопасности в Санкт-Петербурге (СПБ) | Интеллект Про | Все права защищены.<br>
-                        Информация о ценах на сайте не является публичной офертой.
+                        <span class="ru">2010-2024, Системы безопасности в Санкт-Петербурге (СПБ) | Интеллект Про | Все права защищены.<br>Информация о ценах на сайте не является публичной офертой.</span>
+                        <span class="en">2010-2024, Security Systems in St. Petersburg | Intellekt Pro | All rights reserved.<br>Price information on the website is not a public offer.</span>
                     </p>
                 </div>
             </div>
         </footer>
-          <div id="product-modal" class="modal-overlay" style="display: none;">
-    <div class="modal-window">
-        <button id="modal-close" class="close-btn">&times;</button>
-        <div class="modal-grid">
-            <img id="modal-img" src="" alt="">
-            <div class="modal-info">
-                <h3 id="modal-title" style="margin-top: 0; font-size: 1.5rem;"></h3>
-                <div id="modal-price" style="font-weight: bold; font-size: 1.3rem; color: #e74c3c; margin-bottom: 10px;"></div>
-                <ul id="modal-specs" style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;"></ul>
+
+        <!-- Модальное окно товара (динамическое) -->
+        <div id="product-modal" class="modal-overlay" style="display: none;">
+            <div class="modal-window">
+                <button id="modal-close" class="close-btn">&times;</button>
+                <div class="modal-grid">
+                    <img id="modal-img" src="" alt="">
+                    <div class="modal-info">
+                        <h3 id="modal-title" style="margin-top: 0; font-size: 1.5rem;"></h3>
+                        <div id="modal-price" style="font-weight: bold; font-size: 1.3rem; color: #e74c3c; margin-bottom: 10px;"></div>
+                        <ul id="modal-specs" style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;"></ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-    <script src="js/full-catalog.js"></script>
+
+        <!-- Скрипты -->
+        <script type="module">
+            import { initSlider } from './js/components/slider.js';
+            document.addEventListener('DOMContentLoaded', () => {
+                initSlider();
+            });
+        </script>
+        <script src="js/full-catalog.js"></script>
         <script src="js/catalog-auth-guard.js"></script>
         <script src="js/favorites.js"></script>
-      <script src="js/card.js"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/script.js"></script>
-    
+        <script src="js/card.js"></script>
+        <script src="js/auth.js"></script>
+        <script src="js/script.js"></script>
+        
+        <!-- Переключатель языка (правильное имя файла) -->
+        <script src="js/language.js"></script>
+    </div>
 </body>
 </html>

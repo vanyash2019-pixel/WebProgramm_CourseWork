@@ -3,363 +3,391 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Автоматика проезда</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>Свободный выезд</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css"> 
     <link rel="stylesheet" href="css/svobodnyy-vyezd.css">
-        <link rel="stylesheet" href="css/dark-theme.css">
-        <script src="/js/components/slider.js"></script>
-           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/js/components/slider.js"></script>
 </head>
 <body>
 
- <div class="wrapper">
-        <header class="header" id="header">
-            
-                       <div class="header-top">
-                <div class="container">
-                    <div class="header-top__wrapper">
-                        <nav class="header-top__nav">
-                  <ul>
-        <li>
-            <a href="javascript:void(0)" id="theme-dark">
-                <span>🌙 Темная тема</span>
-            </a>
-        </li>
-        <li>
-            <a href="javascript:void(0)" id="theme-light">
-                <span>☀️ Светлая тема</span>
-            </a>
-        </li>
-                                <li><a href="#">Наши работы</a></li>
-                                <li><a href="#">Сотрудничество</a></li>
-                                <li><a href="#">Вакансии</a></li>
-                                <li><a href="#">Новости</a></li>
+<div class="wrapper">
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top__wrapper">
+                    <nav class="header-top__nav">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" id="theme-dark">
+                                    <span class="ru">🌙 Темная тема</span><span class="en">🌙 Dark theme</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" id="theme-light">
+                                    <span class="ru">☀️ Светлая тема</span><span class="en">☀️ Light theme</span>
+                                </a>
+                            </li>
+                            
+                            <!-- Переключатель языка -->
+                            <li class="lang-switcher">
+                                <button type="button" id="lang-ru" class="lang-btn active">RUS</button>
+                                <button type="button" id="lang-en" class="lang-btn">ENG</button>
+                            </li>
+                            
+                            <li><a href="#"><span class="ru">Наши работы</span><span class="en">Our Works</span></a></li>
+                            <li><a href="#"><span class="ru">Сотрудничество</span><span class="en">Cooperation</span></a></li>
+                            <li><a href="#"><span class="ru">Вакансии</span><span class="en">Vacancies</span></a></li>
+                            <li><a href="#"><span class="ru">Новости</span><span class="en">News</span></a></li>
+                        </ul>
+                    </nav>
+                    <div class="header-top__address">
+                        <a class="header-location" href="#">
+                            <span><span class="ru">г. СПБ, наб. р. Карповки, 5И</span><span class="en">St. Petersburg, Karpovka Embankment, 5I</span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-center">
+            <div class="container-2">
+                <div class="header-center__wrapper">
+                    <div class="header-center__logo-block">
+                        <a class="header-logo" href="/">
+                            <img src="assets/logo.png" alt="logo" class="logo-img">
+                            <div class="logo-text-group">
+                                <span class="logo-name">ЕГДС</span>
+                                <span class="logo-desc">
+                                    <span class="ru">Единая Городская Диспетчерская Служба Санкт-Петербурга</span>
+                                    <span class="en">Unified City Dispatch Service of St. Petersburg</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="header-contacts-group">
+                        <div class="header-contact">
+                            <div class="contact-icon">
+                                <img src="assets/envelope-regular 1.png" alt="mail" class="custom-icon">
+                            </div>
+                            <div class="contact-content">
+                                <a href="mailto:office@egdsk-spb.ru" class="contact-link">office@egdsk-spb.ru</a>
+                                <a href="#" class="contact-btn">
+                                    <span class="ru">Обратная связь</span><span class="en">Feedback</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="header-contact">
+                            <div class="contact-icon">
+                                <img src="assets/lucide_phone-call.png" alt="phone" class="custom-icon">
+                            </div>
+                            <div class="contact-content">
+                                <a href="tel:+78001003899" class="contact-link">+7(800)100-38-99</a>
+                                <a href="#" class="contact-btn">
+                                    <span class="ru">Заказать звонок</span><span class="en">Request a call</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="header-contact">
+                            <div class="contact-icon" style="width: 20px;"></div> 
+                            <div class="contact-content">
+                                <a href="tel:+78123093663" class="contact-link">+7(812)309-36-63</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="header-bottom">
+            <div class="container-2">
+                <div class="header-bottom__wrapper">
+                    <ul class="main-nav">
+                        <li class="has-dropdown main-nav__item--catalog">
+                            <a href="#" class="catalog-btn">
+                                <span class="ru">Каталог Оборудования</span><span class="en">Equipment Catalog</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="avtomatika.html"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></a></li>
+                                <li><a href="radioupravlenie.html"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></a></li>
+                                <li><a href="svobodnyy-vyezd.html"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></a></li>
+                                <li><a href="full-catalog.html"><span class="ru">Полный каталог</span><span class="en">Full Catalog</span></a></li>
                             </ul>
-                        </nav>
-                        <div class="header-top__address">
-                            <a class="header-location" href="#">
-                                <span>г. СПБ, наб. р. Карповки, 5И</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-                <div class="header-center">
-                   <div class="container-2">
-                    <div class="header-center__wrapper">
-                        
-                        <div class="header-center__logo-block">
-                            <a class="header-logo" href="/">
-                                <img src="assets/logo.png" alt="logo" class="logo-img">
-                                <div class="logo-text-group">
-                                    <span class="logo-name">ЕГДС</span>
-                                    <span class="logo-desc">Единая Городская Диспетчерская Служба Санкт-Петербурга</span>
-                                </div>
-                            </a>
-                        </div>
-
-                  <div class="header-contacts-group">
-    <div class="header-contact">
-        <div class="contact-icon">
-            <img src="assets/envelope-regular 1.png" alt="mail" class="custom-icon">
-        </div>
-        <div class="contact-content">
-            <a href="mailto:office@egdsk-spb.ru" class="contact-link">office@egdsk-spb.ru</a>
-            <a href="#" class="contact-btn">Обратная связь</a>
-        </div>
-    </div>
-
-    <div class="header-contact">
-        <div class="contact-icon">
-            <img src="assets/lucide_phone-call.png" alt="phone" class="custom-icon">
-        </div>
-        <div class="contact-content">
-            <a href="tel:+78001003899" class="contact-link">+7(800)100-38-99</a>
-            <a href="#" class="contact-btn">Заказать звонок</a>
-        </div>
-    </div>
-
-    <div class="header-contact">
-        <div class="contact-icon" style="width: 20px;"></div> 
-        <div class="contact-content">
-            <a href="tel:+78123093663" class="contact-link">+7(812)309-36-63</a>
-        </div>
-    </div>
-</div>
-                    </div>
-                </div>
-            </div>
-
-<nav class="header-bottom">
-   <div class="container-2">
-        <div class="header-bottom__wrapper">
-            <ul class="main-nav">
-              
-             <li class="has-dropdown main-nav__item--catalog">
-                    <a href="#" class="catalog-btn">Каталог Оборудования</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="avtomatika.html">Автоматика проезда</a></li>
-                        <li><a href="radioupravlenie.html">Радиоуправление</a></li>
-                        <li><a href="svobodnyy-vyezd.html">Свободный выезд</a></li>
-                          <li><a href="full-catalog.html">Полный каталог товаров</a></li>
+                        </li>
+                        <li><a href="card.html"><span class="ru">Корзина</span><span class="en">Cart</span></a></li>
+                        <li><a href="favorites.html"><span class="ru">Избранное</span><span class="en">Favorites</span></a></li>
                     </ul>
-                </li>
-                       <li><a href="card.html">Корзина</a></li>
-                    <li><a href="favorites.html">Избранное</a></li>
-            </ul>
-
-     
-           <div class="header-right-group">
-               
-                            <div class="auth-zone" id="auth-zone"></div>
-                        </div> 
-                    </div>
+                    <div class="header-right-group">
+                        <div class="auth-zone" id="auth-zone"></div>
+                    </div> 
                 </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
+    </header>
     
     <main class="page-main" style="min-height: 60vh;">
-
         <div class="container container--wide">
-            <!-- Блок хлебных крошек (Breadcrumbs) -->
             <nav class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
                 <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                     <a href="/" title="Главная" itemprop="item">
-                        <span itemprop="name">Главная</span>
+                        <span itemprop="name"><span class="ru">Главная</span><span class="en">Home</span></span>
                     </a>
                     <meta itemprop="position" content="1" />
                 </span>
-
                 <span class="separator">/</span>
                 <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                    <span itemprop="name">Свободный выезд</span>
+                    <span itemprop="name"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></span>
                     <meta itemprop="position" content="3" />
                 </span>
             </nav>
 
-            <!-- Заголовок страницы -->
             <div class="page-header">
-                <h1 class="page-title">Свободный выезд</h1>
+                <h1 class="page-title"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></h1>
             </div>
 
-            <!-- Контейнер для управления внутренними потоками -->
             <div class="services-container">
-                <!-- Основная обертка контента (Две колонки) -->
                 <div class="b-services-wrapper">
-                    
-              <div class="b-services-content">
-                    <article class="text-page">
-                    	<p>Чаще всего индукционная петля используется как способ открытия шлагбаума на выезд.<br>
-Данный способ обеспечивает беспрепятственный выезд с территории.</p>
-<br>
-<h2 class="red-title">Цифровые детекторы транспортного средства: зачем нужны и как их выбрать?</h2>
-<br>
+                    <div class="b-services-content">
+                        <article class="text-page">
+                            <p><span class="ru">Чаще всего индукционная петля используется как способ открытия шлагбаума на выезд.<br>Данный способ обеспечивает беспрепятственный выезд с территории.</span>
+                            <span class="en">Most often, an induction loop is used as a way to open a barrier gate for exit.<br>This method ensures unobstructed exit from the territory.</span></p><br>
+                            
+                            <h2 class="red-title"><span class="ru">Цифровые детекторы транспортного средства: зачем нужны и как их выбрать?</span><span class="en">Digital vehicle detectors: why you need them and how to choose?</span></h2><br>
 
-<p>Пожалуй, самый простой способ управления стрелой автоматического шлагбаума — это индукционная петля. В комплект поставки данного устройства всегда входит провод для создания самой петли и датчик, который будет регистрировать факт присутствия автомобиля в контролируемой зоне. Провод укладывается под асфальт рядом с пропускным пунктом, а датчик устанавливается на сам шлагбаум. Этот тандем создан для обнаружения различных предметов из металла.</p>
-<br>
-<p>Важным параметром датчика является возможность автоматической настройки чувствительности. Ведь петля заметит любой металлический объект, который будет находиться над ней. Но по сути, именно датчик примет решение — реагировать на это шлагбауму или нет. Если учесть, что такой способ управления не предполагает у пользователей наличие идентификатора (брелок, метка, карта), то пройти через стрелу, например, маме с коляской может быть проблематично.</p>
-<br>
-<p>Поэтому чаще всего на своих объектах мы устанавливаем цифровой детектор обнаружения транспортного средства Сame SMA. У этого датчика есть возможность автоматической настройки чувствительности, то есть он способен реагировать даже на совсем небольшие объекты. Но это не все его преимущества. Также он сам производит свою настройку и тестирование. А ещё имеет оптимальное соотношение цены и качества.</p>
-<br>
-<p>Если прибавить к этому плюсы всей индукционной петли в целом (низкий уровень ложных срабатываний, малая стоимость, высокая работоспособность в любых погодных условиях, долговечность), то получается отличный вариант для удобного выезда с закрытой территории. </p>
-<br>
-<h2>Хотите установить индукционную петлю и детектор обнаружения транспортного средства Came?</h2> 
-<br>
-<p>Позвоните или напишите в нашу компанию «ЕГДС-СПб», на сайте которой находитесь. Мы занимаемся монтажом и обслуживанием шлагбаумов и всех видов систем управления для них. Имеем штат опытных специалистов и можем провести все необходимые работы «под ключ». Перед оформлением заказа вы можете получить бесплатную консультацию.</p>
-					
+                            <p><span class="ru">Пожалуй, самый простой способ управления стрелой автоматического шлагбаума — это индукционная петля. В комплект поставки данного устройства всегда входит провод для создания самой петли и датчик, который будет регистрировать факт присутствия автомобиля в контролируемой зоне. Провод укладывается под асфальт рядом с пропускным пунктом, а датчик устанавливается на сам шлагбаум. Этот тандем создан для обнаружения различных предметов из металла.</span>
+                            <span class="en">Perhaps the simplest way to control an automatic barrier gate boom is an induction loop. The kit always includes a wire to create the loop and a sensor that registers the presence of a vehicle in the controlled zone. The wire is laid under asphalt near the checkpoint, and the sensor is mounted on the barrier gate itself. This tandem is designed to detect various metal objects.</span></p><br>
+                            
+                            <p><span class="ru">Важным параметром датчика является возможность автоматической настройки чувствительности. Ведь петля заметит любой металлический объект, который будет находиться над ней. Но по сути, именно датчик примет решение — реагировать на это шлагбауму или нет. Если учесть, что такой способ управления не предполагает у пользователей наличие идентификатора (брелок, метка, карта), то пройти через стрелу, например, маме с коляской может быть проблематично.</span>
+                            <span class="en">An important sensor parameter is automatic sensitivity adjustment. The loop will detect any metal object above it. But essentially, it's the sensor that decides whether the barrier gate should react. Considering this control method doesn't require users to have an identifier (key fob, tag, card), passing through the boom — for example, a mother with a stroller — can be problematic.</span></p><br>
+                            
+                            <p><span class="ru">Поэтому чаще всего на своих объектах мы устанавливаем цифровой детектор обнаружения транспортного средства Сame SMA. У этого датчика есть возможность автоматической настройки чувствительности, то есть он способен реагировать даже на совсем небольшие объекты. Но это не все его преимущества. Также он сам производит свою настройку и тестирование. А ещё имеет оптимальное соотношение цены и качества.</span>
+                            <span class="en">Therefore, we most often install the CAME SMA digital vehicle detection sensor at our facilities. This sensor has automatic sensitivity adjustment, meaning it can react to even very small objects. But that's not all its advantages. It also performs self-calibration and testing. And it offers an optimal price-quality ratio.</span></p><br>
+                            
+                            <p><span class="ru">Если прибавить к этому плюсы всей индукционной петли в целом (низкий уровень ложных срабатываний, малая стоимость, высокая работоспособность в любых погодных условиях, долговечность), то получается отличный вариант для удобного выезда с закрытой территории.</span>
+                            <span class="en">If you add to this the advantages of the entire induction loop system (low false alarm rate, low cost, high performance in any weather conditions, durability), you get an excellent option for convenient exit from a restricted area.</span></p><br>
+                            
+                            <h2><span class="ru">Хотите установить индукционную петлю и детектор обнаружения транспортного средства Came?</span><span class="en">Want to install an induction loop and CAME vehicle detection sensor?</span></h2><br>
+                            
+                            <p><span class="ru">Позвоните или напишите в нашу компанию «ЕГДС-СПб», на сайте которой находитесь. Мы занимаемся монтажом и обслуживанием шлагбаумов и всех видов систем управления для них. Имеем штат опытных специалистов и можем провести все необходимые работы «под ключ». Перед оформлением заказа вы можете получить бесплатную консультацию.</span>
+                            <span class="en">Call or write to our company "EGDS-Spb", whose website you are on. We specialize in installation and maintenance of barrier gates and all types of control systems for them. We have a team of experienced specialists and can perform all necessary turnkey work. Before placing an order, you can receive a free consultation.</span></p>
 
-
-                        <div class="b-services-row">
-    <div class="b-services-card-horizontal">
-        <!-- Картинка слева -->
-        <div class="b-card-pic">
-            <a href="shlagbaumy/">
-                <img src="/assets/d15nclv8o3i0dn2cvnx5q1cuqftrwdiz.jpeg" alt="Петля">
-            </a>
-        </div>
-
-        <!-- Контент справа -->
-        <div class="b-card-content">
-            <div class="b-card-header">
-                <a href="Petla/" class="b-card-title">Двойная индукционная петля</a>
-            </div>
-            
-            <p class="b-card-text">
-            Индукционные петли CAME SMA: принцип работы и преимущества. Многие знакомы с итальянской фирмой Came, как с производителем качественных автоматических шлагбаумов. Их устройства серии Gard установлены практически в каждом втором российском дворе.
-            </p>
-
-            <div class="b-card-action">
-                <a class="btn-more" href="catalog-svobodnyy-vyezd.html">Подробнее</a>
-            </div>
-        </div>
-    </div>
-</div>
+                            <div class="b-services-row">
+                                <div class="b-services-card-horizontal">
+                                    <div class="b-card-pic">
+                                        <a href="shlagbaumy/">
+                                            <img src="/assets/d15nclv8o3i0dn2cvnx5q1cuqftrwdiz.jpeg" alt="Петля">
+                                        </a>
+                                    </div>
+                                    <div class="b-card-content">
+                                        <div class="b-card-header">
+                                            <a href="Petla/" class="b-card-title">
+                                                <span class="ru">Двойная индукционная петля</span><span class="en">Double Induction Loop</span>
+                                            </a>
+                                        </div>
+                                        <p class="b-card-text">
+                                            <span class="ru">Индукционные петли CAME SMA: принцип работы и преимущества. Многие знакомы с итальянской фирмой Came, как с производителем качественных автоматических шлагбаумов. Их устройства серии Gard установлены практически в каждом втором российском дворе.</span>
+                                            <span class="en">CAME SMA induction loops: operating principle and advantages. Many are familiar with the Italian company Came as a manufacturer of quality automatic barrier gates. Their Gard series devices are installed in almost every second Russian courtyard.</span>
+                                        </p>
+                                        <div class="b-card-action">
+                                            <a class="btn-more" href="catalog-svobodnyy-vyezd.html">
+                                                <span class="ru">Подробнее</span><span class="en">Details</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </article>
                     </div>
 
-                    
-
-               
-                  <aside class="b-sidebar">
-    <span class="b-sidebar__title">Смотрите также:</span>
-    <ul class="b-sidebar__list">
-        <li class="b-sidebar__item">
-            <a href="avtomatika.html" class="b-sidebar__link">
-                Автоматика проезда <span>→</span>
-            </a>
-        </li> 
-        <li class="b-sidebar__item">
-            <a href="radioupravlenie.html" class="b-sidebar__link">
-                Радиоуправление <span>→</span>
-            </a>
-        </li>
-        <li class="b-sidebar__item">
-            <a href="svobodnyy-vyezd.html" class="b-sidebar__link">
-                Свободный выезд <span>→</span>
-            </a>
-        </li>
-    </ul>
-</aside>
-
+                    <aside class="b-sidebar">
+                        <span class="b-sidebar__title"><span class="ru">Смотрите также:</span><span class="en">See also:</span></span>
+                        <ul class="b-sidebar__list">
+                            <li class="b-sidebar__item">
+                                <a href="avtomatika.html" class="b-sidebar__link">
+                                    <span class="ru">Автоматика проезда</span><span class="en">Access Automation</span> <span>→</span>
+                                </a>
+                            </li> 
+                            <li class="b-sidebar__item">
+                                <a href="radioupravlenie.html" class="b-sidebar__link">
+                                    <span class="ru">Радиоуправление</span><span class="en">Radio Control</span> <span>→</span>
+                                </a>
+                            </li>
+                            <li class="b-sidebar__item">
+                                <a href="svobodnyy-vyezd.html" class="b-sidebar__link">
+                                    <span class="ru">Свободный выезд</span><span class="en">Free Exit</span> <span>→</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
                 </div>
             </div> 
         </div> 
         
-<section class="callback-section">
-    <div class="step-container">
-        <div class="callback-wrapper">
-            
-            <div class="callback-content">
-                <h3 class="callback-title">Если у вас появилось желание оставить отзыв, то не ждите! Нам важно ваше мнение!</h3>
-            
+        <section class="callback-section">
+            <div class="step-container">
+                <div class="callback-wrapper">
+                    <div class="callback-content">
+                        <h3 class="callback-title">
+                            <span class="ru">Если у вас появилось желание оставить отзыв, то не ждите! Нам важно ваше мнение!</span>
+                            <span class="en">If you want to leave a review, don't wait! Your opinion matters to us!</span>
+                        </h3>
+                    </div>
+                    <div class="callback-action">
+                        <button type="button" id="open-review-modal" class="callback-btn">
+                            <span class="ru">Написать отзыв</span><span class="en">Leave a Review</span>
+                        </button>
+                    </div>
+                </div>
             </div>
-            
-            <div class="callback-action">
-                <button type="button" id="open-review-modal" class="callback-btn">Написать отзыв</button>
-            </div>
-            
-        </div>
-    </div>
-</section>
+        </section>
     </main>
 
-
-
-  <footer class="site-footer">
-    <div class="footer-container">
-        
-        <div class="footer-top">
-            
-            <!-- Колонку 1: ПОМОЩЬ -->
-            <div class="footer-col col-help">
-                <h4 class="footer-heading heading-help">Помощь</h4>
-                <ul class="footer-list list-help">
-                    <li><a href="#">О компании</a></li>
-                    <li><a href="#">Бренды</a></li>
-                    <li><a href="#">Наши работы</a></li>
-                    <li><a href="#">Сотрудничество</a></li>
-                    <li><a href="#">Вакансии</a></li>
-                    <li><a href="#">Новости</a></li>
-                </ul>
-            </div>
-
-            <!-- Колонка 2: УСЛУГИ -->
-            <div class="footer-col col-services">
-                <h4 class="footer-heading heading-services">Услуги</h4>
-                <ul class="footer-list list-services">
-                    <li><a href="#">Диспетчеризация</a></li>
-                    <li><a href="#">Автоматизация проезда</a></li>
-                    <li><a href="#">Система умный шлагбаум</a></li>
-                    <li><a href="#">Видеонаблюдение</a></li>
-                    <li><a href="#">Контроль доступа</a></li>
-                </ul>
-            </div>
-
-            <!-- Колонка 3: ТОВАРЫ -->
-            <div class="footer-col col-products">
-                <h4 class="footer-heading heading-products">Товары</h4>
-                <div class="products-grid-wrapper">
-                    <!-- Левая подколонка товаров -->
-                    <ul class="footer-list list-products-left">
-                        <li><a href="#">Автоматика проезда</a></li>
-                        <li><a href="#">Свободный выезд</a></li>
-                        <li><a href="#">Распознавание автомобильных номеров</a></li>
-                        <li><a href="#">UNF метки</a></li>
-                        <li><a href="#">Радиоуправление</a></li>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-col col-help">
+                    <h4 class="footer-heading heading-help">
+                        <span class="ru">Помощь</span><span class="en">Help</span>
+                    </h4>
+                    <ul class="footer-list list-help">
+                        <li><a href="#"><span class="ru">О компании</span><span class="en">About Company</span></a></li>
+                        <li><a href="#"><span class="ru">Бренды</span><span class="en">Brands</span></a></li>
+                        <li><a href="#"><span class="ru">Наши работы</span><span class="en">Our Works</span></a></li>
+                        <li><a href="#"><span class="ru">Сотрудничество</span><span class="en">Cooperation</span></a></li>
+                        <li><a href="#"><span class="ru">Вакансии</span><span class="en">Vacancies</span></a></li>
+                        <li><a href="#"><span class="ru">Новости</span><span class="en">News</span></a></li>
                     </ul>
-                    <!-- Правая подколонка товаров -->
-                    <ul class="footer-list list-products-right">
-                        <li><a href="#">GSM управление</a></li>
-                        <li><a href="#">Система заявок</a></li>
-                        <li><a href="#">Видеонаблюдение</a></li>
-                        <li><a href="#">Контроль доступа</a></li>
+                </div>
+
+                <div class="footer-col col-services">
+                    <h4 class="footer-heading heading-services">
+                        <span class="ru">Услуги</span><span class="en">Services</span>
+                    </h4>
+                    <ul class="footer-list list-services">
+                        <li><a href="#"><span class="ru">Диспетчеризация</span><span class="en">Dispatching</span></a></li>
+                        <li><a href="#"><span class="ru">Автоматизация проезда</span><span class="en">Access Automation</span></a></li>
+                        <li><a href="#"><span class="ru">Система умный шлагбаум</span><span class="en">Smart Barrier System</span></a></li>
+                        <li><a href="#"><span class="ru">Видеонаблюдение</span><span class="en">Video Surveillance</span></a></li>
+                        <li><a href="#"><span class="ru">Контроль доступа</span><span class="en">Access Control</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col col-products">
+                    <h4 class="footer-heading heading-products">
+                        <span class="ru">Товары</span><span class="en">Products</span>
+                    </h4>
+                    <div class="products-grid-wrapper">
+                        <ul class="footer-list list-products-left">
+                            <li><a href="#"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></a></li>
+                            <li><a href="#"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></a></li>
+                            <li><a href="#"><span class="ru">Распознавание номеров</span><span class="en">License Plate Recognition</span></a></li>
+                            <li><a href="#"><span class="ru">UNF метки</span><span class="en">UNF Tags</span></a></li>
+                            <li><a href="#"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></a></li>
+                        </ul>
+                        <ul class="footer-list list-products-right">
+                            <li><a href="#"><span class="ru">GSM управление</span><span class="en">GSM Control</span></a></li>
+                            <li><a href="#"><span class="ru">Система заявок</span><span class="en">Request System</span></a></li>
+                            <li><a href="#"><span class="ru">Видеонаблюдение</span><span class="en">Video Surveillance</span></a></li>
+                            <li><a href="#"><span class="ru">Контроль доступа</span><span class="en">Access Control</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-col col-contacts">
+                    <h4 class="footer-heading heading-contacts">
+                        <span class="ru">Контакты</span><span class="en">Contacts</span>
+                    </h4>
+                    <ul class="spec-contact-list">
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-map-marker"></i></div>
+                            <div class="spec-contact-content">
+                                <span class="spec-contact-text">
+                                    <span class="ru">Санкт-Петербург, наб. р. Карповки 5И</span>
+                                    <span class="en">St. Petersburg, Karpovka Embankment, 5I</span>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-phone"></i></div>
+                            <div class="spec-contact-content">
+                                <span class="spec-contact-text">
+                                    <span class="ru">8 (800)100-38-99<br>+7(812)309-36-63</span>
+                                    <span class="en">8 (800)100-38-99<br>+7(812)309-36-63</span>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-envelope"></i></div>
+                            <div class="spec-contact-content">
+                                <a href="mailto:office@intellekt-pro.ru" class="spec-contact-link">office@intellekt-pro.ru</a>
+                            </div>
+                        </li>
+                        <li class="spec-contact-item">
+                            <div class="spec-contact-icon"><i class="fa fa-clock-o"></i></div>
+                            <div class="spec-contact-content">
+                                <span class="spec-contact-text">
+                                    <span class="ru">Пн-Пт, 10-19</span>
+                                    <span class="en">Mon-Fri, 10:00-19:00</span>
+                                </span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Колонка 4: КОНТАКТЫ -->
-   <div class="footer-col col-contacts">
-    <h4 class="footer-heading heading-contacts">Контакты</h4>
-    <ul class="spec-contact-list">
-        <!-- Адрес -->
-        <li class="spec-contact-item">
-            <div class="spec-contact-icon"><i class="fa fa-map-marker"></i></div>
-            <div class="spec-contact-content">
-                <span class="spec-contact-text">Санкт-Петербург, наб. р. Карповки 5И</span>
+            <div class="footer-bottom">
+                <p class="copyright-text">
+                    <span class="ru">2010-2024, Системы безопасности в Санкт-Петербурге (СПБ) | Интеллект Про | Все права защищены.<br>Информация о ценах на сайте не является публичной офертой.</span>
+                    <span class="en">2010-2024, Security Systems in St. Petersburg | Intellekt Pro | All rights reserved.<br>Price information on the website is not a public offer.</span>
+                </p>
             </div>
-        </li>
-        
-        <!-- Телефоны -->
-        <li class="spec-contact-item">
-            <div class="spec-contact-icon"><i class="fa fa-phone"></i></div>
-            <div class="spec-contact-content">
-                <span class="spec-contact-text">
-                    8 (800)100-38-99<br>
-                    +7(812)309-36-63
-                </span>
-            </div>
-        </li>
-        
-        <!-- Почта -->
-        <li class="spec-contact-item">
-            <div class="spec-contact-icon"><i class="fa fa-envelope"></i></div>
-            <div class="spec-contact-content">
-                <a href="mailto:office@intellekt-pro.ru" class="spec-contact-link">office@intellekt-pro.ru</a>
-            </div>
-        </li>
-        
-        <!-- Время работы -->
-        <li class="spec-contact-item">
-            <div class="spec-contact-icon"><i class="fa fa-clock-o"></i></div>
-            <div class="spec-contact-content">
-                <span class="spec-contact-text">Пн-Пт, 10-19</span>
-            </div>
-        </li>
-    </ul>
-</div>
-        </div> <!-- /footer-top -->
-
-        <!-- Нижняя часть: КОПИРАЙТ -->
-        <div class="footer-bottom">
-            <p class="copyright-text">
-                2010-2024, Системы безопасности в Санкт-Петербурге (СПБ) | Интеллект Про | Все права защищены.<br>
-                Информация о ценах на сайте не является публичной офертой.
-            </p>
         </div>
+    </footer>
 
-    </div> 
-</footer>
-<script type="module">
-    import { initSlider } from './js/components/slider.js';
+<div id="review-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
+    <div class="modal-content" style="background: #fff; padding: 30px; border-radius: 8px; max-width: 500px; width: 90%; position: relative;">
+        <span id="close-review-modal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #999;">&times;</span>
+        <h3 style="margin-top: 0; margin-bottom: 20px; font-size: 22px; color: #333;">
+            <span class="ru">Оставить отзыв</span><span class="en">Leave a Review</span>
+        </h3>
+        <form id="review-form">
+            <input type="text" id="review-author" 
+                   data-placeholder-ru="Ваше имя" 
+                   data-placeholder-en="Your Name" 
+                   placeholder="Ваше имя" 
+                   required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            
+            <textarea id="review-text" 
+                      data-placeholder-ru="Напишите ваш отзыв здесь..." 
+                      data-placeholder-en="Write your review here..." 
+                      placeholder="Напишите ваш отзыв здесь..." 
+                      required style="width: 100%; height: 150px; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; resize: vertical; box-sizing: border-box; font-family: inherit;"></textarea>
+            
+            <button type="submit" style="width: 100%; padding: 12px; background: #cc0000; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 16px;">
+                <span class="ru">Отправить отзыв</span><span class="en">Send Review</span>
+            </button>
+        </form>
+    </div>
+</div>
 
-    // Запускаем слайдер, когда документ готов
-    document.addEventListener('DOMContentLoaded', () => {
-        initSlider();
-        
-    });
-</script>
-<script src="js/auth.js"></script>
+
+    <!-- Скрипты -->
+    <script type="module">
+        import { initSlider } from './js/components/slider.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            initSlider();
+        });
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/reviews.js"></script>
+    
+    <!-- Переключатель языка -->
+    <script src="js/language.js"></script>
 </body>
 </html>

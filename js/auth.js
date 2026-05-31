@@ -1,4 +1,11 @@
+// js/auth.js
+
 const API_URL = 'http://localhost:3000';
+
+// === ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ДЛЯ ПЕРЕВОДОВ ===
+function getUIText(ru, en) {
+    return document.body.classList.contains('lang-en') ? en : ru;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     updateAuthHeader();
@@ -16,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const adminLink = document.createElement('a');
                     adminLink.href = 'admin.html';
                     adminLink.className = 'admin-menu-link';
-                    adminLink.innerHTML = '</i> Редактор';
+                    // === ИСПРАВЛЕНО: Перевод ссылки ===
+                    adminLink.innerHTML = '</i> ' + getUIText('Редактор', 'Admin Panel');
                     adminLi.appendChild(adminLink);
                     mainNav.appendChild(adminLi);
                 }
@@ -54,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         password: document.getElementById('reg-password'),
         confirmPassword: document.getElementById('reg-password-confirm'),
         nickname: document.getElementById('reg-nickname'),
-        agreement: document.getElementById('reg-agreement') // Наша галочка
+        agreement: document.getElementById('reg-agreement')
     };
 
     const errors = {
@@ -135,38 +143,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
         switch (key) {
             case 'lastName':
-                if (!val) { showError(key, 'Введите фамилию'); return false; }
+                if (!val) { 
+                    // === ИСПРАВЛЕНО: Перевод ошибки ===
+                    showError(key, getUIText('Введите фамилию', 'Enter last name')); 
+                    return false; 
+                }
                 clearError(key); return true;
                 
             case 'firstName':
-                if (!val) { showError(key, 'Введите имя'); return false; }
+                if (!val) { 
+                    showError(key, getUIText('Введите имя', 'Enter first name')); 
+                    return false; 
+                }
                 clearError(key); return true;
                 
             case 'email':
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
-                if (!emailRegex.test(val)) { showError(key, 'Некорректный email. Требуется @ и домен (например .com)'); return false; }
+                if (!emailRegex.test(val)) { 
+                    showError(key, getUIText('Некорректный email. Требуется @ и домен (например .com)', 'Invalid email. Must include @ and domain (e.g. .com)')); 
+                    return false; 
+                }
                 clearError(key); return true;
                 
             case 'phone':
                 if (val.length !== 13 || !val.startsWith('+375')) { 
-                    showError(key, 'Телефон должен содержать +375 и ровно 9 цифр'); 
+                    showError(key, getUIText('Телефон должен содержать +375 и ровно 9 цифр', 'Phone must start with +375 and contain exactly 9 digits')); 
                     return false; 
                 }
                 clearError(key); return true;
                 
             case 'birthdate':
-                if (!val) { showError(key, 'Укажите дату рождения'); return false; }
-                if (!validateAge(val)) { showError(key, 'Регистрация доступна только с 16 лет'); return false; }
+                if (!val) { 
+                    showError(key, getUIText('Укажите дату рождения', 'Enter date of birth')); 
+                    return false; 
+                }
+                if (!validateAge(val)) { 
+                    showError(key, getUIText('Регистрация доступна только с 16 лет', 'Registration available only from 16 years old')); 
+                    return false; 
+                }
                 clearError(key); return true;
                 
             case 'nickname':
-                if (val.length < 3) { showError(key, 'Никнейм от 3 символов'); return false; }
+                if (val.length < 3) { 
+                    showError(key, getUIText('Никнейм от 3 символов', 'Nickname must be at least 3 characters')); 
+                    return false; 
+                }
                 clearError(key); return true;
 
             case 'password':
                 const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
                 if (!passRegex.test(val)) { 
-                    showError(key, 'Мин. 6 символов: заглавная, строчная, цифра и спецсимвол'); 
+                    showError(key, getUIText('Мин. 6 символов: заглавная, строчная, цифра и спецсимвол', 'Min. 6 chars: uppercase, lowercase, digit and special character')); 
                     return false; 
                 }
                 clearError(key);
@@ -175,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
             case 'confirmPassword':
                 if (val !== fields.password.value) {
-                    showError(key, 'Пароли не совпадают');
+                    showError(key, getUIText('Пароли не совпадают', 'Passwords do not match'));
                     return false;
                 }
                 clearError(key); return true;
@@ -196,14 +223,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const isNicknameOk = fields.nickname && fields.nickname.value.trim().length >= 3 && fields.nickname.value.trim().length <= 12;
         const isPasswordOk = fields.password && /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(fields.password.value);
         const isConfirmOk = fields.confirmPassword && fields.confirmPassword.value !== '' && fields.confirmPassword.value === fields.password.value;
-        const isAgreementOk = fields.agreement && fields.agreement.checked; // Проверяем галочку
+        const isAgreementOk = fields.agreement && fields.agreement.checked;
 
         const isFormValid = isLastNameOk && isFirstNameOk && isEmailOk && isPhoneOk && 
                             isBirthdateOk && isPasswordOk && isConfirmOk && 
                             isAgreementOk && isNicknameOk;
 
         if (btnSubmit) {
-            btnSubmit.disabled = !isFormValid; // Если всё true, кнопка разблокируется
+            btnSubmit.disabled = !isFormValid;
         }
     }
 
@@ -226,7 +253,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const isFirstNameValid = fields.firstName.value.trim() !== '';
 
             if (!isLastNameValid || !isFirstNameValid) {
-                alert('Сначала введите Фамилию и Имя для генерации никнейма!');
+                // === ИСПРАВЛЕНО: Перевод сообщения ===
+                alert(getUIText('Сначала введите Фамилию и Имя для генерации никнейма!', 'Please enter Last Name and First Name to generate a nickname!'));
                 return;
             }
 
@@ -248,11 +276,14 @@ document.addEventListener('DOMContentLoaded', () => {
             fields.nickname.value = generatedNick;
             
             nickAttempts--;
-            if (attemptsHint) attemptsHint.textContent = `Осталось попыток генерации: ${nickAttempts}`;
+            if (attemptsHint) {
+                // === ИСПРАВЛЕНО: Перевод подсказки ===
+                attemptsHint.textContent = getUIText(`Осталось попыток генерации: ${nickAttempts}`, `Generation attempts left: ${nickAttempts}`);
+            }
 
             if (nickAttempts === 0) {
                 btnGenerateNick.disabled = true;
-                if (attemptsHint) attemptsHint.textContent = "Попытки исчерпаны.";
+                if (attemptsHint) attemptsHint.textContent = getUIText("Попытки исчерпаны.", "Attempts exhausted.");
             }
 
             validateField('nickname');
@@ -283,7 +314,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 autoGeneratedPassword = autoGeneratedPassword.split('').sort(() => 0.5 - Math.random()).join('');
 
-                alert(`ВАШ СГЕНЕРИРОВАННЫЙ ПАРОЛЬ:\n\n${autoGeneratedPassword}\n\nСкопируйте его и введите в поля пароля ниже!`);
+                // === ИСПРАВЛЕНО: Перевод сообщения с паролем ===
+                const passwordMsg = getUIText(
+                    `ВАШ СГЕНЕРИРОВАННЫЙ ПАРОЛЬ:\n\n${autoGeneratedPassword}\n\nСкопируйте его и введите в поля пароля ниже!`,
+                    `YOUR GENERATED PASSWORD:\n\n${autoGeneratedPassword}\n\nCopy it and enter it in the password fields below!`
+                );
+                alert(passwordMsg);
                 
                 if (fields.password) fields.password.value = '';
                 if (fields.confirmPassword) fields.confirmPassword.value = '';
@@ -312,7 +348,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const existingUsers = await checkResponse.json();
                 
                 if (existingUsers.length > 0) {
-                    alert('ОШИБКА: Пользователь с таким E-mail уже зарегистрирован!');
+                    // === ИСПРАВЛЕНО: Перевод ошибки ===
+                    alert(getUIText('ОШИБКА: Пользователь с таким E-mail уже зарегистрирован!', 'ERROR: A user with this email is already registered!'));
                     return;
                 }
 
@@ -334,19 +371,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (response.ok) {
-                    alert('Регистрация успешно завершена! Теперь вы можете войти в систему.');
+                    // === ИСПРАВЛЕНО: Перевод успеха ===
+                    alert(getUIText('Регистрация успешно завершена! Теперь вы можете войти в систему.', 'Registration completed successfully! You can now log in.'));
                     regForm.reset();
-                    btnSubmit.disabled = true; // Снова блокируем после успешной отправки
+                    btnSubmit.disabled = true;
                     autoGeneratedPassword = "";
                     
                     const loginTabBtn = document.querySelector('[data-tab="login-form"]');
                     if (loginTabBtn) loginTabBtn.click();
                 } else {
-                    alert('Ошибка при сохранении пользователя на сервере.');
+                    alert(getUIText('Ошибка при сохранении пользователя на сервере.', 'Failed to save user to server.'));
                 }
             } catch (error) {
                 console.error('Ошибка сети:', error);
-                alert('Не удалось связаться с сервером базы данных (json-server).');
+                alert(getUIText('Не удалось связаться с сервером базы данных (json-server).', 'Failed to connect to database server (json-server).'));
             }
         });
     }
@@ -369,14 +407,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.setItem('currentUser', JSON.stringify({
                         id: users[0].id, name: users[0].name, email: users[0].email, role: users[0].role || 'user'
                     }));
-                    alert(`Успешный вход! Добро пожаловать, ${users[0].name}.`);
+                    // === ИСПРАВЛЕНО: Перевод приветствия ===
+                    const welcomeMsg = getUIText(`Успешный вход! Добро пожаловать, ${users[0].name}.`, `Login successful! Welcome, ${users[0].name}.`);
+                    alert(welcomeMsg);
                     updateAuthHeader();
                     window.location.href = 'index.html'; 
                 } else {
-                    alert('Неверный Email или Пароль!');
+                    alert(getUIText('Неверный Email или Пароль!', 'Invalid Email or Password!'));
                 }
             } catch (error) {
-                alert('Ошибка соединения с сервером.');
+                alert(getUIText('Ошибка соединения с сервером.', 'Server connection error.'));
             }
         });
     }
@@ -394,10 +434,10 @@ function updateAuthHeader() {
             <div class="auth-user-container">
                 <a href="lk.html" class="header-cabinet">
                     <div class="cabinet-icon"><img src="assets/iconoir_profile-circle.png" class="cabinet-icon" alt="Профиль"></div>
-                    <div class="cabinet-text"><span class="cabinet-title">${user.name}</span><span class="cabinet-desc">Личный кабинет</span></div>
+                    <div class="cabinet-text"><span class="cabinet-title">${user.name}</span><span class="cabinet-desc"><span class="ru">Личный кабинет</span><span class="en">Personal Account</span></span></div>
                 </a>
                 <span class="auth-separator">|</span>
-              <a href="javascript:void(0)" id="logout-btn" style="color: white; text-decoration: none;">Выйти <i class="fa fa-sign-out" style="color: white;"></i></a>
+                <a href="javascript:void(0)" id="logout-btn" style="color: white; text-decoration: none;"><span class="ru">Выйти</span><span class="en">Logout</span> <i class="fa fa-sign-out" style="color: white;"></i></a>
             </div>
         `;
         document.getElementById('logout-btn').addEventListener('click', () => {
@@ -408,7 +448,7 @@ function updateAuthHeader() {
         authZone.innerHTML = `
             <a href="auth.html" class="header-cabinet">
                 <div class="cabinet-icon"><img src="assets/iconoir_profile-circle.png" class="cabinet-icon" alt="Профиль"></div>
-                <div class="cabinet-text"><span class="cabinet-title">Кабинет</span><span class="cabinet-desc">Вход для клиентов</span></div>
+                <div class="cabinet-text"><span class="cabinet-title"><span class="ru">Кабинет</span><span class="en">Account</span></span><span class="cabinet-desc"><span class="ru">Вход для клиентов</span><span class="en">Client Login</span></span></div>
             </a>
         `;
     }
