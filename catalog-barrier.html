@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автоматика проезда</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css"> 
+    <link rel="stylesheet" href="css/barrier.css"> 
+    <link rel="stylesheet" href="css/dark-theme.css"> 
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/js/components/slider.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <header class="header" id="header">
+          <div class="header-top">
+                <div class="container">
+                    <div class="header-top__wrapper">
+                        <nav class="header-top__nav">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" id="theme-dark">
+                                        <span class="ru">Темная тема</span><span class="en">Dark theme</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" id="theme-light">
+                                        <span class="ru">Светлая тема</span><span class="en">Light theme</span>
+                                    </a>
+                                </li>
+                                <li>
+    <a href="javascript:void(0)" id="theme-terminal">
+        <span class="ru">Терминал тема</span><span class="en">Terminal theme</span>
+    </a>
+</li>
+                                
+                        
+                                <li class="lang-switcher">
+                                    <button type="button" id="lang-ru" class="lang-btn active">RUS</button>
+                                 
+                                    <button type="button" id="lang-en" class="lang-btn">ENG</button>
+                                </li>
+
+<li class="acc-switcher">
+    <button type="button" class="acc-font-btn" data-acc="font-normal" title="Обычный размер">A</button>
+    <button type="button" class="acc-font-btn" data-acc="font-large" title="Увеличенный">A+</button>
+    <button type="button" class="acc-font-btn" data-acc="font-xlarge" title="Крупный">A++</button>
+</li>
+<li class="reset-settings-group">
+    <button type="button" class="reset-settings-btn" title="Сбросить все настройки">
+        <i class="fa fa-refresh"></i>
+        <span class="ru">Сброс</span>
+        <span class="en">Reset</span>
+    </button>
+</li>
+                            </ul>
+                        </nav>
+                        <div class="header-top__address">
+                            <a class="header-location" href="#">
+                                <span class="ru">г. СПБ, наб. р. Карповки, 5И</span><span class="en">St. Petersburg, Karpovka Embankment, 5I</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="header-center">
+            <div class="container-2">
+                <div class="header-center__wrapper">
+                    <div class="header-center__logo-block">
+                        <a class="header-logo" href="/">
+                            <img src="assets/logo.png" alt="logo" class="logo-img">
+                            <div class="logo-text-group">
+                                <span class="logo-name">ЕГДС</span>
+                                <span class="logo-desc">
+                                    <span class="ru">Единая Городская Диспетчерская Служба Санкт-Петербурга</span>
+                                    <span class="en">Unified City Dispatch Service of St. Petersburg</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+
+                     <div class="header-contacts-group">
+                            <div class="header-contact">
+                                <div class="contact-icon">
+                                    <img src="assets/envelope-regular 1.png" alt="mail" class="custom-icon">
+                                </div>
+                                <div class="contact-content">
+                                    <a href="mailto:office@egdsk-spb.ru" class="contact-link">office@egdsk-spb.ru</a>
+
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="header-contact">
+                                <div class="contact-icon">
+                                    <img src="assets/lucide_phone-call.png" alt="phone" class="custom-icon">
+                                </div>
+                                <div class="contact-content">
+                                    <a href="tel:+78001003899" class="contact-link">+7(800)100-38-99</a>
+                                 
+                              
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="header-contact">
+                                <div class="contact-icon" style="width: 20px;"></div> 
+                                <div class="contact-content">
+                                    <a href="tel:+78123093663" class="contact-link">+7(812)309-36-63</a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="header-bottom">
+            <div class="container-2">
+                <div class="header-bottom__wrapper">
+                    <ul class="main-nav">
+                        <li class="has-dropdown main-nav__item--catalog">
+                            <a href="#" class="catalog-btn">
+                                <span class="ru">Каталог Оборудования</span><span class="en">Equipment Catalog</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="avtomatika.html"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></a></li>
+                                <li><a href="radioupravlenie.html"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></a></li>
+                                <li><a href="svobodnyy-vyezd.html"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></a></li>
+                                <li><a href="full-catalog.html"><span class="ru">Полный каталог</span><span class="en">Full Catalog</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="card.html"><span class="ru">Корзина</span><span class="en">Cart</span></a></li>
+                        <li><a href="favorites.html"><span class="ru">Избранное</span><span class="en">Favorites</span></a></li>
+                    </ul>
+
+                    <!-- БУРГЕР МЕНЮ -->
+                    <button class="burger-btn" id="burger-btn" aria-label="Меню">
+                        <span></span><span></span><span></span>
+                    </button>
+
+                    <div class="mobile-icons">
+                        <a href="full-catalog.html" title="Поиск"></a>
+                        <a href="card.html" title="Корзина"></a>
+                    </div>
+
+                    <div class="header-right-group">
+                        <div class="auth-zone" id="auth-zone"></div>
+                    </div> 
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <div class="container container--wide">
+            <nav class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="/" title="Главная" itemprop="item">
+                        <span itemprop="name"><span class="ru">Главная</span><span class="en">Home</span></span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </span>
+                <span class="separator">/</span>
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="avtomatika.html" title="Автоматика проезда" itemprop="item">
+                        <span itemprop="name"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></span>
+                    </a>
+                    <meta itemprop="position" content="3" />
+                </span>
+                <span class="separator">/</span>
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name"><span class="ru">Шлагбаумы</span><span class="en">Barrier Gates</span></span>
+                    <meta itemprop="position" content="4" />
+                </span>
+            </nav>
+
+            <div class="page-header">
+                <h1 class="page-title"><span class="ru">Шлагбаумы</span><span class="en">Barrier Gates</span></h1>
+            </div>
+
+            <div class="services-container">
+                <div class="b-services-wrapper">
+                    <div class="b-services-content">
+                        <article class="text-page">
+                            <p><span class="ru">Как в этом разобраться самому? Задача действительно сложная. Если вы хотите её упростить, то обратите внимание на линейку шлагбаумов Gard от итальянской фирмы Came. Они практичные, эргономичные и износостойкие. Довольно хорошо адаптированы для российского климата. Их качество высоко оценивают не только пользователи, но и профессиональные монтажники и ремонтники.</span>
+                            <span class="en">How to figure this out yourself? The task is quite complex. If you want to simplify it, pay attention to the Gard barrier gate line from the Italian company Came. They are practical, ergonomic and wear-resistant. Well adapted for the Russian climate. Their quality is highly appreciated not only by users, but also by professional installers and repairmen.</span></p>
+                            
+                            <p><span class="ru">Дальше вам придётся совсем немного разобраться в технических тонкостях. Для подбора конкретной модели шлагбаумов Came Gard (как и любых других) нужно учесть: ширину проезда для заказа стрелы определенной длины; количество проезжающих машин через КПП в час пик, чтобы узнать интенсивность движения.</span>
+                            <span class="en">Next, you'll need to understand a few technical details. To select a specific Came Gard barrier gate model (like any other), consider: the driveway width for ordering a boom of certain length; the number of vehicles passing through the checkpoint during peak hours to determine traffic intensity.</span></p>
+                            
+                            <p><span class="ru">Об этих параметрах вас обязательно спросят в компании, куда вы обратитесь за покупкой и установкой шлагбаума. От длины стрелы, скорости и частоты ее открывания будет зависеть в том числе цена устройства.</span>
+                            <span class="en">You will definitely be asked about these parameters at the company where you apply for purchase and installation. The price of the device depends on the boom length, opening speed and frequency.</span></p>
+                            
+                            <p><span class="ru">Также вам нужно будет выбрать способ доступа на закрытую территорию. Его можно реализовать с помощью брелока, RFID-метки, мобильного приложения, удаленной диспетчеризации или номерного знака автомобиля. Можете быть спокойны: любая из указанных систем управления совместима со шлагбаумами Came Gard.</span>
+                            <span class="en">You will also need to choose an access method for the restricted area. It can be implemented using a key fob, RFID tag, mobile app, remote dispatching, or license plate recognition. Rest assured: any of these control systems is compatible with Came Gard barrier gates.</span></p>
+                            
+                            <h2 class="page-title-2"><span class="ru">Где заказать шлагбаум и дополнительное оборудование к нему?</span><span class="en">Where to order a barrier gate and accessories?</span></h2>
+                            
+                            <p><span class="ru">Обратитесь к специалистам компании «ЕГДС-СПб». Они проведут для вас бесплатную консультацию, учтут все ваши пожелания и составят точную смету работ и технических средств.</span>
+                            <span class="en">Contact EGDS-Spb specialists. They will provide a free consultation, consider all your requirements and prepare an accurate estimate for works and equipment.</span></p>
+                            
+                            <p><span class="ru">А после монтажа смогут взять ваш шлагбаум Came на гарантийное и постгарантийное обслуживание. В наличии на складе и под заказ есть оригинальные комплектующие, которые позволят сохранить работоспособность шлагбаума на весь срок эксплуатации, прописанный в паспорте.</span>
+                            <span class="en">After installation, they can provide warranty and post-warranty service for your Came barrier gate. Original components are available in stock and by order to maintain operability throughout the service life specified in the passport.</span></p>
+                            
+                            <p><span class="ru">Позвоните по телефонам, указанным в верхней части страницы нашего сайта. Или оставьте свои контактные данные в специальной форме внизу страницы этого сайта, тогда мы сами свяжемся с вами.</span>
+                            <span class="en">Call the phones listed at the top of our website. Or leave your contact details in the special form at the bottom of this page, and we will contact you ourselves.</span></p>
+                            
+                            <h2 class="page-title-2"><span class="ru">Общие характеристики шлагбаумов</span><span class="en">General barrier gate specifications</span></h2>
+                            
+                            <ul class="catalog-list-marker_list"> 
+                                <li><span class="ru">Рабочая температура без использования дополнительных обогревателей от -20°C до +55°C. А установка шлагбаума с обогревателем требуется в северных регионах, где столбик термометра зимой опускается ниже -25-30°C.</span>
+                                <span class="en">Operating temperature without additional heaters: from -20°C to +55°C. Barrier gates with heaters are required in northern regions where temperatures drop below -25-30°C in winter.</span></li>
+                                <li><span class="ru">Класс защиты IP54. Это значит, что можно устанавливать шлагбаум на улице без дополнительной защиты от дождя и пыли.</span>
+                                <span class="en">IP54 protection rating. This means the barrier gate can be installed outdoors without additional protection from rain and dust.</span></li>
+                                <li><span class="ru">Ярко-оранжевые тумбы (RAL 2004) у всех моделей, кроме GARD 5000 (тумба серого цвета). Материал корпуса – оцинкованная окрашенная сталь.</span>
+                                <span class="en">Bright orange pedestals (RAL 2004) on all models except GARD 5000 (gray pedestal). Body material: painted galvanized steel.</span></li>
+                                <li><span class="ru">Максимальная скорость открывания допускается в случаях с укороченной стрелой и без каких-либо аксессуаров.</span>
+                                <span class="en">Maximum opening speed is allowed with shortened booms and without any accessories.</span></li>
+                            </ul>
+                            
+                            <p><span class="ru">Отличаются шлагбаумы САМЕ друг от друга по типу питания двигателя, ширине перекрываемого проезда и по функционалу.</span>
+                            <span class="en">CAME barrier gates differ from each other by motor power type, driveway width covered, and functionality.</span></p>
+                            
+                            <ul class="catalog-list-marker_list"> 
+                                <li><span class="ru">Тип питания двигателя базовых шлагбаумов САМЕ либо 24В (почти все модели), либо 230В (GARD 2500).</span>
+                                <span class="en">Basic CAME barrier gate motors are powered by either 24V (almost all models) or 230V (GARD 2500).</span></li>
+                                <li><span class="ru">Ширина проезда – это расстояние от края тумбы, обращенного в сторону проезда, до конца стрелы, и у большинства моделей оно совпадает с названием. Например, у GARD 2500 ширина перекрываемого проезда составляет 2500 мм или 2,5 м, у GARD 4000 – 4 м и т.д. Исключением является GARD 6000 – он перекрывает 6,5 м, как и GARD 6500.</span>
+                                <span class="en">Driveway width is the distance from the pedestal edge facing the driveway to the end of the boom. For most models, it matches the name. For example, GARD 2500 covers 2500 mm or 2.5 m, GARD 4000 covers 4 m, etc. Exception: GARD 6000 covers 6.5 m, like GARD 6500.</span></li>
+                            </ul>
+                            
+                            <p><span class="ru">При выборе шлагбаума учитывается влияние аксессуаров для стрелы на ширину проезда. Дополнительные аксессуары утяжеляют стрелу и ее приходится укорачивать, что приводит к уменьшению ширины перекрываемого проезда.</span>
+                            <span class="en">When choosing a barrier gate, consider how boom accessories affect driveway width. Additional accessories add weight, requiring boom shortening, which reduces the covered driveway width.</span></p>
+                            
+                            <p><span class="ru">У любой модели шлагбаума можно при желании укоротить стрелу, но удлинить стрелу – нельзя. Шлагбаумы с удлиненный стрелой невозможно отбалансировать при монтаже и их эксплуатация запрещена.</span>
+                            <span class="en">Any barrier gate boom can be shortened if needed, but cannot be extended. Barrier gates with extended booms cannot be balanced during installation and their operation is prohibited.</span></p>
+                            
+                            <h2 class="page-title-2"><span class="ru">Сравнение базовых моделей</span><span class="en">Basic models comparison</span></h2>
+                            
+                            <p><span class="ru">При сравнении базовых шлагбаумов САМЕ можно условно объединить модели GARD 4000 и GARD 3750, а также GARD 6000 и GARD 6500. Данные шлагбаумы практически идентичны, только GARD 3750 и GARD 6500 являются более современными решениями.</span>
+                            <span class="en">When comparing basic CAME barrier gates, models GARD 4000 and GARD 3750 can be grouped together, as well as GARD 6000 and GARD 6500. These barrier gates are virtually identical, with GARD 3750 and GARD 6500 being more modern solutions.</span></p>
+                            
+                            <p><b><span class="ru">Характеристики базовых шлагбаумов</span><span class="en">Basic barrier gate specifications</span></b></p>
+                            
+                            <div class="static-content" style="overflow-x: auto; margin-bottom: 20px;">
+                                <table class="table" style="width: 100%; border-collapse: collapse;"> 
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid #ddd;">    
+                                            <th style="padding: 10px; text-align: left;"><span class="ru">Параметр</span><span class="en">Parameter</span></th>    
+                                            <th style="padding: 10px; text-align: center;">GARD 2500</th>    
+                                            <th style="padding: 10px; text-align: center;">GARD 4000 / 3750</th>    
+                                            <th style="padding: 10px; text-align: center;">GARD 5000</th>    
+                                            <th style="padding: 10px; text-align: center;">GARD 6000 / 6500</th>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #ddd;">    
+                                            <td style="padding: 10px;"><span class="ru">Ширина проезда (максимальная)</span><span class="en">Driveway width (max)</span></td>     
+                                            <td align="center">2,5 м</td>     
+                                            <td align="center">3,75 м / 4 м</td>    
+                                            <td align="center">5 м</td>    
+                                            <td align="center">6,5 м</td> 
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #ddd;">    
+                                            <td style="padding: 10px;"><span class="ru">MCBF (количество циклов до отказа) *</span><span class="en">MCBF (cycles before failure) *</span></td>    
+                                            <td align="center">1,5 млн</td>     
+                                            <td align="center">1 млн</td>    
+                                            <td align="center">1,2 млн</td>    
+                                            <td align="center">1 млн</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #ddd;">    
+                                            <td style="padding: 10px;"><span class="ru">Количество циклов в день (макс)</span><span class="en">Cycles per day (max)</span></td>    
+                                            <td align="center">500</td>    
+                                            <td align="center">5400</td>    
+                                            <td align="center">3500</td>    
+                                            <td align="center">3500</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #ddd;">    
+                                            <td style="padding: 10px;"><span class="ru">Интенсивность использования</span><span class="en">Usage intensity</span></td>     
+                                            <td align="center">30%</td>     
+                                            <td colspan="3" align="center"><span class="ru">интенсивное использование</span><span class="en">intensive use</span></td> 
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #ddd;">    
+                                            <td style="padding: 10px;"><span class="ru">Время открывания до 90°(с)</span><span class="en">Opening time to 90° (sec)</span></td>     
+                                            <td align="center">4</td>     
+                                            <td align="center">2-6</td>     
+                                            <td align="center">4-8</td>     
+                                            <td align="center">4-8</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p><span style="font-weight: 400; font-size: 0.9em; color: gray;">* <span class="ru">Значения приведены для шлагбаумов без аксессуаров для стрелы и при использовании в регионах с умеренной ветровой нагрузкой.</span><span class="en">Values are for barrier gates without boom accessories and use in regions with moderate wind load.</span></span></p>
+                            
+                            <p><span class="ru">Сравним наработку на отказ, то есть максимальное количество рабочих циклов до появления неисправностей. Показатель выше у модели GARD 2500, в которой установлен двигатель с питанием 230В. Происходит это за счет более короткой стрелы, асинхронного двигателя и отсутствия в нем щеток. У шлагбаума GARD 5000 ресурс также увеличен за счет двигателя с энкодером и короткой стрелы.</span>
+                            <span class="en">Let's compare MTBF — maximum operating cycles before failure. The figure is higher for GARD 2500 with its 230V motor, due to shorter boom, asynchronous motor and brushless design. GARD 5000 also has extended service life thanks to encoder-equipped motor and short boom.</span></p>
+                            
+                            <p><span class="ru">Далее, разберемся с интенсивностью базовых шлагбаумов. Интенсивность эксплуатации – это выраженное в процентах время работы шлагбаума (время открытия + время закрытия) за 1 цикл. Один рабочий цикл шлагбаума состоит из "открытия-отдыха-закрытия-отдыха". Интенсивная эксплуатация подразумевает, что шлагбаум может закрываться сразу после открывания. Все модели, кроме GARD 2500, рассчитаны на интенсивную эксплуатацию.</span>
+                            <span class="en">Next, let's look at basic barrier gate intensity. Operating intensity is the percentage of time the gate works (opening + closing time) per cycle. One work cycle consists of "open-rest-close-rest". Intensive operation means the gate can close immediately after opening. All models except GARD 2500 are designed for intensive use.</span></p>
+                            
+                            <p><span class="ru">Интенсивность проезда – это количество машин, проезжающих через шлагбаум за час. GARD 2500 – шлагбаум с невысокой интенсивностью и больше подходит для контроля проезда на частной территории. Модели GARD 5000, GARD 6000 и GARD 6500 регулируют проезд со средней и высокой интенсивностью проезда.</span>
+                            <span class="en">Traffic intensity is the number of vehicles passing through the barrier gate per hour. GARD 2500 is a low-intensity gate, better suited for private property access control. Models GARD 5000, GARD 6000 and GARD 6500 handle medium to high traffic intensity.</span></p>
+
+                            <div class="b-services-row">
+                                <div class="b-services-card-horizontal" data-id="13">
+                                    <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                        <i class="fa fa-heart-o"></i>
+                                    </button>
+                                    <div class="b-card-pic">
+                                        <img src="assets/1.jpg" alt="Шлагбаум GARD 5000 (Серый)">
+                                    </div>
+                                    <div class="b-card-content">
+                                        <div class="b-card-header">
+                                            <span class="b-card-title">
+                                                <span class="ru">Шлагбаум GARD 5000 (Серый)</span>
+                                                <span class="en">Barrier Gate GARD 5000 (Gray)</span>
+                                            </span>
+                                        </div>
+                                        <p class="b-card-text">
+                                            <span class="ru">Тумба шлагбаума из оцинкованной стали в строгом сером цвете. Идеальное решение для проездов до 5 метров с высокой интенсивностью движения. Класс защиты IP54.</span>
+                                            <span class="en">Galvanized steel pedestal in strict gray color. Ideal solution for driveways up to 5 meters with high traffic intensity. IP54 protection rating.</span>
+                                        </p>
+                                        <div class="b-card-price">115 500 руб.</div>
+                                        <div class="b-card-action">
+                                            <button class="btn-more btn-details" style="margin-right: 10px;">
+                                                <span class="ru">Подробнее</span><span class="en">Details</span>
+                                            </button>
+                                            <button class="btn-more buy-btn-catalog">
+                                                <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="b-services-card-horizontal" data-id="14">
+                                    <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                        <i class="fa fa-heart-o"></i>
+                                    </button>
+                                    <div class="b-card-pic">
+                                        <img src="assets/2.webp" alt="Шлагбаум GARD 6500 Classico (Оранжевый)">
+                                    </div>
+                                    <div class="b-card-content">
+                                        <div class="b-card-header">
+                                            <span class="b-card-title">
+                                                <span class="ru">Шлагбаум GARD 6500 Classico (Оранжевый)</span>
+                                                <span class="en">Barrier Gate GARD 6500 Classico (Orange)</span>
+                                            </span>
+                                        </div>
+                                        <p class="b-card-text">
+                                            <span class="ru">Массивный и надежный шлагбаум с классической ярко-оранжевой тумбой. Предназначен для перекрытия широких проездов до 6,5 метров на промышленных объектах.</span>
+                                            <span class="en">Massive and reliable barrier gate with classic bright orange pedestal. Designed for wide driveways up to 6.5 meters at industrial facilities.</span>
+                                        </p>
+                                        <div class="b-card-price">125 700 руб.</div>
+                                        <div class="b-card-action">
+                                            <button class="btn-more btn-details" style="margin-right: 10px;">
+                                                <span class="ru">Подробнее</span><span class="en">Details</span>
+                                            </button>
+                                            <button class="btn-more buy-btn-catalog">
+                                                <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="b-services-card-horizontal" data-id="15">
+                                    <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                        <i class="fa fa-heart-o"></i>
+                                    </button>
+                                    <div class="b-card-pic">
+                                        <img src="assets/3.jpeg" alt="Шлагбаум GARD 4000SX">
+                                    </div>
+                                    <div class="b-card-content">
+                                        <div class="b-card-header">
+                                            <span class="b-card-title">
+                                                <span class="ru">Шлагбаум GARD 4000SX (Компактный)</span>
+                                                <span class="en">Barrier Gate GARD 4000SX (Compact)</span>
+                                            </span>
+                                        </div>
+                                        <p class="b-card-text">
+                                            <span class="ru">Быстрый шлагбаум для левостороннего монтажа. Компактные размеры и высокая скорость открывания.</span>
+                                            <span class="en">Fast barrier gate for left-side installation. Compact size and high opening speed.</span>
+                                        </p>
+                                        <div class="b-card-price">75 400 руб.</div>
+                                        <div class="b-card-action">
+                                            <button class="btn-more btn-details">
+                                                <span class="ru">Подробнее</span><span class="en">Details</span>
+                                            </button>
+                                            <button class="btn-more buy-btn-catalog">
+                                                <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="pagination">
+                                <span class="pagination-label"><span class="ru">Страница:</span><span class="en">Page:</span></span>
+                                <a href="#" class="page-link active">1</a>
+                                <a href="catalog-barrier-2.html" class="page-link">2</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <aside class="b-sidebar">
+                        <span class="b-sidebar__title"><span class="ru">Смотрите также:</span><span class="en">See also:</span></span>
+                        <ul class="b-sidebar__list">
+                            <li class="b-sidebar__item">
+                                <a href="avtomatika.html" class="b-sidebar__link">
+                                    <span class="ru">Автоматика проезда</span><span class="en">Access Automation</span> <span>→</span>
+                                </a>
+                            </li> 
+                            <li class="b-sidebar__item">
+                                <a href="radioupravlenie.html" class="b-sidebar__link">
+                                    <span class="ru">Радиоуправление</span><span class="en">Radio Control</span> <span>→</span>
+                                </a>
+                            </li>
+                            <li class="b-sidebar__item">
+                                <a href="svobodnyy-vyezd.html" class="b-sidebar__link">
+                                    <span class="ru">Свободный выезд</span><span class="en">Free Exit</span> <span>→</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </div>
+
+        <section class="callback-section">
+            <div class="step-container">
+                <div class="callback-wrapper">
+                    <div class="callback-content">
+                        <h3 class="callback-title">
+                            <span class="ru">Если у вас появилось желание оставить отзыв, то не ждите! Нам важно ваше мнение!</span>
+                            <span class="en">If you want to leave a review, don't wait! Your opinion matters to us!</span>
+                        </h3>
+                    </div>
+                    <div class="callback-action">
+                        <button type="button" id="open-review-modal" class="callback-btn">
+                            <span class="ru">Написать отзыв</span><span class="en">Leave a Review</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+         <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-col col-help">
+                        <h4 class="footer-heading heading-help">
+                            <span class="ru">Услуги</span><span class="en">Help</span>
+                        </h4>
+                        <ul class="footer-list list-help">
+                            <li><a href="card.html"><span class="ru">Корзина</span><span class="en">Cart</span></a></li>
+                            <li><a href="favorites.html"><span class="ru">Избранное</span><span class="en">Favorites</span></a></li>
+                            <li><a href="lk.html"><span class="ru">Личный кабинет</span><span class="en">Account</span></a></li>
+                            <li><a href="full-catalog.html"><span class="ru">Полный котолог</span><span class="en">Full catalog</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-services">
+                        <h4 class="footer-heading heading-services">
+                            <span class="ru">Товары</span><span class="en">Services</span>
+                        </h4>
+                        <ul class="footer-list list-services">
+                                <li><a href="avtomatika.html"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></a></li>
+                                <li><a href="svobodnyy-vyezd.html"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></a></li>
+                                <li><a href="radioupravlenie.html"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></a></li>
+                        </ul>
+                    </div>
+                   <div class="footer-col col-products">
+    <h4 class="footer-heading heading-products">
+        <span class="ru">Настройки</span><span class="en">Settings</span>
+    </h4>
+    <div class="products-grid-wrapper">
+        <ul class="footer-list list-products-left">
+            <li><a href="#" id="footer-theme-dark"><span class="ru">Тёмная тема</span><span class="en">Dark theme</span></a></li>
+            <li><a href="#" id="footer-theme-light"><span class="ru">Светлая тема</span><span class="en">Light theme</span></a></li>
+            <li><a href="#" id="footer-theme-terminal"><span class="ru">Терминал тема</span><span class="en">Terminal theme</span></a></li>
+            <li><a href="#" id="footer-lang-ru"><span class="ru">Русский язык</span><span class="en">Russian</span></a></li>
+        </ul>
+        <ul class="footer-list list-products-right">
+            <li><a href="#" id="footer-font-normal"><span class="ru">A Обычный шрифт</span><span class="en">A Normal font</span></a></li>
+            <li><a href="#" id="footer-font-large"><span class="ru">A+ Средний шрифт</span><span class="en">A+ Medium font</span></a></li>
+            <li><a href="#" id="footer-font-xlarge"><span class="ru">A++ Большой шрифт</span><span class="en">A++ Large font</span></a></li>
+            <li><a href="#" id="footer-lang-en"><span class="ru">Английский язык</span><span class="en">English</span></a></li>
+        </ul>
+    </div>
+</div>
+                    <div class="footer-col col-contacts">
+                        <h4 class="footer-heading heading-contacts">
+                            <span class="ru">Контакты</span><span class="en">Contacts</span>
+                        </h4>
+                        <ul class="spec-contact-list">
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-map-marker"></i></div>
+                                <div class="spec-contact-content">
+                                    <span class="spec-contact-text">
+                                        <span class="ru">Санкт-Петербург, наб. р. Карповки 5И</span>
+                                        <span class="en">St. Petersburg, Karpovka Embankment, 5I</span>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-phone"></i></div>
+                                <div class="spec-contact-content">
+                                    <span class="spec-contact-text">
+                                        <span class="ru">+7(812)309-36-63<br></span>
+                                        <span class="en">+7(812)309-36-63<br></span>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-envelope"></i></div>
+                                <div class="spec-contact-content">
+                                    <a href="mailto:office@intellekt-pro.ru" class="spec-contact-link">office@intellekt-pro.ru</a>
+                                </div>
+                            </li>
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-clock-o"></i></div>
+                                <div class="spec-contact-content">
+                                    <span class="spec-contact-text">
+                                        <span class="ru">Пн-Пт, 10-19</span>
+                                        <span class="en">Mon-Fri, 10:00-19:00</span>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright-text">
+                        <span class="ru">2010-2024, Системы безопасности в Санкт-Петербурге (СПБ) | Интеллект Про | Все права защищены.<br>Информация о ценах на сайте не является публичной офертой.</span>
+                        <span class="en">2010-2024, Security Systems in St. Petersburg | Intellekt Pro | All rights reserved.<br>Price information on the website is not a public offer.</span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    <div id="product-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-window">
+            <button id="modal-close" class="close-btn">&times;</button>
+            <div class="modal-grid">
+                <img id="modal-img" src="" alt="">
+                <div class="modal-info">
+                    <h3 id="modal-title" style="margin-top: 0; font-size: 1.5rem;"></h3>
+                    <div id="modal-price" style="font-weight: bold; font-size: 1.3rem; color: #e74c3c; margin-bottom: 10px;"></div>
+                    <ul id="modal-specs" style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="review-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
+    <div class="modal-content" style="background: #fff; padding: 30px; border-radius: 8px; max-width: 500px; width: 90%; position: relative;">
+        <span id="close-review-modal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #999;">&times;</span>
+        <h3 style="margin-top: 0; margin-bottom: 20px; font-size: 22px; color: #333;">
+            <span class="ru">Оставить отзыв</span><span class="en">Leave a Review</span>
+        </h3>
+        <form id="review-form">
+            <input type="text" id="review-author" 
+                   data-placeholder-ru="Ваше имя" 
+                   data-placeholder-en="Your Name" 
+                   placeholder="Ваше имя" 
+                   required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            
+            <textarea id="review-text" 
+                      data-placeholder-ru="Напишите ваш отзыв здесь..." 
+                      data-placeholder-en="Write your review here..." 
+                      placeholder="Напишите ваш отзыв здесь..." 
+                      required style="width: 100%; height: 150px; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; resize: vertical; box-sizing: border-box; font-family: inherit;"></textarea>
+            
+            <button type="submit" style="width: 100%; padding: 12px; background: #cc0000; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 16px;">
+                <span class="ru">Отправить отзыв</span><span class="en">Send Review</span>
+            </button>
+        </form>
+    </div>
+</div>
+
+    <!-- Скрипты -->
+    <script type="module">
+        import { initSlider } from './js/components/slider.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            initSlider();
+        });
+    </script>
+    <script src="js/favorites.js"></script>
+    <script type="module" src="js/catalog-auth-guard.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/reviews.js"></script>
+    <script src="js/accessibility.js"></script>  
+    <script src="js/language.js"></script>
+
+    <!-- БУРГЕР МЕНЮ -->
+    <script src="js/burger.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,416 @@
+   /* Специфичные стили для секции корзины, гармонирующие с основным сайтом */
+        .cart-section {
+            padding: 60px 0;
+      
+            min-height: 50vh;
+        margin-left: 120px;
+        }
+
+        .cart-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 35px;
+            position: relative;
+            color: #333;
+        }
+
+        /* Список товаров в корзине */
+        .cart-table {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 10px 20px;
+            margin-bottom: 30px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Левая часть карточки: фото и название */
+        .cart-item__product {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .cart-item__img-wrapper {
+            width: 90px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .cart-item__img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .cart-item__info {
+            max-width: 450px;
+        }
+
+        .cart-item__name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 5px;
+        }
+
+        .cart-item__price-each {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Правая часть карточки: управление количеством и цены */
+        .cart-item__actions {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        /* Переключатель количества в стиле кнопок управления */
+        .counter-block {
+            display: flex;
+            align-items: center;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            background: #ffffff;
+            height: 38px;
+        }
+
+        .counter-btn {
+            background: #f5f5f5;
+            border: none;
+            width: 35px;
+            height: 100%;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .counter-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .counter-value {
+            width: 40px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .cart-item__total {
+            font-size: 18px;
+            font-weight: 700;
+            color: #222;
+            min-width: 130px;
+            text-align: right;
+        }
+
+        .cart-item__remove {
+            background: none;
+            border: none;
+            color: #cc0000; /* Фирменный красный акцент со стрелочек */
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: underline;
+            padding: 5px;
+            transition: opacity 0.2s;
+        }
+
+        .cart-item__remove:hover {
+            opacity: 0.7;
+        }
+
+        /* Блок итога и оформления */
+        .cart-checkout-panel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 25px 30px;
+            margin-top: 20px;
+        }
+
+        .cart-back-btn {
+            color: #333;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cart-back-btn:hover {
+            color: #cc0000;
+        }
+
+        .cart-summary-info {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .cart-total-label {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .cart-total-sum {
+            font-size: 24px;
+            font-weight: 900;
+            color: #222;
+        }
+
+        /* Кнопка в едином стиле с callback-btn на главной */
+        .cart-submit-btn {
+            background-color: #cc0000; /* Соответствует цвету стрелок слайдера */
+            color: #ffffff;
+            border: none;
+            padding: 12px 35px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.2s;
+        }
+
+        .cart-submit-btn:hover {
+            background-color: #b30000;
+        }
+
+        .cart-empty-msg {
+            font-size: 16px;
+            color: #666;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        /* Адаптивность под мобильные устройства */
+        @media (max-width: 768px) {
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .cart-item__actions {
+                width: 100%;
+                justify-content: space-between;
+                gap: 10px;
+            }
+            .cart-item__total {
+                text-align: left;
+                min-width: auto;
+            }
+            .cart-checkout-panel {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            .cart-summary-info {
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .cart-submit-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+         Общие стили для нового модального окна */
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+}
+
+.modal-content-wrapper {
+    background-color: var(--bg-card, #ffffff); /* Используем переменные твоей темы, если есть, или белый */
+    color: var(--text-color, #333333);
+    padding: 25px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+/* Изменение фона для темной темы, если у тебя используются классы */
+body.dark-theme .modal-content-wrapper {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
+.modal-header-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+body.dark-theme .modal-header-block {
+    border-bottom-color: #444;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #888;
+}
+.close-modal-btn:hover { color: #f44336; }
+
+.modal-form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-field-group label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.required-star { color: #f44336; }
+
+.form-field-group input, 
+.form-field-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: var(--bg-input, #fff);
+    color: var(--text-input, #000);
+}
+body.dark-theme .form-field-group input,
+body.dark-theme .form-field-group textarea {
+    background-color: #333;
+    border-color: #555;
+    color: #fff;
+}
+
+.modal-footer-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cancel-action-btn {
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.cancel-action-btn:hover { background-color: #d5d5d5; }
+
+.confirm-action-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.confirm-action-btn:hover { background-color: #218838; }
+
+#order-modal {
+    /* JS будет переключать это свойство на flex */
+    display: none; 
+    
+    /* Отрываем окно от остального контента и фиксируем на экране */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Делаем темный полупрозрачный фон (оверлей) вокруг формы */
+    background-color: rgba(0, 0, 0, 0.6); 
+    
+    /* Вытаскиваем окно ПОВЕРХ футера, хедера и всех остальных блоков */
+    z-index: 9999; 
+    
+    /* Выравниваем само окно с формой ровно по центру экрана */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для самой карточки с формой внутри окна (если класс называется так) */
+#order-modal .modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+}
+/* Стили для кнопки подтверждения заказа внутри формы */
+#order-submit-form button[type="submit"] {
+    background-color: #cc0000; /* Тот самый красный цвет */
+    color: #ffffff; /* Белый текст */
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px; /* Скругляем углы, если нужно */
+    cursor: pointer;
+    transition: background-color 0.2s ease; /* Плавное изменение цвета */
+}
+
+/* Эффект при наведении мыши (делаем цвет чуть темнее) */
+#order-submit-form button[type="submit"]:hover {
+    background-color: #990000; 
+}

@@ -4,7 +4,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+:root {
+    --bg-main: #ffffff;
+    --bg-secondary: #f0f0f0;
+    --bg-cards: #fcfcfc;
+    --text-main: #333333;
+    --text-title: #BF0016; /* Твой красный */
+    --border-color: #f0f0f0;
+    --header-top-bg: rgb(240, 240, 240);
+}
 body {
     font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -96,7 +104,7 @@ line-height: 120%; /* 19.2px */
 }
 /* --- HEADER CENTER (На основе твоих замеров) --- */
 .header-center {
-    background-color: #ffffff;
+   background-color: var(--bg-main);
     padding: 9px 0; /* Создаем высоту блока за счет внутренних отступов */
     border-bottom: 1px solid #f0f0f0;
     padding-left: 120px;
@@ -123,6 +131,7 @@ line-height: 120%; /* 19.2px */
     align-items: center;
     text-decoration: none;
     gap: 15px;
+    margin-left: 30px;
 }
 
 .header-logo img {
@@ -157,6 +166,7 @@ width: 300px;
     display: flex;
     align-items: flex-start;
     gap: 12px;
+  
 }
 
 .contact-link {
@@ -230,14 +240,14 @@ width: 300px;
     list-style: none;
     margin: 0;
     padding: 0;
-    /* Сдвигаем меню чуть правее от начала, как на скрине */
-    margin-left: 98px; 
+   height: 100%;
+    margin-left: 90px; 
 
 }
 
 .main-nav li {
     margin-right: 20px;
-   
+   height: 100%;
 }
 
 .main-nav a {
@@ -325,6 +335,51 @@ line-height: 120%; /* 13.2px */
     
 }
 
+/* ==========================================================================
+   СТИЛИ ДЛЯ ЗОНЫ АВТОРИЗАЦИИ (Вынесено из JS)
+   ========================================================================== */
+
+/* Контейнер для профиля и кнопки выхода */
+.auth-user-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Разделитель (вертикальная черта) */
+.auth-separator {
+    color: rgba(255, 255, 255, 0.3);
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+/* Кнопка "Выйти" */
+.logout-btn {
+    color: #ffb0b9;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.logout-btn i {
+    margin-left: 3px;
+}
+
+.logout-btn:hover {
+    opacity: 1;
+    color: #ff4d4d;
+}
+
+/* Вспомогательный класс для скрытия элементов (ручной ввод пароля) */
+.hidden-block {
+    display: none !important;
+}
 .cabinet-desc {
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
@@ -335,7 +390,7 @@ line-height: 120%; /* 13.2px */
 /* Основная секция */
 .hero-slider {
     margin-top: 40px;
-    background-color: #ffffff; /* Теперь тут белый */
+   background-color: var(--bg-main);
     padding: 40px 0;
     width: 100%;
 }
@@ -493,7 +548,7 @@ margin-bottom: 30px;
 /* --- СЕКЦИЯ О КОМПАНИИ --- */
 .about {
     padding: 20px 0 20px 0; /* Отступы сверху и снизу всей секции */
-    background-color: #ffffff;
+   background-color: var(--bg-main);
     margin-left: 115px;
 }
 
@@ -561,110 +616,8 @@ line-height: 120%; /* 19.2px */
  
 }
 
-.services {
-  padding: 20px 0 20px 0; 
- margin-left: 115px;
-    margin-bottom: 20px;
-}
-.services .title-main {
 
-color: var(---, #BF0016);
 
-font-family: Roboto;
-font-size: 34px;
-font-style: normal;
-font-weight: 400;
-line-height: 120%; /* 40.8px */
- margin-bottom: 30px;
-}
-
-.services__grid {
-    display: grid;
-    /* По умолчанию 3 колонки */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px 7px;
-   
-}
-
-.service-card {
-    position: relative;
-    display: block;
-    height: 235px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 5px;
-    overflow: hidden;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-    width: 360px;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-.service-card__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
-    z-index: 1;
-}
-
-.service-card__content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-   z-index: 5;
-    box-sizing: border-box;
-}
-
-.service-card__title {
-       display: flex;
-    justify-content: space-between;
-    font-weight: 500;
-    font-size: 17px;
-   
-    line-height: 120%;
-    text-transform: uppercase;
-    align-items: center;
-    color: #fff;
-    width: 75%;
-}
-
-.service-card__arrow {
-    color: #fff;
-    font-style: normal;
-    font-size: 20px;
-}
-/* Создаем красную заливку, скрытую по умолчанию */
-.service-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    /* Используем твой градиент из макета */
-    background: linear-gradient(0.00deg, rgb(191, 0, 22) -0.001%, rgb(234, 92, 95) 100.002%);
-    transition: all .3s ease;
-    
-    /* Состояния по умолчанию: скрыто */
-    opacity: 0;
-    visibility: hidden;
-    
-    /* Ставим z-index между фоновой картинкой и текстом */
-    z-index: 3; 
-}
-/* При наведении на карточку меняем состояние её псевдоэлемента */
-.service-card:hover::before {
-    opacity: 1;
-    visibility: visible;
-}
 
 
 .equipment-catalog {
@@ -1149,6 +1102,7 @@ flex-shrink: 0;
     padding: 20px 0 0 110px;
     background-color: #fff;
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 45px;
 }
 
 .step-container {
@@ -1272,3 +1226,744 @@ line-height: 120%; /* 19.2px */
     margin: 0;
 }
 
+/* --- Секция партнеров --- */
+.partners-section {
+     padding: 20px 0 0 110px;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+}
+
+.partners-title {
+    color: var(---, #BF0016);
+text-align: left;
+/* Заголовок 1 */
+font-family: Roboto;
+font-size: 34px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 40.8px */ 
+margin-bottom: 10px;
+}
+
+.partners-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Сам скроллящийся блок */
+.partners-track {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Магнитная прокрутка (прилипает к элементам) */
+    scroll-behavior: smooth; /* Плавная прокрутка при клике на стрелки */
+    padding: 20px 0;
+    width: 100%;
+    
+    /* Прячем стандартный ползунок прокрутки для красоты */
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.partners-track::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.partner-item {
+    flex: 0 0 calc(20% - 24px); /* Показываем 5 логотипов на экране (100% / 5 минус отступы) */
+    scroll-snap-align: center; /* Элемент будет центрироваться при скролле */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px; /* Минимальная ширина, чтобы на мобилках не сжимались в точку */
+}
+
+.partner-item img {
+    max-width: 100%;
+    max-height: 220px; /* Ограничиваем высоту, чтобы логотипы смотрелись ровно */
+    object-fit: contain;
+    filter: grayscale(100%); /* Делаем их серыми, как на макете */
+    opacity: 0.7;
+    transition: all 0.3s ease;
+
+}
+
+/* При наведении логотип становится цветным и ярким */
+.partner-item:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* --- Стрелочки --- */
+.partners-arrow {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+.partners-arrow:hover {
+    transform: translateY(-50%) scale(1.1); /* Легкое увеличение при наведении */
+}
+
+.partners-arrow.prev {
+    left: -80px; /* Выносим за левый край контейнера */
+}
+
+.partners-arrow.next {
+    right: -60px; /* Выносим за правый край контейнера */
+}
+/* Добавляем специальный класс, который будем включать через JS */
+.partners-track.is-dragging {
+    scroll-snap-type: none; /* Отключаем магнит */
+    scroll-behavior: auto;  /* Отключаем плавность, чтобы трек мгновенно следовал за курсором */
+    cursor: grabbing;
+}
+
+.partners-track {
+    /* ... твои старые стили ... */
+    scroll-behavior: smooth; /* Для стрелочек оставляем плавность */
+    user-select: none;       /* Запрещаем выделение текста/картинок при перетаскивании */
+}
+
+.partner-item img {
+    pointer-events: none;    /* Чтобы браузер не пытался "утащить" саму картинку как файл */
+}
+
+/* --- Секция Карты --- */
+.map-section {
+     padding: 20px 0 0 110px;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 62px;
+}
+
+.map-title {
+     color: var(---, #BF0016);
+text-align: left;
+/* Заголовок 1 */
+font-family: Roboto;
+font-size: 34px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 40.8px */ 
+margin-bottom: 30px;
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 500px; /* Высота как в твоем примере */
+    border-radius: 12px; /* Немного закруглим углы */
+    overflow: hidden; /* Чтобы карта не вылезала за скругленные углы */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Легкая современная тень */
+    /* Добавляем серый фон на случай, если карта грузится медленно */
+    background-color: #f0f0f0; 
+}
+
+#yandex-map {
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Секция "Остались вопросы" --- */
+.callback-section {
+    background-color: #f4f4f4;
+    padding: 30px 0; /* Уменьшили внутренние отступы в 2 раза, чтобы полоска была узкой */
+}
+
+.callback-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Расталкиваем заголовок влево, а форму вправо */
+    gap: 20px;
+    flex-wrap: nowrap; /* ЗАПРЕЩАЕМ перенос на новую строку, чтобы всё было в ряд */
+}
+
+.callback-title {
+    color: #cc0000;
+    font-size: 20px; /* Немного уменьшили шрифт, чтобы влезло */
+    font-weight: 500;
+    white-space: nowrap; /* Запрещаем тексту разрываться на две строки */
+    flex-shrink: 0; /* Запрещаем заголовку сжиматься */
+    margin-left: 54px;
+  
+}
+
+.callback-form {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Чуть меньше отступы между инпутами */
+    flex-grow: 1; /* Форма забирает свободное место */
+    justify-content: flex-end; /* Прижимаем инпуты к правому краю */
+margin-left: 50px;
+}
+
+.callback-input {
+    padding: 12px 15px; /* Уменьшили высоту полей */
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 256px; /* Немного ужали ширину полей */
+    outline: none;
+    
+}
+
+.callback-btn {
+    background-color: #cc0000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px; /* Уменьшили высоту кнопки */
+    font-size: 15px;
+    white-space: nowrap;
+    cursor: pointer;
+    flex-shrink: 0;
+    width: 180px;;
+font-family: Roboto;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 21.6px */
+}
+
+
+.site-footer ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.site-footer {
+    background-color: #313131;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 60px 230px 26px 230px;
+    gap: 15px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    
+}
+
+.footer-top {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    min-width: 200px;
+    width: auto;
+}
+
+/* Десктопные отступы и ширины — только на экранах от 768px */
+@media (min-width: 1400px) {
+    .col-services { margin-left: 30px; min-width: 200px; }
+    .col-products { margin-left: 90px; min-width: 420px; }
+    .col-contacts { margin-left: -25px; max-width: 300px; }
+}
+
+.products-grid-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 30px;
+    width: 80%;
+}
+
+
+.footer-heading {
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+    margin: 0 0 1px 0;
+    padding-bottom: 5px;
+    position: relative;
+    border-bottom: none !important;
+}
+
+.footer-heading::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: #555;
+}
+
+.col-help .footer-heading::after { width: 165px; }
+.col-services .footer-heading::after { width: 257px; }
+.col-products .footer-heading::after { width: 360px; }
+.col-contacts .footer-heading::after { width: 230px; }
+
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.site-footer a, 
+.site-footer li,
+.site-footer span {
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer a:hover { color: #cccccc; }
+
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    width: 103%;
+    color: #B4B4B4;
+    font-size: 14px;
+    line-height: 120%;
+}
+/* 6. УНИКАЛЬНЫЙ БЛОК КОНТАКТОВ (БЕЗ ЛИШНЕЙ ИЗОЛЕНТЫ) */
+.spec-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.spec-contact-item {
+    display: grid;
+    grid-template-columns: 25px 1fr; 
+    gap: 10px;
+    align-items: start;
+    margin-bottom: 3px;
+}
+
+.spec-contact-icon {
+    display: flex;
+    justify-content: center;
+    padding-top: 2px;
+}
+
+.spec-contact-icon i {
+    color: #888888;
+    font-size: 16px;
+}
+
+.spec-contact-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.spec-contact-text, 
+.spec-contact-link {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    text-decoration: none;
+}
+
+.spec-contact-link:hover {
+    color: #cccccc;
+}
+
+/* Базовое состояние нашего хедера (добавь это к .header-bottom) */
+.header-bottom {
+    transition: background 0.3s; /* Плавная смена цвета если нужно */
+}
+
+
+/* Начальное состояние клона: он всегда зафиксирован, но спрятан выше экрана */
+.header-bottom--sticky {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    margin: 0 !important;
+    transform: translateY(-100%); /* Прячем за верхнюю границу */
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s;
+    opacity: 0;
+    pointer-events: none; /* Пока не видно — нельзя кликнуть */
+}
+
+/* Когда добавляем этот класс — меню плавно выезжает */
+.header-bottom--sticky.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto; /* Теперь ссылки работают */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Чтобы клон визуально не отличался, убедись, что градиент на месте */
+.header-bottom--sticky {
+    background: linear-gradient(180deg, #0092e4 0%, #dc061f 100%) !important;
+}
+
+--- ВЫПАДАЮЩЕЕ МЕНЮ --- */
+
+/* 1. Настраиваем родителя */
+.main-nav .has-dropdown {
+    position: relative; /* Важно! Относительно него будет позиционироваться выпадашка */
+    display: flex;
+    align-items: center;
+    height: 63px; /* Растягиваем на всю высоту шапки, чтобы мышка не "теряла" меню */
+}
+
+/* 2. Базовые стили самой плашки (скрыта по умолчанию) */
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Прикрепляем ровно к нижнему краю шапки */
+    left: 0;
+    width: 280px; /* Ширина как на скрине */
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Мягкая тень */
+    list-style: none;
+    padding: 15px 0;
+    margin: -10px;
+    
+  
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px); /* Слегка сдвигаем вниз для эффекта выезда */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Возвращаем на место */
+}
+
+/* 4. Настраиваем пункты внутри выпадающего меню */
+.dropdown-menu li {
+    margin: 0px; /* Сбрасываем отступы от главного меню */
+
+}
+.dropdown-menu li:last-child {
+    border-bottom: none; /* Убираем полоску у последнего пункта */
+}
+
+/* 5. Настраиваем ссылки внутри (цвет, шрифт, отступы) */
+.main-nav .dropdown-menu a {
+    display: block;
+    padding: 20px 20px;
+    color: #E26666; /* Цвет как на твоем скриншоте */
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: none; /* Отменяем капс */
+    text-align: left; /* Выравниваем по левому краю */
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* 6. Эффект при наведении на конкретную ссылку внутри выпадашки */
+.main-nav .dropdown-menu a:hover {
+    background: #f9f9f9; /* Легкий серый фон */
+    color: #cc0000;      /* Текст становится темнее/ярче */
+}
+
+.header-bottom, 
+.header-bottom__wrapper, 
+.container-2 {
+    overflow: visible !important;
+}
+
+/* Все пункты меню должны занимать 100% высоты полоски */
+.main-nav > li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 0; /* Убираем лишние отступы, заменим их паддингами у ссылок */
+}
+.main-nav li {
+    height: 63px;   /* Фиксированная высота как у всей полоски */
+    display: block; /* Или flex */
+}
+
+
+/* Общий стиль для всех ссылок в шапке */
+.main-nav > li > a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px; /* Одинаковые отступы для всех */
+    color: #fff !important;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: background 0.3s;
+    
+}
+
+
+/* Состояние "Каталога" и других ссылок при наведении (можно добавить легкое затемнение) */
+.main-nav > li:hover > a {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* --- ВЫПАДАЮЩЕЕ МЕНЮ --- */
+
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250px;
+    background: #fff;
+    padding: 10px 0;
+    margin: 0;
+    list-style: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+}
+
+/* Показываем меню только при наведении на пункт */
+.has-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Ссылки внутри выпадающего меню */
+.dropdown-menu a {
+    color: #E26666 !important; /* Твой коралловый цвет */
+    padding: 12px 25px;
+    display: block;
+    font-size: 16px;
+    text-transform: none !important; /* Обычный шрифт, не капс */
+    text-align: left;
+    height: auto; /* Тут высота зависит от текста */
+}
+
+.dropdown-menu a:hover {
+    background: #f9f9f9;
+}
+/* Делаем так, чтобы карточка была базой для позиционирования */
+.b-services-card-horizontal {
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Настройка кнопки сердечка в углу */
+.favorite-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #d9534f;
+    padding: 0;
+}
+
+/* На всякий случай добавим эффект при наведении */
+.favorite-btn:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+/* Остальные стили */
+.b-card-pic img {
+    max-width: 100%;
+}
+
+.b-card-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.b-card-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+/* Переключатель языка в шапке */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 10px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+    color: #cc0000;
+    background: rgba(204, 0, 0, 0.1);
+}
+
+.lang-separator {
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* Для тёмной темы */
+body.dark .lang-btn {
+    color: #fff;
+}
+
+body.dark .lang-btn:hover,
+body.dark .lang-btn.active {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.15);
+}
+/* По умолчанию показываем русский, скрываем английский */
+.en { display: none; }
+.ru { display: inline; }
+
+/* Если у body стоит класс lang-en */
+body.lang-en .ru { display: none; }
+body.lang-en .en { display: inline; }
+
+        .en { display: none; }
+        .ru { display: inline; }
+        body.lang-en .ru { display: none !important; }
+        body.lang-en .en { display: inline !important; }
+        /* Для блочных элементов */
+        body.lang-en .en.block { display: block !important; }
+        .ru.block { display: block; }
+        /* Кнопки языка */
+        .lang-switcher { display: flex; align-items: center; gap: 6px; padding: 0 10px; }
+        .lang-btn {
+            background: none; border: none; color: inherit; font-weight: 400; 
+            cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: 0.2s;
+            font-size: 14px;
+        }
+        .lang-btn:hover, .lang-btn.active { color: #cc0000; background: rgba(204,0,0,0.1); }
+        .lang-separator { opacity: 0.4; font-size: 14px; }
+        /* Для тёмной темы */
+        body.dark .lang-btn { color: #fff; }
+        body.dark .lang-btn:hover, body.dark .lang-btn.active { color: #ff6b6b; background: rgba(255,107,107,0.15); }
+
+        /* ================================================
+   ФУТЕР — ЖЁСТКИЙ ФИКС ДЛЯ ПЛАНШЕТОВ
+   Вставлено в конец index.css
+   ================================================ */
+@media (min-width: 768px) and (max-width: 1399px) {
+
+    .site-footer {
+        padding: 20px 30px 16px 30px !important;
+        gap: 10px !important;
+    }
+
+    .footer-top {
+        flex-wrap: wrap !important;
+        gap: 18px !important;
+        justify-content: flex-start !important;
+    }
+
+    /* === Первая строка: Услуги + Товары === */
+    .footer-col.col-help,
+    .footer-col.col-services {
+        flex: 0 0 calc(50% - 9px) !important;
+        width: calc(50% - 9px) !important;
+        min-width: 150px !important;
+    }
+
+    /* === Вторая строка: Настройки + Контакты (на одном уровне) === */
+    .footer-col.col-products,
+    .footer-col.col-contacts {
+        flex: 0 0 calc(50% - 9px) !important;
+        width: calc(50% - 9px) !important;
+        min-width: 170px !important;
+        margin-top: 8px !important;
+    }
+
+    .footer-list {
+        gap: 5px !important;
+    }
+
+    .footer-heading {
+        margin-bottom: 6px !important;
+        font-size: 15px !important;
+    }
+
+    .footer-bottom {
+        padding-top: 12px !important;
+        margin-top: 10px !important;
+    }
+}
+
+/* === КНОПКА СБРОСА НАСТРОЕК === */
+.reset-settings-group {
+    display: flex;
+    align-items: center;
+}
+
+.reset-settings-btn {
+    background: none;
+    border: 1px solid #BF0016;
+    border-radius: 4px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 13px;
+    color: #BF0016;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.reset-settings-btn:hover {
+    background: #BF0016;
+    color: #fff;
+}
+
+.reset-settings-btn i {
+    font-size: 13px;
+    transition: transform 0.3s;
+}
+
+.reset-settings-btn:hover i {
+    transform: rotate(180deg);
+}

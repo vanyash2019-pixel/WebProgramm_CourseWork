@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель администратора ЕГДС</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/lang.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/responsive.css">   
+</head>
+<body>
+
+    <header class="admin-header">
+        <div class="container-2">
+            <div class="admin-header__wrapper">
+                <div class="admin-logo-block">
+                    <span>
+                        <span class="ru">⚙️ Панель администратора ЕГДС</span>
+                        <span class="en">⚙️ EGDS Admin Panel</span>
+                    </span>
+                </div>
+                
+                <div class="lang-switcher" style="margin-right: 15px;">
+                    <button type="button" id="lang-ru" class="lang-btn active">RUS</button>
+                    <button type="button" id="lang-en" class="lang-btn">ENG</button>
+                </div>
+                
+                <div class="admin-right-group">
+                    <a href="index.html" class="admin-back-btn">
+                        <i class="fa fa-home"></i> 
+                        <span class="ru">Вернуться на сайт</span><span class="en">Back to site</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-container">
+        <h1 class="admin-title">
+            <span class="ru">Управление системой</span><span class="en">System Management</span>
+        </h1>
+
+        <!-- Управление заказами -->
+        <div class="admin-card">
+            <h2 class="admin-card__title">
+                <i class="fa fa-shopping-basket"></i> 
+                <span class="ru">Управление заказами и заявками</span>
+                <span class="en">Orders & Requests Management</span>
+            </h2>
+            <div id="admin-orders-list">
+                <p style="color: #666; padding: 15px;">
+                    <span class="ru">Загрузка заказов...</span><span class="en">Loading orders...</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Модерация отзывов -->
+        <div class="admin-card">
+            <h2 class="admin-card__title">
+                <i class="fa fa-comments"></i> 
+                <span class="ru">Модерация отзывов</span>
+                <span class="en">Review Moderation</span>
+            </h2>
+            <div class="admin-table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">
+                                <span class="ru">Автор и дата</span><span class="en">Author & Date</span>
+                            </th>
+                            <th style="width: 55%;">
+                                <span class="ru">Текст отзыва</span><span class="en">Review Text</span>
+                            </th>
+                            <th style="width: 20%;">
+                                <span class="ru">Действия</span><span class="en">Actions</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-reviews-list">
+                        <tr>
+                            <td colspan="3" style="text-align:center; color: #666; padding: 20px;">
+                                <span class="ru">Загрузка отзывов...</span><span class="en">Loading reviews...</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/admin.js"></script>
+    <script src="js/language.js"></script>
+</body>
+</html>

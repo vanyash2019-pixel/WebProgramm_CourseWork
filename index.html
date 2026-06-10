@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ЕГДС — Единая Городская Диспетчерская Служба</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index.css">    
+    <link rel="stylesheet" href="css/dark-theme.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    
+
 </head>
 <body>
     <div class="wrapper">
@@ -16,17 +24,46 @@
                     <div class="header-top__wrapper">
                         <nav class="header-top__nav">
                             <ul>
-                                <li><a href="#">О компании</a></li>
-                                <li><a href="#">Бренды</a></li>
-                                <li><a href="#">Наши работы</a></li>
-                                <li><a href="#">Сотрудничество</a></li>
-                                <li><a href="#">Вакансии</a></li>
-                                <li><a href="#">Новости</a></li>
+                                <li>
+                                    <a href="javascript:void(0)" id="theme-dark">
+                                        <span class="ru">Темная тема</span><span class="en">Dark theme</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" id="theme-light">
+                                        <span class="ru">Светлая тема</span><span class="en">Light theme</span>
+                                    </a>
+                                </li>
+                                <li>
+    <a href="javascript:void(0)" id="theme-terminal">
+        <span class="ru">Терминал тема</span><span class="en">Terminal theme</span>
+    </a>
+</li>
+                                
+                        
+                                <li class="lang-switcher">
+                                    <button type="button" id="lang-ru" class="lang-btn active">RUS</button>
+                                 
+                                    <button type="button" id="lang-en" class="lang-btn">ENG</button>
+                                </li>
+
+<li class="acc-switcher">
+    <button type="button" class="acc-font-btn" data-acc="font-normal" title="Обычный размер">A</button>
+    <button type="button" class="acc-font-btn" data-acc="font-large" title="Увеличенный">A+</button>
+    <button type="button" class="acc-font-btn" data-acc="font-xlarge" title="Крупный">A++</button>
+</li>
+<li class="reset-settings-group">
+    <button type="button" class="reset-settings-btn" title="Сбросить все настройки">
+        <i class="fa fa-refresh"></i>
+        <span class="ru">Сброс</span>
+        <span class="en">Reset</span>
+    </button>
+</li>
                             </ul>
                         </nav>
                         <div class="header-top__address">
                             <a class="header-location" href="#">
-                                <span>г. СПБ, наб. р. Карповки, 5И</span>
+                                <span class="ru">г. СПБ, наб. р. Карповки, 5И</span><span class="en">St. Petersburg, Karpovka Embankment, 5I</span>
                             </a>
                         </div>
                     </div>
@@ -34,7 +71,7 @@
             </div>
 
             <div class="header-center">
-                <div class="container">
+                <div class="container-2">
                     <div class="header-center__wrapper">
                         
                         <div class="header-center__logo-block">
@@ -42,502 +79,639 @@
                                 <img src="assets/logo.png" alt="logo" class="logo-img">
                                 <div class="logo-text-group">
                                     <span class="logo-name">ЕГДС</span>
-                                    <span class="logo-desc">Единая Городская Диспетчерская Служба Санкт-Петербурга</span>
+                                    <span class="logo-desc">
+                                        <span class="ru">Единая Городская Диспетчерская Служба Санкт-Петербурга</span>
+                                        <span class="en">Unified City Dispatch Service of St. Petersburg</span>
+                                    </span>
                                 </div>
                             </a>
                         </div>
 
-                  <div class="header-contacts-group">
-    <div class="header-contact">
-        <div class="contact-icon">
-            <img src="assets/envelope-regular 1.png" alt="mail" class="custom-icon">
-        </div>
-        <div class="contact-content">
-            <a href="mailto:office@egdsk-spb.ru" class="contact-link">office@egdsk-spb.ru</a>
-            <a href="#" class="contact-btn">Обратная связь</a>
-        </div>
-    </div>
+                        <div class="header-contacts-group">
+                            <div class="header-contact">
+                                <div class="contact-icon">
+                                    <img src="assets/envelope-regular 1.png" alt="mail" class="custom-icon">
+                                </div>
+                                <div class="contact-content">
+                                    <a href="mailto:office@egdsk-spb.ru" class="contact-link">office@egdsk-spb.ru</a>
 
-    <div class="header-contact">
-        <div class="contact-icon">
-            <img src="assets/lucide_phone-call.png" alt="phone" class="custom-icon">
-        </div>
-        <div class="contact-content">
-            <a href="tel:+78001003899" class="contact-link">+7(800)100-38-99</a>
-            <a href="#" class="contact-btn">Заказать звонок</a>
-        </div>
-    </div>
+                                    </a>
+                                </div>
+                            </div>
 
-    <div class="header-contact">
-        <div class="contact-icon" style="width: 20px;"></div> 
-        <div class="contact-content">
-            <a href="tel:+78123093663" class="contact-link">+7(812)309-36-63</a>
-        </div>
-    </div>
-</div>
+                            <div class="header-contact">
+                                <div class="contact-icon">
+                                    <img src="assets/lucide_phone-call.png" alt="phone" class="custom-icon">
+                                </div>
+                                <div class="contact-content">
+                                    <a href="tel:+78001003899" class="contact-link">+7(800)100-38-99</a>
+                                 
+                              
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="header-contact">
+                                <div class="contact-icon" style="width: 20px;"></div> 
+                                <div class="contact-content">
+                                    <a href="tel:+78123093663" class="contact-link">+7(812)309-36-63</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-<nav class="header-bottom">
-   <div class="container-2">
+         <nav class="header-bottom">
+    <div class="container-2">
+        
         <div class="header-bottom__wrapper">
+
             <ul class="main-nav">
-                <li><a href="#">Услуги</a></li>
-                <li><a href="#">Каталог Оборудования</a></li>
-                <li><a href="#">Теория</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li class="has-dropdown main-nav__item--catalog">
+                    <a href="#" class="catalog-btn">
+                        <span class="ru">Каталог Оборудования</span><span class="en">Equipment Catalog</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="avtomatika.html"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></a></li>
+                        <li><a href="radioupravlenie.html"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></a></li>
+                        <li><a href="svobodnyy-vyezd.html"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></a></li>
+                        <li><a href="full-catalog.html"><span class="ru">Полный каталог</span><span class="en">Full Catalog</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="card.html"><span class="ru">Корзина</span><span class="en">Cart</span></a></li>
+                <li><a href="favorites.html"><span class="ru">Избранное</span><span class="en">Favorites</span></a></li>
             </ul>
 
+           
+            <button class="burger-btn" id="burger-btn" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="mobile-icons">
+                <a href="full-catalog.html" title="Поиск"></a>
+                <a href="card.html" title="Корзина"></a>
+
+            </div>
+
             <div class="header-right-group">
-                
-                <div class="header-search">
-                    <input type="text" placeholder="" class="search-input">
-                    <button class="search-btn">
-                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 19L14.65 14.65M17 9C17 13.4183 13.4183 17 9 17C4.58172 17 1 13.4183 1 9C1 4.58172 4.58172 1 9 1C13.4183 1 17 4.58172 17 9Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-
-                <a href="#" class="header-cabinet">
-                    <div class="cabinet-icon">
-                 <img src="assets/iconoir_profile-circle.png" class="cabinet-icon">
-                    </div>
-                    <div class="cabinet-text">
-                        <span class="cabinet-title">Кабинет</span>
-                        <span class="cabinet-desc">Вход для клиентов</span>
-                    </div>
-                </a>
-
-            </div> </div>
+                <div class="auth-zone" id="auth-zone"></div>
+            </div> 
         </div>
+    </div>
 </nav>
         </header>
 
         <main class="main">
-<section class="hero-slider">
-   
-        <div class="slider-wrapper" id="js-slider">
-            <div class="slider-line" id="js-line">
-                
-               <div class="slide">
-            <div class="slide-content">
-              <h1 class="slide-title">Умная диспетчеризация</h1>
-            <ul class="slide-list">
-            <li class="slide-item">Онлайн-консьерж, живой оператор</li>
-            <li class="slide-item">Диспетчер открывает ворота, шлагбаум для проезда спецтранспорта (скорой помощи, пожарной и т.д)</li>
-            <li class="slide-item">Оператор работает по регламенту, согласованному с вами (может открывать такси, службе доставки и т.д.)</li>
-            <li class="slide-item">Диспетчер ведёт полный видеоконтроль на момент общения с посетителем и чётко понимает ситуацию.</li>
-            <li class="slide-item">Умная диспетчеризация увеличит пропускную способность вашего проезда</li>
-            <li class="slide-item">Данная услуга является обязательной согласно Постановление Правительства РФ от 16 сентября 2020 г. N 1479 "Об утверждении Правил противопожарного режима в Российской Федерации".</li>
-        </ul>
-        <a href="#" class="slide-btn">Подробнее тут</a>
-        </div>
-              <div class="slide-picture">
-        <img src="assets/ofis-2-1536x1060_pixian_ai 1.png" alt="slide">
-    </div>
-</div>
-
-          <div class="slide">
-   <div class="slide-content slide-content--second">
-        <p style="margin-bottom: 20px; font-weight: 400;">Установка шлагбаума во дворе позволяет</p>
-        <ul class="slide-list">
-            <li class="slide-item">ограничить проезд на дворовую территорию случайным и нежелательным автомобилям</li>
-            <li class="slide-item">исключить проезд «транзитных» автомобилей</li>
-            <li class="slide-item">повысить вероятность найти свободное место в "своем" дворе</li>
-            <li class="slide-item">повысить безопасность дворовой территории</li>
-    </div>
-    <div class="slide-picture">
-        <img src="assets/Парковка.png" alt="slide">
-    </div>
-    
-</div>
-<div class="slide">
-    <div class="slide-content slide-content--third">
-        <h1 class="slide-title">Как управлять шлагбаумом</h1>
-        <p style="margin-bottom: 20px; font-weight: 400;">Открытие шлагбаума с помощью:</p>
-        <ul class="slide-list">
-            <li class="slide-item">мобильного приложения</li>
-            <li class="slide-item">распознавания автомобильных номеров</li>
-            <li class="slide-item">RFID (меток)</li>
-            <li class="slide-item">звонком с телефона</li>
-            <li class="slide-item">защищённым персональным пультом</li>
-            <li class="slide-item">система заявок для гостевого транспорта</li>
-        </ul>
-        <p style="margin-top: 20px; font-weight: 400;">Удаленное администрирование</p>
-        <p style="font-weight: 400;">Онлайн оплата услуг</p>
-    </div>
-    <div class="slide-picture">
-        <img src="assets/Group 21.png" alt="slide">
-    </div>
-</div>
-<div class="slide">
-    <div class="slide-content slide-content--fourth">
-        <p style="margin-bottom: 25px; font-weight: 500; font-size: 18px;">Система «Умный шлагбаум»</p>
-        <ul class="slide-list">
-            <li class="slide-item">Каждое открытие шлагбаума персонализировано</li>
-            <li class="slide-item">Фотофиксация проездов автотранспорта</li>
-            <li class="slide-item">Цифровой контроль за управлением шлагбаумом — внедрение системы распознавания автомобильных номеров</li>
-            <li class="slide-item">Статистика управления шлагбаумом, пребывания автомобилей на территории и их количества</li>
-            <li class="slide-item">Автоматизация внутреннего регламента — контроль ограничений и применение наказаний</li>
-        </ul>
-    </div>
-    <div class="slide-picture">
-        <img src="assets/Машина.png" alt="slide">
-    </div>
-</div>
-</section>
-<div class="slider-dots" id="js-dots">
-    <span class="dot"></span>
-    <span class="dot active"></span> <span class="dot"></span>
-    <span class="dot"></span>
-</div>
-<section class="about">
-    <div class="container">
-        <h1 class="title-main">Установка умной системы диспетчеризации</h1>
-
-        <div class="about__content">
-            <p class="about__text">
-                Компания «ЕГДС-СПб» занимается оказанием комплекса услуг систем безопасности дворовой территории в Санкт-Петербурге и Ленинградской области.
-            </p>
             
-            <p class="about__text">
-                Наша компания предлагает услуги по:
-            </p>
+            <section class="hero-slider">
+                <div class="slider-wrapper" id="js-slider">
+                    <div class="slider-line" id="js-line">
+                        
+                        <div class="slide">
+                            <div class="slide-content">
+                                <h1 class="slide-title">
+                                    <span class="ru">Умная диспетчеризация</span><span class="en">Smart Dispatching</span>
+                                </h1>
+                                <ul class="slide-list">
+                                    <li class="slide-item"><span class="ru">Онлайн-консьерж, живой оператор</span><span class="en">Online concierge, live operator</span></li>
+                                    <li class="slide-item"><span class="ru">Диспетчер открывает ворота, шлагбаум для проезда спецтранспорта (скорой помощи, пожарной и т.д)</span><span class="en">Dispatcher opens gates for emergency vehicles (ambulances, fire trucks, etc.)</span></li>
+                                    <li class="slide-item"><span class="ru">Оператор работает по регламенту, согласованному с вами (может открывать такси, службе доставки и т.д.)</span><span class="en">Operator works per your agreed regulations (can open for taxis, delivery services, etc.)</span></li>
+                                    <li class="slide-item"><span class="ru">Диспетчер ведёт полный видеоконтроль на момент общения с посетителем и чётко понимает ситуацию.</span><span class="en">Dispatcher maintains full video control during visitor communication.</span></li>
+                                    <li class="slide-item"><span class="ru">Умная диспетчеризация увеличит пропускную способность вашего проезда</span><span class="en">Smart dispatching increases your entrance throughput</span></li>
+                                    <li class="slide-item"><span class="ru">Данная услуга является обязательной согласно Постановление Правительства РФ от 16 сентября 2020 г. N 1479</span><span class="en">This service is mandatory per Russian Government Decree No. 1479 (2020)</span></li>
+                                </ul>
+                            </div>
+                            <div class="slide-picture">
+                                <img src="assets/ofis-2-1536x1060_pixian_ai 1.png" alt="slide">
+                            </div>
+                        </div>
 
-            <ul class="about__list">
-                <li>удалённой «умной диспетчеризации» (мы имеем большой штат диспетчеров, работающих 24 часа и имеющих дополнительно видеоконтроль объекта. Все разговоры оператора записываются. Ведётся видеоархив с предоставлением необходимых видеозаписей);</li>
-                <li>установке систем автоматизации проезда (установка автоматических ворот, шлагбаумов, оградительных элементов);</li>
-                <li>организации многочисленных вариантов управления (собственное мобильное приложение, распознавание автомобильного номера, радиометка дальнего радиуса действия, радиобрелок, бесконтактный брелок, въезд по гостевому коду, автоматический выезд, аварийное открытие);</li>
-                <li>комплексное техническое обслуживание (устранение неисправностей в кратчайший период и "горячая" замена вышедшего из строя оборудования).</li>
-            </ul>
+                        <div class="slide">
+                            <div class="slide-content slide-content--second">
+                                <p style="margin-bottom: 20px; font-weight: 400;">
+                                    <span class="ru">Установка шлагбаума во дворе позволяет</span><span class="en">Installing a barrier gate in the yard allows you to</span>
+                                </p>
+                                <ul class="slide-list">
+                                    <li class="slide-item"><span class="ru">ограничить проезд на дворовую территорию случайным и нежелательным автомобилям</span><span class="en">restrict access for random and unwanted vehicles</span></li>
+                                    <li class="slide-item"><span class="ru">исключить проезд «транзитных» автомобилей</span><span class="en">exclude transit vehicles from passing through</span></li>
+                                    <li class="slide-item"><span class="ru">повысить вероятность найти свободное место в "своем" дворе</span><span class="en">increase chances of finding a free spot in your yard</span></li>
+                                    <li class="slide-item"><span class="ru">повысить безопасность дворовой территории</span><span class="en">improve yard territory safety</span></li>
+                                </ul>
+                            </div>
+                            <div class="slide-picture">
+                                <img src="assets/Парковка.png" alt="slide">
+                            </div>
+                        </div>
 
-            <p class="about__text">
-                Наша система защищена от дублирования элементов управления автоматикой проезда.
-            </p>
-            
-            <p class="about__text">
-                Наша система обладает удобным интерфейсом управления и максимально информативным журналом событий, где отображаются все действия системы с привязкой видеоизображения.
-            </p>
-        </div>
+                        <div class="slide">
+                            <div class="slide-content slide-content--third">
+                                <h1 class="slide-title">
+                                    <span class="ru">Как управлять шлагбаумом</span><span class="en">How to control the barrier gate</span>
+                                </h1>
+                                <p style="margin-bottom: 20px; font-weight: 400;">
+                                    <span class="ru">Открытие шлагбаума с помощью:</span><span class="en">Opening the barrier gate using:</span>
+                                </p>
+                                <ul class="slide-list">
+                                    <li class="slide-item"><span class="ru">мобильного приложения</span><span class="en">mobile application</span></li>
+                                    <li class="slide-item"><span class="ru">распознавания автомобильных номеров</span><span class="en">license plate recognition</span></li>
+                                    <li class="slide-item"><span class="ru">RFID (меток)</span><span class="en">RFID tags</span></li>
+                                    <li class="slide-item"><span class="ru">звонком с телефона</span><span class="en">phone call</span></li>
+                                    <li class="slide-item"><span class="ru">защищённым персональным пультом</span><span class="en">secure personal remote</span></li>
+                                    <li class="slide-item"><span class="ru">система заявок для гостевого транспорта</span><span class="en">guest vehicle request system</span></li>
+                                </ul>
+                                <p style="margin-top: 20px; font-weight: 400;">
+                                    <span class="ru">Удаленное администрирование</span><span class="en">Remote administration</span>
+                                </p>
+                                <p style="font-weight: 400;">
+                                    <span class="ru">Онлайн оплата услуг</span><span class="en">Online payment for services</span>
+                                </p>
+                            </div>
+                            <div class="slide-picture">
+                                <img src="assets/Group 21.png" alt="slide">
+                            </div>
+                        </div>
 
-        <hr class="about__divider">
-    </div>
-</section>
-
-
-<section class="services">
-    <div class="container">
-        <h1 class="title-main">Услуги умной системы диспетчеризации проезда</h1>
-        
-        <div class="services__grid">
-            <a href="#" class="service-card" style="background-image: url('assets/Карточка\ \(1\).png');">
-                <div class="service-card__overlay"></div>
-                <div class="service-card__content">
-                    <span class="service-card__title">Диспетчеризация</span>
-                    <i class="service-card__arrow">→</i>
-                </div>
-            </a>
-
-            <a href="#" class="service-card" style="background-image: url('assets/Карточка\ \(2\).png');">
-                <div class="service-card__overlay"></div>
-                <div class="service-card__content">
-                    <span class="service-card__title">Автоматизация проезда</span>
-                    <i class="service-card__arrow">→</i>
-                </div>
-            </a>
-
-            <a href="#" class="service-card" style="background-image: url('assets/Карточка\ \(3\).png');">
-                <div class="service-card__overlay"></div>
-                <div class="service-card__content">
-                    <span class="service-card__title">Система умный шлагбаум</span>
-                    <i class="service-card__arrow">→</i>
-                </div>
-            </a>
-
-            <a href="#" class="service-card" style="background-image: url('assets/Карточка\ \(4\).png');">
-                <div class="service-card__overlay"></div>
-                <div class="service-card__content">
-                    <span class="service-card__title">Комплексное обслуживание</span>
-                    <i class="service-card__arrow">→</i>
-                </div>
-            </a>
-
-            <a href="#" class="service-card" style="background-image: url('assets/Карточка\ \(5\).png');">
-                <div class="service-card__overlay"></div>
-                <div class="service-card__content">
-                    <span class="service-card__title">Видеонаблюдение</span>
-                    <i class="service-card__arrow">→</i>
-                </div>
-            </a>
-
-            <a href="#" class="service-card" style="background-image: url('assets/Карточка\ \(6\).png');">
-                <div class="service-card__overlay"></div>
-                <div class="service-card__content">
-                    <span class="service-card__title">Контроль доступа</span>
-                    <i class="service-card__arrow">→</i>
-                </div>
-            </a>
-        </div>
-     
-    </div>
-</section>
-
-
-<section class="equipment-catalog">
-    <div class="container">
-        <h2 class="title-main">Каталог оборудования</h2>
-
-        <div class="equipment-grid">
-            <a href="/catalog/avtomatika-proezda/" class="equipment-card">
-                <div class="equipment-card__icon">
-                    <img src="assets/barriers_7z3uzito3vkb 1.svg" alt="Автоматика проезда">
-                </div>
-                <div class="equipment-card__title">Автоматика проезда</div>
-            </a>
-
-            <a href="/catalog/svobodnyy-vyezd/" class="equipment-card">
-                <div class="equipment-card__icon">
-                    <img src="assets/exit_8xem5xs575cf 1.svg" alt="Свободный выезд">
-                </div>
-                <div class="equipment-card__title">Свободный выезд</div>
-            </a>
-
-            <a href="/catalog/raspoznavanie-nomerov/" class="equipment-card">
-                <div class="equipment-card__icon">
-                    <img src="assets/license_oz4swabj1dsf 1.svg" alt="Распознавание номеров">
-                </div>
-                <div class="equipment-card__title">Распознавание номеров</div>
-            </a>
-
-            <a href="/catalog/unf-metki/" class="equipment-card">
-                <div class="equipment-card__icon">
-                    <img src="assets/UNF метки 1.svg" alt="UNF метки">
-                </div>
-                <div class="equipment-card__title">UNF метки</div>
-            </a>
-
-            <a href="/catalog/radioupravlenie/" class="equipment-card">
-                <div class="equipment-card__icon">
-                    <img src="assets/remote_control_nw2uc52wjfq4 1.svg" alt="Радиоуправление">
-                </div>
-                <div class="equipment-card__title">Радиоуправление</div>
-            </a>
-
-            <a href="/catalog/gsm-upravlenie/" class="equipment-card">
-                <div class="equipment-card__icon">
-                    <img src="assets/mobile_a7jzvteyxhhd 1.svg" alt="GSM управление">
-                </div>
-                <div class="equipment-card__title">GSM управление</div>
-            </a>
-
-            <a href="/catalog/sistema-zayavok/" class="equipment-card">
-                <div class="equipment-card__icon">
-                    <img src="assets/list_6uwugif28ogj 1.svg" alt="Система заявок">
-                </div>
-                <div class="equipment-card__title">Система заявок</div>
-            </a>
-
-            <a href="/catalog/videonablyudenie/" class="equipment-card">
-                <div class="equipment-card__icon">
-                    <img src="assets/cctv_b761euok3lvf 1.svg" alt="Видеонаблюдение">
-                </div>
-                <div class="equipment-card__title">Видеонаблюдение</div>
-            </a>
-
-            <a href="/catalog/kontrol-dostupa/" class="equipment-card">
-                <div class="equipment-card__icon">
-                    <img src="assets/access_control_zeuppljnizpg 1.svg" alt="Контроль доступа">
-                </div>
-                <div class="equipment-card__title">Контроль доступа</div>
-            </a>
-        </div>
-    </div>
-</section>
-<section class="section-works">
-    <div class="v-container">
-        <h2 class="title-main">Примеры работы</h2>
-         </div>
-
-          <div class="v-slider-wrapper">
-        <div class="js-line v-slider-line">
-            
-            <div class="v-slide" style="background-image: url('assets/Слайд\ 3.png');">
-                <div class="v-slide__overlay"></div>
-                <div class="v-slide__container">
-                    <div class="v-slide__text">
-                        <h3 class="v-slide__title">АВТОЦЕНТР BMW <br> НА ПРИДОРОЖНОЙ АЛЛЕЕ</h3>
-                        <ul class="v-slide__list">
-                            <li>Монтаж локально-вычислительной сети;</li>
-                            <li>Видеонаблюдения;</li>
-                            <li>Системы контроля доступа;</li>
-                            <li>Воротной автоматики.</li>
-                        </ul>
-                        <div class="v-slide__btns">
-                            <a href="#" class="v-btn">Подробнее</a>
-                            <a href="#" class="v-btn v-btn--outline">Cмотреть все работы</a>
+                        <div class="slide">
+                            <div class="slide-content slide-content--fourth">
+                                <p style="margin-bottom: 25px; font-weight: 500; font-size: 18px;">
+                                    <span class="ru">Система «Умный шлагбаум»</span><span class="en">"Smart Barrier Gate" System</span>
+                                </p>
+                                <ul class="slide-list">
+                                    <li class="slide-item"><span class="ru">Каждое открытие шлагбаума персонализировано</span><span class="en">Each barrier opening is personalized</span></li>
+                                    <li class="slide-item"><span class="ru">Фотофиксация проездов автотранспорта</span><span class="en">Photo fixation of vehicle passages</span></li>
+                                    <li class="slide-item"><span class="ru">Цифровой контроль за управлением шлагбаумом — внедрение системы распознавания автомобильных номеров</span><span class="en">Digital control with license plate recognition</span></li>
+                                    <li class="slide-item"><span class="ru">Статистика управления шлагбаумом, пребывания автомобилей на территории и их количества</span><span class="en">Statistics on barrier management and vehicle presence</span></li>
+                                    <li class="slide-item"><span class="ru">Автоматизация внутреннего регламента — контроль ограничений и применение наказаний</span><span class="en">Automation of internal regulations and penalties</span></li>
+                                </ul>
+                            </div>
+                            <div class="slide-picture">
+                                <img src="assets/Машина.png" alt="slide">
+                            </div>
                         </div>
                     </div>
-                    <div class="v-slide__gallery">
-                        <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 6\ \(1\).png');"></div>
-                        <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 7\ \(1\).png');"></div>
-                        <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 8\ \(1\).png');"></div>
-                        <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 9\ \(1\).png');"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="v-slide" style="background-image: url('assets/Слайд\ 2\ \(1\).png');">
-                <div class="v-slide__overlay"></div>
-                <div class="v-slide__container">
-                    <div class="v-slide__text">
-                        <h3 class="v-slide__title">ЛЕДОВАЯ АРЕНА ICE RINK</h3>
-                        <ul class="v-slide__list">
-                            <li>Внешнее и внутреннее электроснабжение;</li>
-                            <li>Охранно-пожарная сигнализация;</li>
-                            <li>Система контроля и управления доступом;</li>
-                            <li>Система видеонаблюдения;</li>
-                            <li>Структурированная кабельная сеть.</li>
-                                <li>Автомотическая платная парковака.</li>
-                        </ul>
-                        <div class="v-slide__btns">
-                            <a href="#" class="v-btn">Подробнее</a>
-                            <a href="#" class="v-btn v-btn--outline">Cмотреть все работы</a>
-                        </div>
-                    </div>
-                    <div class="v-slide__gallery">
-<div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 6.png');"></div>
-                        <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 7.png');"></div>
-                        <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 8.png');"></div>
-                        <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 9.png');"></div>
-                    
-                    </div>
-                </div>
-            </div>
-
-            <div class="v-slide" style="background-image: url('assets/Слайд\ 1.png');">
-                <div class="v-slide__overlay"></div>
-                <div class="v-slide__container">
-                    <div class="v-slide__text">
-                        <h3 class="v-slide__title">КИБЕРМАРКЕТЫ ЮЛМАРТ</h3>
-                        <p class="v-slide__subtitle">Строительство магазинов под ключ:</p>
-                        <ul class="v-slide__list">
-                            <li>Локально-вычислительная сеть;</li>
-                            <li>Электромонтажные работы;</li>
-                            <li>Вентиляция и кондиционирование;</li>
-                            <li>Система водоснабжения и канализации;</li>
-                            <li>Устройство подъемного стола.</li>
-                        </ul>
-                        <div class="v-slide__btns">
-                            <a href="#" class="v-btn">Подробнее</a>
-                            <a href="#" class="v-btn v-btn--outline">Cмотреть все работы</a>
-                        </div>
-                    </div>
-                    <div class="v-slide__gallery">
- <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 6\ \(2\).png');"></div>
-                        <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 7\ \(2\).png');"></div>
-                        <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 8\ \(2\).png');"></div>
-                        <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 9\ \(2\).png');"></div>
-                    </div>
-                </div>
-            </div>
-
+                    <div class="slider-dots" id="js-dots">
+            <span class="dot"></span>
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
 
-        <div class="v-pagination">
-            <span class="v-dot active"></span>
-            <span class="v-dot"></span>
-            <span class="v-dot"></span>
+                </div>
+  
         </div>
-    </div>
-</section>
+            </section>
 
+            <section class="about">
+                <div class="container">
+                    <h1 class="title-main">
+                        <span class="ru">Установка умной системы диспетчеризации</span><span class="en">Smart Dispatching System Installation</span>
+                    </h1>
+                    <div class="about__content">
+                        <p class="about__text">
+                            <span class="ru">Компания «ЕГДС-СПб» занимается оказанием комплекса услуг систем безопасности дворовой территории в Санкт-Петербурге и Ленинградской области.</span>
+                            <span class="en">EGDS-Spb provides comprehensive security services for yard territories in St. Petersburg and Leningrad Region.</span>
+                        </p>
+                        <p class="about__text">
+                            <span class="ru">Наша компания предлагает услуги по:</span>
+                            <span class="en">Our company offers services for:</span>
+                        </p>
+                        <ul class="about__list">
+                            <li>
+                                <span class="ru">удалённой «умной диспетчеризации» (мы имеем большой штат диспетчеров, работающих 24 часа и имеющих дополнительно видеоконтроль объекта. Все разговоры оператора записываются. Ведётся видеоархив с предоставлением необходимых видеозаписей);</span>
+                                <span class="en">remote "smart dispatching" (24/7 dispatchers with video surveillance, recorded conversations, and video archive access);</span>
+                            </li>
+                            <li>
+                                <span class="ru">установке систем автоматизации проезда (установка автоматических ворот, шлагбаумов, оградительных элементов);</span>
+                                <span class="en">access automation systems installation (automatic gates, barriers, fencing elements);</span>
+                            </li>
+                            <li>
+                                <span class="ru">организации многочисленных вариантов управления (собственное мобильное приложение, распознавание автомобильного номера, радиометка дальнего радиуса действия, радиобрелок, бесконтактный брелок, въезд по гостевому коду, автоматический выезд, аварийное открытие);</span>
+                                <span class="en">multiple control options (mobile app, license plate recognition, long-range RFID, radio keys, guest codes, automatic exit, emergency opening);</span>
+                            </li>
+                            <li>
+                                <span class="ru">комплексное техническое обслуживание (устранение неисправностей в кратчайший период и "горячая" замена вышедшего из строя оборудования).</span>
+                                <span class="en">comprehensive technical support (quick troubleshooting and "hot" equipment replacement).</span>
+                            </li>
+                        </ul>
+                        <p class="about__text">
+                            <span class="ru">Наша система защищена от дублирования элементов управления автоматикой проезда.</span>
+                            <span class="en">Our system is protected from duplication of access control elements.</span>
+                        </p>
+                        <p class="about__text">
+                            <span class="ru">Наша система обладает удобным интерфейсом управления и максимально информативным журналом событий, где отображаются все действия системы с привязкой видеоизображения.</span>
+                            <span class="en">Our system has a user-friendly interface and informative event log with video attachment for all actions.</span>
+                        </p>
+                    </div>
+                    <button type="button" class="about__read-more" id="about-read-more">
+    <span class="ru">Читать далее</span>
+    <span class="en">Read more</span>
+</button>
+                    <hr class="about__divider">
+                </div>
+            </section>
 
+            <section class="equipment-catalog">
+                <div class="container">
+                    <h2 class="title-main">
+                        <span class="ru">Каталог оборудования</span><span class="en">Equipment Catalog</span>
+                    </h2>
+                    <div class="equipment-grid">
+                        <a href="avtomatika.html" class="equipment-card">
+                            <div class="equipment-card__icon">
+                                <img src="assets/barriers_7z3uzito3vkb 1.svg" alt="Автоматика проезда">
+                            </div>
+                            <div class="equipment-card__title">
+                                <span class="ru">Автоматика проезда</span><span class="en">Access Automation</span>
+                            </div>
+                        </a>
+                        <a href="svobodnyy-vyezd.html" class="equipment-card">
+                            <div class="equipment-card__icon">
+                                <img src="assets/exit_8xem5xs575cf 1.svg" alt="Свободный выезд">
+                            </div>
+                            <div class="equipment-card__title">
+                                <span class="ru">Свободный выезд</span><span class="en">Free Exit</span>
+                            </div>
+                        </a>
+                        <a href="radioupravlenie.html" class="equipment-card">
+                            <div class="equipment-card__icon">
+                                <img src="assets/remote_control_nw2uc52wjfq4 1.svg" alt="Радиоуправление">
+                            </div>
+                            <div class="equipment-card__title">
+                                <span class="ru">Радиоуправление</span><span class="en">Radio Control</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
 
-<section class="section-steps">
-    <div class="step-container">
-        <h2 class="title-main">Этапы установки</h2>
-        
-        <div class="step-wrapper">
+            <section class="section-works">
+                <div class="container">
+                    <h2 class="title-main">
+                        <span class="ru">Примеры работы</span><span class="en">Project Examples</span>
+                    </h2>
+                </div>
+                <div class="v-slider-wrapper">
+                    <div class="js-line v-slider-line">
+                        
+                        <div class="v-slide" style="background-image: url('assets/Слайд\ 3.png');">
+                            <div class="v-slide__overlay"></div>
+                            <div class="v-slide__container">
+                                <div class="v-slide__text">
+                                    <h3 class="v-slide__title">
+                                        <span class="ru">АВТОЦЕНТР BMW <br> НА ПРИДОРОЖНОЙ АЛЛЕЕ</span>
+                                        <span class="en block">BMW SERVICE CENTER <br> ON PRIDOROZHNAYA ALLEY</span>
+                                    </h3>
+                                    <ul class="v-slide__list">
+                                        <li><span class="ru">Монтаж локально-вычислительной сети;</span><span class="en">Local area network installation;</span></li>
+                                        <li><span class="ru">Видеонаблюдения;</span><span class="en">Video surveillance;</span></li>
+                                        <li><span class="ru">Системы контроля доступа;</span><span class="en">Access control systems;</span></li>
+                                        <li><span class="ru">Воротной автоматики.</span><span class="en">Gate automation.</span></li>
+                                    </ul>
+                                </div>
+                                <div class="v-slide__gallery">
+                                    <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 6\ \(1\).png');"></div>
+                                    <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 7\ \(1\).png');"></div>
+                                    <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 8\ \(1\).png');"></div>
+                                    <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 9\ \(1\).png');"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="v-slide" style="background-image: url('assets/Слайд\ 2\ \(1\).png');">
+                            <div class="v-slide__overlay"></div>
+                            <div class="v-slide__container">
+                                <div class="v-slide__text">
+                                    <h3 class="v-slide__title">
+                                        <span class="ru">ЛЕДОВАЯ АРЕНА ICE RINK</span>
+                                        <span class="en">ICE RINK ARENA</span>
+                                    </h3>
+                                    <ul class="v-slide__list">
+                                        <li><span class="ru">Внешнее и внутреннее электроснабжение;</span><span class="en">External and internal power supply;</span></li>
+                                        <li><span class="ru">Охранно-пожарная сигнализация;</span><span class="en">Fire and security alarm system;</span></li>
+                                        <li><span class="ru">Система контроля и управления доступом;</span><span class="en">Access control and management system;</span></li>
+                                        <li><span class="ru">Система видеонаблюдения;</span><span class="en">Video surveillance system;</span></li>
+                                        <li><span class="ru">Структурированная кабельная сеть.</span><span class="en">Structured cabling system.</span></li>
+                                        <li><span class="ru">Автоматическая платная парковка.</span><span class="en">Automatic paid parking.</span></li>
+                                    </ul>
+                                </div>
+                                <div class="v-slide__gallery">
+                                    <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 6.png');"></div>
+                                    <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 7.png');"></div>
+                                    <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 8.png');"></div>
+                                    <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 9.png');"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="v-slide" style="background-image: url('assets/Слайд\ 1.png');">
+                            <div class="v-slide__overlay"></div>
+                            <div class="v-slide__container">
+                                <div class="v-slide__text">
+                                    <h3 class="v-slide__title">
+                                        <span class="ru">КИБЕРМАРКЕТЫ ЮЛМАРТ</span>
+                                        <span class="en">ULMART CYBERMARKETS</span>
+                                    </h3>
+                                    <p class="v-slide__subtitle">
+                                        <span class="ru">Строительство магазинов под ключ:</span>
+                                        <span class="en">Turnkey store construction:</span>
+                                    </p>
+                                    <ul class="v-slide__list">
+                                        <li><span class="ru">Локально-вычислительная сеть;</span><span class="en">Local area network;</span></li>
+                                        <li><span class="ru">Электромонтажные работы;</span><span class="en">Electrical installation works;</span></li>
+                                        <li><span class="ru">Вентиляция и кондиционирование;</span><span class="en">Ventilation and air conditioning;</span></li>
+                                        <li><span class="ru">Система водоснабжения и канализации;</span><span class="en">Water supply and sewerage system;</span></li>
+                                        <li><span class="ru">Устройство подъемного стола.</span><span class="en">Lifting table installation.</span></li>
+                                    </ul>
+                                </div>
+                                <div class="v-slide__gallery">
+                                    <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 6\ \(2\).png');"></div>
+                                    <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 7\ \(2\).png');"></div>
+                                    <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 8\ \(2\).png');"></div>
+                                    <div class="v-gallery-item" style="background-image: url('assets/Rectangle\ 9\ \(2\).png');"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="v-pagination">
+                        <span class="v-dot active"></span>
+                        <span class="v-dot"></span>
+                        <span class="v-dot"></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-steps">
+                <div class="container">
+                    <h2 class="title-main">
+                        <span class="ru">Этапы установки</span><span class="en">Installation Steps</span>
+                    </h2>
+                    <div class="step-wrapper">
+                        <div class="step-video-block">
+                            <div class="step-video-poster" id="video-container" style="background-image: url('assets/video-poster.jpg');">
+                                <button class="step-play-btn" id="play-button">
+                                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="50" cy="50" r="48" stroke="white" stroke-width="4"/>
+                                        <path d="M40 30L70 50L40 70V30Z" fill="white"/>
+                                    </svg>
+                                </button>
+                                <iframe 
+                                    id="video-iframe"
+                                    src="" 
+                                    data-src="https://player.vimeo.com/video/127705649?autoplay=1" 
+                                    frameborder="0" 
+                                    allow="autoplay; fullscreen; picture-in-picture" 
+                                    allowfullscreen 
+                                    style="display:none; width:100%; height:100%; position:absolute; top:0; left:0;">
+                                </iframe>
+                            </div>
+                        </div>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-text">
+                                    <h4 class="step-title">
+                                        <span class="ru">Инициатива по установке шлагбаума</span><span class="en">Initiative to install a barrier gate</span>
+                                    </h4>
+                                    <p class="step-desc">
+                                        <span class="ru">Получение плана межевания. Общение с администрацией / муниципальными депутатами. Оценка реалистичности установки шлагбаума. Составить план установки. Получение коммерческого предложения.</span>
+                                        <span class="en">Obtain land survey plan. Communicate with administration. Assess feasibility. Create installation plan. Receive commercial proposal.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-text">
+                                    <h4 class="step-title">
+                                        <span class="ru">Получение разрешения</span><span class="en">Obtaining permission</span>
+                                    </h4>
+                                    <p class="step-desc">
+                                        <span class="ru">Проведение собрания собственников МКД. Получение разрешение от Совета депутатов или Администрации города.</span>
+                                        <span class="en">Hold apartment owners meeting. Obtain permission from Council of Deputies or City Administration.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-text">
+                                    <h4 class="step-title">
+                                        <span class="ru">Установка шлагбаума</span><span class="en">Barrier gate installation</span>
+                                    </h4>
+                                    <p class="step-desc">
+                                        <span class="ru">Заключение договоров с собственниками МКД.</span>
+                                        <span class="en">Sign contracts with apartment building owners.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-text">
+                                    <h4 class="step-title">
+                                        <span class="ru">Обслуживание шлагбаума</span><span class="en">Barrier gate maintenance</span>
+                                    </h4>
+                                    <p class="step-desc">
+                                        <span class="ru">Диспетчеризация шлагбаума. Плановое и внеплановое техническое обслуживание.</span>
+                                        <span class="en">Barrier gate dispatching. Scheduled and unscheduled technical maintenance.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="partners-section">
+                <div class="container">
+                    <h2 class="partners-title">
+                        <span class="ru">С нами работают</span><span class="en">Our Partners</span>
+                    </h2>
+                    <div class="partners-slider-wrapper">
+                        <button class="partners-arrow prev" id="partner-prev">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 19L8 12L15 5" stroke="#cc0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="partners-track" id="partner-track">
+                            <div class="partner-item"><img src="assets/e8f5a324-8d3d-4528-871b-b6cb7fb5d429 1.png" alt="Партнер 1"></div>
+                            <div class="partner-item"><img src="assets/Logo 2 (1).png" alt="Партнер 2"></div>
+                            <div class="partner-item"><img src="assets/Logo 3.png" alt="Партнер 3"></div>
+                            <div class="partner-item"><img src="assets/Logo 4.png" alt="Партнер 4"></div>
+                            <div class="partner-item"><img src="assets/Logo 5.png" alt="Партнер 5"></div>
+                            <div class="partner-item"><img src="assets/Logo 6.png" alt="Партнер 6"></div>
+                            <div class="partner-item"><img src="assets/Logo 7.png" alt="Партнер 7"></div>
+                            <div class="partner-item"><img src="assets/Logo 8 (1).jpg" alt="Партнер 8"></div>
+                        </div>
+                        <button class="partners-arrow next" id="partner-next">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 5L16 12L9 19" stroke="#cc0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="map-section">
+                <div class="container">
+                    <h2 class="map-title">
+                        <span class="ru">Карта барьеров</span><span class="en">Barrier Map</span>
+                    </h2>
+                    <div class="map-wrapper">
+                        <div id="yandex-map"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="callback-section">
+                <div class="container">
+                    <div class="callback-wrapper">
+                        <div class="callback-content">
+                            <h3 class="callback-title">
+                                <span class="ru">Если у вас появилось желание оставить отзыв, то не ждите! Нам важно ваше мнение!</span>
+                                <span class="en">If you want to leave a review, don't wait! Your opinion matters to us!</span>
+                            </h3>
+                        </div>
+                        <div class="callback-action">
+                            <button type="button" id="open-review-modal" class="callback-btn">
+                                <span class="ru">Написать отзыв</span><span class="en">Leave a Review</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-col col-help">
+                        <h4 class="footer-heading heading-help">
+                            <span class="ru">Услуги</span><span class="en">Help</span>
+                        </h4>
+                        <ul class="footer-list list-help">
+                            <li><a href="card.html"><span class="ru">Корзина</span><span class="en">Cart</span></a></li>
+                            <li><a href="favorites.html"><span class="ru">Избранное</span><span class="en">Favorites</span></a></li>
+                            <li><a href="lk.html"><span class="ru">Личный кабинет</span><span class="en">Account</span></a></li>
+                            <li><a href="full-catalog.html"><span class="ru">Полный котолог</span><span class="en">Full catalog</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-services">
+                        <h4 class="footer-heading heading-services">
+                            <span class="ru">Товары</span><span class="en">Services</span>
+                        </h4>
+                        <ul class="footer-list list-services">
+                                <li><a href="avtomatika.html"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></a></li>
+                                <li><a href="svobodnyy-vyezd.html"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></a></li>
+                                <li><a href="radioupravlenie.html"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></a></li>
             
-          <div class="step-video-block">
-    <!-- Добавили id="video-container" -->
-    <div class="step-video-poster" id="video-container" style="background-image: url('assets/video-poster.jpg');">
-        
-        <!-- Добавили id="play-button" -->
-        <button class="step-play-btn" id="play-button">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="48" stroke="white" stroke-width="4"/>
-                <path d="M40 30L70 50L40 70V30Z" fill="white"/>
-            </svg>
-        </button>
+                        </ul>
+                    </div>
+                   <div class="footer-col col-products">
+    <h4 class="footer-heading heading-products">
+        <span class="ru">Настройки</span><span class="en">Settings</span>
+    </h4>
+    <div class="products-grid-wrapper">
+        <ul class="footer-list list-products-left">
+            <li><a href="#" id="footer-theme-dark"><span class="ru">Тёмная тема</span><span class="en">Dark theme</span></a></li>
+            <li><a href="#" id="footer-theme-light"><span class="ru">Светлая тема</span><span class="en">Light theme</span></a></li>
+            <li><a href="#" id="footer-theme-terminal"><span class="ru">Терминал тема</span><span class="en">Terminal theme</span></a></li>
+            <li><a href="#" id="footer-lang-ru"><span class="ru">Русский язык</span><span class="en">Russian</span></a></li>
+        </ul>
+        <ul class="footer-list list-products-right">
+            <li><a href="#" id="footer-font-normal"><span class="ru">A Обычный шрифт</span><span class="en">A Normal font</span></a></li>
+            <li><a href="#" id="footer-font-large"><span class="ru">A+ Средний шрифт</span><span class="en">A+ Medium font</span></a></li>
+            <li><a href="#" id="footer-font-xlarge"><span class="ru">A++ Большой шрифт</span><span class="en">A++ Large font</span></a></li>
+            <li><a href="#" id="footer-lang-en"><span class="ru">Английский язык</span><span class="en">English</span></a></li>
+        </ul>
+    </div>
+</div>
+                    <div class="footer-col col-contacts">
+                        <h4 class="footer-heading heading-contacts">
+                            <span class="ru">Контакты</span><span class="en">Contacts</span>
+                        </h4>
+                        <ul class="spec-contact-list">
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-map-marker"></i></div>
+                                <div class="spec-contact-content">
+                                    <span class="spec-contact-text">
+                                        <span class="ru">Санкт-Петербург, наб. р. Карповки 5И</span>
+                                        <span class="en">St. Petersburg, Karpovka Embankment, 5I</span>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-phone"></i></div>
+                                <div class="spec-contact-content">
+                                    <span class="spec-contact-text">
+                                        <span class="ru">+7(812)309-36-63<br></span>
+                                        <span class="en">+7(812)309-36-63<br></span>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-envelope"></i></div>
+                                <div class="spec-contact-content">
+                                    <a href="mailto:office@intellekt-pro.ru" class="spec-contact-link">office@intellekt-pro.ru</a>
+                                </div>
+                            </li>
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-clock-o"></i></div>
+                                <div class="spec-contact-content">
+                                    <span class="spec-contact-text">
+                                        <span class="ru">Пн-Пт, 10-19</span>
+                                        <span class="en">Mon-Fri, 10:00-19:00</span>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright-text">
+                        <span class="ru">2010-2024, Системы безопасности в Санкт-Петербурге (СПБ) | Интеллект Про | Все права защищены.<br>Информация о ценах на сайте не является публичной офертой.</span>
+                        <span class="en">2010-2024, Security Systems in St. Petersburg | Intellekt Pro | All rights reserved.<br>Price information on the website is not a public offer.</span>
+                    </p>
+                </div>
+            </div>
+        </footer>
 
-        <iframe 
-            id="video-iframe"
-            src="" 
-            data-src="https://player.vimeo.com/video/127705649?autoplay=1" 
-            frameborder="0" 
-            allow="autoplay; fullscreen; picture-in-picture" 
-            allowfullscreen 
-            style="display:none; width:100%; height:100%; position:absolute; top:0; left:0;">
-        </iframe>
+
+<div id="review-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
+    <div class="modal-content" style="background: #fff; padding: 30px; border-radius: 8px; max-width: 500px; width: 90%; position: relative;">
+        <span id="close-review-modal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #999;">&times;</span>
+        <h3 style="margin-top: 0; margin-bottom: 20px; font-size: 22px; color: #333;">
+            <span class="ru">Оставить отзыв</span><span class="en">Leave a Review</span>
+        </h3>
+        <form id="review-form">
+            <input type="text" id="review-author" 
+                   data-placeholder-ru="Ваше имя" 
+                   data-placeholder-en="Your Name" 
+                   placeholder="Ваше имя" 
+                   required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            
+            <textarea id="review-text" 
+                      data-placeholder-ru="Напишите ваш отзыв здесь..." 
+                      data-placeholder-en="Write your review here..." 
+                      placeholder="Напишите ваш отзыв здесь..." 
+                      required style="width: 100%; height: 150px; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; resize: vertical; box-sizing: border-box; font-family: inherit;"></textarea>
+            
+            <button type="submit" style="width: 100%; padding: 12px; background: #cc0000; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 16px;">
+                <span class="ru">Отправить отзыв</span><span class="en">Send Review</span>
+            </button>
+        </form>
     </div>
 </div>
 
-            <!-- ПРАВАЯ ЧАСТЬ: СПИСОК ЭТАПОВ -->
-            <div class="step-list">
-                
-                <!-- Этап 1 -->
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <div class="step-text">
-                        <h4 class="step-title">Инициатива по установке шлагбаума</h4>
-                        <p class="step-desc">Получение плана межевания. Общение с администрацией / муниципальными депутатами. Оценка реалистичности установки шлагбаума. Составить план установки. Получение коммерческого предложения.</p>
-                    </div>
-                </div>
+    <script type="module">
+        import { initSlider } from './js/components/slider.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            initSlider();
+        });
+    </script>
+  <script src="js/burger.js"> </script>
+  
+    <script src="js/language.js"> </script>
+    <script src="js/auth.js"></script>
+      <script src="js/accessibility.js"></script>  
+    <script src="js/reviews.js"></script>
 
-                <!-- Этап 2 -->
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <div class="step-text">
-                        <h4 class="step-title">Получение разрешения</h4>
-                        <p class="step-desc">Проведение собрания собственников МКД. Получение разрешение от Совета депутатов или Администрации города.</p>
-                    </div>
-                </div>
-
-                <!-- Этап 3 -->
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <div class="step-text">
-                        <h4 class="step-title">Установка шлагбаума</h4>
-                        <p class="step-desc">Заключение договоров с собственниками МКД.</p>
-                    </div>
-                </div>
-
-                <!-- Этап 4 -->
-                <div class="step-item">
-                    <div class="step-number">4</div>
-                    <div class="step-text">
-                        <h4 class="step-title">Обслуживание шлагбаума</h4>
-                        <p class="step-desc">Диспетчеризация шлагбаума. Плановое и внеплановое техническое обслуживание.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-            </main>
-
-        <footer class="footer">
-            </footer>
-    </div><script type="module">
-    import { initSlider } from './js/components/slider.js';
-
-    // Запускаем слайдер, когда документ готов
-    document.addEventListener('DOMContentLoaded', () => {
-        initSlider();
-    });
-</script> </body>
+</body>
 </html>

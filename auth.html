@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход и Регистрация — ЕГДС</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght=300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/auth.css"> 
+    <link rel="stylesheet" href="css/dark-theme.css"> 
+
+        <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<div class="auth-wrapper">
+    <div class="auth-container">
+        
+        <!-- Переключатель языка (добавлен отдельно, т.к. нет стандартной шапки) -->
+        <div class="lang-switcher" style="position: absolute; top: 15px; right: 15px; z-index: 10;">
+            <button type="button" id="lang-ru" class="lang-btn active">RUS</button>
+            <button type="button" id="lang-en" class="lang-btn">ENG</button>
+        </div>
+        
+        <a href="/" class="back-link">
+            <span>&larr;</span> 
+            <span class="ru">Вернуться к каталогу</span><span class="en">Back to catalog</span>
+        </a>
+
+        <div class="auth-tabs">
+            <button class="tab-btn active" data-tab="login-form">
+                <span class="ru">Вход</span><span class="en">Login</span>
+            </button>
+            <button class="tab-btn" data-tab="register-form">
+                <span class="ru">Регистрация</span><span class="en">Register</span>
+            </button>
+        </div>
+
+        <form id="login-form" class="auth-form active">
+            <div class="form-group">
+                <label for="login-email">
+                    <span class="ru">Ваш Email</span><span class="en">Your Email</span>
+                </label>
+                <input type="email" id="login-email" required 
+                       data-placeholder-ru="example@mail.ru" 
+                       data-placeholder-en="example@mail.ru" 
+                       placeholder="example@mail.ru">
+            </div>
+            <div class="form-group">
+                <label for="login-password">
+                    <span class="ru">Пароль</span><span class="en">Password</span>
+                </label>
+                <input type="password" id="login-password" required 
+                       data-placeholder-ru="••••••••" 
+                       data-placeholder-en="••••••••" 
+                       placeholder="••••••••">
+            </div>
+            <button type="submit" class="btn-submit">
+                <span class="ru">Войти</span><span class="en">Log In</span>
+            </button>
+        </form>
+
+        <form id="register-form" class="auth-form">
+            <div class="form-group">
+                <label for="reg-lastname">
+                    <span class="ru">Фамилия *</span><span class="en">Last Name *</span>
+                </label>
+                <input type="text" id="reg-lastname" required 
+                       data-placeholder-ru="Иванов" 
+                       data-placeholder-en="Ivanov" 
+                       placeholder="Иванов">
+                <span class="error-msg" id="err-lastname" style="color: #ff4d4d; font-size: 12px;"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="reg-firstname">
+                    <span class="ru">Имя *</span><span class="en">First Name *</span>
+                </label>
+                <input type="text" id="reg-firstname" required 
+                       data-placeholder-ru="Иван" 
+                       data-placeholder-en="Ivan" 
+                       placeholder="Иван">
+                <span class="error-msg" id="err-firstname" style="color: #ff4d4d; font-size: 12px;"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="reg-middlename">
+                    <span class="ru">Отчество</span><span class="en">Middle Name</span>
+                </label>
+                <input type="text" id="reg-middlename" 
+                       data-placeholder-ru="Иванович" 
+                       data-placeholder-en="Ivanovich" 
+                       placeholder="Иванович">
+            </div>
+
+            <div class="form-group">
+                <label for="reg-birthday">
+                    <span class="ru">Дата рождения * (от 16 лет)</span><span class="en">Date of Birth * (16+ years)</span>
+                </label>
+                <input type="date" id="reg-birthday" required>
+                <span class="error-msg" id="err-birthday" style="color: #ff4d4d; font-size: 12px;"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="reg-email">
+                    <span class="ru">E-mail *</span><span class="en">E-mail *</span>
+                </label>
+                <input type="email" id="reg-email" required 
+                       data-placeholder-ru="example@mail.ru" 
+                       data-placeholder-en="example@mail.ru" 
+                       placeholder="example@mail.ru">
+                <span class="error-msg" id="err-email" style="color: #ff4d4d; font-size: 12px;"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="reg-phone">
+                    <span class="ru">Телефон *</span><span class="en">Phone *</span>
+                </label>
+                <input type="tel" id="reg-phone" maxlength="13" 
+                       data-placeholder-ru="+7XXXXXXXXXX" 
+                       data-placeholder-en="+7XXXXXXXXXX" 
+                       placeholder="+375XXXXXXXXX">
+                <span class="error-msg" id="err-phone" style="color: #ff4d4d; font-size: 12px;"></span>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;">
+                <label>
+                    <span class="ru">Способ задания пароля *</span><span class="en">Password setup method *</span>
+                </label>
+                <div class="radio-group">
+                    <label class="inline-label">
+                        <input type="radio" name="pass-method" value="manual" checked> 
+                        <span class="ru">Сам</span><span class="en">Manual</span>
+                    </label>
+                    <label class="inline-label">
+                        <input type="radio" name="pass-method" value="auto"> 
+                        <span class="ru">Автоматически</span><span class="en">Auto-generated</span>
+                    </label>
+                </div>
+            </div>
+
+            <div id="manual-password-block">
+                <div class="form-group">
+                    <label for="reg-password">
+                        <span class="ru">Пароль *</span><span class="en">Password *</span>
+                    </label>
+                    <input type="password" id="reg-password" 
+                           data-placeholder-ru="Минимум 6 символов" 
+                           data-placeholder-en="Minimum 6 characters" 
+                           placeholder="Минимум 6 символов">
+                    <span class="error-msg" id="err-password" style="color: #ff4d4d; font-size: 12px;"></span>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password-confirm">
+                        <span class="ru">Повторите пароль *</span><span class="en">Confirm Password *</span>
+                    </label>
+                    <input type="password" id="reg-password-confirm" 
+                           data-placeholder-ru="••••••••" 
+                           data-placeholder-en="••••••••" 
+                           placeholder="••••••••">
+                    <span class="error-msg" id="err-password-confirm" style="color: #ff4d4d; font-size: 12px;"></span>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;">
+                <label for="reg-nickname">
+                    <span class="ru">Никнейм *</span><span class="en">Nickname *</span>
+                </label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" id="reg-nickname" required style="flex: 1;" 
+                           data-placeholder-ru="nickname123" 
+                           data-placeholder-en="nickname123" 
+                           placeholder="nickname123">
+                    <button type="button" id="btn-generate-nick" style="padding: 0 15px; cursor: pointer;">
+                        <span class="ru">Сгенерировать</span><span class="en">Generate</span>
+                    </button>
+                </div>
+                <span class="error-msg" id="err-nickname" style="color: #ff4d4d; font-size: 12px;"></span>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="reg-agreement" required>
+                <label for="reg-agreement" class="inline-label">
+                    <span class="ru">Согласен с правилами *</span><span class="en">I agree to the rules *</span>
+                </label>
+            </div>
+
+            <button type="submit" id="btn-register-submit" class="btn-submit" disabled>
+                <span class="ru">Зарегистрироваться</span><span class="en">Register</span>
+            </button>
+        </form>
+
+    </div>
+</div>
+
+<script src="js/auth.js"></script>
+<!-- Переключатель языка (правильное имя файла) -->
+<script src="js/language.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Двойная индукционная петля</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css"> 
+    <link rel="stylesheet" href="css/barrier.css"> 
+    <link rel="stylesheet" href="css/dark-theme.css"> 
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/js/components/slider.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <header class="header" id="header">
+        <div class="header-top">
+                <div class="container">
+                    <div class="header-top__wrapper">
+                        <nav class="header-top__nav">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" id="theme-dark">
+                                        <span class="ru">Темная тема</span><span class="en">Dark theme</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" id="theme-light">
+                                        <span class="ru">Светлая тема</span><span class="en">Light theme</span>
+                                    </a>
+                                </li>
+                                <li>
+    <a href="javascript:void(0)" id="theme-terminal">
+        <span class="ru">Терминал тема</span><span class="en">Terminal theme</span>
+    </a>
+</li>
+                                
+                        
+                                <li class="lang-switcher">
+                                    <button type="button" id="lang-ru" class="lang-btn active">RUS</button>
+                                 
+                                    <button type="button" id="lang-en" class="lang-btn">ENG</button>
+                                </li>
+
+<li class="acc-switcher">
+    <button type="button" class="acc-font-btn" data-acc="font-normal" title="Обычный размер">A</button>
+    <button type="button" class="acc-font-btn" data-acc="font-large" title="Увеличенный">A+</button>
+    <button type="button" class="acc-font-btn" data-acc="font-xlarge" title="Крупный">A++</button>
+</li>
+<li class="reset-settings-group">
+    <button type="button" class="reset-settings-btn" title="Сбросить все настройки">
+        <i class="fa fa-refresh"></i>
+        <span class="ru">Сброс</span>
+        <span class="en">Reset</span>
+    </button>
+</li>
+                            </ul>
+                        </nav>
+                        <div class="header-top__address">
+                            <a class="header-location" href="#">
+                                <span class="ru">г. СПБ, наб. р. Карповки, 5И</span><span class="en">St. Petersburg, Karpovka Embankment, 5I</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="header-center">
+            <div class="container-2">
+                <div class="header-center__wrapper">
+                    <div class="header-center__logo-block">
+                        <a class="header-logo" href="/">
+                            <img src="assets/logo.png" alt="logo" class="logo-img">
+                            <div class="logo-text-group">
+                                <span class="logo-name">ЕГДС</span>
+                                <span class="logo-desc">
+                                    <span class="ru">Единая Городская Диспетчерская Служба Санкт-Петербурга</span>
+                                    <span class="en">Unified City Dispatch Service of St. Petersburg</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="header-contacts-group">
+                            <div class="header-contact">
+                                <div class="contact-icon">
+                                    <img src="assets/envelope-regular 1.png" alt="mail" class="custom-icon">
+                                </div>
+                                <div class="contact-content">
+                                    <a href="mailto:office@egdsk-spb.ru" class="contact-link">office@egdsk-spb.ru</a>
+
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="header-contact">
+                                <div class="contact-icon">
+                                    <img src="assets/lucide_phone-call.png" alt="phone" class="custom-icon">
+                                </div>
+                                <div class="contact-content">
+                                    <a href="tel:+78001003899" class="contact-link">+7(800)100-38-99</a>
+                                 
+                              
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="header-contact">
+                                <div class="contact-icon" style="width: 20px;"></div> 
+                                <div class="contact-content">
+                                    <a href="tel:+78123093663" class="contact-link">+7(812)309-36-63</a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="header-bottom">
+            <div class="container-2">
+                <div class="header-bottom__wrapper">
+                    <ul class="main-nav">
+                        <li class="has-dropdown main-nav__item--catalog">
+                            <a href="#" class="catalog-btn">
+                                <span class="ru">Каталог Оборудования</span><span class="en">Equipment Catalog</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="avtomatika.html"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></a></li>
+                                <li><a href="radioupravlenie.html"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></a></li>
+                                <li><a href="svobodnyy-vyezd.html"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></a></li>
+                                <li><a href="full-catalog.html"><span class="ru">Полный каталог</span><span class="en">Full Catalog</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="card.html"><span class="ru">Корзина</span><span class="en">Cart</span></a></li>
+                        <li><a href="favorites.html"><span class="ru">Избранное</span><span class="en">Favorites</span></a></li>
+                    </ul>
+
+                    <!-- Бургер и мобильные иконки -->
+                    <button class="burger-btn" id="burger-btn" aria-label="Меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <div class="mobile-icons">
+                        <a href="full-catalog.html" title="Поиск"></a>
+                        <a href="card.html" title="Корзина"></a>
+                    </div>
+
+                    <div class="header-right-group">
+                        <div class="auth-zone" id="auth-zone"></div>
+                    </div> 
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <div class="container container--wide">
+            <nav class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="/" title="Главная" itemprop="item">
+                        <span itemprop="name"><span class="ru">Главная</span><span class="en">Home</span></span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </span>
+                <span class="separator">/</span>
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="svobodnyy-vyezd.html" title="Свободный выезд" itemprop="item">
+                        <span itemprop="name"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></span>
+                    </a>
+                    <meta itemprop="position" content="3" />
+                </span>
+                <span class="separator">/</span>
+                <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name"><span class="ru">Двойная индукционная петля</span><span class="en">Double Induction Loop</span></span>
+                    <meta itemprop="position" content="4" />
+                </span>
+            </nav>
+
+            <div class="page-header">
+                <h1 class="page-title"><span class="ru">Двойная индукционная петля</span><span class="en">Double Induction Loop</span></h1>
+            </div>
+
+            <div class="services-container">
+                <div class="b-services-wrapper">
+                    <div class="b-services-content">
+                        <article class="text-page">
+                            <div class="video-wrapper">
+                                <iframe 
+                                    src="https://rutube.ru/play/embed/4df0b22c4f40104650041ed096c70523/" 
+                                    title="Двойная индукционная петля" 
+                                    frameborder="0" 
+                                    allow="clipboard-write; autoplay" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+
+                            <p><span class="ru">Двойная индукционная петля используется для обнаружения транспортных средств, двигающихся на выезд, с помощью электромагнитной петли. Датчик снабжен микропроцессором и предназначен для контроля доступа и управления транспортными потоками. Принцип работы состоит в измерении изменения индуктивности в магнитной петле при прохождении над ней транспортного средства.</span>
+                            <span class="en">A double induction loop is used to detect vehicles moving towards exit using an electromagnetic loop. The sensor is equipped with a microprocessor and designed for access control and traffic flow management. The operating principle consists of measuring inductance changes in the magnetic loop when a vehicle passes over it.</span></p>
+                            
+                            <p><span class="ru">Чувствительный элемент электромагнитного датчика определяет наличие транспортного средства, размещенного на поверхности над индукционной петлей, образованной двумя или более витками провода, уложенного в полотно дороги. Когда транспортное средство проезжает над петлей, измеряется изменение индуктивности. При обнаружении срабатывают выходные реле и шлагбаум открывается.</span>
+                            <span class="en">The sensitive element of the electromagnetic sensor detects the presence of a vehicle positioned on the surface above the induction loop, formed by two or more wire turns laid in the road surface. When a vehicle passes over the loop, inductance change is measured. Upon detection, output relays activate and the barrier gate opens.</span></p>
+                            
+                            <h2 class="page-title-2"><span class="ru">Индукционные петли CAME SMA: принцип работы и преимущества.</span><span class="en">CAME SMA Induction Loops: operating principle and advantages.</span></h2>
+                            
+                            <p><span class="ru">Многие знакомы с итальянской фирмой Came, как с производителем качественных автоматических шлагбаумов. Их устройства серии Gard установлены практически в каждом втором российском дворе. Но не все знают, что эта компания также занимается автоматикой для шлагбаумов и ворот. Тоже весьма успешно.</span>
+                            <span class="en">Many are familiar with the Italian company Came as a manufacturer of quality automatic barrier gates. Their Gard series devices are installed in almost every second Russian courtyard. But not everyone knows that this company also produces automation for barrier gates and gates. Also very successfully.</span></p>
+                            
+                            <p><span class="ru">Например, большой популярностью пользуются индукционные петли Came SMA и SMA2 (с возможностью подключения одной и двух петель соответственно).</span>
+                            <span class="en">For example, Came SMA and SMA2 induction loops are very popular (with the ability to connect one and two loops respectively).</span></p>
+                            
+                            <p><span class="ru">Оба этих устройства имеют одинаковый принцип работы. Это магнитный датчик для обнаружения транспортных средств в зоне перед шлагбаумом. Он реагирует на появление автомобиля в радиусе его действия. А точнее измеряет изменение индуктивности в магнитной петле, которая создается с помощью провода, уложенного на дороге под асфальтом. Когда машина появляется в контролируемой зоне, сигнал от датчика передается системе управления для открытия стрелы. Такие приборы обычно устанавливают на выезде с объекта, так как с помощью них невозможно проверить наличие права доступа. Но их невысокая стоимость, стабильность и высокая скорость работы делают их актуальным и востребованным вариантом управления.</span>
+                            <span class="en">Both devices have the same operating principle. This is a magnetic sensor for detecting vehicles in the zone in front of the barrier gate. It responds to the appearance of a car within its range. More precisely, it measures inductance change in the magnetic loop, which is created using a wire laid on the road under asphalt. When a car appears in the controlled zone, the sensor signal is transmitted to the control system to open the boom. Such devices are usually installed at the exit from the facility, as they cannot verify access rights. But their low cost, stability and high operating speed make them a relevant and popular control option.</span></p>
+                            
+                            <p><b><span class="ru">Плюсами индукционной петли от фирмы Came являются:</span><span class="en">Advantages of Came induction loops:</span></b></p>
+                            <ul class="catalog-list-marker_list">
+                                <li><span class="ru">Датчик с самонастройкой и самотестированием.</span><span class="en">Sensor with auto-calibration and self-testing.</span></li>
+                                <li><span class="ru">Возможность совместной работы с разными автоматическими системами.</span><span class="en">Ability to work with various automatic systems.</span></li>
+                                <li><span class="ru">Высокая чувствительность, которая позволяет обнаруживать даже небольшие объекты (велосипед, детская коляска).</span><span class="en">High sensitivity that allows detecting even small objects (bicycle, baby stroller).</span></li>
+                            </ul>
+                            
+                            <p><span class="ru">А ещё высокое качество всех элементов индукционной петли, что очень немаловажно. Ведь сама петля укладывается под дорожное покрытие, вскрывать которое повторно никому не доставит удовольствия.</span>
+                            <span class="en">And also high quality of all induction loop elements, which is very important. After all, the loop itself is laid under the road surface, and reopening it is not pleasant for anyone.</span></p>
+                            
+                            <p><span class="ru">Мы будем рады, если эта информация поможет Вам выбрать нужный Вам функционал, а мы с радостью воплотим Ваши желания в нашей системе «Умный шлагбаум».</span>
+                            <span class="en">We will be glad if this information helps you choose the functionality you need, and we will be happy to implement your wishes in our "Smart Barrier Gate" system.</span></p>
+
+                            <div class="b-services-row">
+                                <div class="b-services-card-horizontal" data-id="25">
+                                    <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                        <i class="fa fa-heart-o"></i>
+                                    </button>
+                                    <div class="b-card-pic">
+                                        <img src="assets/25.jpg" alt="CAME SMA">
+                                    </div>
+                                    <div class="b-card-content">
+                                        <div class="b-card-header">
+                                            <span class="b-card-title">
+                                                <span class="ru">CAME SMA Цифровой детектор транспортного средства</span>
+                                                <span class="en">CAME SMA Digital Vehicle Detector</span>
+                                            </span>
+                                        </div>
+                                        <p class="b-card-text">
+                                            <span class="ru">Датчик магнитный одноканальный для обнаружения транспортных средств. Автоматическая настройка датчика. Самотестирование датчика. Различные варианты работы выходных контактов реле. Совместимость с любой автоматической системой САМЕ.</span>
+                                            <span class="en">Single-channel magnetic sensor for vehicle detection. Automatic sensor calibration. Sensor self-testing. Various output relay contact operation modes. Compatible with any CAME automatic system.</span>
+                                        </p>
+                                        <div class="b-card-price">23 000 руб.</div>
+                                        <div class="b-card-action">
+                                            <button class="btn-more btn-details" style="margin-right: 10px;">
+                                                <span class="ru">Подробнее</span><span class="en">Details</span>
+                                            </button>
+                                            <button class="btn-more buy-btn-catalog">
+                                                <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="b-services-card-horizontal" data-id="26">
+                                    <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                        <i class="fa fa-heart-o"></i>
+                                    </button>
+                                    <div class="b-card-pic">
+                                        <img src="assets/26.jpg" alt="CAME SMA2">
+                                    </div>
+                                    <div class="b-card-content">
+                                        <div class="b-card-header">
+                                            <span class="b-card-title">
+                                                <span class="ru">CAME SMA2 Цифровой детектор транспортного средства</span>
+                                                <span class="en">CAME SMA2 Digital Vehicle Detector</span>
+                                            </span>
+                                        </div>
+                                        <p class="b-card-text">
+                                            <span class="ru">Датчик магнитный двухканальный для одновременного контроля двух независимых индукционных петель. Оптимальное решение для раздельного контроля въезда и выезда.</span>
+                                            <span class="en">Dual-channel magnetic sensor for simultaneous control of two independent induction loops. Optimal solution for separate entry and exit control.</span>
+                                        </p>
+                                        <div class="b-card-price">30 000 руб.</div>
+                                        <div class="b-card-action">
+                                            <button class="btn-more btn-details" style="margin-right: 10px;">
+                                                <span class="ru">Подробнее</span><span class="en">Details</span>
+                                            </button>
+                                            <button class="btn-more buy-btn-catalog">
+                                                <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="b-services-card-horizontal" data-id="27">
+                                    <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                        <i class="fa fa-heart-o"></i>
+                                    </button>
+                                    <div class="b-card-pic">
+                                        <img src="assets/27.jpg" alt="Провод индукционной петли CAME">
+                                    </div>
+                                    <div class="b-card-content">
+                                        <div class="b-card-header">
+                                            <span class="b-card-title">
+                                                <span class="ru">Кабель для индукционной петли CAME (пробег 50м)</span>
+                                                <span class="en">CAME Induction Loop Cable (50m run)</span>
+                                            </span>
+                                        </div>
+                                        <p class="b-card-text">
+                                            <span class="ru">Специализированный высокопрочный термостойкий провод для формирования витков индукционной петли в дорожном полотне под асфальт или плитку. Обеспечивает долговечность и стабильность индуктивности.</span>
+                                            <span class="en">Specialized high-strength heat-resistant wire for forming induction loop turns in road surface under asphalt or tiles. Ensures durability and inductance stability.</span>
+                                        </p>
+                                        <div class="b-card-price">6 500 руб.</div>
+                                        <div class="b-card-action">
+                                            <button class="btn-more btn-details" style="margin-right: 10px;">
+                                                <span class="ru">Подробнее</span><span class="en">Details</span>
+                                            </button>
+                                            <button class="btn-more buy-btn-catalog">
+                                                <span class="ru">В корзину</span><span class="en">Add to Cart</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="pagination">
+                                <span class="pagination-label"><span class="ru">Страница:</span><span class="en">Page:</span></span>
+                                <a href="#" class="page-link active">1</a>
+                                <a href="catalog-svobodnyy-vyezd-2.html" class="page-link">2</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <aside class="b-sidebar">
+                        <span class="b-sidebar__title"><span class="ru">Смотрите также:</span><span class="en">See also:</span></span>
+                        <ul class="b-sidebar__list">
+                            <li class="b-sidebar__item">
+                                <a href="avtomatika.html" class="b-sidebar__link">
+                                    <span class="ru">Автоматика проезда</span><span class="en">Access Automation</span> <span>→</span>
+                                </a>
+                            </li> 
+                            <li class="b-sidebar__item">
+                                <a href="radioupravlenie.html" class="b-sidebar__link">
+                                    <span class="ru">Радиоуправление</span><span class="en">Radio Control</span> <span>→</span>
+                                </a>
+                            </li>
+                            <li class="b-sidebar__item">
+                                <a href="svobodnyy-vyezd.html" class="b-sidebar__link">
+                                    <span class="ru">Свободный выезд</span><span class="en">Free Exit</span> <span>→</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </div>
+
+        <section class="callback-section">
+            <div class="step-container">
+                <div class="callback-wrapper">
+                    <div class="callback-content">
+                        <h3 class="callback-title">
+                            <span class="ru">Если у вас появилось желание оставить отзыв, то не ждите! Нам важно ваше мнение!</span>
+                            <span class="en">If you want to leave a review, don't wait! Your opinion matters to us!</span>
+                        </h3>
+                    </div>
+                    <div class="callback-action">
+                        <button type="button" id="open-review-modal" class="callback-btn">
+                            <span class="ru">Написать отзыв</span><span class="en">Leave a Review</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-col col-help">
+                        <h4 class="footer-heading heading-help">
+                            <span class="ru">Услуги</span><span class="en">Help</span>
+                        </h4>
+                        <ul class="footer-list list-help">
+                            <li><a href="card.html"><span class="ru">Корзина</span><span class="en">Cart</span></a></li>
+                            <li><a href="favorites.html"><span class="ru">Избранное</span><span class="en">Favorites</span></a></li>
+                            <li><a href="lk.html"><span class="ru">Личный кабинет</span><span class="en">Account</span></a></li>
+                            <li><a href="full-catalog.html"><span class="ru">Полный котолог</span><span class="en">Full catalog</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-services">
+                        <h4 class="footer-heading heading-services">
+                            <span class="ru">Товары</span><span class="en">Services</span>
+                        </h4>
+                        <ul class="footer-list list-services">
+                                <li><a href="avtomatika.html"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></a></li>
+                                <li><a href="svobodnyy-vyezd.html"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></a></li>
+                                <li><a href="radioupravlenie.html"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></a></li>
+                        </ul>
+                    </div>
+                   <div class="footer-col col-products">
+    <h4 class="footer-heading heading-products">
+        <span class="ru">Настройки</span><span class="en">Settings</span>
+    </h4>
+    <div class="products-grid-wrapper">
+        <ul class="footer-list list-products-left">
+            <li><a href="#" id="footer-theme-dark"><span class="ru">Тёмная тема</span><span class="en">Dark theme</span></a></li>
+            <li><a href="#" id="footer-theme-light"><span class="ru">Светлая тема</span><span class="en">Light theme</span></a></li>
+            <li><a href="#" id="footer-theme-terminal"><span class="ru">Терминал тема</span><span class="en">Terminal theme</span></a></li>
+            <li><a href="#" id="footer-lang-ru"><span class="ru">Русский язык</span><span class="en">Russian</span></a></li>
+        </ul>
+        <ul class="footer-list list-products-right">
+            <li><a href="#" id="footer-font-normal"><span class="ru">A Обычный шрифт</span><span class="en">A Normal font</span></a></li>
+            <li><a href="#" id="footer-font-large"><span class="ru">A+ Средний шрифт</span><span class="en">A+ Medium font</span></a></li>
+            <li><a href="#" id="footer-font-xlarge"><span class="ru">A++ Большой шрифт</span><span class="en">A++ Large font</span></a></li>
+            <li><a href="#" id="footer-lang-en"><span class="ru">Английский язык</span><span class="en">English</span></a></li>
+        </ul>
+    </div>
+</div>
+                    <div class="footer-col col-contacts">
+                        <h4 class="footer-heading heading-contacts">
+                            <span class="ru">Контакты</span><span class="en">Contacts</span>
+                        </h4>
+                        <ul class="spec-contact-list">
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-map-marker"></i></div>
+                                <div class="spec-contact-content">
+                                    <span class="spec-contact-text">
+                                        <span class="ru">Санкт-Петербург, наб. р. Карповки 5И</span>
+                                        <span class="en">St. Petersburg, Karpovka Embankment, 5I</span>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-phone"></i></div>
+                                <div class="spec-contact-content">
+                                    <span class="spec-contact-text">
+                                        <span class="ru">+7(812)309-36-63<br></span>
+                                        <span class="en">+7(812)309-36-63<br></span>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-envelope"></i></div>
+                                <div class="spec-contact-content">
+                                    <a href="mailto:office@intellekt-pro.ru" class="spec-contact-link">office@intellekt-pro.ru</a>
+                                </div>
+                            </li>
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-clock-o"></i></div>
+                                <div class="spec-contact-content">
+                                    <span class="spec-contact-text">
+                                        <span class="ru">Пн-Пт, 10-19</span>
+                                        <span class="en">Mon-Fri, 10:00-19:00</span>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright-text">
+                        <span class="ru">2010-2024, Системы безопасности в Санкт-Петербурге (СПБ) | Интеллект Про | Все права защищены.<br>Информация о ценах на сайте не является публичной офертой.</span>
+                        <span class="en">2010-2024, Security Systems in St. Petersburg | Intellekt Pro | All rights reserved.<br>Price information on the website is not a public offer.</span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+   
+   <!-- Модальное окно товара (динамическое) -->
+    <div id="product-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-window">
+            <button id="modal-close" class="close-btn">&times;</button>
+            <div class="modal-grid">
+                <img id="modal-img" src="" alt="">
+                <div class="modal-info">
+                    <h3 id="modal-title" style="margin-top: 0; font-size: 1.5rem;"></h3>
+                    <div id="modal-price" style="font-weight: bold; font-size: 1.3rem; color: #e74c3c; margin-bottom: 10px;"></div>
+                    <ul id="modal-specs" style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Скрипты -->
+    <script type="module">
+        import { initSlider } from './js/components/slider.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            initSlider();
+        });
+    </script>
+    <script src="js/favorites.js"></script>
+    <script type="module" src="js/catalog-auth-guard.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/reviews.js"></script>
+    <script src="js/accessibility.js"></script>  
+    <script src="js/language.js"></script>
+    <script src="js/burger.js"></script>
+</body>
+</html>

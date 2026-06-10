@@ -1,0 +1,189 @@
+  /* Сброс стилей */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7f6; /* Нейтральный фон страницы */
+        }
+
+        /* Центрирование контейнера на экране */
+        .auth-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        /* Центральный одноколоночный блок */
+        .auth-container {
+            width: 100%;
+            max-width: 450px; /* Компактная ширина для одной колонки */
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e0e6e9;
+            padding: 40px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* Ссылка "Назад к каталогу" */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            color: #7f8c8d;
+            text-decoration: none;
+            transition: color 0.2s;
+            margin-bottom: 30px; /* Фиксированный отступ снизу, чтобы форма её не перекрывала */
+        }
+        .back-link:hover {
+            color: #0056b3;
+        }
+        .back-link span {
+            margin-right: 8px;
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        /* Переключатель вкладок (Вход / Регистрация) */
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e0e6e9;
+        }
+        .tab-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            font-weight: 700;
+            color: #95a5a6;
+            padding: 10px 0;
+            margin-right: 30px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        .tab-btn:hover {
+            color: #34495e;
+        }
+        .tab-btn.active {
+            color: #2c3e50;
+            border-bottom-color: #0056b3; /* Наш фирменный синий */
+        }
+
+        /* Управление видимостью форм */
+        .auth-form {
+            display: none;
+        }
+        .auth-form.active {
+            display: block;
+        }
+
+        /* Поля ввода */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #dcdfe3;
+            border-radius: 6px;
+            font-size: 15px;
+            color: #2c3e50;
+            box-sizing: border-box;
+            background-color: #fbfcfc;
+            transition: all 0.2s;
+        }
+        .form-group input:focus {
+            border-color: #0056b3;
+            background-color: #ffffff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.05);
+        }
+
+        /* Кнопка отправки */
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background-color: #0056b3;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+        .btn-submit:hover {
+            background-color: #004085;
+        }
+        /* Убираем 100% ширину и лишние отступы для кнопок выбора */
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Выстраиваем радио-кнопки и чекбоксы в одну линию с текстом */
+.form-group label.inline-label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #7f8c8d;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Контейнер для радио-кнопок чтобы они стояли рядом */
+.radio-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 8px;
+}
+
+/* Контейнер для чекбокса */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрируем чекбокс под кнопкой генерации */
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+/* Стили для заблокированной кнопки регистрации */
+#btn-register-submit:disabled {
+    background-color: #cccccc !important; /* Делаем фон серым */
+    color: #888888 !important; /* Делаем текст тусклым */
+    cursor: not-allowed !important; /* Тот самый курсор-барьер (перечеркнутый круг) */
+    border: 1px solid #bbbbbb !important; /* Серая рамка (если нужна) */
+    box-shadow: none !important; /* Убираем тени, если они были */
+    transform: none !important; /* Убираем анимацию нажатия/наведения, если была */
+    pointer-events: auto; /* Гарантирует, что курсор-барьер сработает */
+}
+/* Стили для кнопки "Выйти" в шапке */
+.logout-btn {
+    color: #ffffff !important; /* Делает текст белым */
+    text-decoration: none; /* Убирает нижнее подчеркивание, если оно есть */
+    font-weight: 500;
+    transition: color 0.2s ease; /* Плавность для эффекта наведения */
+}
+

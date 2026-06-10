@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина — ЕГДС</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">    
+    <link rel="stylesheet" href="css/dark-theme.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header" id="header">
+             <div class="header-top">
+                <div class="container">
+                    <div class="header-top__wrapper">
+                        <nav class="header-top__nav">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" id="theme-dark">
+                                        <span class="ru">Темная тема</span><span class="en">Dark theme</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" id="theme-light">
+                                        <span class="ru">Светлая тема</span><span class="en">Light theme</span>
+                                    </a>
+                                </li>
+                                <li>
+    <a href="javascript:void(0)" id="theme-terminal">
+        <span class="ru">Терминал тема</span><span class="en">Terminal theme</span>
+    </a>
+</li>
+                                
+                        
+                                <li class="lang-switcher">
+                                    <button type="button" id="lang-ru" class="lang-btn active">RUS</button>
+                                 
+                                    <button type="button" id="lang-en" class="lang-btn">ENG</button>
+                                </li>
+
+<li class="acc-switcher">
+    <button type="button" class="acc-font-btn" data-acc="font-normal" title="Обычный размер">A</button>
+    <button type="button" class="acc-font-btn" data-acc="font-large" title="Увеличенный">A+</button>
+    <button type="button" class="acc-font-btn" data-acc="font-xlarge" title="Крупный">A++</button>
+</li>
+<li class="reset-settings-group">
+    <button type="button" class="reset-settings-btn" title="Сбросить все настройки">
+        <i class="fa fa-refresh"></i>
+        <span class="ru">Сброс</span>
+        <span class="en">Reset</span>
+    </button>
+</li>
+                            </ul>
+                        </nav>
+                        <div class="header-top__address">
+                            <a class="header-location" href="#">
+                                <span class="ru">г. СПБ, наб. р. Карповки, 5И</span><span class="en">St. Petersburg, Karpovka Embankment, 5I</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-center">
+                <div class="container-2">
+                    <div class="header-center__wrapper">
+                        <div class="header-center__logo-block">
+                            <a class="header-logo" href="/">
+                                <img src="assets/logo.png" alt="logo" class="logo-img">
+                                <div class="logo-text-group">
+                                    <span class="logo-name">ЕГДС</span>
+                                    <span class="logo-desc">
+                                        <span class="ru">Единая Городская Диспетчерская Служба Санкт-Петербурга</span>
+                                        <span class="en">Unified City Dispatch Service of St. Petersburg</span>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+
+                         <div class="header-contacts-group">
+                            <div class="header-contact">
+                                <div class="contact-icon">
+                                    <img src="assets/envelope-regular 1.png" alt="mail" class="custom-icon">
+                                </div>
+                                <div class="contact-content">
+                                    <a href="mailto:office@egdsk-spb.ru" class="contact-link">office@egdsk-spb.ru</a>
+
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="header-contact">
+                                <div class="contact-icon">
+                                    <img src="assets/lucide_phone-call.png" alt="phone" class="custom-icon">
+                                </div>
+                                <div class="contact-content">
+                                    <a href="tel:+78001003899" class="contact-link">+7(800)100-38-99</a>
+                                 
+                              
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="header-contact">
+                                <div class="contact-icon" style="width: 20px;"></div> 
+                                <div class="contact-content">
+                                    <a href="tel:+78123093663" class="contact-link">+7(812)309-36-63</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="header-bottom">
+                <div class="container-2">
+                    <div class="header-bottom__wrapper">
+                        <ul class="main-nav">
+                            <li class="has-dropdown main-nav__item--catalog">
+                                <a href="#" class="catalog-btn">
+                                    <span class="ru">Каталог Оборудования</span><span class="en">Equipment Catalog</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="avtomatika.html"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></a></li>
+                                    <li><a href="radioupravlenie.html"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></a></li>
+                                    <li><a href="svobodnyy-vyezd.html"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></a></li>
+                                    <li><a href="full-catalog.html"><span class="ru">Полный каталог</span><span class="en">Full Catalog</span></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="card.html"><span class="ru">Корзина</span><span class="en">Cart</span></a></li>
+                            <li><a href="favorites.html"><span class="ru">Избранное</span><span class="en">Favorites</span></a></li>
+                        </ul>
+
+                        <!-- Бургер и мобильные иконки -->
+                        <button class="burger-btn" id="burger-btn" aria-label="Меню">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+
+                        <div class="mobile-icons">
+                            <a href="full-catalog.html" title="Поиск"></a>
+                            <a href="card.html" title="Корзина"></a>
+                        </div>
+
+                        <div class="header-right-group">
+                            <div class="auth-zone" id="auth-zone"></div>
+                        </div> 
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <section class="cart-section">
+                <div class="step-container">
+                    <h1 class="cart-title">
+                        <span class="ru">Выбранное оборудование</span><span class="en">Selected Equipment</span>
+                    </h1>
+                    
+                    <!-- Динамический контент загружается через js/card.js -->
+                    <div id="cart-container-js"></div>
+                    
+                    <div id="cart-summary-panel" class="cart-checkout-panel" style="display: none;">
+                        <a href="avtomatika.html" class="cart-back-btn">
+                            <i class="fa fa-chevron-left" style="font-size: 12px;"></i> 
+                            <span class="ru">Вернуться в каталог</span><span class="en">Back to catalog</span>
+                        </a>
+                        <div class="cart-summary-info">
+                            <div class="cart-total-label">
+                                <span class="ru">Итого к оплате:</span><span class="en">Total to pay:</span> 
+                                <span id="total-sum-js" class="cart-total-sum">0</span> руб.
+                            </div>
+                            <button id="checkout-btn" class="cart-submit-btn">
+                                <span class="ru">ОФОРМИТЬ ЗАЯВКУ</span><span class="en">SUBMIT ORDER</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-col col-help">
+                        <h4 class="footer-heading heading-help">
+                            <span class="ru">Услуги</span><span class="en">Help</span>
+                        </h4>
+                        <ul class="footer-list list-help">
+                            <li><a href="card.html"><span class="ru">Корзина</span><span class="en">Cart</span></a></li>
+                            <li><a href="favorites.html"><span class="ru">Избранное</span><span class="en">Favorites</span></a></li>
+                            <li><a href="lk.html"><span class="ru">Личный кабинет</span><span class="en">Account</span></a></li>
+                            <li><a href="full-catalog.html"><span class="ru">Полный котолог</span><span class="en">Full catalog</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-services">
+                        <h4 class="footer-heading heading-services">
+                            <span class="ru">Товары</span><span class="en">Services</span>
+                        </h4>
+                        <ul class="footer-list list-services">
+                                <li><a href="avtomatika.html"><span class="ru">Автоматика проезда</span><span class="en">Access Automation</span></a></li>
+                                <li><a href="svobodnyy-vyezd.html"><span class="ru">Свободный выезд</span><span class="en">Free Exit</span></a></li>
+                                <li><a href="radioupravlenie.html"><span class="ru">Радиоуправление</span><span class="en">Radio Control</span></a></li>
+                        </ul>
+                    </div>
+                   <div class="footer-col col-products">
+    <h4 class="footer-heading heading-products">
+        <span class="ru">Настройки</span><span class="en">Settings</span>
+    </h4>
+    <div class="products-grid-wrapper">
+        <ul class="footer-list list-products-left">
+            <li><a href="#" id="footer-theme-dark"><span class="ru">Тёмная тема</span><span class="en">Dark theme</span></a></li>
+            <li><a href="#" id="footer-theme-light"><span class="ru">Светлая тема</span><span class="en">Light theme</span></a></li>
+            <li><a href="#" id="footer-theme-terminal"><span class="ru">Терминал тема</span><span class="en">Terminal theme</span></a></li>
+            <li><a href="#" id="footer-lang-ru"><span class="ru">Русский язык</span><span class="en">Russian</span></a></li>
+        </ul>
+        <ul class="footer-list list-products-right">
+            <li><a href="#" id="footer-font-normal"><span class="ru">A Обычный шрифт</span><span class="en">A Normal font</span></a></li>
+            <li><a href="#" id="footer-font-large"><span class="ru">A+ Средний шрифт</span><span class="en">A+ Medium font</span></a></li>
+            <li><a href="#" id="footer-font-xlarge"><span class="ru">A++ Большой шрифт</span><span class="en">A++ Large font</span></a></li>
+            <li><a href="#" id="footer-lang-en"><span class="ru">Английский язык</span><span class="en">English</span></a></li>
+        </ul>
+    </div>
+</div>
+                    <div class="footer-col col-contacts">
+                        <h4 class="footer-heading heading-contacts">
+                            <span class="ru">Контакты</span><span class="en">Contacts</span>
+                        </h4>
+                        <ul class="spec-contact-list">
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-map-marker"></i></div>
+                                <div class="spec-contact-content">
+                                    <span class="spec-contact-text">
+                                        <span class="ru">Санкт-Петербург, наб. р. Карповки 5И</span>
+                                        <span class="en">St. Petersburg, Karpovka Embankment, 5I</span>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-phone"></i></div>
+                                <div class="spec-contact-content">
+                                    <span class="spec-contact-text">
+                                        <span class="ru">+7(812)309-36-63<br></span>
+                                        <span class="en">+7(812)309-36-63<br></span>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-envelope"></i></div>
+                                <div class="spec-contact-content">
+                                    <a href="mailto:office@intellekt-pro.ru" class="spec-contact-link">office@intellekt-pro.ru</a>
+                                </div>
+                            </li>
+                            <li class="spec-contact-item">
+                                <div class="spec-contact-icon"><i class="fa fa-clock-o"></i></div>
+                                <div class="spec-contact-content">
+                                    <span class="spec-contact-text">
+                                        <span class="ru">Пн-Пт, 10-19</span>
+                                        <span class="en">Mon-Fri, 10:00-19:00</span>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright-text">
+                        <span class="ru">2010-2024, Системы безопасности в Санкт-Петербурге (СПБ) | Интеллект Про | Все права защищены.<br>Информация о ценах на сайте не является публичной офертой.</span>
+                        <span class="en">2010-2024, Security Systems in St. Petersburg | Intellekt Pro | All rights reserved.<br>Price information on the website is not a public offer.</span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Модальное окно оформления заказа -->
+    <div id="order-modal" class="custom-modal" style="display: none;">
+        <div class="modal-content-wrapper">
+            <div class="modal-header-block">
+                <h2>
+                    <span class="ru">Детали доставки</span><span class="en">Delivery Details</span>
+                </h2>
+                <button id="order-modal-close" class="close-modal-btn">&times;</button>
+            </div>
+            <form id="order-submit-form" class="modal-form-body">
+                <div class="form-field-group">
+                    <label for="order-address">
+                        <span class="ru">Адрес доставки <span class="required-star">*</span></span>
+                        <span class="en">Delivery Address <span class="required-star">*</span></span>
+                    </label>
+                    <input type="text" id="order-address" 
+                           data-placeholder-ru="г. Санкт-Петербург, ул. ... д. ... кв. ..." 
+                           data-placeholder-en="St. Petersburg, street ... bldg ... apt ..." 
+                           placeholder="г. Санкт-Петербург, ул. ... д. ... кв. ..." required>
+                </div>
+                <div class="form-field-group">
+                    <label for="order-comment">
+                        <span class="ru">Комментарий к заказу</span><span class="en">Order Comment</span>
+                    </label>
+                    <textarea id="order-comment" rows="4" 
+                              data-placeholder-ru="Например: код домофона, удобное время, особенности проезда..." 
+                              data-placeholder-en="Example: intercom code, convenient time, access instructions..." 
+                              placeholder="Например: код домофона, удобное время, особенности проезда..."></textarea>
+                </div>
+                <div class="modal-footer-actions">
+                    <button type="button" id="order-modal-cancel" class="cancel-action-btn">
+                        <span class="ru">Отмена</span><span class="en">Cancel</span>
+                    </button>
+                    <button type="submit" class="confirm-action-btn">
+                        <span class="ru">ПОДТВЕРДИТЬ ЗАКАЗ</span><span class="en">CONFIRM ORDER</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script type="module">
+        import { initSlider } from './js/components/slider.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            initSlider();
+        });
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/accessibility.js"></script>  
+    <script src="js/burger.js"></script>
+</body>
+</html>
