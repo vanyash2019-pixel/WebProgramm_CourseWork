@@ -1,13 +1,12 @@
-// js/admin.js
 
 const API_URL = 'http://localhost:3000';
 
-// === ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ДЛЯ ПЕРЕВОДОВ ===
+
 function getUIText(ru, en) {
     return document.body.classList.contains('lang-en') ? en : ru;
 }
 
-// === ПЕРЕВОД СТАТУСОВ ЗАКАЗА ===
+
 function getStatusText(status) {
     const translations = {
         'Принята': { ru: 'Принята', en: 'Received' },
@@ -37,11 +36,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Запускаем загрузку данных
     loadAdminData();
-    
-    // === 🎯 Слушаем событие смены языка ===
-    window.addEventListener('languageChanged', () => {
-        loadAdminData(); // Перезагружаем данные с новыми переводами
-    });
+
+    // === 🎯 ПРЯМЫЕ ОБРАБОТЧИКИ НА КНОПКИ ЯЗЫКА ===
+    // Работают независимо от language.js и события languageChanged
+    const langRuBtn = document.getElementById('lang-ru');
+    const langEnBtn = document.getElementById('lang-en');
+
+    if (langRuBtn) {
+        langRuBtn.addEventListener('click', () => {
+            // Даём language.js 150мс, чтобы он успел обновить класс body и localStorage
+            setTimeout(() => location.reload(), 150);
+        });
+    }
+
+    if (langEnBtn) {
+        langEnBtn.addEventListener('click', () => {
+            setTimeout(() => location.reload(), 150);
+        });
+    }
+
+
+
 });
 
 async function loadAdminData() {

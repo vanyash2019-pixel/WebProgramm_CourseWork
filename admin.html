@@ -2,12 +2,14 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Панель администратора ЕГДС</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="css/lang.css">
-        <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/responsive.css">   
 </head>
 <body>
 
@@ -21,7 +23,6 @@
                     </span>
                 </div>
                 
-                <!-- Переключатель языка (добавлен отдельно) -->
                 <div class="lang-switcher" style="margin-right: 15px;">
                     <button type="button" id="lang-ru" class="lang-btn active">RUS</button>
                     <button type="button" id="lang-en" class="lang-btn">ENG</button>
@@ -42,6 +43,7 @@
             <span class="ru">Управление системой</span><span class="en">System Management</span>
         </h1>
 
+        <!-- Управление заказами -->
         <div class="admin-card">
             <h2 class="admin-card__title">
                 <i class="fa fa-shopping-basket"></i> 
@@ -55,6 +57,7 @@
             </div>
         </div>
 
+        <!-- Модерация отзывов -->
         <div class="admin-card">
             <h2 class="admin-card__title">
                 <i class="fa fa-comments"></i> 
@@ -88,10 +91,7 @@
         </div>
     </main>
 
-    <!-- Скрипты -->
     <script src="js/admin.js"></script>
-    
-    <!-- Переключатель языка (правильное имя файла) -->
     <script src="js/language.js"></script>
 </body>
 </html>

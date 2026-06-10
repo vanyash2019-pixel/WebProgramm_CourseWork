@@ -49,19 +49,18 @@ font-weight: 400;
 
 }
 
-/* САЙДБАР (ПРАВАЯ КОЛОНКА) */
 .b-sidebar {
-    background: #f4f4f4; /* Серый фон как на image_00a1c2.png */
+    background: #f4f4f4;
     border-radius: 4px;
-    height: fit-content; /* Чтобы не растягивался до конца страницы */
-   display: flex;
-width: 260px;
-padding: 30px;
-flex-direction: column;
-align-items: flex-start;
-gap: 20px;
-margin-right: 60px;
-margin-top: 1px;
+    height: fit-content;
+    display: flex;
+    width: 270px;
+    padding: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-right: 60px;
+    margin-top: 1px;
 }
 
 .b-sidebar__title {
@@ -77,11 +76,11 @@ margin-top: 1px;
 }
 
 .b-sidebar__item {
-    border-bottom:none
+    border-bottom: none;
 }
 
 .b-sidebar__link {
-   display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px 0;
@@ -89,25 +88,51 @@ margin-top: 1px;
     color: #313131;
     font-size: 16px;
     transition: 0.3s;
-    
 }
-.b-sidebar__link span {
-    flex-shrink: 0; /* Не даем стрелке сжиматься */
-    width: 20px;    /* Задаем ей свое место */
+
+/* Стили ТОЛЬКО для стрелки (последний span без класса) */
+.b-sidebar__link > span:last-child {
+    flex-shrink: 0;
+    width: 20px;
     text-align: right;
     transition: transform 0.2s;
-    margin-left: 20px; /* Минимальный отступ от текста */
-} 
+    margin-left: 20px;
+}
+
 .b-sidebar__link:hover {
-  
     color: #888;
 }
-.b-sidebar__link:hover span {
-    transform: translateX(8px); 
-    display: inline-block; /* Гарантируем, что трансформация сработает */
+
+.b-sidebar__link:hover > span:last-child {
+    transform: translateX(8px);
 }
+
 .b-sidebar__link svg {
     opacity: 0.6;
+}
+
+/* === ПЕРЕКЛЮЧЕНИЕ ЯЗЫКОВ ДЛЯ САЙДБАРА === */
+
+/* По умолчанию (русский) - показываем только русский */
+body:not(.lang-en) .b-sidebar__link .en,
+body:not(.lang-en) .b-sidebar__title .en {
+    display: none !important;
+}
+
+body:not(.lang-en) .b-sidebar__link .ru,
+body:not(.lang-en) .b-sidebar__title .ru {
+    display: inline !important;
+}
+
+/* Когда английский - показываем только английский */
+body.lang-en .b-sidebar__link .ru,
+body.lang-en .b-sidebar__title .ru {
+    display: none !important;
+}
+
+body.lang-en .b-sidebar__link .en,
+body.lang-en .b-sidebar__title .en {
+    display: inline !important;
 }
 
 /* ХЛЕБНЫЕ КРОШКИ */

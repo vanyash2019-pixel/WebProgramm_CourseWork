@@ -297,3 +297,33 @@ body {
 .admin-btn-right {
     margin-left: auto; /* Толкает кнопку удаления в правый край */
 }
+/* ==========================================================================
+   ПЕРЕВОДЫ ДЛЯ АДМИНКИ
+   ========================================================================== */
+
+/* По умолчанию показываем русский, скрываем английский */
+.admin-header .en,
+.admin-container .en {
+    display: none !important;
+}
+
+.admin-header .ru,
+.admin-container .ru {
+    display: inline !important;
+}
+
+/* Если выбран английский язык */
+body.lang-en .admin-header .ru,
+body.lang-en .admin-container .ru {
+    display: none !important;
+}
+
+body.lang-en .admin-header .en,
+body.lang-en .admin-container .en {
+    display: inline !important;
+}
+
+/* Для блочных элементов (если есть) */
+body.lang-en .en.block {
+    display: block !important;
+}

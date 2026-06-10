@@ -903,93 +903,32 @@
   ],
   "orders": [
     {
-      "userId": "aTAviRxYYUc",
-      "items": [
-        {
-          "id": "13",
-          "name": "Шлагбаум GARD 5000 (Серый)",
-          "price": 115500,
-          "img": "assets/came-g5000.jpg",
-          "quantity": 3
-        }
-      ],
-      "totalPrice": 346500,
-      "date": "5/21/2026, 9:12:46 PM",
-      "status": "В обработке",
-      "id": "EenlINVnzyo"
-    },
-    {
-      "userId": "aTAviRxYYUc",
-      "items": [
-        {
-          "id": "13",
-          "name": "Шлагбаум GARD 5000 (Серый)",
-          "price": 115500,
-          "img": "assets/came-g5000.jpg",
-          "quantity": 5
-        }
-      ],
-      "totalPrice": 577500,
-      "date": "5/23/2026, 4:48:42 PM",
-      "status": "В обработке",
-      "id": "Wonb1QVHhDM"
-    },
-    {
       "userId": "FB5S_Gm_OiY",
       "userName": "иван",
       "items": [
         {
           "id": "13",
           "name": "Шлагбаум GARD 5000 (Серый)",
+          "nameEn": "Barrier Gate GARD 5000 (Gray)",
           "price": 115500,
-          "img": "assets/came-g5000.jpg",
+          "img": "assets/1.jpg",
+          "quantity": 4
+        },
+        {
+          "id": "14",
+          "name": "Шлагбаум GARD 6500 Classico",
+          "nameEn": "Barrier Gate GARD 6500 Classico",
+          "price": 125700,
+          "img": "assets/2.webp",
           "quantity": 1
         }
       ],
-      "totalPrice": 115500,
-      "date": "5/24/2026, 10:45:21 PM",
-      "address": "fdg",
-      "comment": "vdsfb",
-      "status": "Отменен",
-      "id": "KPAC4k6axWw"
-    },
-    {
-      "userId": "FB5S_Gm_OiY",
-      "userName": "иван",
-      "items": [
-        {
-          "id": "12",
-          "name": "Контроллер автономный Z-5R",
-          "price": 1100,
-          "img": "assets/24.webp",
-          "quantity": 3
-        }
-      ],
-      "totalPrice": 3300,
-      "date": "5/30/2026, 4:58:12 PM",
-      "address": "jgntfsa",
-      "comment": "ngfdsa",
-      "status": "Принята",
-      "id": "5fgLrW7ea1Y"
-    },
-    {
-      "userId": "FB5S_Gm_OiY",
-      "userName": "иван",
-      "items": [
-        {
-          "id": "27",
-          "name": "Кабель для индукционной петли CAME (пробег 50м)",
-          "price": 6500,
-          "img": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=500&q=80",
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 6500,
-      "date": "5/30/2026, 9:52:17 PM",
-      "address": "chchchhcchhc",
-      "comment": "в любое время звони, базар",
-      "status": "Принята",
-      "id": "Np5dmEKm7FM"
+      "totalPrice": 587700,
+      "date": "6/3/2026, 9:58:37 PM",
+      "address": "г. Санкт-Петербург, ул. Примерная, д. 10",
+      "comment": "Просьба доставить в рабочее время с 10:00 до 18:00",
+      "status": "Готов",
+      "id": "m31cOLrIpd8"
     }
   ],
   "reviews": [
@@ -1001,6 +940,67 @@
       "id": "TtClXIq0cxA"
     }
   ],
-  "favorites": [],
+  "favorites": [
+    {
+      "id": "LENR2EDGBws",
+      "productId": "14",
+      "title": "Шлагбаум GARD 6500 Classico (Оранжевый)",
+      "titleEn": "Barrier Gate GARD 6500 Classico (Orange)",
+      "price": "125 700 руб.",
+      "image": "assets/2.webp"
+    }
+  ],
+  "carts": [
+    {
+      "id": "1",
+      "userId": "FB5S_Gm_OiY",
+      "items": [
+        {
+          "id": "13",
+          "name": "Шлагбаум GARD 5000 (Серый)",
+          "nameEn": "Barrier Gate GARD 5000 (Gray)",
+          "price": 115500,
+          "img": "assets/1.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "15",
+          "name": "Шлагбаум GARD 4000SX (Компактный)",
+          "nameEn": "Barrier Gate GARD 4000SX (Compact)",
+          "price": 75400,
+          "img": "assets/3.jpeg",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "userId": "1",
+      "items": [
+        {
+          "id": "26",
+          "name": "CAME SMA2 Цифровой детектор транспортного средства",
+          "nameEn": "CAME SMA2 Digital Vehicle Detector",
+          "price": 30000,
+          "img": "assets/26.jpg",
+          "quantity": 1
+        }
+      ],
+      "id": "iLzC8yGuSIU"
+    },
+    {
+      "userId": "kBfqx8VYlt4",
+      "items": [
+        {
+          "id": "3",
+          "name": "Мини-пульт двухканальный Radio 8101-2M",
+          "nameEn": "Radio 8101-2M Dual-Channel Mini Remote",
+          "price": 2100,
+          "img": "assets/15.webp",
+          "quantity": 1
+        }
+      ],
+      "id": "5SFiSiqhK30"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

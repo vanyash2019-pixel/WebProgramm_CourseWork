@@ -1,0 +1,2560 @@
+/*
+
+ === СТИЛИ КНОПОК В ШАПКЕ === */
+.acc-font-btn {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px;
+    font-weight: bold;
+    transition: background 0.2s;
+    color: #333;
+}
+
+.acc-font-btn:hover { background: #e0e0e0; }
+.acc-font-btn.active { background: #333; color: #fff; border-color: #333; }
+
+/* ============================================================
+   СРЕДНИЙ РАЗМЕР (A+) — 18px
+   Базовый: 16px → 18px
+   ============================================================ */
+
+/* --- Универсальное увеличение для всех текстовых элементов --- */
+body.acc-font-large p,
+body.acc-font-large li,
+body.acc-font-large a,
+body.acc-font-large span,
+body.acc-font-large label,
+body.acc-font-large input,
+body.acc-font-large textarea,
+body.acc-font-large select,
+body.acc-font-large button {
+    font-size: 18px !important;
+    line-height: 1.4 !important;
+}
+
+/* --- Шапка (header-top) --- */
+body.acc-font-large .header-top__nav a { font-size: 18px !important; }
+body.acc-font-large .header-location { font-size: 17px !important; }
+body.acc-font-large .lang-btn { font-size: 15px !important; }
+
+/* --- Шапка (header-center) --- */
+body.acc-font-large .logo-name { font-size: 48px !important; }
+body.acc-font-large .logo-desc { font-size: 19px !important; }
+body.acc-font-large .contact-link { font-size: 18px !important; }
+body.acc-font-large .contact-btn { font-size: 15px !important; }
+
+/* --- Шапка (header-bottom) --- */
+body.acc-font-large .main-nav a { font-size: 20px !important; }
+body.acc-font-large .dropdown-menu a { font-size: 18px !important; }
+body.acc-font-large .cabinet-text { font-size: 12px !important; }
+body.acc-font-large .cabinet-title { font-size: 15px !important; }
+body.acc-font-large .cabinet-desc { font-size: 13px !important; }
+body.acc-font-large .auth-separator { font-size: 13px !important; }
+body.acc-font-large .logout-btn { font-size: 12px !important; }
+
+/* --- Главная: Hero-слайдер --- */
+body.acc-font-large .slide-title { font-size: 38px !important; }
+body.acc-font-large .slide-item { font-size: 17px !important; }
+body.acc-font-large .slide-btn { font-size: 20px !important; }
+
+/* --- Главная: О компании --- */
+body.acc-font-large .about .title-main,
+body.acc-font-large .equipment-catalog .title-main,
+body.acc-font-large .section-works .title-main,
+body.acc-font-large .section-steps .title-main,
+body.acc-font-large .partners-title,
+body.acc-font-large .map-title {
+    font-size: 40px !important;
+}
+body.acc-font-large .about__text { font-size: 18px !important; }
+body.acc-font-large .about__list li { font-size: 18px !important; }
+body.acc-font-large .equipment-card__title { font-size: 19px !important; }
+
+/* --- Главная: Примеры работ --- */
+body.acc-font-large .v-slide__title { font-size: 43px !important; }
+body.acc-font-large .v-slide__text { font-size: 19px !important; }
+body.acc-font-large .v-slide__subtitle { font-size: 19px !important; }
+body.acc-font-large .v-slide__list li { font-size: 18px !important; }
+body.acc-font-large .v-btn,
+body.acc-font-large .v-btn--outline { font-size: 20px !important; }
+
+/* --- Главная: Этапы установки --- */
+body.acc-font-large .step-title { font-size: 20px !important; }
+body.acc-font-large .step-desc { font-size: 16px !important; }
+body.acc-font-large .step-text { font-size: 18px !important; }
+body.acc-font-large .step-number { font-size: 18px !important; }
+
+/* --- Главная: Callback --- */
+body.acc-font-large .callback-title { font-size: 22px !important; }
+body.acc-font-large .callback-btn { font-size: 20px !important; }
+body.acc-font-large .callback-input { font-size: 16px !important; }
+
+/* --- Футер --- */
+body.acc-font-large .footer-heading { font-size: 20px !important; }
+body.acc-font-large .footer-list a,
+body.acc-font-large .footer-list li,
+body.acc-font-large .footer-list span { font-size: 18px !important; }
+body.acc-font-large .spec-contact-text,
+body.acc-font-large .spec-contact-link { font-size: 18px !important; }
+body.acc-font-large .spec-contact-icon i { font-size: 18px !important; }
+body.acc-font-large .copyright-text { font-size: 15px !important; }
+
+/* --- Страницы категорий (каталоги) --- */
+body.acc-font-large .page-title { font-size: 38px !important; }
+body.acc-font-large .page-title-2 { font-size: 34px !important; }
+body.acc-font-large .text-page h2 { font-size: 34px !important; }
+body.acc-font-large .text-page p { font-size: 18px !important; }
+body.acc-font-large .breadcrumbs { font-size: 17px !important; }
+body.acc-font-large .b-sidebar__title { font-size: 18px !important; }
+body.acc-font-large .b-sidebar__link { font-size: 18px !important; }
+
+/* --- Карточки товаров --- */
+body.acc-font-large .b-card-title { font-size: 26px !important; }
+body.acc-font-large .b-card-text { font-size: 18px !important; }
+body.acc-font-large .b-card-price { font-size: 22px !important; }
+body.acc-font-large .btn-more { font-size: 20px !important; }
+body.acc-font-large .brand-promo-box__text h2 { font-size: 34px !important; }
+body.acc-font-large .brand-promo-box__text p { font-size: 18px !important; }
+
+/* --- Модальные окна --- */
+body.acc-font-large .modal-window { font-size: 18px !important; }
+body.acc-font-large #modal-title { font-size: 26px !important; }
+body.acc-font-large #modal-price { font-size: 22px !important; }
+body.acc-font-large #modal-specs li { font-size: 18px !important; }
+body.acc-font-large #review-modal h3 { font-size: 24px !important; }
+
+/* --- Корзина --- */
+body.acc-font-large .cart-title { font-size: 34px !important; }
+body.acc-font-large .cart-item__name { font-size: 18px !important; }
+body.acc-font-large .cart-item__price-each { font-size: 15px !important; }
+body.acc-font-large .counter-value { font-size: 17px !important; }
+body.acc-font-large .cart-item__total { font-size: 20px !important; }
+body.acc-font-large .cart-item__remove { font-size: 15px !important; }
+body.acc-font-large .cart-total-label { font-size: 20px !important; }
+body.acc-font-large .cart-total-sum { font-size: 26px !important; }
+body.acc-font-large .cart-submit-btn { font-size: 17px !important; }
+body.acc-font-large .cart-empty-msg { font-size: 18px !important; }
+
+/* --- Личный кабинет --- */
+body.acc-font-large .lk-title { font-size: 24px !important; }
+body.acc-font-large .profile-label { font-size: 12px !important; }
+body.acc-font-large .profile-input { font-size: 15px !important; }
+body.acc-font-large .profile-status-text { font-size: 15px !important; }
+body.acc-font-large .lk-save-btn,
+body.acc-font-large .lk-logout-btn { font-size: 14px !important; }
+body.acc-font-large .lk-menu__item a { font-size: 15px !important; }
+body.acc-font-large .order-item__header-title { font-size: 18px !important; }
+body.acc-font-large .order-item__products { font-size: 15px !important; }
+body.acc-font-large .order-item__total { font-size: 17px !important; }
+body.acc-font-large .order-status-btn { font-size: 15px !important; }
+body.acc-font-large .order-cancel-btn { font-size: 15px !important; }
+body.acc-font-large .timeline-title { font-size: 15px !important; }
+body.acc-font-large .timeline-date { font-size: 14px !important; }
+
+/* --- Админ-панель --- */
+body.acc-font-large .admin-title { font-size: 34px !important; }
+body.acc-font-large .admin-card__title { font-size: 22px !important; }
+body.acc-font-large .admin-table th { font-size: 15px !important; }
+body.acc-font-large .admin-table td { font-size: 17px !important; }
+body.acc-font-large .admin-order-date { font-size: 15px !important; }
+body.acc-font-large .admin-order-details p { font-size: 17px !important; }
+body.acc-font-large .admin-order-price { font-size: 17px !important; }
+body.acc-font-large .admin-order-select { font-size: 15px !important; }
+body.acc-font-large .btn-admin { font-size: 15px !important; }
+body.acc-font-large .status-badge { font-size: 13px !important; }
+
+/* --- Полный каталог --- */
+body.acc-font-large .catalog-page-section .title-main { font-size: 40px !important; }
+body.acc-font-large .filter-group h4 { font-size: 18px !important; }
+body.acc-font-large .filter-input,
+body.acc-font-large .filter-select { font-size: 15px !important; }
+body.acc-font-large .btn-reset { font-size: 15px !important; }
+body.acc-font-large .card-title { font-size: 20px !important; }
+body.acc-font-large .card-desc { font-size: 15px !important; }
+body.acc-font-large .card-price { font-size: 22px !important; }
+body.acc-font-large .btn-details,
+body.acc-font-large .buy-btn-catalog { font-size: 15px !important; }
+body.acc-font-large .no-products { font-size: 20px !important; }
+
+/* --- Избранное --- */
+body.acc-font-large .fav-card__title { font-size: 20px !important; }
+body.acc-font-large .fav-card__price { font-size: 22px !important; }
+body.acc-font-large .fav-btn-cart,
+body.acc-font-large .fav-btn-delete { font-size: 15px !important; }
+body.acc-font-large .favorites-subtitle { font-size: 17px !important; }
+body.acc-font-large .empty-message { font-size: 20px !important; }
+
+/* --- Пагинация --- */
+body.acc-font-large .page-link { font-size: 15px !important; }
+body.acc-font-large .pagination-label { font-size: 15px !important; }
+
+/* ============================================================
+   КРУПНЫЙ РАЗМЕР (A++) — 20px
+   Базовый: 16px → 20px
+   ============================================================ */
+
+/* --- Универсальное увеличение для всех текстовых элементов --- */
+body.acc-font-xlarge p,
+body.acc-font-xlarge li,
+body.acc-font-xlarge a,
+body.acc-font-xlarge span,
+body.acc-font-xlarge label,
+body.acc-font-xlarge input,
+body.acc-font-xlarge textarea,
+body.acc-font-xlarge select,
+body.acc-font-xlarge button {
+    font-size: 20px !important;
+    line-height: 1.5 !important;
+}
+
+/* --- Шапка (header-top) --- */
+body.acc-font-xlarge .header-top__nav a { font-size: 20px !important; }
+body.acc-font-xlarge .header-location { font-size: 19px !important; }
+body.acc-font-xlarge .lang-btn { font-size: 17px !important; }
+
+/* --- Шапка (header-center) --- */
+body.acc-font-xlarge .logo-name { font-size: 56px !important; }
+body.acc-font-xlarge .logo-desc { font-size: 21px !important; }
+body.acc-font-xlarge .contact-link { font-size: 20px !important; }
+body.acc-font-xlarge .contact-btn { font-size: 17px !important; }
+
+/* --- Шапка (header-bottom) --- */
+body.acc-font-xlarge .main-nav a { font-size: 22px !important; }
+body.acc-font-xlarge .dropdown-menu a { font-size: 20px !important; }
+body.acc-font-xlarge .cabinet-text { font-size: 14px !important; }
+body.acc-font-xlarge .cabinet-title { font-size: 17px !important; }
+body.acc-font-xlarge .cabinet-desc { font-size: 15px !important; }
+body.acc-font-xlarge .auth-separator { font-size: 15px !important; }
+body.acc-font-xlarge .logout-btn { font-size: 14px !important; }
+
+/* --- Главная: Hero-слайдер --- */
+body.acc-font-xlarge .slide-title { font-size: 45px !important; }
+body.acc-font-xlarge .slide-item { font-size: 19px !important; }
+body.acc-font-xlarge .slide-btn { font-size: 22px !important; }
+
+/* --- Главная: Заголовки секций --- */
+body.acc-font-xlarge .about .title-main,
+body.acc-font-xlarge .equipment-catalog .title-main,
+body.acc-font-xlarge .section-works .title-main,
+body.acc-font-xlarge .section-steps .title-main,
+body.acc-font-xlarge .partners-title,
+body.acc-font-xlarge .map-title {
+    font-size: 47px !important;
+}
+body.acc-font-xlarge .about__text { font-size: 20px !important; }
+body.acc-font-xlarge .about__list li { font-size: 20px !important; }
+body.acc-font-xlarge .equipment-card__title { font-size: 21px !important; }
+
+/* --- Главная: Примеры работ --- */
+body.acc-font-xlarge .v-slide__title { font-size: 50px !important; }
+body.acc-font-xlarge .v-slide__text { font-size: 21px !important; }
+body.acc-font-xlarge .v-slide__subtitle { font-size: 21px !important; }
+body.acc-font-xlarge .v-slide__list li { font-size: 20px !important; }
+body.acc-font-xlarge .v-btn,
+body.acc-font-xlarge .v-btn--outline { font-size: 22px !important; }
+
+/* --- Главная: Этапы установки --- */
+body.acc-font-xlarge .step-title { font-size: 22px !important; }
+body.acc-font-xlarge .step-desc { font-size: 18px !important; }
+body.acc-font-xlarge .step-text { font-size: 20px !important; }
+body.acc-font-xlarge .step-number { font-size: 20px !important; }
+
+/* --- Главная: Callback --- */
+body.acc-font-xlarge .callback-title { font-size: 24px !important; }
+body.acc-font-xlarge .callback-btn { font-size: 22px !important; }
+body.acc-font-xlarge .callback-input { font-size: 18px !important; }
+
+/* --- Футер --- */
+body.acc-font-xlarge .footer-heading { font-size: 22px !important; }
+body.acc-font-xlarge .footer-list a,
+body.acc-font-xlarge .footer-list li,
+body.acc-font-xlarge .footer-list span { font-size: 20px !important; }
+body.acc-font-xlarge .spec-contact-text,
+body.acc-font-xlarge .spec-contact-link { font-size: 20px !important; }
+body.acc-font-xlarge .spec-contact-icon i { font-size: 20px !important; }
+body.acc-font-xlarge .copyright-text { font-size: 17px !important; }
+
+/* --- Страницы категорий --- */
+body.acc-font-xlarge .page-title { font-size: 45px !important; }
+body.acc-font-xlarge .page-title-2 { font-size: 39px !important; }
+body.acc-font-xlarge .text-page h2 { font-size: 39px !important; }
+body.acc-font-xlarge .text-page p { font-size: 20px !important; }
+body.acc-font-xlarge .breadcrumbs { font-size: 19px !important; }
+body.acc-font-xlarge .b-sidebar__title { font-size: 20px !important; }
+body.acc-font-xlarge .b-sidebar__link { font-size: 20px !important; }
+
+/* --- Карточки товаров --- */
+body.acc-font-xlarge .b-card-title { font-size: 29px !important; }
+body.acc-font-xlarge .b-card-text { font-size: 20px !important; }
+body.acc-font-xlarge .b-card-price { font-size: 25px !important; }
+body.acc-font-xlarge .btn-more { font-size: 22px !important; }
+body.acc-font-xlarge .brand-promo-box__text h2 { font-size: 39px !important; }
+body.acc-font-xlarge .brand-promo-box__text p { font-size: 20px !important; }
+
+/* --- Модальные окна --- */
+body.acc-font-xlarge .modal-window { font-size: 20px !important; }
+body.acc-font-xlarge #modal-title { font-size: 29px !important; }
+body.acc-font-xlarge #modal-price { font-size: 25px !important; }
+body.acc-font-xlarge #modal-specs li { font-size: 20px !important; }
+body.acc-font-xlarge #review-modal h3 { font-size: 27px !important; }
+
+/* --- Корзина --- */
+body.acc-font-xlarge .cart-title { font-size: 39px !important; }
+body.acc-font-xlarge .cart-item__name { font-size: 20px !important; }
+body.acc-font-xlarge .cart-item__price-each { font-size: 17px !important; }
+body.acc-font-xlarge .counter-value { font-size: 19px !important; }
+body.acc-font-xlarge .cart-item__total { font-size: 22px !important; }
+body.acc-font-xlarge .cart-item__remove { font-size: 17px !important; }
+body.acc-font-xlarge .cart-total-label { font-size: 22px !important; }
+body.acc-font-xlarge .cart-total-sum { font-size: 29px !important; }
+body.acc-font-xlarge .cart-submit-btn { font-size: 19px !important; }
+body.acc-font-xlarge .cart-empty-msg { font-size: 20px !important; }
+
+/* --- Личный кабинет --- */
+body.acc-font-xlarge .lk-title { font-size: 27px !important; }
+body.acc-font-xlarge .profile-label { font-size: 14px !important; }
+body.acc-font-xlarge .profile-input { font-size: 17px !important; }
+body.acc-font-xlarge .profile-status-text { font-size: 17px !important; }
+body.acc-font-xlarge .lk-save-btn,
+body.acc-font-xlarge .lk-logout-btn { font-size: 16px !important; }
+body.acc-font-xlarge .lk-menu__item a { font-size: 17px !important; }
+body.acc-font-xlarge .order-item__header-title { font-size: 20px !important; }
+body.acc-font-xlarge .order-item__products { font-size: 17px !important; }
+body.acc-font-xlarge .order-item__total { font-size: 19px !important; }
+body.acc-font-xlarge .order-status-btn { font-size: 17px !important; }
+body.acc-font-xlarge .order-cancel-btn { font-size: 17px !important; }
+body.acc-font-xlarge .timeline-title { font-size: 17px !important; }
+body.acc-font-xlarge .timeline-date { font-size: 16px !important; }
+
+/* --- Админ-панель --- */
+body.acc-font-xlarge .admin-title { font-size: 39px !important; }
+body.acc-font-xlarge .admin-card__title { font-size: 25px !important; }
+body.acc-font-xlarge .admin-table th { font-size: 17px !important; }
+body.acc-font-xlarge .admin-table td { font-size: 19px !important; }
+body.acc-font-xlarge .admin-order-date { font-size: 17px !important; }
+body.acc-font-xlarge .admin-order-details p { font-size: 19px !important; }
+body.acc-font-xlarge .admin-order-price { font-size: 19px !important; }
+body.acc-font-xlarge .admin-order-select { font-size: 17px !important; }
+body.acc-font-xlarge .btn-admin { font-size: 17px !important; }
+body.acc-font-xlarge .status-badge { font-size: 15px !important; }
+
+/* --- Полный каталог --- */
+body.acc-font-xlarge .catalog-page-section .title-main { font-size: 47px !important; }
+body.acc-font-xlarge .filter-group h4 { font-size: 20px !important; }
+body.acc-font-xlarge .filter-input,
+body.acc-font-xlarge .filter-select { font-size: 17px !important; }
+body.acc-font-xlarge .btn-reset { font-size: 17px !important; }
+body.acc-font-xlarge .card-title { font-size: 22px !important; }
+body.acc-font-xlarge .card-desc { font-size: 17px !important; }
+body.acc-font-xlarge .card-price { font-size: 25px !important; }
+body.acc-font-xlarge .btn-details,
+body.acc-font-xlarge .buy-btn-catalog { font-size: 17px !important; }
+body.acc-font-xlarge .no-products { font-size: 22px !important; }
+
+/* --- Избранное --- */
+body.acc-font-xlarge .fav-card__title { font-size: 22px !important; }
+body.acc-font-xlarge .fav-card__price { font-size: 25px !important; }
+body.acc-font-xlarge .fav-btn-cart,
+body.acc-font-xlarge .fav-btn-delete { font-size: 17px !important; }
+body.acc-font-xlarge .favorites-subtitle { font-size: 19px !important; }
+body.acc-font-xlarge .empty-message { font-size: 22px !important; }
+
+/* --- Пагинация --- */
+body.acc-font-xlarge .page-link { font-size: 17px !important; }
+body.acc-font-xlarge .pagination-label { font-size: 17px !important; }
+/* ============================================================
+   ДОПОЛНИТЕЛЬНЫЕ ЭЛЕМЕНТЫ ДЛЯ A+ (СРЕДНИЙ РАЗМЕР)
+   ============================================================ */
+
+/* --- Кнопка "Читать далее" в секции About --- */
+body.acc-font-large .about__read-more {
+    font-size: 17px !important;
+    padding: 12px 24px !important;
+}
+
+/* --- Бургер-меню и мобильные иконки --- */
+body.acc-font-large .burger-btn {
+    width: 50px !important;
+    height: 50px !important;
+}
+body.acc-font-large .burger-btn span {
+    width: 30px !important;
+    height: 4px !important;
+}
+body.acc-font-large .mobile-icons a {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 20px !important;
+}
+
+/* --- Мобильное меню (когда открыто) --- */
+body.acc-font-large .main-nav.active a {
+    font-size: 18px !important;
+    padding: 18px 26px !important;
+}
+body.acc-font-large .main-nav.active .dropdown-menu a {
+    font-size: 16px !important;
+    padding-left: 50px !important;
+}
+body.acc-font-large .mobile-menu-close {
+    font-size: 38px !important;
+    width: 50px !important;
+    height: 50px !important;
+}
+
+/* --- Placeholder в полях ввода --- */
+body.acc-font-large input::placeholder,
+body.acc-font-large textarea::placeholder {
+    font-size: 16px !important;
+}
+
+/* --- Кнопка закрытия модального окна --- */
+body.acc-font-large #close-review-modal {
+    font-size: 28px !important;
+    top: 18px !important;
+    right: 22px !important;
+}
+
+/* --- Поля ввода в модальном окне --- */
+body.acc-font-large #review-author,
+body.acc-font-large #review-text {
+    font-size: 16px !important;
+    padding: 12px !important;
+}
+
+/* --- Кнопка отправки отзыва --- */
+body.acc-font-large #review-form button[type="submit"] {
+    font-size: 18px !important;
+    padding: 14px !important;
+}
+
+/* --- Точки пагинации (увеличиваем размер для удобства клика) --- */
+body.acc-font-large .dot,
+body.acc-font-large .v-dot {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+/* --- Стрелки в слайдере партнеров --- */
+body.acc-font-large .partners-arrow {
+    width: 60px !important;
+    height: 60px !important;
+}
+body.acc-font-large .partners-arrow svg {
+    width: 28px !important;
+    height: 28px !important;
+}
+
+/* --- Кнопка Play в видео --- */
+body.acc-font-large .step-play-btn {
+    width: 100px !important;
+    height: 100px !important;
+}
+body.acc-font-large .step-play-btn svg {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* --- Иконки в контактах (увеличиваем контейнер) --- */
+body.acc-font-large .contact-icon img {
+    width: 22px !important;
+    height: 22px !important;
+}
+
+/* --- Красная точка перед адресом --- */
+body.acc-font-large .header-location span::before {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+/* --- Красные точки в списках (slide-item, about__list, v-slide__list) --- */
+body.acc-font-large .slide-item::before,
+body.acc-font-large .about__list li::before,
+body.acc-font-large .v-slide__list li::before,
+body.acc-font-large .works-info__item::before {
+    width: 10px !important;
+    height: 10px !important;
+    top: 6px !important;
+}
+
+/* ============================================================
+   ДОПОЛНИТЕЛЬНЫЕ ЭЛЕМЕНТЫ ДЛЯ A++ (КРУПНЫЙ РАЗМЕР)
+   ============================================================ */
+
+/* --- Кнопка "Читать далее" в секции About --- */
+body.acc-font-xlarge .about__read-more {
+    font-size: 19px !important;
+    padding: 14px 28px !important;
+}
+
+/* --- Бургер-меню и мобильные иконки --- */
+body.acc-font-xlarge .burger-btn {
+    width: 56px !important;
+    height: 56px !important;
+}
+body.acc-font-xlarge .burger-btn span {
+    width: 34px !important;
+    height: 5px !important;
+}
+body.acc-font-xlarge .mobile-icons a {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 22px !important;
+}
+
+/* --- Мобильное меню (когда открыто) --- */
+body.acc-font-xlarge .main-nav.active a {
+    font-size: 20px !important;
+    padding: 20px 30px !important;
+}
+body.acc-font-xlarge .main-nav.active .dropdown-menu a {
+    font-size: 18px !important;
+    padding-left: 55px !important;
+}
+body.acc-font-xlarge .mobile-menu-close {
+    font-size: 42px !important;
+    width: 56px !important;
+    height: 56px !important;
+}
+
+/* --- Placeholder в полях ввода --- */
+body.acc-font-xlarge input::placeholder,
+body.acc-font-xlarge textarea::placeholder {
+    font-size: 18px !important;
+}
+
+/* --- Кнопка закрытия модального окна --- */
+body.acc-font-xlarge #close-review-modal {
+    font-size: 32px !important;
+    top: 20px !important;
+    right: 24px !important;
+}
+
+/* --- Поля ввода в модальном окне --- */
+body.acc-font-xlarge #review-author,
+body.acc-font-xlarge #review-text {
+    font-size: 18px !important;
+    padding: 14px !important;
+}
+
+/* --- Кнопка отправки отзыва --- */
+body.acc-font-xlarge #review-form button[type="submit"] {
+    font-size: 20px !important;
+    padding: 16px !important;
+}
+
+/* --- Точки пагинации --- */
+body.acc-font-xlarge .dot,
+body.acc-font-xlarge .v-dot {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+/* --- Стрелки в слайдере партнеров --- */
+body.acc-font-xlarge .partners-arrow {
+    width: 70px !important;
+    height: 70px !important;
+}
+body.acc-font-xlarge .partners-arrow svg {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+/* --- Кнопка Play в видео --- */
+body.acc-font-xlarge .step-play-btn {
+    width: 120px !important;
+    height: 120px !important;
+}
+
+/* --- Иконки в контактах --- */
+body.acc-font-xlarge .contact-icon img {
+    width: 26px !important;
+    height: 26px !important;
+}
+
+/* --- Красная точка перед адресом --- */
+body.acc-font-xlarge .header-location span::before {
+    width: 10px !important;
+    height: 10px !important;
+}
+
+/* --- Красные точки в списках --- */
+body.acc-font-xlarge .slide-item::before,
+body.acc-font-xlarge .about__list li::before,
+body.acc-font-xlarge .v-slide__list li::before,
+body.acc-font-xlarge .works-info__item::before {
+    width: 12px !important;
+    height: 12px !important;
+    top: 7px !important;
+}
+
+/* ============================================================
+   УВЕЛИЧЕНИЕ ОТСТУПОВ И РАЗМЕРОВ БЛОКОВ (для обоих режимов)
+   ============================================================ */
+
+/* --- A+: Увеличиваем отступы между элементами --- */
+body.acc-font-large .slide-item,
+body.acc-font-large .about__list li,
+body.acc-font-large .v-slide__list li {
+    margin-bottom: 14px !important;
+    padding-left: 30px !important;
+}
+
+body.acc-font-large .step-item {
+    gap: 20px !important;
+    margin-bottom: 25px !important;
+}
+
+body.acc-font-large .footer-list {
+    gap: 12px !important;
+}
+
+body.acc-font-large .spec-contact-list {
+    gap: 10px !important;
+}
+
+/* --- A++: Увеличиваем отступы ещё больше --- */
+body.acc-font-xlarge .slide-item,
+body.acc-font-xlarge .about__list li,
+body.acc-font-xlarge .v-slide__list li {
+    margin-bottom: 16px !important;
+    padding-left: 35px !important;
+}
+
+body.acc-font-xlarge .step-item {
+    gap: 25px !important;
+    margin-bottom: 30px !important;
+}
+
+body.acc-font-xlarge .footer-list {
+    gap: 14px !important;
+}
+
+body.acc-font-xlarge .spec-contact-list {
+    gap: 12px !important;
+}
+/* ============================================================
+   ФИНАЛЬНЫЙ БЛОК — ПЕРЕБИВАЕТ ВСЁ (для A+)
+   ============================================================ */
+html body.acc-font-large .slide-title,
+html body.acc-font-large .title-main,
+html body.acc-font-large .about .title-main,
+html body.acc-font-large .equipment-catalog .title-main,
+html body.acc-font-large .section-works .title-main,
+html body.acc-font-large .section-steps .title-main,
+html body.acc-font-large .partners-title,
+html body.acc-font-large .map-title {
+    font-size: 40px !important;
+    line-height: 1.3 !important;
+}
+
+html body.acc-font-large .v-slide__title {
+    font-size: 43px !important;
+}
+
+html body.acc-font-large .logo-name {
+    font-size: 48px !important;
+}
+
+html body.acc-font-large .logo-desc {
+    font-size: 19px !important;
+}
+
+html body.acc-font-large .main-nav a,
+html body.acc-font-large .main-nav > li > a {
+    font-size: 20px !important;
+}
+
+html body.acc-font-large .about__text,
+html body.acc-font-large .about__list li,
+html body.acc-font-large .slide-item,
+html body.acc-font-large .v-slide__list li,
+html body.acc-font-large .step-desc,
+html body.acc-font-large .step-text {
+    font-size: 18px !important;
+    line-height: 1.5 !important;
+}
+
+html body.acc-font-large .step-title {
+    font-size: 20px !important;
+}
+
+html body.acc-font-large .callback-title {
+    font-size: 22px !important;
+    white-space: normal !important;
+}
+
+/* ============================================================
+   ФИНАЛЬНЫЙ БЛОК — ПЕРЕБИВАЕТ ВСЁ (для A++)
+   ============================================================ */
+html body.acc-font-xlarge .slide-title,
+html body.acc-font-xlarge .title-main,
+html body.acc-font-xlarge .about .title-main,
+html body.acc-font-xlarge .equipment-catalog .title-main,
+html body.acc-font-xlarge .section-works .title-main,
+html body.acc-font-xlarge .section-steps .title-main,
+html body.acc-font-xlarge .partners-title,
+html body.acc-font-xlarge .map-title {
+    font-size: 47px !important;
+    line-height: 1.3 !important;
+}
+
+html body.acc-font-xlarge .v-slide__title {
+    font-size: 50px !important;
+}
+
+html body.acc-font-xlarge .logo-name {
+    font-size: 56px !important;
+}
+
+html body.acc-font-xlarge .logo-desc {
+    font-size: 21px !important;
+}
+
+html body.acc-font-xlarge .main-nav a,
+html body.acc-font-xlarge .main-nav > li > a {
+    font-size: 22px !important;
+}
+
+html body.acc-font-xlarge .about__text,
+html body.acc-font-xlarge .about__list li,
+html body.acc-font-xlarge .slide-item,
+html body.acc-font-xlarge .v-slide__list li,
+html body.acc-font-xlarge .step-desc,
+html body.acc-font-xlarge .step-text {
+    font-size: 20px !important;
+    line-height: 1.6 !important;
+}
+
+html body.acc-font-xlarge .step-title {
+    font-size: 22px !important;
+}
+
+html body.acc-font-xlarge .callback-title {
+    font-size: 24px !important;
+    white-space: normal !important;
+}
+/* ==========================================================================
+   СТРАНИЦА "АВТОМАТИКА ПРОЕЗДА" — ВЕРСИИ ДЛЯ СЛАБОВИДЯЩИХ (A+ и A++)
+   ========================================================================== */
+
+/* ============================================================
+   СРЕДНИЙ РАЗМЕР (A+) — для страницы Автоматика
+   ============================================================ */
+
+/* --- Хлебные крошки --- */
+html body.acc-font-large .breadcrumbs {
+    font-size: 15px !important;
+    gap: 10px !important;
+}
+
+/* --- Заголовок страницы --- */
+html body.acc-font-large .page-title {
+    font-size: 42px !important;
+    line-height: 1.25 !important;
+}
+
+/* --- Заголовок "Как выбрать и где купить?" --- */
+html body.acc-font-large .text-page h2.red-title {
+    font-size: 30px !important;
+    line-height: 1.3 !important;
+    padding-left: 18px !important;
+    border-left-width: 5px !important;
+}
+
+/* --- Основной текст статьи --- */
+html body.acc-font-large .text-page p {
+    font-size: 18px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 18px !important;
+}
+
+/* --- Блок бренда (CAME) --- */
+html body.acc-font-large .brand-promo-box {
+    padding: 35px !important;
+    gap: 35px !important;
+}
+
+html body.acc-font-large .brand-promo-box__logo img {
+    max-width: 220px !important;
+}
+
+html body.acc-font-large .brand-promo-box__text h2 {
+    font-size: 26px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 15px !important;
+}
+
+html body.acc-font-large .brand-promo-box__text p {
+    font-size: 18px !important;
+    line-height: 1.65 !important;
+}
+
+/* --- Карточки товаров --- */
+html body.acc-font-large .b-services-row {
+    gap: 30px !important;
+    margin: 40px 0 25px 0 !important;
+}
+
+html body.acc-font-large .b-services-card-horizontal {
+    padding: 0 !important;
+}
+
+html body.acc-font-large .b-card-pic {
+    flex: 0 0 320px !important;
+    width: 320px !important;
+}
+
+html body.acc-font-large .b-card-content {
+    padding: 30px 35px !important;
+}
+
+html body.acc-font-large .b-card-title {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+}
+
+html body.acc-font-large .b-card-text {
+    font-size: 18px !important;
+    line-height: 1.65 !important;
+    margin-bottom: 25px !important;
+}
+
+html body.acc-font-large .btn-more {
+    font-size: 17px !important;
+    padding: 12px 26px !important;
+}
+
+/* --- Боковое меню (сайдбар) --- */
+html body.acc-font-large .b-sidebar {
+    flex: 0 0 320px !important;
+    width: 320px !important;
+    padding: 30px !important;
+}
+
+html body.acc-font-large .b-sidebar__title {
+    font-size: 20px !important;
+    margin-bottom: 22px !important;
+    padding-bottom: 15px !important;
+}
+
+html body.acc-font-large .b-sidebar__link {
+    font-size: 17px !important;
+    padding: 14px 18px !important;
+}
+
+html body.acc-font-large .b-sidebar__link span:last-child {
+    font-size: 18px !important;
+}
+
+/* --- Callback секция на этой странице --- */
+html body.acc-font-large .page-main .callback-title {
+    font-size: 22px !important;
+    line-height: 1.4 !important;
+}
+
+html body.acc-font-large .page-main .callback-btn {
+    font-size: 19px !important;
+    padding: 16px 36px !important;
+}
+
+/* ============================================================
+   КРУПНЫЙ РАЗМЕР (A++) — для страницы Автоматика
+   ============================================================ */
+
+/* --- Хлебные крошки --- */
+html body.acc-font-xlarge .breadcrumbs {
+    font-size: 17px !important;
+    gap: 12px !important;
+}
+
+/* --- Заголовок страницы --- */
+html body.acc-font-xlarge .page-title {
+    font-size: 48px !important;
+    line-height: 1.25 !important;
+}
+
+/* --- Заголовок "Как выбрать и где купить?" --- */
+html body.acc-font-xlarge .text-page h2.red-title {
+    font-size: 35px !important;
+    line-height: 1.3 !important;
+    padding-left: 20px !important;
+    border-left-width: 6px !important;
+    margin-bottom: 30px !important;
+}
+
+/* --- Основной текст статьи --- */
+html body.acc-font-xlarge .text-page p {
+    font-size: 20px !important;
+    line-height: 1.75 !important;
+    margin-bottom: 22px !important;
+}
+
+/* --- Блок бренда (CAME) --- */
+html body.acc-font-xlarge .brand-promo-box {
+    padding: 40px !important;
+    gap: 40px !important;
+    margin: 45px 0 !important;
+}
+
+html body.acc-font-xlarge .brand-promo-box__logo img {
+    max-width: 260px !important;
+}
+
+html body.acc-font-xlarge .brand-promo-box__text h2 {
+    font-size: 30px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 18px !important;
+}
+
+html body.acc-font-xlarge .brand-promo-box__text p {
+    font-size: 20px !important;
+    line-height: 1.7 !important;
+}
+
+/* --- Карточки товаров --- */
+html body.acc-font-xlarge .b-services-row {
+    gap: 35px !important;
+    margin: 50px 0 30px 0 !important;
+}
+
+html body.acc-font-xlarge .b-card-pic {
+    flex: 0 0 360px !important;
+    width: 360px !important;
+}
+
+html body.acc-font-xlarge .b-card-content {
+    padding: 35px 40px !important;
+}
+
+html body.acc-font-xlarge .b-card-title {
+    font-size: 32px !important;
+    line-height: 1.3 !important;
+}
+
+html body.acc-font-xlarge .b-card-text {
+    font-size: 20px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 30px !important;
+}
+
+html body.acc-font-xlarge .btn-more {
+    font-size: 19px !important;
+    padding: 14px 30px !important;
+}
+
+/* --- Боковое меню (сайдбар) --- */
+html body.acc-font-xlarge .b-sidebar {
+    flex: 0 0 360px !important;
+    width: 360px !important;
+    padding: 35px !important;
+}
+
+html body.acc-font-xlarge .b-sidebar__title {
+    font-size: 23px !important;
+    margin-bottom: 25px !important;
+    padding-bottom: 18px !important;
+}
+
+html body.acc-font-xlarge .b-sidebar__link {
+    font-size: 19px !important;
+    padding: 16px 20px !important;
+}
+
+html body.acc-font-xlarge .b-sidebar__link span:last-child {
+    font-size: 20px !important;
+}
+
+/* --- Callback секция на этой странице --- */
+html body.acc-font-xlarge .page-main .callback-title {
+    font-size: 24px !important;
+    line-height: 1.4 !important;
+}
+
+html body.acc-font-xlarge .page-main .callback-btn {
+    font-size: 21px !important;
+    padding: 18px 40px !important;
+}
+
+/* ==========================================================================
+   АДАПТИВ ДЛЯ СЛАБОВИДЯЩИХ НА МОБИЛЬНЫХ (чтобы карточки корректно сжимались)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    html body.acc-font-large .b-sidebar,
+    html body.acc-font-xlarge .b-sidebar {
+        flex: 1 1 auto !important;
+        width: 100% !important;
+    }
+
+    html body.acc-font-large .b-card-pic,
+    html body.acc-font-xlarge .b-card-pic {
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        height: 220px !important;
+    }
+
+    html body.acc-font-large .brand-promo-box,
+    html body.acc-font-xlarge .brand-promo-box {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 767px) {
+    html body.acc-font-large .b-card-pic,
+    html body.acc-font-xlarge .b-card-pic {
+        height: 200px !important;
+    }
+
+    html body.acc-font-large .btn-more,
+    html body.acc-font-xlarge .btn-more {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    html body.acc-font-large .page-main .callback-wrapper,
+    html body.acc-font-xlarge .page-main .callback-wrapper {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    html body.acc-font-large .page-main .callback-btn,
+    html body.acc-font-xlarge .page-main .callback-btn {
+        width: 100% !important;
+    }
+}/* ==========================================================================
+   ДОПОЛНИТЕЛЬНЫЕ КЛАССЫ ДЛЯ СЛАБОВИДЯЩИХ (A+ и A++)
+   ========================================================================== */
+
+/* ============================================================
+   ОБЩИЕ ЭЛЕМЕНТЫ СТРАНИЦ (для всех внутренних страниц)
+   ============================================================ */
+
+/* --- A+ --- */
+html body.acc-font-large .page-main {
+    padding: 50px 0 !important;
+}
+
+html body.acc-font-large .container--wide {
+    max-width: 1300px !important;
+    padding: 0 30px !important;
+}
+
+html body.acc-font-large .breadcrumbs {
+    font-size: 15px !important;
+    gap: 10px !important;
+    margin-bottom: 28px !important;
+}
+
+html body.acc-font-large .breadcrumbs .separator {
+    font-size: 15px !important;
+}
+
+html body.acc-font-large .page-header {
+    margin-bottom: 40px !important;
+    padding-bottom: 25px !important;
+}
+
+html body.acc-font-large .page-title {
+    font-size: 42px !important;
+    line-height: 1.25 !important;
+}
+
+html body.acc-font-large .page-title-2 {
+    font-size: 34px !important;
+    line-height: 1.3 !important;
+    margin: 30px 0 20px 0 !important;
+}
+
+html body.acc-font-large .text-page h2,
+html body.acc-font-large .text-page h2.red-title {
+    font-size: 30px !important;
+    line-height: 1.3 !important;
+    margin: 30px 0 20px 0 !important;
+}
+
+html body.acc-font-large .text-page p {
+    font-size: 18px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 18px !important;
+}
+
+html body.acc-font-large .services-container {
+    width: 100% !important;
+}
+
+html body.acc-font-large .b-services-wrapper {
+    gap: 40px !important;
+}
+
+/* --- A++ --- */
+html body.acc-font-xlarge .page-main {
+    padding: 60px 0 !important;
+}
+
+html body.acc-font-xlarge .container--wide {
+    max-width: 1300px !important;
+    padding: 0 35px !important;
+}
+
+html body.acc-font-xlarge .breadcrumbs {
+    font-size: 17px !important;
+    gap: 12px !important;
+    margin-bottom: 32px !important;
+}
+
+html body.acc-font-xlarge .breadcrumbs .separator {
+    font-size: 17px !important;
+}
+
+html body.acc-font-xlarge .page-header {
+    margin-bottom: 45px !important;
+    padding-bottom: 28px !important;
+}
+
+html body.acc-font-xlarge .page-title {
+    font-size: 48px !important;
+    line-height: 1.25 !important;
+}
+
+html body.acc-font-xlarge .page-title-2 {
+    font-size: 39px !important;
+    line-height: 1.3 !important;
+    margin: 35px 0 25px 0 !important;
+}
+
+html body.acc-font-xlarge .text-page h2,
+html body.acc-font-xlarge .text-page h2.red-title {
+    font-size: 35px !important;
+    line-height: 1.3 !important;
+    margin: 35px 0 25px 0 !important;
+}
+
+html body.acc-font-xlarge .text-page p {
+    font-size: 20px !important;
+    line-height: 1.75 !important;
+    margin-bottom: 22px !important;
+}
+
+html body.acc-font-xlarge .b-services-wrapper {
+    gap: 45px !important;
+}
+
+/* ============================================================
+   БОКОВОЕ МЕНЮ (САЙДБАР) — для страниц с услугами
+   ============================================================ */
+
+/* --- A+ --- */
+html body.acc-font-large .b-sidebar {
+    flex: 0 0 320px !important;
+    width: 320px !important;
+    padding: 30px !important;
+}
+
+html body.acc-font-large .b-sidebar__title {
+    font-size: 20px !important;
+    margin-bottom: 22px !important;
+    padding-bottom: 15px !important;
+}
+
+html body.acc-font-large .b-sidebar__list {
+    gap: 6px !important;
+}
+
+html body.acc-font-large .b-sidebar__link {
+    font-size: 17px !important;
+    padding: 14px 18px !important;
+}
+
+/* --- A++ --- */
+html body.acc-font-xlarge .b-sidebar {
+    flex: 0 0 360px !important;
+    width: 360px !important;
+    padding: 35px !important;
+}
+
+html body.acc-font-xlarge .b-sidebar__title {
+    font-size: 23px !important;
+    margin-bottom: 25px !important;
+    padding-bottom: 18px !important;
+}
+
+html body.acc-font-xlarge .b-sidebar__list {
+    gap: 8px !important;
+}
+
+html body.acc-font-xlarge .b-sidebar__link {
+    font-size: 19px !important;
+    padding: 16px 20px !important;
+}
+
+/* ============================================================
+   КАРТОЧКИ ТОВАРОВ (горизонтальные) — для страниц услуг
+   ============================================================ */
+
+/* --- A+ --- */
+html body.acc-font-large .b-services-row {
+    gap: 30px !important;
+    margin: 40px 0 25px 0 !important;
+}
+
+html body.acc-font-large .b-services-card-horizontal {
+    border-radius: 12px !important;
+}
+
+html body.acc-font-large .b-card-pic {
+    flex: 0 0 320px !important;
+    width: 320px !important;
+}
+
+html body.acc-font-large .b-card-content {
+    padding: 30px 35px !important;
+}
+
+html body.acc-font-large .b-card-header {
+    margin-bottom: 15px !important;
+}
+
+html body.acc-font-large .b-card-title {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+}
+
+html body.acc-font-large .b-card-text {
+    font-size: 18px !important;
+    line-height: 1.65 !important;
+    margin-bottom: 25px !important;
+}
+
+html body.acc-font-large .b-card-action {
+    gap: 15px !important;
+}
+
+html body.acc-font-large .btn-more {
+    font-size: 17px !important;
+    padding: 12px 26px !important;
+}
+
+/* --- A++ --- */
+html body.acc-font-xlarge .b-services-row {
+    gap: 35px !important;
+    margin: 50px 0 30px 0 !important;
+}
+
+html body.acc-font-xlarge .b-card-pic {
+    flex: 0 0 360px !important;
+    width: 360px !important;
+}
+
+html body.acc-font-xlarge .b-card-content {
+    padding: 35px 40px !important;
+}
+
+html body.acc-font-xlarge .b-card-title {
+    font-size: 32px !important;
+    line-height: 1.3 !important;
+}
+
+html body.acc-font-xlarge .b-card-text {
+    font-size: 20px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 30px !important;
+}
+
+html body.acc-font-xlarge .btn-more {
+    font-size: 19px !important;
+    padding: 14px 30px !important;
+}
+
+/* ============================================================
+   CALLBACK СЕКЦИЯ (на страницах услуг)
+   ============================================================ */
+
+/* --- A+ --- */
+html body.acc-font-large .page-main .callback-section {
+    padding: 50px 0 !important;
+    margin-top: 60px !important;
+}
+
+html body.acc-font-large .page-main .callback-title {
+    font-size: 22px !important;
+    line-height: 1.4 !important;
+}
+
+html body.acc-font-large .page-main .callback-btn {
+    font-size: 19px !important;
+    padding: 16px 36px !important;
+}
+
+/* --- A++ --- */
+html body.acc-font-xlarge .page-main .callback-section {
+    padding: 60px 0 !important;
+    margin-top: 70px !important;
+}
+
+html body.acc-font-xlarge .page-main .callback-title {
+    font-size: 24px !important;
+    line-height: 1.4 !important;
+}
+
+html body.acc-font-xlarge .page-main .callback-btn {
+    font-size: 21px !important;
+    padding: 18px 40px !important;
+}
+
+/* ============================================================
+   ПОЛНЫЙ КАТАЛОГ — фильтры и сайдбар
+   ============================================================ */
+
+/* --- A+ --- */
+html body.acc-font-large .catalog-page-section {
+    padding: 50px 0 !important;
+}
+
+html body.acc-font-large .catalog-layout {
+    gap: 35px !important;
+}
+
+html body.acc-font-large .catalog-sidebar {
+    width: 320px !important;
+    padding: 30px !important;
+}
+
+html body.acc-font-large .filter-group {
+    margin-bottom: 22px !important;
+}
+
+html body.acc-font-large .filter-group h4 {
+    font-size: 18px !important;
+    margin-bottom: 12px !important;
+}
+
+html body.acc-font-large .filter-input,
+html body.acc-font-large .filter-select {
+    font-size: 16px !important;
+    padding: 12px 14px !important;
+    min-height: 46px !important;
+}
+
+html body.acc-font-large .price-inputs {
+    gap: 12px !important;
+}
+
+html body.acc-font-large .price-inputs input {
+    font-size: 16px !important;
+    padding: 12px !important;
+    min-height: 46px !important;
+}
+
+html body.acc-font-large .btn-reset {
+    font-size: 16px !important;
+    padding: 14px 20px !important;
+    min-height: 48px !important;
+}
+
+html body.acc-font-large .catalog-content {
+    flex: 1 !important;
+}
+
+html body.acc-font-large .full-catalog-grid {
+    gap: 25px !important;
+}
+
+/* --- A++ --- */
+html body.acc-font-xlarge .catalog-page-section {
+    padding: 60px 0 !important;
+}
+
+html body.acc-font-xlarge .catalog-layout {
+    gap: 40px !important;
+}
+
+html body.acc-font-xlarge .catalog-sidebar {
+    width: 360px !important;
+    padding: 35px !important;
+}
+
+html body.acc-font-xlarge .filter-group {
+    margin-bottom: 25px !important;
+}
+
+html body.acc-font-xlarge .filter-group h4 {
+    font-size: 20px !important;
+    margin-bottom: 14px !important;
+}
+
+html body.acc-font-xlarge .filter-input,
+html body.acc-font-xlarge .filter-select {
+    font-size: 18px !important;
+    padding: 14px 16px !important;
+    min-height: 50px !important;
+}
+
+html body.acc-font-xlarge .price-inputs {
+    gap: 14px !important;
+}
+
+html body.acc-font-xlarge .price-inputs input {
+    font-size: 18px !important;
+    padding: 14px !important;
+    min-height: 50px !important;
+}
+
+html body.acc-font-xlarge .btn-reset {
+    font-size: 18px !important;
+    padding: 16px 24px !important;
+    min-height: 52px !important;
+}
+
+html body.acc-font-xlarge .full-catalog-grid {
+    gap: 30px !important;
+}
+
+/* ============================================================
+   МОДАЛЬНОЕ ОКНО ТОВАРА (в каталоге)
+   ============================================================ */
+
+/* --- A+ --- */
+html body.acc-font-large #product-modal .modal-window {
+    max-width: 800px !important;
+    padding: 40px !important;
+}
+
+html body.acc-font-large #product-modal .close-btn {
+    font-size: 36px !important;
+    width: 48px !important;
+    height: 48px !important;
+    top: 15px !important;
+    right: 15px !important;
+}
+
+html body.acc-font-large #product-modal .modal-grid {
+    gap: 30px !important;
+}
+
+html body.acc-font-large #product-modal #modal-img {
+    max-width: 350px !important;
+}
+
+html body.acc-font-large #product-modal .modal-info {
+    flex: 1 !important;
+}
+
+html body.acc-font-large #product-modal #modal-title {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 15px !important;
+}
+
+html body.acc-font-large #product-modal #modal-price {
+    font-size: 26px !important;
+    margin-bottom: 20px !important;
+}
+
+html body.acc-font-large #product-modal #modal-specs {
+    font-size: 17px !important;
+    line-height: 1.6 !important;
+}
+
+html body.acc-font-large #product-modal #modal-specs li {
+    font-size: 17px !important;
+    margin-bottom: 8px !important;
+}
+
+/* --- A++ --- */
+html body.acc-font-xlarge #product-modal .modal-window {
+    max-width: 900px !important;
+    padding: 45px !important;
+}
+
+html body.acc-font-xlarge #product-modal .close-btn {
+    font-size: 40px !important;
+    width: 54px !important;
+    height: 54px !important;
+    top: 18px !important;
+    right: 18px !important;
+}
+
+html body.acc-font-xlarge #product-modal .modal-grid {
+    gap: 35px !important;
+}
+
+html body.acc-font-xlarge #product-modal #modal-img {
+    max-width: 400px !important;
+}
+
+html body.acc-font-xlarge #product-modal #modal-title {
+    font-size: 32px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 18px !important;
+}
+
+html body.acc-font-xlarge #product-modal #modal-price {
+    font-size: 30px !important;
+    margin-bottom: 25px !important;
+}
+
+html body.acc-font-xlarge #product-modal #modal-specs {
+    font-size: 19px !important;
+    line-height: 1.65 !important;
+}
+
+html body.acc-font-xlarge #product-modal #modal-specs li {
+    font-size: 19px !important;
+    margin-bottom: 10px !important;
+}
+
+/* ============================================================
+   ЛИЧНЫЙ КАБИНЕТ — расширенные стили
+   ============================================================ */
+
+/* --- A+ --- */
+html body.acc-font-large .lk-section {
+    padding: 50px 0 !important;
+}
+
+html body.acc-font-large .lk-wrapper {
+    gap: 35px !important;
+}
+
+html body.acc-font-large .lk-sidebar {
+    padding: 20px !important;
+}
+
+html body.acc-font-large .lk-menu {
+    gap: 8px !important;
+}
+
+html body.acc-font-large .lk-menu__item a {
+    font-size: 16px !important;
+    padding: 14px 22px !important;
+}
+
+html body.acc-font-large .lk-menu__item i {
+    font-size: 18px !important;
+}
+
+html body.acc-font-large .lk-content {
+    padding: 35px !important;
+}
+
+html body.acc-font-large .lk-title {
+    font-size: 28px !important;
+    margin-bottom: 28px !important;
+}
+
+html body.acc-font-large .profile-grid {
+    gap: 22px !important;
+}
+
+html body.acc-font-large .profile-field {
+    margin-bottom: 5px !important;
+}
+
+html body.acc-font-large .profile-label {
+    font-size: 14px !important;
+    margin-bottom: 8px !important;
+}
+
+html body.acc-font-large .profile-input {
+    font-size: 16px !important;
+    padding: 14px 16px !important;
+    min-height: 50px !important;
+}
+
+html body.acc-font-large .profile-status-text {
+    font-size: 16px !important;
+    padding: 14px 16px !important;
+    min-height: 50px !important;
+}
+
+html body.acc-font-large .profile-actions {
+    gap: 15px !important;
+    margin-top: 30px !important;
+    padding-top: 25px !important;
+}
+
+html body.acc-font-large .lk-save-btn {
+    font-size: 16px !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+
+html body.acc-font-large .lk-logout-btn {
+    font-size: 15px !important;
+    padding: 15px 28px !important;
+    min-height: 50px !important;
+}
+
+/* --- A++ --- */
+html body.acc-font-xlarge .lk-section {
+    padding: 60px 0 !important;
+}
+
+html body.acc-font-xlarge .lk-wrapper {
+    gap: 40px !important;
+}
+
+html body.acc-font-xlarge .lk-sidebar {
+    padding: 25px !important;
+}
+
+html body.acc-font-xlarge .lk-menu {
+    gap: 10px !important;
+}
+
+html body.acc-font-xlarge .lk-menu__item a {
+    font-size: 18px !important;
+    padding: 16px 26px !important;
+}
+
+html body.acc-font-xlarge .lk-menu__item i {
+    font-size: 20px !important;
+}
+
+html body.acc-font-xlarge .lk-content {
+    padding: 40px !important;
+}
+
+html body.acc-font-xlarge .lk-title {
+    font-size: 32px !important;
+    margin-bottom: 32px !important;
+}
+
+html body.acc-font-xlarge .profile-grid {
+    gap: 25px !important;
+}
+
+html body.acc-font-xlarge .profile-label {
+    font-size: 16px !important;
+    margin-bottom: 10px !important;
+}
+
+html body.acc-font-xlarge .profile-input {
+    font-size: 18px !important;
+    padding: 16px 18px !important;
+    min-height: 54px !important;
+}
+
+html body.acc-font-xlarge .profile-status-text {
+    font-size: 18px !important;
+    padding: 16px 18px !important;
+    min-height: 54px !important;
+}
+
+html body.acc-font-xlarge .profile-actions {
+    gap: 18px !important;
+    margin-top: 35px !important;
+    padding-top: 30px !important;
+}
+
+html body.acc-font-xlarge .lk-save-btn {
+    font-size: 18px !important;
+    padding: 18px 36px !important;
+    min-height: 56px !important;
+}
+
+html body.acc-font-xlarge .lk-logout-btn {
+    font-size: 17px !important;
+    padding: 17px 32px !important;
+    min-height: 54px !important;
+}
+
+/* ============================================================
+   МОДАЛЬНОЕ ОКНО СТАТУСА ЗАКАЗА (в ЛК)
+   ============================================================ */
+
+/* --- A+ --- */
+html body.acc-font-large .status-modal-overlay .status-modal-content {
+    max-width: 700px !important;
+    padding: 35px !important;
+}
+
+html body.acc-font-large .status-modal-header {
+    margin-bottom: 25px !important;
+    padding-bottom: 18px !important;
+}
+
+html body.acc-font-large .status-modal-header h3 {
+    font-size: 26px !important;
+    line-height: 1.3 !important;
+}
+
+html body.acc-font-large .close-modal-btn {
+    font-size: 36px !important;
+    width: 48px !important;
+    height: 48px !important;
+}
+
+html body.acc-font-large .status-modal-body {
+    font-size: 17px !important;
+    line-height: 1.6 !important;
+}
+
+html body.acc-font-large .timeline-title {
+    font-size: 17px !important;
+}
+
+html body.acc-font-large .timeline-date {
+    font-size: 15px !important;
+}
+
+/* --- A++ --- */
+html body.acc-font-xlarge .status-modal-overlay .status-modal-content {
+    max-width: 800px !important;
+    padding: 40px !important;
+}
+
+html body.acc-font-xlarge .status-modal-header {
+    margin-bottom: 30px !important;
+    padding-bottom: 20px !important;
+}
+
+html body.acc-font-xlarge .status-modal-header h3 {
+    font-size: 30px !important;
+    line-height: 1.3 !important;
+}
+
+html body.acc-font-xlarge .close-modal-btn {
+    font-size: 40px !important;
+    width: 54px !important;
+    height: 54px !important;
+}
+
+html body.acc-font-xlarge .status-modal-body {
+    font-size: 19px !important;
+    line-height: 1.65 !important;
+}
+
+html body.acc-font-xlarge .timeline-title {
+    font-size: 19px !important;
+}
+
+html body.acc-font-xlarge .timeline-date {
+    font-size: 17px !important;
+}
+
+/* ============================================================
+   ЗАКАЗЫ В ЛИЧНОМ КАБИНЕТЕ
+   ============================================================ */
+
+/* --- A+ --- */
+html body.acc-font-large .order-item {
+    padding: 22px !important;
+    margin-bottom: 18px !important;
+}
+
+html body.acc-font-large .order-item__header {
+    gap: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+html body.acc-font-large .order-item__header-title {
+    font-size: 20px !important;
+}
+
+html body.acc-font-large .order-item__products {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+html body.acc-font-large .order-item__total {
+    font-size: 19px !important;
+}
+
+html body.acc-font-large .order-status-btn,
+html body.acc-font-large .order-cancel-btn {
+    font-size: 16px !important;
+    padding: 12px 22px !important;
+    min-height: 46px !important;
+}
+
+/* --- A++ --- */
+html body.acc-font-xlarge .order-item {
+    padding: 26px !important;
+    margin-bottom: 22px !important;
+}
+
+html body.acc-font-xlarge .order-item__header {
+    gap: 18px !important;
+    margin-bottom: 18px !important;
+}
+
+html body.acc-font-xlarge .order-item__header-title {
+    font-size: 23px !important;
+}
+
+html body.acc-font-xlarge .order-item__products {
+    font-size: 18px !important;
+    line-height: 1.65 !important;
+}
+
+html body.acc-font-xlarge .order-item__total {
+    font-size: 22px !important;
+}
+
+html body.acc-font-xlarge .order-status-btn,
+html body.acc-font-xlarge .order-cancel-btn {
+    font-size: 18px !important;
+    padding: 14px 26px !important;
+    min-height: 50px !important;
+}
+
+/* ============================================================
+   МОДАЛЬНОЕ ОКНО ОТЗЫВА (на всех страницах)
+   ============================================================ */
+
+/* --- A+ --- */
+html body.acc-font-large #review-modal .modal-content {
+    max-width: 600px !important;
+    padding: 40px !important;
+}
+
+html body.acc-font-large #review-modal h3 {
+    font-size: 26px !important;
+    margin-bottom: 25px !important;
+}
+
+html body.acc-font-large #close-review-modal {
+    font-size: 32px !important;
+    top: 18px !important;
+    right: 22px !important;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+html body.acc-font-large #review-author,
+html body.acc-font-large #review-text {
+    font-size: 17px !important;
+    padding: 14px !important;
+}
+
+html body.acc-font-large #review-form button[type="submit"] {
+    font-size: 18px !important;
+    padding: 16px !important;
+    min-height: 52px !important;
+}
+
+/* --- A++ --- */
+html body.acc-font-xlarge #review-modal .modal-content {
+    max-width: 700px !important;
+    padding: 45px !important;
+}
+
+html body.acc-font-xlarge #review-modal h3 {
+    font-size: 30px !important;
+    margin-bottom: 28px !important;
+}
+
+html body.acc-font-xlarge #close-review-modal {
+    font-size: 36px !important;
+    top: 20px !important;
+    right: 24px !important;
+    width: 46px !important;
+    height: 46px !important;
+}
+
+html body.acc-font-xlarge #review-author,
+html body.acc-font-xlarge #review-text {
+    font-size: 19px !important;
+    padding: 16px !important;
+}
+
+html body.acc-font-xlarge #review-form button[type="submit"] {
+    font-size: 20px !important;
+    padding: 18px !important;
+    min-height: 56px !important;
+}
+
+/* ============================================================
+   АДАПТИВ ДЛЯ СЛАБОВИДЯЩИХ НА МОБИЛЬНЫХ
+   ============================================================ */
+
+@media (max-width: 992px) {
+    /* Сайдбар услуг на всю ширину */
+    html body.acc-font-large .b-sidebar,
+    html body.acc-font-xlarge .b-sidebar {
+        flex: 1 1 auto !important;
+        width: 100% !important;
+    }
+
+    /* Карточки услуг — вертикальные */
+    html body.acc-font-large .b-services-card-horizontal,
+    html body.acc-font-xlarge .b-services-card-horizontal {
+        flex-direction: column !important;
+    }
+
+    html body.acc-font-large .b-card-pic,
+    html body.acc-font-xlarge .b-card-pic {
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        height: 240px !important;
+    }
+
+    /* Каталог — сайдбар на всю ширину */
+    html body.acc-font-large .catalog-sidebar,
+    html body.acc-font-xlarge .catalog-sidebar {
+        width: 100% !important;
+    }
+
+    /* ЛК — сайдбар на всю ширину */
+    html body.acc-font-large .lk-wrapper,
+    html body.acc-font-xlarge .lk-wrapper {
+        grid-template-columns: 1fr !important;
+    }
+
+    html body.acc-font-large .lk-sidebar,
+    html body.acc-font-xlarge .lk-sidebar {
+        width: 100% !important;
+    }
+
+    /* Модальное окно товара — вертикальная раскладка */
+    html body.acc-font-large #product-modal .modal-grid,
+    html body.acc-font-xlarge #product-modal .modal-grid {
+        flex-direction: column !important;
+    }
+
+    html body.acc-font-large #product-modal #modal-img,
+    html body.acc-font-xlarge #product-modal #modal-img {
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Уменьшаем отступы на мобильных */
+    html body.acc-font-large .page-main,
+    html body.acc-font-xlarge .page-main {
+        padding: 30px 0 !important;
+    }
+
+    html body.acc-font-large .container--wide,
+    html body.acc-font-xlarge .container--wide {
+        padding: 0 15px !important;
+    }
+
+    /* Карточки услуг — кнопка на всю ширину */
+    html body.acc-font-large .btn-more,
+    html body.acc-font-xlarge .btn-more {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* Callback — вертикально */
+    html body.acc-font-large .page-main .callback-wrapper,
+    html body.acc-font-xlarge .page-main .callback-wrapper {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    html body.acc-font-large .page-main .callback-btn,
+    html body.acc-font-xlarge .page-main .callback-btn {
+        width: 100% !important;
+    }
+
+    /* ЛК — кнопки на всю ширину */
+    html body.acc-font-large .profile-actions,
+    html body.acc-font-xlarge .profile-actions {
+        flex-direction: column !important;
+    }
+
+    html body.acc-font-large .lk-save-btn,
+    html body.acc-font-large .lk-logout-btn,
+    html body.acc-font-xlarge .lk-save-btn,
+    html body.acc-font-xlarge .lk-logout-btn {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Меню ЛК — горизонтально с переносом */
+    html body.acc-font-large .lk-menu,
+    html body.acc-font-xlarge .lk-menu {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+
+    /* Модальные окна — на всю ширину */
+    html body.acc-font-large #review-modal .modal-content,
+    html body.acc-font-xlarge #review-modal .modal-content {
+        width: 95% !important;
+        padding: 25px !important;
+    }
+
+    html body.acc-font-large #product-modal .modal-window,
+    html body.acc-font-xlarge #product-modal .modal-window {
+        width: 95% !important;
+        padding: 25px !important;
+    }
+}
+/* ==========================================================================
+   ДОПОЛНИТЕЛЬНЫЕ КЛАССЫ ДЛЯ СЛАБОВИДЯЩИХ
+   Страницы: Nero Electronics, Корзина, Избранное
+   ========================================================================== */
+
+/* ============================================================
+   СТРАНИЦА КАТАЛОГА ТОВАРОВ (Nero Electronics)
+   ============================================================ */
+
+/* --- Кнопка "Избранное" (сердечко) --- */
+html body.acc-font-large .favorite-btn {
+    font-size: 28px !important;
+    width: 52px !important;
+    height: 52px !important;
+    top: 18px !important;
+    right: 18px !important;
+}
+
+html body.acc-font-xlarge .favorite-btn {
+    font-size: 32px !important;
+    width: 58px !important;
+    height: 58px !important;
+    top: 20px !important;
+    right: 20px !important;
+}
+
+/* --- Цена в карточке товара --- */
+html body.acc-font-large .b-card-price {
+    font-size: 24px !important;
+    margin: 12px 0 !important;
+}
+
+html body.acc-font-xlarge .b-card-price {
+    font-size: 28px !important;
+    margin: 15px 0 !important;
+}
+
+/* --- Кнопки "В корзину" и "Подробнее" --- */
+html body.acc-font-large .btn-details,
+html body.acc-font-large .buy-btn-catalog {
+    font-size: 16px !important;
+    padding: 12px 22px !important;
+    min-height: 48px !important;
+}
+
+html body.acc-font-xlarge .btn-details,
+html body.acc-font-xlarge .buy-btn-catalog {
+    font-size: 18px !important;
+    padding: 14px 26px !important;
+    min-height: 52px !important;
+}
+
+/* --- Пагинация --- */
+html body.acc-font-large .pagination {
+    margin: 40px 0 20px 0 !important;
+    gap: 10px !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+}
+
+html body.acc-font-large .pagination-label {
+    font-size: 17px !important;
+    margin-right: 8px !important;
+}
+
+html body.acc-font-large .page-link {
+    font-size: 17px !important;
+    padding: 10px 18px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+html body.acc-font-xlarge .pagination {
+    margin: 50px 0 25px 0 !important;
+    gap: 12px !important;
+}
+
+html body.acc-font-xlarge .pagination-label {
+    font-size: 19px !important;
+    margin-right: 10px !important;
+}
+
+html body.acc-font-xlarge .page-link {
+    font-size: 19px !important;
+    padding: 12px 22px !important;
+    min-width: 50px !important;
+    min-height: 50px !important;
+}
+
+/* ============================================================
+   СТРАНИЦА КОРЗИНЫ (card.html)
+   ============================================================ */
+
+/* --- Секция корзины --- */
+html body.acc-font-large .cart-section {
+    padding: 50px 0 !important;
+}
+
+html body.acc-font-large .cart-title {
+    font-size: 36px !important;
+    margin-bottom: 35px !important;
+}
+
+html body.acc-font-xlarge .cart-section {
+    padding: 60px 0 !important;
+}
+
+html body.acc-font-xlarge .cart-title {
+    font-size: 42px !important;
+    margin-bottom: 40px !important;
+}
+
+/* --- Панель оформления заказа --- */
+html body.acc-font-large .cart-checkout-panel {
+    padding: 28px 30px !important;
+    gap: 25px !important;
+    margin-top: 30px !important;
+}
+
+html body.acc-font-large .cart-back-btn {
+    font-size: 16px !important;
+    padding: 12px 22px !important;
+    min-height: 48px !important;
+}
+
+html body.acc-font-large .cart-back-btn i {
+    font-size: 14px !important;
+}
+
+html body.acc-font-large .cart-summary-info {
+    gap: 20px !important;
+}
+
+html body.acc-font-large .cart-total-label {
+    font-size: 20px !important;
+}
+
+html body.acc-font-large .cart-total-sum {
+    font-size: 28px !important;
+}
+
+html body.acc-font-large .cart-submit-btn {
+    font-size: 18px !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+
+html body.acc-font-xlarge .cart-checkout-panel {
+    padding: 32px 35px !important;
+    gap: 30px !important;
+    margin-top: 35px !important;
+}
+
+html body.acc-font-xlarge .cart-back-btn {
+    font-size: 18px !important;
+    padding: 14px 26px !important;
+    min-height: 52px !important;
+}
+
+html body.acc-font-xlarge .cart-summary-info {
+    gap: 25px !important;
+}
+
+html body.acc-font-xlarge .cart-total-label {
+    font-size: 22px !important;
+}
+
+html body.acc-font-xlarge .cart-total-sum {
+    font-size: 32px !important;
+}
+
+html body.acc-font-xlarge .cart-submit-btn {
+    font-size: 20px !important;
+    padding: 18px 36px !important;
+    min-height: 56px !important;
+}
+
+/* ============================================================
+   МОДАЛЬНОЕ ОКНО ОФОРМЛЕНИЯ ЗАКАЗА (в корзине)
+   ============================================================ */
+
+/* --- A+ --- */
+html body.acc-font-large #order-modal .modal-content-wrapper {
+    max-width: 650px !important;
+    padding: 35px !important;
+}
+
+html body.acc-font-large #order-modal .modal-header-block {
+    margin-bottom: 25px !important;
+    padding-bottom: 18px !important;
+}
+
+html body.acc-font-large #order-modal .modal-header-block h2 {
+    font-size: 26px !important;
+    line-height: 1.3 !important;
+}
+
+html body.acc-font-large #order-modal .close-modal-btn {
+    font-size: 36px !important;
+    width: 48px !important;
+    height: 48px !important;
+    top: 18px !important;
+    right: 18px !important;
+}
+
+html body.acc-font-large #order-modal .form-field-group {
+    margin-bottom: 20px !important;
+}
+
+html body.acc-font-large #order-modal .form-field-group label {
+    font-size: 16px !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+}
+
+html body.acc-font-large #order-modal .required-star {
+    font-size: 16px !important;
+}
+
+html body.acc-font-large #order-modal .form-field-group input,
+html body.acc-font-large #order-modal .form-field-group textarea {
+    font-size: 16px !important;
+    padding: 14px 16px !important;
+    min-height: 50px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+html body.acc-font-large #order-modal .form-field-group textarea {
+    min-height: 120px !important;
+    resize: vertical !important;
+}
+
+html body.acc-font-large #order-modal .modal-footer-actions {
+    gap: 15px !important;
+    margin-top: 25px !important;
+    padding-top: 20px !important;
+    flex-wrap: wrap !important;
+}
+
+html body.acc-font-large #order-modal .cancel-action-btn,
+html body.acc-font-large #order-modal .confirm-action-btn {
+    font-size: 16px !important;
+    padding: 14px 26px !important;
+    min-height: 50px !important;
+}
+
+/* --- A++ --- */
+html body.acc-font-xlarge #order-modal .modal-content-wrapper {
+    max-width: 750px !important;
+    padding: 40px !important;
+}
+
+html body.acc-font-xlarge #order-modal .modal-header-block {
+    margin-bottom: 30px !important;
+    padding-bottom: 22px !important;
+}
+
+html body.acc-font-xlarge #order-modal .modal-header-block h2 {
+    font-size: 30px !important;
+    line-height: 1.3 !important;
+}
+
+html body.acc-font-xlarge #order-modal .close-modal-btn {
+    font-size: 40px !important;
+    width: 54px !important;
+    height: 54px !important;
+    top: 20px !important;
+    right: 20px !important;
+}
+
+html body.acc-font-xlarge #order-modal .form-field-group {
+    margin-bottom: 25px !important;
+}
+
+html body.acc-font-xlarge #order-modal .form-field-group label {
+    font-size: 18px !important;
+    margin-bottom: 12px !important;
+}
+
+html body.acc-font-xlarge #order-modal .required-star {
+    font-size: 18px !important;
+}
+
+html body.acc-font-xlarge #order-modal .form-field-group input,
+html body.acc-font-xlarge #order-modal .form-field-group textarea {
+    font-size: 18px !important;
+    padding: 16px 18px !important;
+    min-height: 54px !important;
+}
+
+html body.acc-font-xlarge #order-modal .form-field-group textarea {
+    min-height: 140px !important;
+}
+
+html body.acc-font-xlarge #order-modal .modal-footer-actions {
+    gap: 18px !important;
+    margin-top: 30px !important;
+    padding-top: 25px !important;
+}
+
+html body.acc-font-xlarge #order-modal .cancel-action-btn,
+html body.acc-font-xlarge #order-modal .confirm-action-btn {
+    font-size: 18px !important;
+    padding: 16px 30px !important;
+    min-height: 54px !important;
+}
+
+/* ============================================================
+   СТРАНИЦА ИЗБРАННОГО (favorites.html)
+   ============================================================ */
+
+/* --- Секция избранного --- */
+html body.acc-font-large .favorites-section {
+    padding: 50px 0 !important;
+}
+
+html body.acc-font-large .favorites-section .title-main {
+    font-size: 42px !important;
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+}
+
+html body.acc-font-large .favorites-subtitle {
+    font-size: 17px !important;
+    margin-bottom: 30px !important;
+    line-height: 1.5 !important;
+}
+
+html body.acc-font-large .favorites-grid {
+    gap: 25px !important;
+}
+
+html body.acc-font-xlarge .favorites-section {
+    padding: 60px 0 !important;
+}
+
+html body.acc-font-xlarge .favorites-section .title-main {
+    font-size: 48px !important;
+    margin-top: 0 !important;
+    margin-bottom: 18px !important;
+}
+
+html body.acc-font-xlarge .favorites-subtitle {
+    font-size: 19px !important;
+    margin-bottom: 35px !important;
+    line-height: 1.55 !important;
+}
+
+html body.acc-font-xlarge .favorites-grid {
+    gap: 30px !important;
+}
+
+/* --- Карточка избранного --- */
+html body.acc-font-large .fav-card {
+    padding: 20px !important;
+    gap: 20px !important;
+}
+
+html body.acc-font-large .fav-card__img-wrapper {
+    width: 130px !important;
+    height: 100px !important;
+}
+
+html body.acc-font-large .fav-card__title {
+    font-size: 22px !important;
+    margin-bottom: 10px !important;
+    line-height: 1.3 !important;
+}
+
+html body.acc-font-large .fav-card__price {
+    font-size: 24px !important;
+    margin-bottom: 15px !important;
+}
+
+html body.acc-font-large .fav-card__actions {
+    gap: 12px !important;
+}
+
+html body.acc-font-large .fav-btn-cart {
+    font-size: 16px !important;
+    padding: 12px 22px !important;
+    min-height: 48px !important;
+}
+
+html body.acc-font-large .fav-btn-delete {
+    font-size: 18px !important;
+    width: 48px !important;
+    height: 48px !important;
+}
+
+html body.acc-font-xlarge .fav-card {
+    padding: 25px !important;
+    gap: 25px !important;
+}
+
+html body.acc-font-xlarge .fav-card__img-wrapper {
+    width: 150px !important;
+    height: 115px !important;
+}
+
+html body.acc-font-xlarge .fav-card__title {
+    font-size: 25px !important;
+    margin-bottom: 12px !important;
+}
+
+html body.acc-font-xlarge .fav-card__price {
+    font-size: 28px !important;
+    margin-bottom: 18px !important;
+}
+
+html body.acc-font-xlarge .fav-card__actions {
+    gap: 15px !important;
+}
+
+html body.acc-font-xlarge .fav-btn-cart {
+    font-size: 18px !important;
+    padding: 14px 26px !important;
+    min-height: 52px !important;
+}
+
+html body.acc-font-xlarge .fav-btn-delete {
+    font-size: 20px !important;
+    width: 54px !important;
+    height: 54px !important;
+}
+
+/* --- Сообщение "Нет товаров" --- */
+html body.acc-font-large .empty-message {
+    font-size: 22px !important;
+    padding: 50px 20px !important;
+    line-height: 1.5 !important;
+}
+
+html body.acc-font-xlarge .empty-message {
+    font-size: 25px !important;
+    padding: 60px 25px !important;
+    line-height: 1.55 !important;
+}
+
+/* ============================================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
+   ============================================================ */
+
+@media (max-width: 992px) {
+    /* Карточки избранного — горизонтальные */
+    html body.acc-font-large .fav-card,
+    html body.acc-font-xlarge .fav-card {
+        flex-direction: row !important;
+    }
+
+    html body.acc-font-large .fav-card__img-wrapper,
+    html body.acc-font-xlarge .fav-card__img-wrapper {
+        flex-shrink: 0 !important;
+    }
+
+    /* Модалка заказа — на всю ширину */
+    html body.acc-font-large #order-modal .modal-content-wrapper,
+    html body.acc-font-xlarge #order-modal .modal-content-wrapper {
+        max-width: 90% !important;
+        padding: 25px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Корзина — панель оформления вертикально */
+    html body.acc-font-large .cart-checkout-panel,
+    html body.acc-font-xlarge .cart-checkout-panel {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 20px !important;
+    }
+
+    html body.acc-font-large .cart-back-btn,
+    html body.acc-font-large .cart-submit-btn,
+    html body.acc-font-xlarge .cart-back-btn,
+    html body.acc-font-xlarge .cart-submit-btn {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+
+    html body.acc-font-large .cart-summary-info,
+    html body.acc-font-xlarge .cart-summary-info {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 15px !important;
+    }
+
+    html body.acc-font-large .cart-total-label,
+    html body.acc-font-xlarge .cart-total-label {
+        text-align: center !important;
+    }
+
+    /* Избранное — карточки вертикальные */
+    html body.acc-font-large .fav-card,
+    html body.acc-font-xlarge .fav-card {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    html body.acc-font-large .fav-card__img-wrapper,
+    html body.acc-font-xlarge .fav-card__img-wrapper {
+        width: 100% !important;
+        height: 180px !important;
+        margin-bottom: 15px !important;
+    }
+
+    html body.acc-font-large .fav-card__actions,
+    html body.acc-font-xlarge .fav-card__actions {
+        flex-direction: row !important;
+        width: 100% !important;
+    }
+
+    html body.acc-font-large .fav-btn-cart,
+    html body.acc-font-xlarge .fav-btn-cart {
+        flex: 1 !important;
+    }
+
+    /* Модалка заказа — кнопки друг под другом */
+    html body.acc-font-large #order-modal .modal-footer-actions,
+    html body.acc-font-xlarge #order-modal .modal-footer-actions {
+        flex-direction: column !important;
+    }
+
+    html body.acc-font-large #order-modal .cancel-action-btn,
+    html body.acc-font-large #order-modal .confirm-action-btn,
+    html body.acc-font-xlarge #order-modal .cancel-action-btn,
+    html body.acc-font-xlarge #order-modal .confirm-action-btn {
+        width: 100% !important;
+    }
+
+    /* Пагинация — по центру */
+    html body.acc-font-large .pagination,
+    html body.acc-font-xlarge .pagination {
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Уменьшаем размеры на очень маленьких экранах */
+    html body.acc-font-large .cart-title,
+    html body.acc-font-xlarge .cart-title {
+        font-size: 24px !important;
+    }
+
+    html body.acc-font-large .favorites-section .title-main,
+    html body.acc-font-xlarge .favorites-section .title-main {
+        font-size: 26px !important;
+    }
+
+    html body.acc-font-large .fav-card__img-wrapper,
+    html body.acc-font-xlarge .fav-card__img-wrapper {
+        height: 150px !important;
+    }
+
+    html body.acc-font-large #order-modal .modal-content-wrapper,
+    html body.acc-font-xlarge #order-modal .modal-content-wrapper {
+        padding: 20px !important;
+    }
+
+    html body.acc-font-large #order-modal .modal-header-block h2,
+    html body.acc-font-xlarge #order-modal .modal-header-block h2 {
+        font-size: 22px !important;
+    }
+}

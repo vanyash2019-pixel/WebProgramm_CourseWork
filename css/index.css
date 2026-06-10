@@ -1450,7 +1450,7 @@ line-height: 120%; /* 21.6px */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 1512spx;
+    width: 100%;
     padding: 60px 230px 26px 230px;
     gap: 15px;
     box-sizing: border-box;
@@ -1471,13 +1471,16 @@ line-height: 120%; /* 21.6px */
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
-    min-width: 170px;
+    min-width: 200px;
     width: auto;
 }
 
-.col-services { margin-left: 30px; min-width: 200px; }
-.col-products { margin-left: 90px; min-width: 420px; }
-.col-contacts { margin-left: -35px; max-width: 300px; }
+/* Десктопные отступы и ширины — только на экранах от 768px */
+@media (min-width: 1400px) {
+    .col-services { margin-left: 30px; min-width: 200px; }
+    .col-products { margin-left: 90px; min-width: 420px; }
+    .col-contacts { margin-left: -25px; max-width: 300px; }
+}
 
 .products-grid-wrapper {
     display: flex !important;
@@ -1511,7 +1514,7 @@ line-height: 120%; /* 21.6px */
 .col-help .footer-heading::after { width: 165px; }
 .col-services .footer-heading::after { width: 257px; }
 .col-products .footer-heading::after { width: 360px; }
-.col-contacts .footer-heading::after { width: 273px; }
+.col-contacts .footer-heading::after { width: 230px; }
 
 
 .footer-list {
@@ -1540,7 +1543,7 @@ line-height: 120%; /* 21.6px */
 .footer-bottom {
     border-top: 1px solid #555;
     padding-top: 20px;
-    width: 100%;
+    width: 103%;
     color: #B4B4B4;
     font-size: 14px;
     line-height: 120%;
@@ -1870,8 +1873,8 @@ body.lang-en .en { display: inline; }
         /* Кнопки языка */
         .lang-switcher { display: flex; align-items: center; gap: 6px; padding: 0 10px; }
         .lang-btn {
-            background: none; border: none; color: inherit; font-weight: 600; 
-            cursor: pointer; padding: 4px 8px; border-radius: 4px; transition: 0.2s;
+            background: none; border: none; color: inherit; font-weight: 400; 
+            cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: 0.2s;
             font-size: 14px;
         }
         .lang-btn:hover, .lang-btn.active { color: #cc0000; background: rgba(204,0,0,0.1); }
@@ -1879,3 +1882,88 @@ body.lang-en .en { display: inline; }
         /* Для тёмной темы */
         body.dark .lang-btn { color: #fff; }
         body.dark .lang-btn:hover, body.dark .lang-btn.active { color: #ff6b6b; background: rgba(255,107,107,0.15); }
+
+        /* ================================================
+   ФУТЕР — ЖЁСТКИЙ ФИКС ДЛЯ ПЛАНШЕТОВ
+   Вставлено в конец index.css
+   ================================================ */
+@media (min-width: 768px) and (max-width: 1399px) {
+
+    .site-footer {
+        padding: 20px 30px 16px 30px !important;
+        gap: 10px !important;
+    }
+
+    .footer-top {
+        flex-wrap: wrap !important;
+        gap: 18px !important;
+        justify-content: flex-start !important;
+    }
+
+    /* === Первая строка: Услуги + Товары === */
+    .footer-col.col-help,
+    .footer-col.col-services {
+        flex: 0 0 calc(50% - 9px) !important;
+        width: calc(50% - 9px) !important;
+        min-width: 150px !important;
+    }
+
+    /* === Вторая строка: Настройки + Контакты (на одном уровне) === */
+    .footer-col.col-products,
+    .footer-col.col-contacts {
+        flex: 0 0 calc(50% - 9px) !important;
+        width: calc(50% - 9px) !important;
+        min-width: 170px !important;
+        margin-top: 8px !important;
+    }
+
+    .footer-list {
+        gap: 5px !important;
+    }
+
+    .footer-heading {
+        margin-bottom: 6px !important;
+        font-size: 15px !important;
+    }
+
+    .footer-bottom {
+        padding-top: 12px !important;
+        margin-top: 10px !important;
+    }
+}
+
+/* === КНОПКА СБРОСА НАСТРОЕК === */
+.reset-settings-group {
+    display: flex;
+    align-items: center;
+}
+
+.reset-settings-btn {
+    background: none;
+    border: 1px solid #BF0016;
+    border-radius: 4px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 13px;
+    color: #BF0016;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.reset-settings-btn:hover {
+    background: #BF0016;
+    color: #fff;
+}
+
+.reset-settings-btn i {
+    font-size: 13px;
+    transition: transform 0.3s;
+}
+
+.reset-settings-btn:hover i {
+    transform: rotate(180deg);
+}

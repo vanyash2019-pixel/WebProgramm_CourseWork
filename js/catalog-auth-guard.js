@@ -7,18 +7,23 @@ document.addEventListener('DOMContentLoaded', () => {
         return document.body.classList.contains('lang-en') ? en : ru;
     }
 
-    // 1. ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ АВТОРИЗОВАН — КРАСИМ КНОПКИ В СЕРЫЙ
+    // 1. ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ АВТОРИЗОВАН — СКРЫВАЕМ КНОПКИ ПОЛНОСТЬЮ
     if (!userRaw) {
         const buyButtons = document.querySelectorAll('.buy-btn-catalog');
         
         buyButtons.forEach(button => {
-            button.classList.add('disabled-style');
-            // === ИСПРАВЛЕНО: Перевод текста кнопки ===
-            button.textContent = ' ' + getUIText('В корзину', 'Add to Cart'); 
+            button.style.display = 'none'; // Полностью скрываем кнопку
+        });
+    } else {
+        // Если авторизован — убеждаемся, что кнопки видны и с правильным текстом
+        const buyButtons = document.querySelectorAll('.buy-btn-catalog');
+        buyButtons.forEach(button => {
+            button.style.display = ''; // Показываем (сбрасываем display)
+            button.textContent = ' ' + getUIText('В корзину', 'Add to Cart');
         });
     }
 
-    // 2. ДЕЛЕГИРОВАНИЕ КЛИКОВ
+    // 2. ДЕЛЕГИРОВАНИЕ КЛИКОВ (защита от прямого вызова)
     document.body.addEventListener('click', (event) => {
         if (event.target.classList.contains('buy-btn-catalog')) {
             // Снова проверяем авторизацию при клике
@@ -42,10 +47,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // === 🎯 Слушаем смену языка для обновления текста кнопок ===
     window.addEventListener('languageChanged', () => {
-        if (!localStorage.getItem('currentUser')) {
+        const userRaw = localStorage.getItem('currentUser');
+        
+        if (userRaw) {
+            // Если авторизован — обновляем текст
             const buyButtons = document.querySelectorAll('.buy-btn-catalog');
             buyButtons.forEach(button => {
+                button.style.display = ''; // Убеждаемся, что видны
                 button.textContent = ' ' + getUIText('В корзину', 'Add to Cart');
+            });
+        } else {
+            // Если не авторизован — скрываем
+            const buyButtons = document.querySelectorAll('.buy-btn-catalog');
+            buyButtons.forEach(button => {
+                button.style.display = 'none';
             });
         }
     });
